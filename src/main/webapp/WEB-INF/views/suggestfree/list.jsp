@@ -13,10 +13,10 @@
 			<table border="1">
 				<thead>
 					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>입장</th>
-						<th>삭제</th>
+						
+						<th>게시글번호</th>
+						<th>글제목</th>
+						<th>회원번호</th>
 					</tr>
 				</thead>
 				
@@ -26,13 +26,13 @@
 							<td colspan="4">등록 된 내용이 없습니다</td>
 						</tr>
 					</c:if>
-					<c:forEach items="${list}" var="item" varStatus="status"><!-- ${list} == var="item" -->
+					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
-							<td>${status.count}</td>
-							<td>${item.title}</td>
-							<td><a href="enter/${item.freeCode}">입장</a></td>
+							<td>${item.freeCode}</td>
+							<td><a href="view/${item.freeCode}">${item.title}</a></td>
+							
+							<td><a href="update/${item.freeCode}">수정</a></td>
 							<td><a href="delete/${item.freeCode}">삭제</a></td>
-							<td><a href="update/${item.freeCode}">변경</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
