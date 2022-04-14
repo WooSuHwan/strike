@@ -19,4 +19,38 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 		return sql.selectList("suggestfree.list");
 	}
 
+	@Override
+	public void add(SuggestFree item) {
+		sql.insert("suggestfree.add", item);
+		
+	}
+
+	@Override
+	public void delete(int freeCode) {
+		sql.delete("suggestfree.delete", freeCode);
+		
+	}
+
+	@Override
+	public SuggestFree item(int freeCode) {
+		
+		return sql.selectOne("suggestfree.item", freeCode);
+	}
+
+	@Override
+	public void update(SuggestFree item) {
+		sql.update("suggestfree.update", item);
+		
+	}
+
+	@Override
+	public SuggestFree read(int freeCode) throws Exception {
+		
+		return sql.selectOne("suggestfree.read", freeCode);
+	}
+
+	
+
+	
+
 }

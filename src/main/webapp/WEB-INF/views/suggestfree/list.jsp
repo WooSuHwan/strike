@@ -28,9 +28,16 @@
 					</c:if>
 					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
+<<<<<<< HEAD
 							<td>${item.freeCode}</td>
 							<td><a href="view/${item.freeCode}">${item.title}</a></td>
 					
+=======
+
+							<td>${item.freeCode}</td>
+							<td><a href="view/${item.freeCode}">${item.title}</a></td>
+							
+>>>>>>> refs/heads/HJP
 							<td><a href="update/${item.freeCode}">수정</a></td>
 							<td><a href="delete/${item.freeCode}">삭제</a></td>
 						</tr>

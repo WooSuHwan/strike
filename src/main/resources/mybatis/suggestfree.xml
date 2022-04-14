@@ -3,17 +3,39 @@
 
 <mapper namespace="suggestfree">
 	<!-- 리스트화 시키는 쿼리문 -->
-	<select id="list" resultType="Individual">
-		SELECT * FROM suggest_free
+
+
+	<select id="list" resultType="suggestfree">
+		SELECT * FROM free
 	</select>
 	
 	<insert id="add">
-		INSERT INTO individual
-		VALUES (INDIVIDUAL_CODE_SEQ.nextval, #{name}, #{clan}, #{tier}, #{record}, #{win}, #{lose}, #{draw}, #{rate})
+		INSERT INTO free
+		VALUES(FREE_CODE_SEQ.nextval,#{title}, #{story})
+	
 	</insert>
 	
 	<delete id="delete">
-		DELETE FROM individual
-		WHERE individual_code=#{individual_code}
+		DELETE FROM free
+		WHERE free_code = #{freeCode}
 	</delete>
+	
+	<update id="update">
+		UPDATE free
+		SET title=#{title}, story = #{story}
+		WHERE free_code = #{freeCode}
+	</update>
+	
+	<select id="item" resultType="suggestfree">
+		SELECT * FROM free
+		WHERE free_code = #{freeCode}
+	</select>
+	
+	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestFree">
+		SELECT *
+		FROM FREE
+		WHERE free_code = #{freeCode}
+	</select>
+	
+	
 </mapper>

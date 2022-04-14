@@ -1,16 +1,31 @@
 package kr.ac.kopo.strike.model;
 
 public class SuggestFree {
-	private int suggest_free_code;
+	
+	private int freeCode;
 	private String title;
 	private String story;
+	
+	private String id;
+	
+	
 
-	public int getSuggest_free_code() {
-		return suggest_free_code;
+	public String getId() {
+		return id;
 	}
 
-	public void setSuggest_free_code(int suggest_free_code) {
-		this.suggest_free_code = suggest_free_code;
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	
+
+	public int getFreeCode() {
+		return freeCode;
+	}
+
+	public void setFreeCode(int freeCode) {
+		this.freeCode = freeCode;
 	}
 
 	public String getTitle() {

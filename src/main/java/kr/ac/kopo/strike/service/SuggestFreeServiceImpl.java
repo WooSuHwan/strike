@@ -19,4 +19,39 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 		return dao.list();
 	}
 
+	@Override
+	public void add(SuggestFree item) {
+		dao.add(item);
+		
+		
+	}
+
+	@Override
+	public void delete(int freeCode) {
+		
+		dao.delete(freeCode);
+		
+	}
+
+	@Override
+	public SuggestFree item(int freeCode) {
+	
+		return dao.item(freeCode);
+	}
+
+	@Override
+	public void update(SuggestFree item) {
+		
+		dao.update(item);
+		
+	}
+
+	@Override
+	public SuggestFree read(int freeCode) throws Exception {
+		
+		return dao.read(freeCode);
+	}
+
+	
+
 }

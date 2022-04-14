@@ -8,4 +8,18 @@ public interface SuggestFreeService {
 
 	List<SuggestFree> list();
 
+	void add(SuggestFree item);
+
+	void delete(int freeCode);
+
+	SuggestFree item(int freeCode);
+
+	void update(SuggestFree item);
+
+	public SuggestFree read(int freeCode) throws Exception;
+
+	
+
+	
+
 }
