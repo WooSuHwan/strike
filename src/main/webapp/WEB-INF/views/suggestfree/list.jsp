@@ -30,7 +30,7 @@
 						<tr>
 							<td>${item.freeCode}</td>
 							<td><a href="view/${item.freeCode}">${item.title}</a></td>
-							
+					
 							<td><a href="update/${item.freeCode}">수정</a></td>
 							<td><a href="delete/${item.freeCode}">삭제</a></td>
 						</tr>
