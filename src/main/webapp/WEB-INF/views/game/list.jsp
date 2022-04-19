@@ -41,7 +41,7 @@
 						<tr>
 							<td>${item.title}</td>
 							<td>${item.loc}</td>
-							<td><a href="challenger/list/${item.game_code}">입장</a></td>
+							<td><a href="http://localhost:9090/challenger/list/${item.game_code}">입장</a></td>
 							<td>
 								<c:if test="${sessionScope.member != null}">
 									<a href="delete/${item.member_code}" style="text-decoration:none">삭제</a>

@@ -6,6 +6,6 @@ import kr.ac.kopo.strike.model.Challenger;
 
 public interface ChallengerDao {
 
-	List<Challenger> list(int game_code);
+	List<Challenger> list();
 
 }

@@ -15,8 +15,8 @@ public class ChallengerDaoImpl implements ChallengerDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Challenger> list(int game_code) {
-		return sql.selectList("challenger.list", game_code);
+	public List<Challenger> list() {
+		return sql.selectList("challenger.list");
 	}
 
 }

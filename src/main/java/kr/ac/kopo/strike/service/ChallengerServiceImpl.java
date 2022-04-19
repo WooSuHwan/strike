@@ -15,8 +15,8 @@ public class ChallengerServiceImpl implements ChallengerService {
 	ChallengerDao dao;
 
 	@Override
-	public List<Challenger> list(int game_code) {
-		return dao.list(game_code);
+	public List<Challenger> list() {
+		return dao.list();
 	}
 
 }

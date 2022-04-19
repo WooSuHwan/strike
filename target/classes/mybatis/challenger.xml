@@ -3,8 +3,9 @@
 
 <mapper namespace="challenger">
 	<select id="list" resultType="Challenger">
-		SELECT * FROM
-		from challenger
-		where game_code=#{game_code} 
+		SELECT *
+		FROM member m, game g, challenger c
+		WHERE m.member_code = c.member_code AND g.member_code = c.member_code AND
+		m.member_code = #{member_code} AND g.game_code = #{game_code};
 	</select>
 </mapper>
