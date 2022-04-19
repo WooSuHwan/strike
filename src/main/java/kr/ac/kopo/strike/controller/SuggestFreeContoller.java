@@ -2,12 +2,15 @@ package kr.ac.kopo.strike.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +29,7 @@ public class SuggestFreeContoller {
 	@Autowired
 	SuggestFreeService service;
 	
-	@GetMapping("list")
+	@RequestMapping({"/", "list"})
 	public String list(Model model) {
 		List<SuggestFree> list = service.list();
 				
@@ -37,13 +40,17 @@ public class SuggestFreeContoller {
 	
 	@GetMapping("/add")
 	public String add() {
+		
 		return path + "add";
 	}
 	
 	@PostMapping("/add")
-	public String add(SuggestFree item) {
+	public String add(SuggestFree item, HttpSession session) {
 		service.add(item);
-		
+		String name = (String) session.getAttribute("name");
+		int user_code = (int) session.getAttribute("code");
+		item.setName(name);
+		item.setUser_code(user_code);
 		return "redirect:list";
 	}
 	
@@ -51,7 +58,7 @@ public class SuggestFreeContoller {
 	public String delete(@PathVariable int freeCode) {
 		service.delete(freeCode);
 		
-		return "redirect:../list";
+		return "redirect:..";
 	}
 	
 	@GetMapping("/update/{freeCode}" )
@@ -67,14 +74,14 @@ public class SuggestFreeContoller {
 	public String update(@PathVariable int freeCode, SuggestFree item) {
 		service.update(item);
 		System.out.println(item);
-		return "redirect:../list";
+		return "redirect:..";
 	}
 	
 	@GetMapping("/view/{freeCode}")
 	public String view(@PathVariable int freeCode,Model model) {
 		SuggestFree item = service.item(freeCode);
+		service.addCount(freeCode);
 		model.addAttribute("item", item);
-		
 		return path+"view";
 	}
 	
@@ -86,5 +93,7 @@ public class SuggestFreeContoller {
 		
 		return "suggest/readView";
 	}
-		
+	
+
+	
 }

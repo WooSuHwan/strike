@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자유게시판 리스트</title>
+<title>공지게시판 리스트</title>
 <style>
 html, body {
 
@@ -36,7 +36,7 @@ a.{
 </head>
 <body>
 	<div>
-		<h1>자유게시판</h1>
+		<h1>공지게시판</h1>
 		<div class="row">
 		<!-- 로그인 전 -->
 		<div>
@@ -80,8 +80,8 @@ a.{
 					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
 
-							<td>${item.freeCode}</td>
-							<td><a href="view/${item.freeCode}">${item.title}</a></td>
+							<td>${item.masterCode}</td>
+							<td><a href="view/${item.masterCode}">${item.title}</a></td>
 							<td>${item.name}</td>
 							<td>${item.hit}</td>
 							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy년MM월dd일"/></td>
@@ -93,7 +93,7 @@ a.{
 			</table>
 		</div>
 		
-		<c:if test="${code ne null}">
+		<c:if test="${sessionScope.grade == 100}">
 				<span><a href="add" style="text-decoration:none">작성</a></span>
 			</c:if>
 		<a href=".." >index</a></td>

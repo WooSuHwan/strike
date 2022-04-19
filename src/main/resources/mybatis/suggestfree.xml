@@ -6,13 +6,14 @@
 
 
 	<select id="list" resultType="suggestfree">
-		SELECT * FROM free
+		SELECT free_code, title, story, hit, name, reg_date  FROM free 
 	</select>
 	
 	<insert id="add">
-		INSERT INTO free
-		VALUES(FREE_CODE_SEQ.nextval,#{title}, #{story})
+		INSERT INTO free (free_code, title, story, hit, name, reg_date)
 	
+		VALUES(FREE_CODE_SEQ.nextval,#{title}, #{story}, 0, #{name}, sysdate )
+		
 	</insert>
 	
 	<delete id="delete">
@@ -37,5 +38,11 @@
 		WHERE free_code = #{freeCode}
 	</select>
 	
+	<update id="addcount">
+		UPDATE FREE
+		SET hit = hit + 1
+		WHERE
+			free_code = #{freeCode}
+	</update>
 	
 </mapper>

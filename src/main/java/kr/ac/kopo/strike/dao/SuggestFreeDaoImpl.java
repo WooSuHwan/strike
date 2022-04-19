@@ -49,6 +49,12 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 		return sql.selectOne("suggestfree.read", freeCode);
 	}
 
+	@Override
+	public void addCount(int freeCode) {
+		sql.update("suggestfree.addcount", freeCode);
+		
+	}
+
 	
 
 	

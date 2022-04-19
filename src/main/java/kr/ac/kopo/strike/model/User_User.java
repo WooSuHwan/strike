@@ -8,6 +8,17 @@ public class User_User {
 	private String birth;
 	private int sex;
 	private String tel;
+	private int grade;
+	
+	
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
 
 	public int getUser_code() {
 		return user_code;

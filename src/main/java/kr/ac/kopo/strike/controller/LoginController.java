@@ -33,6 +33,7 @@ public class LoginController {
 		} else {
 			session.setAttribute("code", user.getUser_code());
 			session.setAttribute("name", user.getName());
+			session.setAttribute("grade", user.getGrade());
 			return "redirect:/";
 		}
 	}

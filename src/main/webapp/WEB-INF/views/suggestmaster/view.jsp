@@ -27,21 +27,21 @@
 							</tr>	
 							<tr>
 								<td>
-									<label for="title">제목</label><input type="text" id="title" name="title" value="${item.title}"  readonly/>
+									<label for="title">제목</label><input type="title" id="title" name="title" value="${item.title}"/>
 								</td>
 							</tr>	
 							<tr>
 								<td>
-									<label for="story">내용</label><textarea type="text" id="story" name="story" readonly="readonly" disabled><c:out value="${item.story}" /></textarea>
+									<label for="story">내용</label><textarea id="story" name="story"><c:out value="${item.story}" /></textarea>
 								</td>
 							</tr>
 							<tr>
 					
 						
 							<a href=".." >목록</a></td>
-							<c:if test="${sessionScope.name == item.name}">
-						<a href="../update/${item.freeCode}" >변경</a>
- 						<a href="../delete/${item.freeCode}" >삭제</a> 
+							<c:if test="${sessionScope.grade == 100}">
+						<button type="button" id="update">수정</button>
+						<button type="button" id="delete">삭제</button>
 						</c:if>
 							</tr>
 						</tbody>			

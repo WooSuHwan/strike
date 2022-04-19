@@ -18,6 +18,12 @@ public interface SuggestFreeService {
 
 	public SuggestFree read(int freeCode) throws Exception;
 
+	void addCount(int freeCode);
+
+
+
+	
+
 	
 
 	

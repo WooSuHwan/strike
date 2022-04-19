@@ -52,6 +52,16 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 		return dao.read(freeCode);
 	}
 
+	@Override
+	public void addCount(int freeCode) {
+		dao.addCount(freeCode);
+		
+	}
+
+	
+
+	
+
 	
 
 }
