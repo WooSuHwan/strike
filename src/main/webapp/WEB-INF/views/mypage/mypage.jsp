@@ -8,10 +8,10 @@
 <body>
 	${item.member_code }
 	${item.id }
-<%-- 	${item.pw } --%>
 	${item.name }
 	${item.birth }
 	${item.sex }
 	${item.tel }
+	<a href="../update/${item.member_code}">회원정보 수정</a>
 </body>
 </html>

@@ -39,7 +39,6 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public Member mypage(Member item) {
-		System.out.println(item.getName()+")))))))))))))))))))))");
 		return sql.selectOne("member.mypage", item);
 	}
 

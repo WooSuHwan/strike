@@ -47,6 +47,13 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member item(Member member) {
 		
+		Member item = dao.item(member);
+		
+		member.setName(aes256.decrypt(item.getName()));
+		member.setBirth(aes256.decrypt(item.getBirth()));
+		member.setId(aes256.decrypt(item.getId()));
+		member.setTel(aes256.decrypt(item.getTel()));
+		
 			return dao.item(member);	
 	}
 

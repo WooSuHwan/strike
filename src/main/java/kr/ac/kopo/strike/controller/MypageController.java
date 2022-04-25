@@ -53,10 +53,10 @@ public class MypageController {
 	@GetMapping("/update/{member_code}")
 	public String update(@PathVariable int member_code, Model model, Member member) {
 		
-		Member item = memberService.item(member);
+		memberService.item(member);
 		
-		model.addAttribute("item", item);
-		
+		model.addAttribute("item", member);
+		System.out.println(member.getName()+"**^*^^*^^*^^");
 		return path + "update";
 	}
 	
