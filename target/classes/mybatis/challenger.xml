@@ -2,10 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="challenger">
-	<select id="list" resultType="Challenger">
-		SELECT *
-		FROM member m, game g, challenger c
-		WHERE m.member_code = c.member_code AND g.member_code = c.member_code AND
-		m.member_code = #{member_code} AND g.game_code = #{game_code};
+	<select id="list" resultType="Member">
+		SELECT * 
+		FROM challenger c, member m, game g
+		WHERE g.game_code = #{game_code} AND m.member_code = c.member_code
 	</select>
+	
+	<insert id="add">
+		INSERT INTO challenger
+		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null)
+	</insert>
 </mapper>

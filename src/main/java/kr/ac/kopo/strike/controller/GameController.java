@@ -35,6 +35,7 @@ public class GameController {
 	
 	@GetMapping("/add")
 	public String add() {
+		
 		return path + "add";
 	}
 	
@@ -74,6 +75,16 @@ public class GameController {
 		service.update(item);
 		
 		return "redirect:../list";
+	}
+	
+	@GetMapping("/view/{game_code}")
+	public String view(@PathVariable int game_code, Model model) {
+		
+		List<Game> list = service.list();
+		
+		model.addAttribute("list", list);
+		
+		return path + "view";
 	}
 	
 }

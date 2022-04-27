@@ -18,6 +18,10 @@
 				<input name="loc" type="text">
 			</div>
 			<div>
+				<label>내용</label>
+				<input name="story" type="text">
+			</div>
+			<div>
 				<button>등록</button>
 			</div>
 		</form>

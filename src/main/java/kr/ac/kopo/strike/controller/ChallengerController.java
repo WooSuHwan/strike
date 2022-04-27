@@ -1,5 +1,6 @@
 package kr.ac.kopo.strike.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
-import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ChallengerService;
 
@@ -24,18 +24,20 @@ public class ChallengerController {
 	ChallengerService service;
 	
 	@GetMapping("/list/{game_code}")
-	public String enter(@PathVariable int game_code, Model model, @SessionAttribute Member member) {
+	public String list(@PathVariable int game_code, Model model) {
+		List<Challenger> list = service.list(game_code);
 		
-		Challenger challenger = new Challenger();
-		
-		challenger.setMember_code(member.getMember_code());
-		challenger.setGame_code(game_code);
-		
-		List<Challenger> list = service.list();
-		
+		model.addAttribute("game_code", game_code);
 		model.addAttribute("list", list);
-		
+	
 		return path + "list";
 	}
 	
+	@GetMapping("/add/{game_code}")
+	public String add(@PathVariable int game_code, @SessionAttribute Member member) {
+		
+		service.add(game_code, member.getMember_code());
+		
+		return "redirect:../list";
+	}
 }

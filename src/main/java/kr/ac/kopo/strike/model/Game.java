@@ -5,6 +5,7 @@ public class Game {
 	private int member_code;
 	private String title;
 	private String loc;
+	private String story;
 
 	public int getGame_code() {
 		return game_code;
@@ -36,6 +37,14 @@ public class Game {
 
 	public void setLoc(String loc) {
 		this.loc = loc;
+	}
+
+	public String getStory() {
+		return story;
+	}
+
+	public void setStory(String story) {
+		this.story = story;
 	}
 
 }

@@ -21,6 +21,8 @@
 						<th>패</th>
 						<th>무</th>
 						<th>승률</th>
+						<th>상태</th>
+						<th>승인</th>
 						<th>삭제</th>	
 					</tr>
 				</thead>
@@ -28,7 +30,7 @@
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="9">등록 된 신청자가 없습니다</td>
+							<td colspan="11">등록 된 신청자가 없습니다</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${list}" var="item" varStatus="status">
@@ -40,6 +42,9 @@
 							<td>${item.lose}</td>
 							<td>${item.draw}</td>
 							<td>${item.rate}</td>
+							<td>미완성</td>
+							<td>미완성</td>
+							<td><button>승인</button></td>
 							<td>
 								<c:if test="${sessionScope.member != null}">
 									<a href="delete/${item.member_code}" style="text-decoration:none">삭제</a>
@@ -51,7 +56,7 @@
 			</table>
 		</div>
 		<div>
-			<a href="memberAdd">신청</a>
+			<a href="../add/${game_code}">신청</a>
 		</div>
 	</div>
 </body>

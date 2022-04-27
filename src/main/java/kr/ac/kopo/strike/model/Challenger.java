@@ -4,6 +4,8 @@ public class Challenger {
 	private int challenger_code;
 	private int member_code;
 	private int game_code;
+	private int stats;
+	
 
 	public int getChallenger_code() {
 		return challenger_code;
@@ -27,6 +29,14 @@ public class Challenger {
 
 	public void setGame_code(int game_code) {
 		this.game_code = game_code;
+	}
+
+	public int getStats() {
+		return stats;
+	}
+
+	public void setStats(int stats) {
+		this.stats = stats;
 	}
 
 }
