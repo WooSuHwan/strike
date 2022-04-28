@@ -99,7 +99,7 @@ a {
 
 /* 햄버거 버튼 */
 
-.Ham_button{
+/* .Ham_button{
     text-align: center;
     display: flex;
     align-items: center;
@@ -117,7 +117,29 @@ a {
     margin-top: 55px;
     margin-right: -440px;
     margin-bottom: 50px;
+} */
+
+.Ham_button{
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top: 1.7em;
+    right: 3.2em;
+    width: 2.8%;
+    height: 5%;
+    z-index: 99999;
 }
+
+.menu-trigger {
+    position: relative;
+    width: 45px;
+	height: 35px;
+    /* margin-top: 55px;
+    margin-right: -440px;
+    margin-bottom: 50px; */
+}
+
 
 .menu-trigger,
 .menu-trigger span {
@@ -172,7 +194,7 @@ a {
     top:0px;
     right:-20%;
     color:#505050;
-    z-index: 99;
+    z-index: 999;
     opacity: 0;
 }
 

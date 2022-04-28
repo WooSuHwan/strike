@@ -62,3 +62,24 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+
+//이미지 클릭시 색상변경
+
+// function ChangeColor(t)
+// {
+//     if( t == '1' ){       
+//         document.getElementById('here').className = "img1";       
+               
+//     }
+// }   
+
+var bDisplay = true;
+function doDisplay(){
+	var con = document.getElementById("imgDisplay");
+	if(con.style.display=='none'){
+		con.style.display = 'block';
+	}else{
+		con.style.display = 'none';
+	}
+}
