@@ -1,5 +1,6 @@
 package kr.ac.kopo.strike.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,7 @@ import kr.co.kopo.strike.util.SHA256Util;
 @Service
 public class ChallengerServiceImpl implements ChallengerService {
 
-	AES256Util aes256 = new AES256Util();
-	SHA256Util sha256 = new SHA256Util();
+
 	
 	@Autowired
 	ChallengerDao dao;
