@@ -37,13 +37,13 @@
 						<tr>
 							<td>${item.name}</td>
 							<td>${item.clan}</td>
+							<td>${item.tier}</td>
 							<td>${item.record}</td>
 							<td>${item.win}</td>
 							<td>${item.lose}</td>
 							<td>${item.draw}</td>
 							<td>${item.rate}</td>
-							<td>미완성</td>
-							<td>미완성</td>
+							<td>${item.state}</td>
 							<td><button>승인</button></td>
 							<td>
 								<c:if test="${sessionScope.member != null}">
