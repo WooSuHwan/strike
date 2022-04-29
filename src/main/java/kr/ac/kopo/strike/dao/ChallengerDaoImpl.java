@@ -1,6 +1,5 @@
 package kr.ac.kopo.strike.dao;
 
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -8,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.ChallengerMember;
 
 @Repository
@@ -30,5 +28,15 @@ public class ChallengerDaoImpl implements ChallengerDao {
 		map.put("member_code", member_code);
 		
 		sql.insert("challenger.add", map);
+	}
+
+	@Override
+	public void permission(int game_code, int member_code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("member_code", member_code);
+		map.put("game_code", game_code);
+		
+		sql.update("challenger.update", map);	
 	}
 }

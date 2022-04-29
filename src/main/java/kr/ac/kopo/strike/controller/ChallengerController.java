@@ -59,4 +59,12 @@ public class ChallengerController {
 		// return path + "add/" + game_code;
 		return "redirect:../list/" + game_code;
 	}
+	
+	@GetMapping("/permission/{member_code}")
+	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
+		
+		service.permission(game_code, member.getMember_code());
+		
+		return "redirect:../list/" + game_code;
+	}
 }

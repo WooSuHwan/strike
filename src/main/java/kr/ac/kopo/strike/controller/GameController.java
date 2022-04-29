@@ -80,9 +80,9 @@ public class GameController {
 	@GetMapping("/view/{game_code}")
 	public String view(@PathVariable int game_code, Model model) {
 		
-		List<Game> list = service.list();
+		List<Game> view = service.view(game_code);
 		
-		model.addAttribute("list", list);
+		model.addAttribute("view", view);
 		
 		return path + "view";
 	}

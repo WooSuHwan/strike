@@ -38,5 +38,10 @@ public class GameServiceImpl implements GameService {
 	public Game item(int game_code) {
 		return dao.item(game_code);
 	}
+	
+	@Override
+	public List<Game> view(int game_code) {
+		return dao.view(game_code);
+	}
 
 }

@@ -26,4 +26,9 @@
 		SELECT * FROM game
 		WHERE game_code=#{game_code}
 	</select>
+	
+	<select id="view" resultType="Game">
+		SELECT * FROM game
+		WHERE game_code=#{game_code}
+	</select>
 </mapper>

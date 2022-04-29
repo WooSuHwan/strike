@@ -39,4 +39,9 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectOne("game.item", game_code);
 	}
 
+	@Override
+	public List<Game> view(int game_code) {
+		return sql.selectList("game.view", game_code);
+	}
+
 }
