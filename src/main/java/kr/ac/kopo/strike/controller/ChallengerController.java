@@ -1,7 +1,5 @@
 package kr.ac.kopo.strike.controller;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +47,7 @@ public class ChallengerController {
 		
 		model.addAttribute("game_code", game_code);
 		model.addAttribute("list", list);
-	
+		
 		return path + "list";
 	}
 	
@@ -58,6 +56,7 @@ public class ChallengerController {
 		
 		service.add(game_code, member.getMember_code());
 		
-		return path + "add" + game_code;
+		// return path + "add/" + game_code;
+		return "redirect:../list/" + game_code;
 	}
 }

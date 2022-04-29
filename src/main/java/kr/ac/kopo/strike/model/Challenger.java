@@ -4,7 +4,7 @@ public class Challenger {
 	private int challenger_code;
 	private int member_code;
 	private int game_code;
-	private int stats;
+	private String stats;
 	
 
 	public int getChallenger_code() {
@@ -31,11 +31,11 @@ public class Challenger {
 		this.game_code = game_code;
 	}
 
-	public int getStats() {
+	public String getStats() {
 		return stats;
 	}
 
-	public void setStats(int stats) {
+	public void setStats(String stats) {
 		this.stats = stats;
 	}
 

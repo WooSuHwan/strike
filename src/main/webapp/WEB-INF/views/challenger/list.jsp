@@ -44,7 +44,11 @@
 							<td>${item.draw}</td>
 							<td>${item.rate}</td>
 							<td>${item.state}</td>
-							<td><button>승인</button></td>
+							<td>
+								<c:if test="${sessionScope.member != null}">
+									<a href="permission/${item.member_code}" style="text-decoration:none">승인</a>
+								</c:if>
+							</td>
 							<td>
 								<c:if test="${sessionScope.member != null}">
 									<a href="delete/${item.member_code}" style="text-decoration:none">삭제</a>
