@@ -55,6 +55,17 @@ form{
     justify-content: center;
 }
 
+.LoginCenterLogo>img{
+	max-width: 100%;
+	text-align: center;
+}
+
+.LoginCenterLogo>a{
+	display: flex;
+    justify-content: center;
+}
+
+   
 
 /* 아디 박스 */
 

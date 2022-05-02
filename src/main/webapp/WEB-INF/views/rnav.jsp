@@ -23,8 +23,8 @@
                     <h3><a href="../login/login">회원가입/로그인 하기</a></h3>
 			</c:if>
 			<c:if test="${sessionScope.member != null}">
-				<h3><a href="../login/logout">로그아웃&nbsp;/</a></h3>
-				<h3><a href="../mypage/mypage/${sessionScope.member.member_code}">마이페이지</a></h3>
+				<h3><a href="../login/logout">로그아웃</a></h3>
+				<%-- <h3><a href="../mypage/mypage/${sessionScope.member.member_code}">마이페이지</a></h3> --%>
 			</c:if>
                 </div>
                 <div class="RM_tilte_Ricon">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="battle">
-                    <div class="f_board_text"><a href="#">마이페이지</a></div>
+                    <div class="f_board_text"><a href="../mypage/mypage/${sessionScope.member.member_code}">마이페이지</a></div>
                     <div class="f_board_icon">
                         <img src="../resources/img/right.png" width="55%" alt="right">
                     </div>
