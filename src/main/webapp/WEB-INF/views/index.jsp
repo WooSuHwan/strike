@@ -228,7 +228,7 @@
     </div>
 
 <!-- 	<div class="row"> -->
-<!-- 		<!-- 로그인 전 --> -->
+<!-- 		<!-- 로그인 전 -->
 <!-- 		<div> -->
 <%-- 			<c:if test="${sessionScope.member == null}"> --%>
 <!-- 				<span><a href="login/login" style="text-decoration:none">로그인 </a></span> -->
@@ -237,7 +237,7 @@
 <%-- 			<c:if test="${sessionScope.member == null}"> --%>
 <!-- 				<span><a href="user/add" style="text-decoration:none">회원가입</a></span> -->
 <%-- 			</c:if> --%>
-<!-- 		<!-- 로그인 후 -->	 -->
+<!-- 		<!-- 로그인 후 -->
 <%-- 			<c:if test="${sessionScope.member != null}"> --%>
 <%-- 				${sessionScope.member.name}님 환영합니다. --%>
 <%-- 			</c:if> --%>
