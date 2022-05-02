@@ -39,4 +39,9 @@ public class ChallengerDaoImpl implements ChallengerDao {
 		
 		sql.update("challenger.update", map);	
 	}
+
+	@Override
+	public void delete(int game_code) {
+		sql.delete("challenger.delete", game_code);
+	}
 }

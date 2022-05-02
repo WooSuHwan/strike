@@ -11,8 +11,6 @@ import kr.ac.kopo.strike.model.ChallengerMember;
 @Service
 public class ChallengerServiceImpl implements ChallengerService {
 
-
-	
 	@Autowired
 	ChallengerDao dao;
 
@@ -29,5 +27,10 @@ public class ChallengerServiceImpl implements ChallengerService {
 	@Override
 	public void permission(int game_code, int member_code) {
 		dao.permission(game_code, member_code);
+	}
+
+	@Override
+	public void delete(int game_code) {
+		dao.delete(game_code);
 	}
 }

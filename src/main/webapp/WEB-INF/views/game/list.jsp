@@ -35,6 +35,17 @@
 							<td>${item.story}</td>
 							<td><a href="view/${item.game_code}">입장</a></td>
 							<td>
+								<c:if test="${item.member_code eq sessionScope.member.member_code}">
+									<a href="delete/${item.game_code}" style="text-decoration:none">삭제</a>
+								</c:if>
+							</td>
+							<td>
+								<c:if test="${item.member_code eq sessionScope.member.member_code}">
+									<a href="update/${item.game_code}" style="text-decoration:none">수정</a>
+								</c:if>
+							</td>
+							<!--
+							<td>
 								<c:if test="${sessionScope.member != null}">
 									<a href="delete/${item.member_code}" style="text-decoration:none">삭제</a>
 								</c:if>
@@ -44,6 +55,7 @@
 									<a href="update/${item.member_code}" style="text-decoration:none">수정</a>
 								</c:if>
 							</td>
+							-->
 						</tr>
 					</c:forEach>
 				</tbody>

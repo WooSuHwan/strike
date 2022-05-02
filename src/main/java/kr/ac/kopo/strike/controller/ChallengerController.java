@@ -42,9 +42,6 @@ public class ChallengerController {
 				item.setName( aes256.decrypt(item.getName()) );
 			}
 		
-		// System.out.println("작동ㅇㄴ러미;ㄹ언ㅁ;리ㅏㅓㅇㄴㅁ;렁ㄴ;ㅁ럼ㅇ니;ㅏㄹ어;ㅏ너");
-		// System.out.println(decryptList);
-		
 		model.addAttribute("game_code", game_code);
 		model.addAttribute("list", list);
 		
@@ -64,6 +61,14 @@ public class ChallengerController {
 	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
 		
 		service.permission(game_code, member.getMember_code());
+		
+		return "redirect:../list/" + game_code;
+	}
+	
+	@GetMapping("/delete/{game_code}")
+	public String delete(@PathVariable int game_code) {
+		
+		service.delete(game_code);
 		
 		return "redirect:../list/" + game_code;
 	}

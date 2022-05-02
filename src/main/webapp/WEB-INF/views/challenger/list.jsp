@@ -45,13 +45,13 @@
 							<td>${item.rate}</td>
 							<td>${item.state}</td>
 							<td>
-								<c:if test="${sessionScope.member != null}">
+								<c:if test="${item.member_code eq sessionScope.member.member_code}">
 									<a href="permission/${item.member_code}" style="text-decoration:none">승인</a>
 								</c:if>
 							</td>
 							<td>
-								<c:if test="${sessionScope.member != null}">
-									<a href="delete/${item.member_code}" style="text-decoration:none">삭제</a>
+								<c:if test="${item.member_code eq sessionScope.member.member_code}">
+									<a href="../delete/${item.game_code}" style="text-decoration:none">삭제</a>
 								</c:if>
 							</td>
 						</tr>

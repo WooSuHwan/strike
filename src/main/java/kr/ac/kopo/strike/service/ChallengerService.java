@@ -12,4 +12,6 @@ public interface ChallengerService {
 
 	void permission(int game_code, int member_code);
 
+	void delete(int game_code);
+
 }
