@@ -99,7 +99,7 @@ $(function() {
 								<img src="../resources/img/Lock.png" alt="자물쇠">
 							</div>
 							<div class="membershipIn_01txt">
-								<a href="#">회원가입 하기</a>
+								<a href="../user/add">회원가입 하기</a>
 							</div>
 						</div>
 					</div>
