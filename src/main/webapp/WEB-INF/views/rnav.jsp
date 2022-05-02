@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="battle">
-                    <div class="f_board_text"><a href="#">대결(신청)</a></div>
+                    <div class="f_board_text"><a href="#">마이페이지</a></div>
                     <div class="f_board_icon">
                         <img src="../resources/img/right.png" width="55%" alt="right">
                     </div>
