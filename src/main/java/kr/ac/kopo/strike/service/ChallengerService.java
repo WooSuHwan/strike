@@ -13,7 +13,7 @@ public interface ChallengerService {
 
 	void permission(int game_code, int member_code);
 
-	void delete(int game_code);
+	void delete(int member_code);
 
 	List<Game> makerItem(int game_code);
 

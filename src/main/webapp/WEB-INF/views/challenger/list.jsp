@@ -44,7 +44,7 @@
 							<td>${item.draw}</td>
 							<td>${item.rate}</td>
 							<td>${item.state}</td>
-							<td><!-- 신청자 -->신청자용
+							<td>신청자용
 								<c:if test="${item.member_code eq sessionScope.member.member_code}">
 									<a href="../delete/${item.game_code}" style="text-decoration:none">삭제</a>
 								</c:if>
@@ -54,7 +54,7 @@
 									<c:if test="${maker.member_code eq sessionScope.member.member_code}">
 										<a href="../permission/${maker.game_code}" style="text-decoration:none"> 승인</a>
 									</c:if>
-								
+									
 									<c:if test="${maker.member_code eq sessionScope.member.member_code}">
 										<a href="../delete/${maker.game_code}" style="text-decoration:none">삭제</a>
 									</c:if>

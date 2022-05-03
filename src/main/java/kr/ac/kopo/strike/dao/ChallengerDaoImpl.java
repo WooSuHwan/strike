@@ -40,15 +40,15 @@ public class ChallengerDaoImpl implements ChallengerDao {
 		
 		sql.update("challenger.update", map);	
 	}
-
+	
 	@Override
-	public void delete(int game_code) {
-		sql.delete("challenger.delete", game_code);
+	public void delete(int member_code) {
+		sql.delete("challenger.delete", member_code);
 	}
-
+	
 	@Override
 	public List<Game> makerItem(int game_code) {
 		return sql.selectList("challenger.makerItem", game_code);
 	}
-	
+
 }

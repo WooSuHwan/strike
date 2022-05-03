@@ -68,11 +68,11 @@ public class ChallengerController {
 		return "redirect:../list/" + game_code;
 	}
 	
-	@GetMapping("/delete/{game_code}")
-	public String delete(@PathVariable int game_code) {
+	@GetMapping("/delete/{game_code}/{member_code}")
+	public String delete(@PathVariable int game_code, @SessionAttribute Member member) {
 		
-		service.delete(game_code);
+		service.delete(member.getMember_code());
 		
-		return "redirect:../list/" + game_code;
+		return "redirect:/challenger/list/" + game_code;
 	}
 }
