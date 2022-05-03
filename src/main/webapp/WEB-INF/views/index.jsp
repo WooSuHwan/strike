@@ -56,7 +56,11 @@ a.{
 			</c:if>
 			
 			<c:if test="${sessionScope.member != null}">
+<<<<<<< HEAD
 				<span><a href="myPage/myPage" style="text-decoration:none">마이페이지</a></span>
+=======
+				<span><a href="mypage/mypage/${sessionScope.member.member_code}" style="text-decoration:none">마이페이지</a></span>
+>>>>>>> refs/heads/master
 			</c:if>
 		</div>
 	</div>
