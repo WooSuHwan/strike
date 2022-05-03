@@ -8,8 +8,18 @@ public class Clan {
 	private int clanLost;
 	private int clanScore;
 	
-	
-	
+	public String getClanName() {
+		return clanName;
+	}
+	public void setClanName(String clanName) {
+		this.clanName = clanName;
+	}
+	public String getMemberCode() {
+		return memberCode;
+	}
+	public void setMemberCode(String memberCode) {
+		this.memberCode = memberCode;
+	}
 	public int getClanCount() {
 		return clanCount;
 	}
@@ -34,20 +44,5 @@ public class Clan {
 	public void setClanScore(int clanScore) {
 		this.clanScore = clanScore;
 	}
-	public String getClanName() {
-		return clanName;
-	}
-	public void setClanName(String clanName) {
-		this.clanName = clanName;
-	}
-	public String getMemberCode() {
-		return memberCode;
-	}
-	public void setMemberCode(String memberCode) {
-		this.memberCode = memberCode;
-	}
-
-
-	
 	
 }

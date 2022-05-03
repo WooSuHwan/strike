@@ -30,7 +30,7 @@
 					<td colspan="10">등록 된 팀 랭크가 없습니다</td>
 				</tr>
 			</c:if>
-			
+
 			<c:forEach items="${list}" var="item">
 				<tr>
 					<td>${item.clanName }</td>

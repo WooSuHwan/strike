@@ -21,7 +21,7 @@ public class ClanController {
 	@Autowired
 	ClanService service;
 	
-	@RequestMapping("/list")
+	@RequestMapping({"/","/list"})
 	public String list(Model model) {
 		List<Clan> list = service.list();
 		
