@@ -44,37 +44,4 @@ public class MemberServiceImpl implements MemberService {
 		dao.add(member);
 	}
 
-	@Override
-	public Member item(Member member) {
-		
-			return dao.item(member);	
-	}
-
-	@Override
-	public void update(Member item) {
-		dao.update(item);
-	}
-
-	@Override
-	public void delete(int member_code) {
-		dao.delete(member_code);
-	}
-
-	@Override
-	public Member mypage(Member item) {
-		
-			Member member = dao.mypage(item);
-			
-			item.setName(aes256.decrypt(member.getName()));
-			item.setBirth(aes256.decrypt(member.getBirth()));
-			item.setId(aes256.decrypt(member.getId()));
-//			item.setPw(sha256.decrypt(member.getPw()));
-			item.setTel(aes256.decrypt(member.getTel()));
-			
-			System.out.println(item.getName()+"$$$$$$$$$$$$$$$$$$$$$");
-			
-			return dao.mypage(item);
-		
-	}
-
 }

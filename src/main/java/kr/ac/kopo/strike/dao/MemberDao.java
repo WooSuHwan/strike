@@ -8,12 +8,4 @@ public interface MemberDao {
 
 	int idCount(String id);
 
-	Member item(Member member);
-
-	void update(Member item);
-
-	void delete(int member_code);
-
-	Member mypage(Member item);
-
 }

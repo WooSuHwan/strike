@@ -54,6 +54,10 @@ a.{
 			<c:if test="${sessionScope.member != null}">
 				<span><a href="login/logout" style="text-decoration:none">로그아웃</a></span>
 			</c:if>
+			
+			<c:if test="${sessionScope.member != null}">
+				<span><a href="myPage/myPage" style="text-decoration:none">마이페이지</a></span>
+			</c:if>
 		</div>
 	</div>
 	

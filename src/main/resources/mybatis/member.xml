@@ -15,25 +15,4 @@
 	<select id="check" parameterType="HashMap" resultType="member">
 		SELECT * FROM member WHERE id=#{id} AND pw=#{pw}
 	</select>
-	
-	<select id="item" resultType="member">
-		SELECT * FROM member
-		WHERE member_code = #{member_code}
-	</select>
-	
-	<select id="mypage" resultType="member">
-		SELECT * FROM member
-		WHERE member_code = #{member_code}
-	</select>
-	
-	<update id="update">
-		UPDATE member 
-		SET id = #{id}, pw = #{pw}, name = #{name}, birth = #{birth}, sex = #{sex}, tel = #{tel}
-		WHERE member_code = #{member_code}
-	</update>
-	
-	<delete id="delete">
-		DELETE FROM member 
-		WHERE member_code = #{member_code} 
-	</delete>
 </mapper>
