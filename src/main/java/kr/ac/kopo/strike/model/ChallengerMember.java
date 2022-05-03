@@ -17,7 +17,7 @@ public class ChallengerMember {
 	private int rate;
 	private int challenger_code;
 	private int game_code;
-	private String state;
+	private int state;
 
 	public int getMember_code() {
 		return member_code;
@@ -147,11 +147,11 @@ public class ChallengerMember {
 		this.game_code = game_code;
 	}
 
-	public String getState() {
+	public int getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(int state) {
 		this.state = state;
 	}
 

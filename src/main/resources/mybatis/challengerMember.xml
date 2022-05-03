@@ -5,18 +5,18 @@
 	<select id="list" resultType="ChallengerMember">
 		SELECT * 
 		FROM challenger c, member m, game g
-		WHERE g.game_code = #{game_code} AND m.member_code = c.member_code
+		WHERE g.game_code = #{game_code} AND m.member_code = c.member_code AND c.game_code = #{game_code}
 	</select>
 	
 	<insert id="add">
 		INSERT INTO challenger
-		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, '승인대기')
+		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null)
 	</insert>
 	
-	<update id="update">
+	<update id="permission">
 		UPDATE challenger
-		SET state = '승인완료'
-		WHERE game_code = #{game_code} AND member_code = #{member_code}
+		SET state = 1
+		WHERE game_code = #{game_code} AND member_code != #{member_code}
 	</update>
 	
 	<delete id="delete">

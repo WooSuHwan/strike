@@ -31,7 +31,7 @@ public class ChallengerController {
 	@GetMapping("/list/{game_code}")
 	public String list(@PathVariable int game_code, Model model) {
 		List<ChallengerMember> list = service.list(game_code);
-		// 생성자의 승인을 얻기 위한 코드
+		// 생성자의 코드를 얻기 위한 코드
 		List<Game> makerItem = service.makerItem(game_code); 
 		// List<ChallengerMember> decryptList = new ArrayList<ChallengerMember>(list.size());
 		
@@ -62,7 +62,8 @@ public class ChallengerController {
 	
 	@GetMapping("/permission/{game_code}")
 	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
-		
+		System.out.println(game_code);
+		System.out.println(member.getMember_code());
 		service.permission(game_code, member.getMember_code());
 		
 		return "redirect:../list/" + game_code;

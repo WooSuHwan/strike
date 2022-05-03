@@ -38,7 +38,7 @@ public class ChallengerDaoImpl implements ChallengerDao {
 		map.put("member_code", member_code);
 		map.put("game_code", game_code);
 		
-		sql.update("challenger.update", map);	
+		sql.update("challenger.permission", map);	
 	}
 	
 	@Override
