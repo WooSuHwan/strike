@@ -17,5 +17,5 @@ public interface GameService {
 	Game item(int game_code);
 
 	List<Game> view(int game_code);
-
+	
 }

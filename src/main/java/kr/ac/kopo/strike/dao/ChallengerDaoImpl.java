@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.ChallengerMember;
+import kr.ac.kopo.strike.model.Game;
 
 @Repository
 public class ChallengerDaoImpl implements ChallengerDao {
@@ -44,4 +45,10 @@ public class ChallengerDaoImpl implements ChallengerDao {
 	public void delete(int game_code) {
 		sql.delete("challenger.delete", game_code);
 	}
+
+	@Override
+	public List<Game> makerItem(int game_code) {
+		return sql.selectList("challenger.makerItem", game_code);
+	}
+	
 }

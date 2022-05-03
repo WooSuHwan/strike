@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.ChallengerDao;
 import kr.ac.kopo.strike.model.ChallengerMember;
+import kr.ac.kopo.strike.model.Game;
 
 @Service
 public class ChallengerServiceImpl implements ChallengerService {
@@ -32,5 +33,10 @@ public class ChallengerServiceImpl implements ChallengerService {
 	@Override
 	public void delete(int game_code) {
 		dao.delete(game_code);
+	}
+
+	@Override
+	public List<Game> makerItem(int game_code) {
+		return dao.makerItem(game_code);
 	}
 }

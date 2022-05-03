@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.ChallengerMember;
+import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ChallengerService;
 import kr.co.kopo.strike.util.AES256Util;
@@ -30,7 +31,8 @@ public class ChallengerController {
 	@GetMapping("/list/{game_code}")
 	public String list(@PathVariable int game_code, Model model) {
 		List<ChallengerMember> list = service.list(game_code);
-		
+		// 생성자의 승인을 얻기 위한 코드
+		List<Game> makerItem = service.makerItem(game_code); 
 		// List<ChallengerMember> decryptList = new ArrayList<ChallengerMember>(list.size());
 		
 		// Collections.copy(decryptList, list);
@@ -44,6 +46,7 @@ public class ChallengerController {
 		
 		model.addAttribute("game_code", game_code);
 		model.addAttribute("list", list);
+		model.addAttribute("makerItem", makerItem);
 		
 		return path + "list";
 	}
@@ -57,7 +60,7 @@ public class ChallengerController {
 		return "redirect:../list/" + game_code;
 	}
 	
-	@GetMapping("/permission/{member_code}")
+	@GetMapping("/permission/{game_code}")
 	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
 		
 		service.permission(game_code, member.getMember_code());

@@ -23,4 +23,10 @@
 		DELETE FROM challenger
 		WHERE game_code=#{game_code}
 	</delete>
+		
+	<select id="makerItem" resultType="Game">
+		SELECT *
+		FROM game
+		WHERE game_code = #{game_code}
+	</select>
 </mapper>

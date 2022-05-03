@@ -22,8 +22,8 @@
 						<th>무</th>
 						<th>승률</th>
 						<th>상태</th>
-						<th>승인</th>
-						<th>삭제</th>	
+						<th>신청자용 삭제</th>
+						<th>생성자용 승인 삭제</th>	
 					</tr>
 				</thead>
 				
@@ -44,21 +44,41 @@
 							<td>${item.draw}</td>
 							<td>${item.rate}</td>
 							<td>${item.state}</td>
-							<td>
-								<c:if test="${item.member_code eq sessionScope.member.member_code}">
-									<a href="permission/${item.member_code}" style="text-decoration:none">승인</a>
-								</c:if>
-							</td>
-							<td>
+							<td><!-- 신청자 -->신청자용
 								<c:if test="${item.member_code eq sessionScope.member.member_code}">
 									<a href="../delete/${item.game_code}" style="text-decoration:none">삭제</a>
 								</c:if>
 							</td>
+							<c:forEach items="${makerItem}" var="maker" varStatus="status">
+								<td>생성자용
+									<c:if test="${maker.member_code eq sessionScope.member.member_code}">
+										<a href="../permission/${maker.game_code}" style="text-decoration:none"> 승인</a>
+									</c:if>
+								
+									<c:if test="${maker.member_code eq sessionScope.member.member_code}">
+										<a href="../delete/${maker.game_code}" style="text-decoration:none">삭제</a>
+									</c:if>
+								</td>
+							</c:forEach>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
+		<!-- 
+		<c:forEach items="${makerItem}" var="maker" varStatus="status">
+			<td>
+				<c:if test="${maker.member_code eq sessionScope.member.member_code}">
+					<a href="permission/${maker.member_code}" style="text-decoration:none">승인</a>
+				</c:if>
+			</td>
+			<td>
+				<c:if test="${item.member_code eq sessionScope.member.member_code}">
+					<a href="../delete/${maker.game_code}" style="text-decoration:none">삭제</a>
+				</c:if>
+			</td>
+		</c:forEach>
+		 -->
 		<div>
 			<a href="../add/${game_code}">신청</a>
 		</div>

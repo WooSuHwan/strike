@@ -3,6 +3,7 @@ package kr.ac.kopo.strike.service;
 import java.util.List;
 
 import kr.ac.kopo.strike.model.ChallengerMember;
+import kr.ac.kopo.strike.model.Game;
 
 public interface ChallengerService {
 
@@ -13,5 +14,7 @@ public interface ChallengerService {
 	void permission(int game_code, int member_code);
 
 	void delete(int game_code);
+
+	List<Game> makerItem(int game_code);
 
 }
