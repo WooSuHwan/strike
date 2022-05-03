@@ -43,6 +43,7 @@ public class GameController {
 	public String add(@SessionAttribute Member member, Game game) {
 		
 		game.setMember_code(member.getMember_code());
+		game.setMaker(member.getName());
 		
 		service.add(game);
 		

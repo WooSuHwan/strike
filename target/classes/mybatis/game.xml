@@ -8,7 +8,7 @@
 	
 	<insert id="add">
 		INSERT INTO game
-		VALUES (GAME_CODE_SEQ.nextval, #{member_code}, #{title}, #{loc}, #{story})
+		VALUES (GAME_CODE_SEQ.nextval, #{member_code}, #{title}, #{loc}, #{story}, #{maker}, '신청대기')
 	</insert>
 	
 	<delete id="delete">

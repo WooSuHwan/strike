@@ -17,6 +17,8 @@
 						<th>위치</th>
 						<th>내용</th>
 						<th>입장</th>
+						<th>작성자</th>
+						<th>도전자</th>
 						<th>삭제</th>
 						<th>수정</th>
 					</tr>
@@ -25,7 +27,7 @@
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="6">등록 된 개인 대결이 없습니다</td>
+							<td colspan="8">등록 된 개인 대결이 없습니다</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${list}" var="item" varStatus="status">
@@ -34,6 +36,8 @@
 							<td>${item.loc}</td>
 							<td>${item.story}</td>
 							<td><a href="view/${item.game_code}">입장</a></td>
+							<td>${item.maker}</td>
+							<td>${item.challenger}</td>
 							<td>
 								<c:if test="${item.member_code eq sessionScope.member.member_code}">
 									<a href="delete/${item.game_code}" style="text-decoration:none">삭제</a>

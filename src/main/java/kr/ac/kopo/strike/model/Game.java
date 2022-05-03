@@ -6,6 +6,8 @@ public class Game {
 	private String title;
 	private String loc;
 	private String story;
+	private String maker;
+	private String challenger;
 
 	public int getGame_code() {
 		return game_code;
@@ -45,6 +47,22 @@ public class Game {
 
 	public void setStory(String story) {
 		this.story = story;
+	}
+
+	public String getMaker() {
+		return maker;
+	}
+
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
+
+	public String getChallenger() {
+		return challenger;
+	}
+
+	public void setChallenger(String challenger) {
+		this.challenger = challenger;
 	}
 
 }
