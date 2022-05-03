@@ -12,8 +12,11 @@ public class SuggestFree {
 	private int user_code;
 	private String name;
 	private Date regDate;
+
 	
 	
+	
+
 	
 
 	public Date getRegDate() {

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
 
 @Repository
@@ -30,7 +31,7 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 		sql.delete("suggestfree.delete", freeCode);
 		
 	}
-
+	
 	@Override
 	public SuggestFree item(int freeCode) {
 		
@@ -54,6 +55,8 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 		sql.update("suggestfree.addcount", freeCode);
 		
 	}
+	
+
 
 	
 

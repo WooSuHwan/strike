@@ -23,9 +23,7 @@
 				<label>내용:</label>
 					<input name="story" type="text">
 			</div>
-			
-			
-			
+		
 			<div>
 				<button>등록</button>
 			</div>

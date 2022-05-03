@@ -1,7 +1,6 @@
 package kr.ac.kopo.strike.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -10,13 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+
+import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
+import kr.ac.kopo.strike.service.ReplyService;
 import kr.ac.kopo.strike.service.SuggestFreeService;
 
 @Controller
@@ -28,6 +32,10 @@ public class SuggestFreeContoller {
 	
 	@Autowired
 	SuggestFreeService service;
+	
+	@Autowired
+	ReplyService replyservice;
+	
 	
 	@RequestMapping({"/", "list"})
 	public String list(Model model) {
@@ -78,22 +86,36 @@ public class SuggestFreeContoller {
 	}
 	
 	@GetMapping("/view/{freeCode}")
-	public String view(@PathVariable int freeCode,Model model) {
+	public String view(@PathVariable int freeCode,Model model){
 		SuggestFree item = service.item(freeCode);
 		service.addCount(freeCode);
 		model.addAttribute("item", item);
+		
+		
+		
+		
 		return path+"view";
 	}
 	
 	@RequestMapping(value= "/readView", method = RequestMethod.GET)
-	public String read(SuggestFree suggestFree,Model model) throws Exception{
+	public String read(SuggestFree suggestFree,Model model, int freeCode) throws Exception{
+		
 		
 		logger.info("read");
 		model.addAttribute("read", service.read(suggestFree.getFreeCode()));
 		
+		
+		
 		return "suggest/readView";
+		
+		
 	}
 	
+	
+
+
+
+
 
 	
 }

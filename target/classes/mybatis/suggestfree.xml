@@ -6,7 +6,8 @@
 
 
 	<select id="list" resultType="suggestfree">
-		SELECT free_code, title, story, hit, name, reg_date  FROM free 
+		SELECT free_code, title, story, hit, name, reg_date
+		FROM free 
 	</select>
 	
 	<insert id="add">

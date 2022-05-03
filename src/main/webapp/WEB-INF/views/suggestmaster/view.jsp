@@ -40,8 +40,8 @@
 						
 							<a href=".." >목록</a></td>
 							<c:if test="${sessionScope.grade == 100}">
-						<button type="button" id="update">수정</button>
-						<button type="button" id="delete">삭제</button>
+						<a href="../update/${item.masterCode}" >변경</a>
+ 						<a href="../delete/${item.masterCode}" >삭제</a>
 						</c:if>
 							</tr>
 						</tbody>			

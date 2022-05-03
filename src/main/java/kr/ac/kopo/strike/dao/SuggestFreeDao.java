@@ -2,6 +2,7 @@ package kr.ac.kopo.strike.dao;
 
 import java.util.List;
 
+import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
 
 public interface SuggestFreeDao {
@@ -19,6 +20,9 @@ public interface SuggestFreeDao {
 	public  SuggestFree read(int freeCode)throws Exception;
 
 	void addCount(int freeCode);
+	
+	
+
 
 
 

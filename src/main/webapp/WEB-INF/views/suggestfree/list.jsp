@@ -97,6 +97,8 @@ a.{
 				<span><a href="add" style="text-decoration:none">작성</a></span>
 			</c:if>
 		<a href=".." >index</a></td>
+		
+		
 	</div>
 </body>
 </html>
