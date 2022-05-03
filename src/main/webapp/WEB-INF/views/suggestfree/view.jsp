@@ -64,7 +64,7 @@
 	<c:forEach items="${reply}" var="reply">
 	<li>
 		<div>
-			<p>${reply.replyWriter} / <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd" /></p>
+			<p>${reply.replyName} / <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd" /></p>
 			<p>${reply.replyStory}</p>
 		</div>
 	</li>	
@@ -76,10 +76,10 @@
 	<form method="post" action="/reply/write">
 	
 		<p>
-			<label>댓글 작성자</label> <input type="text" name="replyWriter">
+			<label>댓글 작성자</label> <input type="text" name="replyName">
 		</p>
 		<p>
-			<textarea rows="5" cols="50" name="replytStory"></textarea>
+			<textarea rows="5" cols="50" name="replyStory"></textarea>
 		</p>
 		<p>
 			<input type="hidden" name="freeCode" value="${item.freeCode}">

@@ -86,12 +86,15 @@ public class SuggestFreeContoller {
 	}
 	
 	@GetMapping("/view/{freeCode}")
-	public String view(@PathVariable int freeCode,Model model){
+	public String view(@PathVariable int freeCode,Model model) throws Exception{
 		SuggestFree item = service.item(freeCode);
 		service.addCount(freeCode);
 		model.addAttribute("item", item);
 		
-		
+		// 댓글 조회
+		List<Reply> reply = null;
+		reply = replyservice.list(freeCode);
+		model.addAttribute("reply", reply);
 		
 		
 		return path+"view";
