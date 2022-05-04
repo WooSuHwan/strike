@@ -10,9 +10,4 @@ public class RootController {
 	public String index() {
 		return "index";
 	}
-	
-	@RequestMapping("/faq")
-	public String faq() {
-		return "faq";
-	}
 }

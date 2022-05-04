@@ -11,25 +11,28 @@ import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.MemberService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/member")
 public class MemberController {
-	final String path = "user/";
+	final String path = "/member/";
 	
 	@Autowired
 	MemberService service;
 	
 	@GetMapping("/add")
 	public String add() {
-		return path + "/add";
+		return path + "add";
 	}
 	
-	@PostMapping("add")
+	@PostMapping("/add")
 	public String add(Member member) {
 		
 		if(service.confirm(member.getId())) {
 			
 			return "redirect:add";
 		}
+		
+		member.setClan("클랜없음");
+		member.setTier("아이언");
 		
 		service.add(member);
 		
@@ -44,7 +47,7 @@ public class MemberController {
 		if(overlap == true) {
 			return "overlap";
 		} else {
-			return "use";
+			return "/use";
 		}
 	}
 }
