@@ -51,7 +51,6 @@ public class ChallengerController {
 	public String add(@PathVariable int game_code, @SessionAttribute Member member) {
 		
 		service.add(game_code, member.getMember_code());
-		
 		// return path + "add/" + game_code;
 		return "redirect:../list/" + game_code;
 	}
