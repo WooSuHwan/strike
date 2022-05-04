@@ -57,8 +57,7 @@ public class ChallengerController {
 	
 	@GetMapping("/permission/{game_code}")
 	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
-		System.out.println(game_code);
-		System.out.println(member.getMember_code());
+
 		service.permission(game_code, member.getMember_code());
 		
 		return "redirect:../list/" + game_code;
