@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>우수환</title>
 
 <style>
 html, body {
