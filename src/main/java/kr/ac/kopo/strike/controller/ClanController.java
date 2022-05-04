@@ -64,13 +64,14 @@ public class ClanController {
 		service.delete(clanName);
 		return "redirect:../list";
 	}
-	
-//	@GetMapping("/detail/[clanName}")
-//	public String detail(@PathVariable String clanName, Model model) {
-//		Clan item = service.detail(clanName);
-//		
-//		model.addAttribute("item", item);
-//		
-//		return path + "detail";
-//	}
+	/**
+	@GetMapping("/detail/[clanName}")
+	public String detail(@PathVariable String clanName, Model model) {
+		Clan item = service.detail(clanName);
+		
+		model.addAttribute("item", item);
+		
+		return path + "detail";
+	}
+	 */
 }
