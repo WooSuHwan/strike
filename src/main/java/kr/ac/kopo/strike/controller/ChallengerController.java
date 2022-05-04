@@ -34,13 +34,9 @@ public class ChallengerController {
 		// 생성자의 코드를 얻기 위한 코드
 		List<Game> makerItem = service.makerItem(game_code); 
 		// List<ChallengerMember> decryptList = new ArrayList<ChallengerMember>(list.size());
-		
 		// Collections.copy(decryptList, list);
-			
 			for (ChallengerMember item : list) {
-			
 				// decryptMember.setName(aes256.decrypt(decryptMember.getName()));
-				
 				item.setName( aes256.decrypt(item.getName()) );
 			}
 		
