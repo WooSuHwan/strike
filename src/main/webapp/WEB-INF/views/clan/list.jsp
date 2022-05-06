@@ -22,7 +22,8 @@
 						<th>무승부</th>
 						<th>승률</th>
 						<th>변경</th>
-						<th>삭제</th>	
+						<th>삭제</th>
+						<th>입장</th>	
 					</tr>
 				</thead>
 				
@@ -33,9 +34,9 @@
 						</tr>
 					</c:if>
 					
-					<c:forEach items="${list}" var="item">
+					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
-							<td>${list.size()}</td>
+							<td>${list.size() - status.index}</td>
 							<td>${item.clan_name}</td>
 							<td>${item.clan_master}</td>
 							<td>${item.clan_record}</td>
@@ -43,8 +44,9 @@
 							<td>${item.clan_lost}</td>
 							<td>${item.clan_draw}</td>
 							<td>${item.clan_rate}</td>
-							<td><a href="update/${item.clan_name}">변경</a></td>
-							<td><a href="delete/${item.clan_name}">삭제</a></td>
+							<td><a href="update/${item.member_code}">변경</a></td>
+							<td><a href="delete/${item.member_code}">삭제</a></td>
+							<td><a href="clanMember/${item.clan_code}">입장</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

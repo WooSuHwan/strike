@@ -70,8 +70,12 @@ a.{
 		</div>
 		
 		<div>
-			<a href="clan/list" style="text-decoration:none">클랜 순위</a>
+			<a href="clan/list" style="text-decoration:none">클랜 목록</a>
+		</div>
+		<div>
 			<a href="game/list" style="text-decoration:none">개인전 신청</a>
+		</div>
+		<div>
 			<a href="clanChallenger/list" style="text-decoration:none">클랜전 신청</a>
 		</div>
 	</div>

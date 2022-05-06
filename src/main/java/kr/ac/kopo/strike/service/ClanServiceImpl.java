@@ -19,4 +19,24 @@ public class ClanServiceImpl implements ClanService {
 		return dao.list();
 	}
 
+	@Override
+	public void add(Clan clan) {
+		dao.add(clan);
+	}
+
+	@Override
+	public Clan item(int member_code) {
+		return dao.item(member_code);
+	}
+
+	@Override
+	public void update(Clan item) {
+		dao.update(item);
+	}
+
+	@Override
+	public void delete(int member_code) {
+		dao.delete(member_code);
+	}
+
 }

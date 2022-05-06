@@ -8,23 +8,31 @@
 	</select>
 	
 	<insert id="add">
-		INSERT INTO book
-		VALUES (BOOK_SEQ.nextval, #{bookname}, #{publisher}, #{price})
+		INSERT INTO clan
+		VALUES (CLAN_CODE_SEQ.nextval, 
+		#{member_code}, 
+		#{clan_master}, 
+		#{clan_name}, 
+		#{clan_record}, 
+		#{clan_win}, 
+		#{clan_lost}, 
+		#{clan_draw}, 
+		#{clan_rate})
 	</insert>
 	
-	<select id="item" resultType="Book">
-		SELECT * FROM book
-		WHERE bookid=#{bookid}
+	<select id="item" resultType="Clan">
+		SELECT * FROM clan
+		WHERE member_code=#{member_code}
 	</select>
 	
 	<update id="update">
-		UPDATE book
-		SET bookname=#{bookname}, publisher=#{publisher}, price=#{price}
-		WHERE bookid=#{bookid}
+		UPDATE clan
+		SET clan_name=#{clan_name}
+		WHERE member_code=#{member_code}
 	</update>
 	
 	<delete id="delete">
-		DELETE FROM book
-		WHERE bookid=#{bookid}
+		DELETE FROM clan
+		WHERE member_code=#{member_code}
 	</delete>
 </mapper>
