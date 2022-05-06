@@ -46,7 +46,7 @@
 							<td>${item.clan_rate}</td>
 							<td><a href="update/${item.member_code}">변경</a></td>
 							<td><a href="delete/${item.member_code}">삭제</a></td>
-							<td><a href="clanMember/${item.clan_code}">입장</a></td>
+							<td><a href="clanMember/list/${item.clan_code}">입장</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

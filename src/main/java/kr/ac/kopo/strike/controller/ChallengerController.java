@@ -39,6 +39,8 @@ public class ChallengerController {
 				// decryptMember.setName(aes256.decrypt(decryptMember.getName()));
 				item.setName( aes256.decrypt(item.getName()) );
 			}
+			
+			model
 		
 		model.addAttribute("game_code", game_code);
 		model.addAttribute("list", list);

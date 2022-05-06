@@ -7,6 +7,7 @@
 		<typeAlias type="kr.ac.kopo.strike.model.Game" alias="Game"/>
 		<typeAlias type="kr.ac.kopo.strike.model.ChallengerMember" alias="ChallengerMember"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
+		<typeAlias type="kr.ac.kopo.strike.model.ClanMember" alias="ClanMember"/>
 	</typeAliases>
 	
 	<mappers>
@@ -14,5 +15,6 @@
 		<mapper resource="mybatis/game.xml"/>
 		<mapper resource="mybatis/challengerMember.xml"/>
 		<mapper resource="mybatis/clan.xml"/>
+		<mapper resource="mybatis/clanMember.xml"/>
 	</mappers>
 </configuration>
