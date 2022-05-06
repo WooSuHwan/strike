@@ -7,28 +7,31 @@
 	</select>
 	
 	<insert id="add">
-		INSERT INTO clan (clan_name,member_code,clan_count,clan_win,clan_lost,clan_score)
-		VALUES (#{clanName}, #{memberCode}, #{clanCount}, #{clanWin}, #{clanLost}, #{clanScore})
+		INSERT INTO clan
+		VALUES (CLAN_CODE_SEQ.nextval, 
+		#{member_code}, 
+		#{clan_master}, 
+		#{clan_name}, 
+		#{clan_record}, 
+		#{clan_win}, 
+		#{clan_lost}, 
+		#{clan_draw}, 
+		#{clan_rate})
 	</insert>
 	
 	<select id="item" resultType="Clan">
 		SELECT * FROM clan
-		WHERE clan_name = #{clanName}
+		WHERE member_code=#{member_code}
 	</select>
 	
 	<update id="update">
-		UPDATE clan 
-		SET member_code = #{memberCode},clan_count= #{clanCount},clan_win= #{clanWin},clan_lost= #{clanLost},clan_score= #{clanScore}
-		WHERE clan_name = #{clanName}
+		UPDATE clan
+		SET clan_name=#{clan_name}
+		WHERE member_code=#{member_code}
 	</update>
 	
 	<delete id="delete">
-		DELETE FROM clan 
-		WHERE clan_name = #{clanName}
+		DELETE FROM clan
+		WHERE member_code=#{member_code}
 	</delete>
-	
-	<select id="detail" resultType="Clan">
-		SELECT * FROM clan
-		WHERE clan_name = #{clanName}
-	</select>
 </mapper>

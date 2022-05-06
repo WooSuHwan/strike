@@ -263,8 +263,7 @@
 <!-- 		<div> -->
 <!-- 			<a href="individual/list" style="text-decoration:none">개인 </a><a href="suggestfree/list" style="text-decoration:none">자유게시판</a><a href="suggestmaster/list" style="text-decoration:none">공지게시판</a> -->
 <!-- 		</div> -->
-<!-- 	</div> -->
-		
+<!-- 	</div> -->	
 <!-- 	<div> -->
 <!-- 		<hr style="border: solid 1px gray;"> -->
 <!-- 	</div> -->
