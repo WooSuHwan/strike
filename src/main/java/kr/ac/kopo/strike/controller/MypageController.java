@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.ac.kopo.strike.model.Individual;
 import kr.ac.kopo.strike.model.Member;
-import kr.ac.kopo.strike.service.IndividualService;
 import kr.ac.kopo.strike.service.MemberService;
 import kr.co.kopo.strike.util.AES256Util;
 
@@ -26,9 +24,6 @@ public class MypageController {
 	
 	@Autowired
 	MemberService memberService;
-	
-	@Autowired
-	IndividualService individualService;
 	
 	@GetMapping("/mypage/{member_code}")
 	public String mypage(Member item,Model model, HttpSession session, @PathVariable int member_code) {
