@@ -15,7 +15,7 @@
 		#{clan_name}, 
 		#{clan_record}, 
 		#{clan_win}, 
-		#{clan_lost}, 
+		#{clan_lose}, 
 		#{clan_draw}, 
 		#{clan_rate})
 	</insert>

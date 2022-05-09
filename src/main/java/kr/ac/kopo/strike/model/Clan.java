@@ -7,7 +7,7 @@ public class Clan {
 	private String clan_master;
 	private int clan_record;
 	private int clan_win;
-	private int clan_lost;
+	private int clan_lose;
 	private int clan_draw;
 	private int clan_rate;
 
@@ -59,12 +59,12 @@ public class Clan {
 		this.clan_win = clan_win;
 	}
 
-	public int getClan_lost() {
-		return clan_lost;
+	public int getClan_lose() {
+		return clan_lose;
 	}
 
-	public void setClan_lost(int clan_lost) {
-		this.clan_lost = clan_lost;
+	public void setClan_lose(int clan_lose) {
+		this.clan_lose = clan_lose;
 	}
 
 	public int getClan_draw() {

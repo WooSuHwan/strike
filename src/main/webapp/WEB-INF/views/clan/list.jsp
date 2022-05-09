@@ -30,7 +30,7 @@
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="10">등록 된 클랜이 없습니다</td>
+							<td colspan="11">등록 된 클랜이 없습니다</td>
 						</tr>
 					</c:if>
 					
@@ -41,12 +41,12 @@
 							<td>${item.clan_master}</td>
 							<td>${item.clan_record}</td>
 							<td>${item.clan_win}</td>
-							<td>${item.clan_lost}</td>
+							<td>${item.clan_lose}</td>
 							<td>${item.clan_draw}</td>
 							<td>${item.clan_rate}</td>
 							<td><a href="update/${item.member_code}">변경</a></td>
 							<td><a href="delete/${item.member_code}">삭제</a></td>
-							<td><a href="clanMember/list/${item.clan_code}">입장</a></td>
+							<td><a href="/clanMember/list/${item.clan_code}">입장</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

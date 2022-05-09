@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.ClanMemberDao;
-import kr.ac.kopo.strike.model.ClanMember;
+import kr.ac.kopo.strike.model.ClanMemberMember;
 
 @Service
 public class ClanMemberServiceImpl implements ClanMemberService {
@@ -15,8 +15,18 @@ public class ClanMemberServiceImpl implements ClanMemberService {
 	ClanMemberDao dao;
 	
 	@Override
-	public List<ClanMember> list(int clan_code) {
+	public List<ClanMemberMember> list(int clan_code) {
 		return dao.list(clan_code);
+	}
+
+	@Override
+	public void add(int clan_code, int member_code) {
+		dao.add(clan_code, member_code);
+	}
+
+	@Override
+	public void permission(int clan_code, int member_code) {
+		dao.permission(clan_code, member_code);
 	}
 
 }

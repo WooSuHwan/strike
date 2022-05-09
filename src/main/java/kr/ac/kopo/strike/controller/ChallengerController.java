@@ -40,8 +40,6 @@ public class ChallengerController {
 				item.setName( aes256.decrypt(item.getName()) );
 			}
 			
-			model
-		
 		model.addAttribute("game_code", game_code);
 		model.addAttribute("list", list);
 		model.addAttribute("makerItem", makerItem);
@@ -65,11 +63,4 @@ public class ChallengerController {
 		return "redirect:../list/" + game_code;
 	}
 	
-	@GetMapping("/delete/{game_code}/{member_code}")
-	public String delete(@PathVariable int game_code, @SessionAttribute Member member) {
-		
-		service.delete(member.getMember_code());
-		
-		return "redirect:/challenger/list/" + game_code;
-	}
 }

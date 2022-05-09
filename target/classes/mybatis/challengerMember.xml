@@ -18,11 +18,6 @@
 		SET state = 1
 		WHERE game_code = #{game_code} AND member_code != #{member_code}
 	</update>
-	
-	<delete id="delete">
-		DELETE FROM challenger
-		WHERE member_code=#{member_code}
-	</delete>
 		
 	<select id="makerItem" resultType="Game">
 		SELECT *
