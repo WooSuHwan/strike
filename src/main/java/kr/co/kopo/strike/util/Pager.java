@@ -50,7 +50,7 @@ public class Pager {
 		this.perGroup = perGroup;
 	}
 	
-//	í˜ì´ì € ì„¤ì •
+//	?˜?´?? ?„¤? •
 	public int getLast() {
 		return (int) Math.ceil(total / perPage);
 	}

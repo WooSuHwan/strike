@@ -8,12 +8,12 @@ public interface ClanService {
 
 	List<Clan> list();
 
-	void add(Clan item);
+	void add(Clan clan);
 
-	Clan item(String clanName);
+	Clan item(int member_code);
 
 	void update(Clan item);
 
-	void delete(String clanName);
+	void delete(int member_code);
 
 }

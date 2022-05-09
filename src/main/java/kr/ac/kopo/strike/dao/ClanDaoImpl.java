@@ -16,18 +16,17 @@ public class ClanDaoImpl implements ClanDao {
 	
 	@Override
 	public List<Clan> list() {
-		
 		return sql.selectList("clan.list");
 	}
 
 	@Override
-	public void add(Clan item) {
-		sql.insert("clan.add", item);
+	public void add(Clan clan) {
+		sql.insert("clan.add", clan);
 	}
 
 	@Override
-	public Clan item(String tName) {
-		return sql.selectOne("clan.item", tName);
+	public Clan item(int member_code) {
+		return sql.selectOne("clan.item", member_code);
 	}
 
 	@Override
@@ -36,8 +35,8 @@ public class ClanDaoImpl implements ClanDao {
 	}
 
 	@Override
-	public void delete(String tName) {
-		sql.delete("clan.delete", tName);
+	public void delete(int member_code) {
+		sql.delete("clan.delete", member_code);
 	}
 
 }
