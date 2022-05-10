@@ -31,7 +31,6 @@ public class MemberController {
 			return "redirect:add";
 		}
 		
-		member.setClan("클랜없음");
 		member.setTier("아이언");
 		
 		service.add(member);
