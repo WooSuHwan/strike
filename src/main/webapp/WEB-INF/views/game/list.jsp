@@ -16,9 +16,9 @@
 						<th>제목</th>
 						<th>위치</th>
 						<th>내용</th>
-						<th>입장</th>
 						<th>작성자</th>
 						<th>도전자</th>
+						<th>입장</th>
 						<th>삭제</th>
 						<th>수정</th>
 					</tr>
@@ -35,9 +35,9 @@
 							<td>${item.title}</td>
 							<td>${item.loc}</td>
 							<td>${item.story}</td>
-							<td><a href="view/${item.game_code}">입장</a></td>
 							<td>${item.maker}</td>
 							<td>${item.challenger}</td>
+							<td><a href="view/${item.game_code}">입장</a></td>
 							<td>
 								<c:if test="${item.member_code eq sessionScope.member.member_code}">
 									<a href="delete/${item.game_code}" style="text-decoration:none">삭제</a>
@@ -48,18 +48,6 @@
 									<a href="update/${item.game_code}" style="text-decoration:none">수정</a>
 								</c:if>
 							</td>
-							<!--
-							<td>
-								<c:if test="${sessionScope.member != null}">
-									<a href="delete/${item.member_code}" style="text-decoration:none">삭제</a>
-								</c:if>
-							</td>
-							<td>
-								<c:if test="${sessionScope.member != null}">
-									<a href="update/${item.member_code}" style="text-decoration:none">수정</a>
-								</c:if>
-							</td>
-							-->
 						</tr>
 					</c:forEach>
 				</tbody>

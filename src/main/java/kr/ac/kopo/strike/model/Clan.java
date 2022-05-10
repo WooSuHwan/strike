@@ -2,9 +2,9 @@ package kr.ac.kopo.strike.model;
 
 public class Clan {
 	private int clan_code;
-	private int member_code;
+	private int clan_member_code;
+	private int clan_master;
 	private String clan_name;
-	private String clan_master;
 	private int clan_record;
 	private int clan_win;
 	private int clan_lose;
@@ -19,12 +19,20 @@ public class Clan {
 		this.clan_code = clan_code;
 	}
 
-	public int getMember_code() {
-		return member_code;
+	public int getClan_member_code() {
+		return clan_member_code;
 	}
 
-	public void setMember_code(int member_code) {
-		this.member_code = member_code;
+	public void setClan_member_code(int clan_member_code) {
+		this.clan_member_code = clan_member_code;
+	}
+
+	public int getClan_master() {
+		return clan_master;
+	}
+
+	public void setClan_master(int clan_master) {
+		this.clan_master = clan_master;
 	}
 
 	public String getClan_name() {
@@ -33,14 +41,6 @@ public class Clan {
 
 	public void setClan_name(String clan_name) {
 		this.clan_name = clan_name;
-	}
-
-	public String getClan_master() {
-		return clan_master;
-	}
-
-	public void setClan_master(String clan_master) {
-		this.clan_master = clan_master;
 	}
 
 	public int getClan_record() {

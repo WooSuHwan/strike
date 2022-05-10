@@ -31,8 +31,6 @@ public class MemberController {
 			return "redirect:add";
 		}
 		
-		member.setTier("¾ÆÀÌ¾ğ");
-		
 		service.add(member);
 		
 		return "redirect:..";

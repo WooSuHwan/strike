@@ -7,8 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ac.kopo.strike.model.ChallengerMember;
-import kr.ac.kopo.strike.model.Game;
+import kr.ac.kopo.strike.model.Challenger;
 
 @Repository
 public class ChallengerDaoImpl implements ChallengerDao {
@@ -17,7 +16,7 @@ public class ChallengerDaoImpl implements ChallengerDao {
 	SqlSession sql;
 
 	@Override
-	public List<ChallengerMember> list(int game_code) {
+	public List<Challenger> list(int game_code) {
 		return sql.selectList("challenger.list", game_code);
 	}
 	
@@ -41,14 +40,4 @@ public class ChallengerDaoImpl implements ChallengerDao {
 		sql.update("challenger.permission", map);	
 	}
 	
-	@Override
-	public void delete(int member_code) {
-		sql.delete("challenger.delete", member_code);
-	}
-	
-	@Override
-	public List<Game> makerItem(int game_code) {
-		return sql.selectList("challenger.makerItem", game_code);
-	}
-
 }

@@ -4,8 +4,8 @@
 <mapper namespace="member">
 	<!-- 회원가입 -->
 	<insert id="add">
-		INSERT INTO member (member_code, id, pw, name, birth, sex, tel, clan, tier, record, win, lose, draw, rate)
-		VALUES (MEMBER_CODE_SEQ.nextval, #{id}, #{pw}, #{name}, #{birth}, #{sex}, #{tel}, #{clan}, #{tier}, #{record}, #{win}, #{lose}, #{draw}, #{rate})
+		INSERT INTO member (member_code, id, pw, name, birth, sex, tel)
+		VALUES (MEMBER_CODE_SEQ.nextval, #{id}, #{pw}, #{name}, #{birth}, #{sex}, #{tel})
 	</insert>
 	<!-- 중복확인 -->
 	<select id="idCount" parameterType="String" resultType="Integer">

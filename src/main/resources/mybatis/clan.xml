@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="clan">
@@ -9,8 +8,9 @@
 	
 	<insert id="add">
 		INSERT INTO clan
-		VALUES (CLAN_CODE_SEQ.nextval, 
-		#{member_code}, 
+		VALUES (
+		CLAN_CODE_SEQ.nextval,
+		null,
 		#{clan_master}, 
 		#{clan_name}, 
 		#{clan_record}, 

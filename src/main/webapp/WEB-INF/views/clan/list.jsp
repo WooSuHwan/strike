@@ -13,13 +13,12 @@
 			<table border="1">
 				<thead>
 					<tr>
-						<th>등록순</th>
 						<th>클랜명</th>
 						<th>클랜장</th>
 						<th>전적</th>
-						<th>승리</th>
-						<th>패배</th>
-						<th>무승부</th>
+						<th>승</th>
+						<th>패</th>
+						<th>무</th>
 						<th>승률</th>
 						<th>변경</th>
 						<th>삭제</th>
@@ -30,13 +29,12 @@
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="11">등록 된 클랜이 없습니다</td>
+							<td colspan="10">등록 된 클랜이 없습니다</td>
 						</tr>
 					</c:if>
 					
 					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
-							<td>${list.size() - status.index}</td>
 							<td>${item.clan_name}</td>
 							<td>${item.clan_master}</td>
 							<td>${item.clan_record}</td>

@@ -40,8 +40,7 @@ public class ClanController {
 	@PostMapping("/add")
 	public String add(@SessionAttribute Member member, Clan clan) {
 		
-		clan.setMember_code(member.getMember_code());
-		clan.setClan_master(member.getName());
+		clan.setClan_member_code(member.getMember_code());
 		
 		service.add(clan);
 		
@@ -60,8 +59,6 @@ public class ClanController {
 	
 	@PostMapping("/update/{member_code}")
 	public String update(@SessionAttribute Member member, Clan item) {
-		
-		item.setMember_code(member.getMember_code());
 		
 		service.update(item);
 		

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="challenger">
+	<select id="list" resultType="Challenger">
+		SELECT c.*, m.* 
+		FROM challenger c, member m
+		WHERE game_code=#{game_code}
+		AND c.member_code = m.member_code
+	</select>
+	
+	<insert id="add">
+		INSERT INTO challenger
+		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null)
+	</insert>
+	
+	<update id="permission">
+		UPDATE challenger
+		SET state = 1
+		WHERE game_code = #{game_code} AND member_code != #{member_code}
+	</update>
+</mapper>
