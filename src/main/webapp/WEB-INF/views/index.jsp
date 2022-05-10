@@ -76,7 +76,7 @@ a.{
 			<a href="game/list" style="text-decoration:none">개인전 신청</a>
 		</div>
 		<div>
-			<a href="clanChallenger/list" style="text-decoration:none">클랜전 신청</a>
+			<a href="clanGame/list" style="text-decoration:none">클랜전 신청</a>
 		</div>
 	</div>
 		

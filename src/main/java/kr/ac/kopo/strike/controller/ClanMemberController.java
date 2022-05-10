@@ -49,7 +49,7 @@ public class ClanMemberController {
 		return "redirect:../list/" + clan_code;
 	}
 	
-	@GetMapping("/permission/{game_code}")
+	@GetMapping("/permission/{clan_code}")
 	public String permission(@PathVariable int clan_code, @SessionAttribute Member member) {
 
 		service.permission(clan_code, member.getMember_code());

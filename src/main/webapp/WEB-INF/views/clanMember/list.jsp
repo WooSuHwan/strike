@@ -45,7 +45,7 @@
 								<c:when test="${item.state ne 1}"><td>승인대기</td></c:when>
 								<c:when test="${item.state eq 1}"><td>승인완료</td></c:when>
 							</c:choose>
-								<td><a href="permission/${item.member_code}">승인</a></td>
+								<td><a href="../permission/${item.clan_code}">승인</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
