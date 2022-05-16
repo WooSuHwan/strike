@@ -16,6 +16,7 @@
 		SELECT * FROM member WHERE id=#{id} AND pw=#{pw}
 	</select>
 	
+<!-- 	마이페이지 -->
 	<select id="item" resultType="member">
 		SELECT * FROM member
 		WHERE member_code = #{member_code}

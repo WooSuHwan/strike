@@ -8,12 +8,12 @@ public interface ClanDao {
 
 	List<Clan> list();
 
-	void add(Clan item);
+	void add(Clan clan);
 
-	Clan item(String tName);
+	Clan item(int member_code);
 
 	void update(Clan item);
 
-	void delete(String tName);
+	void delete(int member_code);
 
 }

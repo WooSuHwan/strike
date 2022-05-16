@@ -15,5 +15,4 @@ public interface MemberDao {
 	void delete(int member_code);
 
 	Member mypage(Member item);
-
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="suggestmaster">
+	<!-- 리스트화 시키는 쿼리문 -->
+
+
+	<select id="list" resultType="suggestmaster">
+		SELECT master_code, title, story, hit, name, reg_date  FROM suggest_master 
+	</select>
+	
+	<insert id="add">
+		INSERT INTO suggest_master (master_code, title, story, hit, name, reg_date)
+	
+		VALUES(MASTER_CODE_SEQ.nextval,#{title}, #{story}, 0, #{name}, sysdate )
+		
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM suggest_master
+		WHERE master_code = #{masterCode} 
+	</delete>
+	
+	<update id="update">
+		UPDATE suggest_master
+		SET title=#{title}, story = #{story}
+		WHERE master_code = #{masterCode} 
+	</update>
+	
+	<select id="item" resultType="suggestmaster">
+		SELECT * FROM suggest_master
+		WHERE master_code = #{masterCode}
+	</select>
+	
+	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestMaster">
+		SELECT *
+		FROM suggest_master
+		WHERE master_code = #{masterCode}
+	</select>
+	
+	<update id="addcount">
+		UPDATE suggest_master
+		SET hit = hit + 1
+		WHERE
+			master_code = #{masterCode}
+	</update>
+	
+</mapper>

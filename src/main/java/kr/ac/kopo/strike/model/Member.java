@@ -2,12 +2,19 @@ package kr.ac.kopo.strike.model;
 
 public class Member {
 	private int member_code;
+	private int clan_code;
 	private String id;
 	private String pw;
 	private String name;
 	private String birth;
 	private int sex;
 	private String tel;
+	private int record;
+	private int win;
+	private int lose;
+	private int draw;
+	private int rate;
+	private int score;
 
 	public int getMember_code() {
 		return member_code;
@@ -15,6 +22,14 @@ public class Member {
 
 	public void setMember_code(int member_code) {
 		this.member_code = member_code;
+	}
+
+	public int getClan_code() {
+		return clan_code;
+	}
+
+	public void setClan_code(int clan_code) {
+		this.clan_code = clan_code;
 	}
 
 	public String getId() {
@@ -63,6 +78,54 @@ public class Member {
 
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+
+	public int getRecord() {
+		return record;
+	}
+
+	public void setRecord(int record) {
+		this.record = record;
+	}
+
+	public int getWin() {
+		return win;
+	}
+
+	public void setWin(int win) {
+		this.win = win;
+	}
+
+	public int getLose() {
+		return lose;
+	}
+
+	public void setLose(int lose) {
+		this.lose = lose;
+	}
+
+	public int getDraw() {
+		return draw;
+	}
+
+	public void setDraw(int draw) {
+		this.draw = draw;
+	}
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 }

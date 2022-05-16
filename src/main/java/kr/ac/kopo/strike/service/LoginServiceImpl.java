@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.LoginDao;
 import kr.ac.kopo.strike.model.Member;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Service
 public class LoginServiceImpl implements LoginService {

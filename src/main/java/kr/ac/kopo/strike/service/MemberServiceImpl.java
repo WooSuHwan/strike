@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.MemberDao;
 import kr.ac.kopo.strike.model.Member;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -43,7 +43,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		dao.add(member);
 	}
-
+	
 	@Override
 	public Member item(Member member) {
 		
