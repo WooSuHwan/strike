@@ -92,7 +92,7 @@
 							<c:forEach items="${view}" var="item" varStatus="status">
 								<td>
 									<c:if test="${item.member_code eq sessionScope.member.member_code}">
-										<a href="../permission/${item.game_code}" style="text-decoration:none">승인</a>
+										<a href="../permission/${item.challenger_code}" style="text-decoration:none">승인</a>
 									</c:if>
 								</td>
 							</c:forEach>

@@ -78,6 +78,9 @@ a.{
 		<div>
 			<a href="clanGame/list" style="text-decoration:none">클랜전 신청</a>
 		</div>
+		<div>
+			<a href="rank/list" style="text-decoration:none">개인 랭크</a>
+		</div>
 	</div>
 		
 	<div>
