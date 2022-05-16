@@ -1,0 +1,483 @@
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body::-webkit-scrollbar { width: 0; }
+
+table {
+    border-collapse: collapse;
+}
+
+td,th {
+    border: none;
+    text-align: center;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 내용 영역 */
+
+.clanAll{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    background-color: #fff;
+    align-items: center;
+}
+
+
+
+.wh{
+    height: 13em;
+    background-color: #fff;
+}
+
+.clanrankSearch{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #2c2f36;
+    height: 4em;
+    margin-top: 5.5em;
+}
+
+.clanrankSearch1200{
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 100%;
+}
+
+.clanrankSearch_01{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 60%;
+    color: #fff;
+    font-family: 'S-CoreDream-8Heavy';
+}
+
+.clanRdetails01{
+    display: flex;
+    flex-direction: column;
+    width: 62.4%;
+    height: 21em;
+    margin-top: 8em;
+    background-repeat: no-repeat;
+    background-image: url(../img/clandetailsbanner.jpg);
+}
+
+.cdetail01{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 86%;
+}
+
+.cdetail02{
+    display: flex;
+    background-color: #363944;
+    width: 100%;
+    height: 14.7%;
+}
+
+.cdetail01_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13%;
+    height: 50%;
+    margin-left: 6em;
+    margin-right: 5em;
+}
+
+.cdetail01_02{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+}
+
+.cdetail01_02_01{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    font-family: 'S-CoreDream-6Bold';
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.cdetail01_02_02{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 25%;
+    background-color: #ffb400;
+    border-radius: 7px;
+    margin-top: 1em;
+}
+
+.cdetail01_02_02>a{
+    font-family: 'S-CoreDream-6Bold';
+    color: #fff;
+}
+
+
+.cdetail02_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb400;
+    width: 11%;
+    font-family: 'S-CoreDream-6Bold';
+    color: #fff;
+    height: 100%;
+}
+
+.clanRdetails02{
+    display: flex;
+    width: 62.4%;
+    flex-direction: column;
+    height: 15.875em;
+    margin-top: 3.5em;
+}
+
+.clanRdetails03{
+    display: flex;
+    width: 62.4%;
+    flex-direction: column;
+    height: 57.063em;
+    margin-top: 6em;
+}
+
+.clanRdetails02_01{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.clanRdetails02_02{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 67%;
+    margin-top: 2em;
+    background-color: #41434d;
+}
+
+.clanRdetails03_01{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5.5%;
+    font-size: 1.15em;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanRdetails03_02{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    width: 100%;
+    height: 92%;
+}
+
+.clanRdetails02_01_01{
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    width: 50%;
+    font-size: 1.15em;
+    font-family: 'S-CoreDream-6Bold';
+    height: 80%;
+}
+
+.clanRdetails02_01_02{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    font-family: 'S-CoreDream-5Medium';
+    height: 80%;
+    color: #41434d;
+    font-size: 0.95em;
+}
+
+.clanRdetails02_01_02>p>span{
+    color: #ffb400;
+}
+
+.clanRdetails02_02_01{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+.clanRdetails02_02_02{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.clanRdetails02_02_01_01{
+    display: flex;
+    height: 100%;
+    width: 12%;
+    font-family: 'S-CoreDream-6Bold';
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb400;
+    font-size: 1.15em;
+}
+
+.clanRdetails02_02_01_02{
+    display: flex;
+    align-items: center;
+    font-family: 'S-CoreDream-6Bold';
+    color: #fff;
+    height: 100%;
+    width: 87%;
+    margin-left: 2.5em;
+}
+
+.clanRdetails03_02_01{
+    display: flex;
+    flex-direction: column;
+    background-color: #41434d;
+    width: 100%;
+    height: 30.7%;
+    margin-bottom: 2em;
+}
+
+.clanRdetails03_02_02{
+    display: flex;
+    flex-direction: column;
+    background-color: #41434d;
+    width: 100%;
+    height: 30.7%;
+    margin-top: 2em;
+}
+
+.clanRdetails03_02_03{
+    display: flex;
+    flex-direction: column;
+    background-color: #41434d;
+    width: 100%;
+    height: 30.7%;
+    margin-top: 2em;
+}
+
+.clanRdetails03_02_01_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'S-CoreDream-5Medium';
+    width: 100%;
+    height: 20%;
+    background-color: #ffb400;
+    font-size: 1.2em;
+}
+
+.clanRdetails03_02_01_02{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 57%;
+    margin-top: 2em;
+}
+
+.clanRdetails03_02_01_01_01{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 46%;
+    height: 70%;
+}
+
+.clanRdetails03_02_01_01_02{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 46%;
+    height: 70%;
+}
+
+.winorlose01{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #bdbdbd;
+    font-family: 'S-CoreDream-6Bold';
+    height: 20%;
+}
+
+.winorlose02{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 64%;
+    margin-top: 1.5em;
+}
+
+.winorlose02in01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 1.6em;
+    height: 100%;
+    width: 14%;
+    margin-right: 5em;
+}
+
+.winorlose02in02{
+    display: flex;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+
+.winorlose02in03{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6em;
+    font-family: 'S-CoreDream-6Bold';
+    height: 100%;
+    width: 14%;
+    margin-left: 5em;
+}
+
+.winlose01{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'S-CoreDream-8Heavy';
+    color: #ffb400;
+    margin-right: 0.7em;
+    font-size: 3.1em;
+}
+
+.winlose02{
+    display: flex;
+    width: 10%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'S-CoreDream-8Heavy';
+    color: #fff;
+    font-size: 1.6em;
+}
+
+.winlose03{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'S-CoreDream-8Heavy';
+    color: #b3866b;
+    margin-left: 0.7em;
+    font-size: 3.1em;
+}
+
+.pagination {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62.5%;
+    height: 2.5em;
+}
+
+
+.paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    color: #545454;
+    font-size: 0.9em;
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pagination>.paginate>.link.arrow.prev.start {
+    background-image: url('../img/pagerLeft2.png');
+}
+
+.pagination>.paginate>.link.arrow {
+    padding: 0 0.5em;
+    font-size: 0.813em;
+    text-align: left;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #f0f0f0;
+}
+
+.pagination>.paginate>.link {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+    height: 70%;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d2;
+    border-radius: 0.188em;
+    line-height: 1.750em;
+    color: #888888;
+}
+
+.pagination>.paginate>.link.arrow.prev {
+    background-image: url('../img/pagerLeft1.png');
+}
+
+.pagination>.paginate>.link.mobile {
+    display: none;
+    padding: 0 0.5em;
+}
+
+.pagination>.paginate>.link+.link {
+    margin-left: 0.33em;
+}
+
+.now {
+    background-color: #0087e5;
+    color: #fff !important;
+}
+
+.pagination>.paginate>.link.arrow.next {
+    background-image: url('../img/pagerRight1.png');
+}
+
+.pagination>.paginate>.link.arrow.next.last {
+    background-image: url('../img/pagerRight2.png');
+}

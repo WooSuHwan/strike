@@ -10,7 +10,7 @@
 <body>
 <div class="header"> <!-- header nav 메뉴 시작 -->
             <div class="Logo">
-                <a href="/"><img src="../resources/img/logo.png" width="100%" height="100%" alt="logo"></a>
+                <a href="/"><img src="/resources/img/logo.png" width="100%" height="100%" alt="logo"></a>
             </div>
             <div class="W_1200px">
                 <div class="Menu">

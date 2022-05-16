@@ -10,7 +10,7 @@
 <div class="footer">
             <div class="footerL01">
                 <div class="ffflogo">
-                    <img src="../resources/img/logoW.png" width="100%" height="30%" alt="logo">
+                    <img src="/resources/img/logoW.png" width="100%" height="30%" alt="logo">
                 </div>
                 <div class="ffftxt">
                     <ul>

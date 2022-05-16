@@ -6,13 +6,15 @@ body, ul, li {
     list-style: none;
 }
 
-body {
+body::-webkit-scrollbar { width: 0; }
+
+/* body {
     -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
     display: none;
-}
+} */
 
 a {
     text-decoration: none;

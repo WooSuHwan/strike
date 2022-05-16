@@ -64,22 +64,98 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
-//이미지 클릭시 색상변경
+//약관동의 클릭시 이미지 block none
 
-// function ChangeColor(t)
-// {
-//     if( t == '1' ){       
-//         document.getElementById('here').className = "img1";       
-               
-//     }
-// }   
 
 var bDisplay = true;
 function doDisplay(){
 	var con = document.getElementById("imgDisplay");
+	var con4 = document.getElementById("imgDisplay4");
+
 	if(con.style.display=='none'){
 		con.style.display = 'block';
 	}else{
 		con.style.display = 'none';
+		con4.style.display = 'none';
 	}
 }
+
+var bDisplay = true;
+function doDisplay2(){
+	var con = document.getElementById("imgDisplay2");
+  var con4 = document.getElementById("imgDisplay4");
+
+	if(con.style.display=='none'){
+		con.style.display = 'block';
+	}else{
+		con.style.display = 'none';
+		con4.style.display = 'none';
+	}
+}
+
+
+var bDisplay = true;
+function doDisplay3(){
+	var con = document.getElementById("imgDisplay3");
+	var con4 = document.getElementById("imgDisplay4");
+
+	if(con.style.display=='none'){
+		con.style.display = 'block';
+	}else{
+		con.style.display = 'none';
+		con4.style.display = 'none';
+	}
+}
+
+
+var bDisplay = true;
+function doDisplay4(){
+	var con2 = document.getElementById("imgDisplay");
+	var con3 = document.getElementById("imgDisplay2");
+	var con4 = document.getElementById("imgDisplay3");
+  var con = document.getElementById("imgDisplay4");
+
+
+	if(con.style.display=='none' || con2.style.display=='none' || con3.style.display=='none' || con4.style.display=='none'){
+		con.style.display = 'block';
+		con2.style.display = 'block';
+		con3.style.display = 'block';
+		con4.style.display = 'block';
+	}else{
+    con.style.display = 'none';
+    con2.style.display = 'none';
+    con3.style.display = 'none';
+    con4.style.display = 'none';
+  }
+
+}
+
+ /** 우편번호 찾기 */
+ function execDaumPostcode() {
+  daum.postcode.load(function () {
+      new daum.Postcode({
+          oncomplete: function (data) {
+              // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+              $("#postcode").val(data.zonecode);
+              $("#address").val(data.roadAddress);
+          }
+      }).open();
+  });
+}
+
+
+// html dom 이 다 로딩된 후 실행된다.
+$(document).ready(function(){
+    // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+    $(".faqwh_01").click(function(){
+        var submenu = $(this).next(".faqhide");
+
+        // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+        if( submenu.is(":visible") ){
+            submenu.slideUp();
+        }else{
+            submenu.slideDown();
+        }
+    });
+});
+
