@@ -6,20 +6,21 @@
 <!-- 		<typeAlias type="kr.ac.kopo.strike.model.Individual" alias="Individual"/> -->
 <!-- 		<typeAlias type="kr.ac.kopo.strike.model.Free" alias="Free"/> -->
 		<typeAlias type="kr.ac.kopo.strike.model.Member" alias="Member"/>
+		<typeAlias type="kr.ac.kopo.strike.model.Game" alias="Game"/>
 <!-- 		<typeAlias type="kr.ac.kopo.strike.model.SuggestFree" alias="SuggestFree"/> -->
 <!-- 		<typeAlias type="kr.ac.kopo.strike.model.User_User" alias="User_User"/> -->
+		<typeAlias type="kr.ac.kopo.strike.model.Challenger" alias="Challenger"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
-		<typeAlias type="kr.ac.kopo.strike.model.ClanList" alias="ClanList"/>
 	</typeAliases>
 	
 	<mappers>
 <!-- 		<mapper resource="mybatis/individual.xml" /> -->
 <!-- 		<mapper resource="mybatis/free.xml" /> -->
 		<mapper resource="mybatis/member.xml"/>
+		<mapper resource="mybatis/game.xml"/>
 <!-- 		<mapper resource="mybatis/suggestfree.xml" /> -->
 <!-- 		<mapper resource="mybatis/user_user.xml"/> -->
 		<mapper resource="mybatis/clan.xml"/>
-		<mapper resource="mybatis/clanList.xml"/>
+		<mapper resource="mybatis/rank.xml"/>
 	</mappers>
-	
 </configuration>
