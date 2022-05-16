@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
@@ -13,5 +14,48 @@
 		<mapper resource="mybatis/member.xml"/>
 		<mapper resource="mybatis/game.xml"/>
 		<mapper resource="mybatis/clan.xml"/>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<typeAliases>
+
+		<typeAlias type="kr.ac.kopo.strike.model.Individual" alias="Individual"/>
+		<typeAlias type="kr.ac.kopo.strike.model.SuggestFree" alias="SuggestFree"/>
+		<typeAlias type="kr.ac.kopo.strike.model.User_User" alias="User_User"/>
+		<typeAlias type="kr.ac.kopo.strike.model.SuggestMaster" alias="SuggestMaster"/>
+		<typeAlias type="kr.ac.kopo.strike.model.Reply" alias="Reply"/>
+
+ 	<typeAlias type="kr.ac.kopo.strike.model.Free" alias="Free"/> 
+		<typeAlias type="kr.ac.kopo.strike.model.Member" alias="Member"/>
+		<typeAlias type="kr.ac.kopo.strike.model.SuggestFree" alias="SuggestFree"/> 
+		<typeAlias type="kr.ac.kopo.strike.model.User_User" alias="User_User"/>
+		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
+		<typeAlias type="kr.ac.kopo.strike.model.ClanList" alias="ClanList"/>
+
+	</typeAliases>
+	
+	<mappers>
+
+		<mapper resource="mybatis/individual.xml" />
+		<mapper resource="mybatis/suggestfree.xml" />
+		<mapper resource="mybatis/user_user.xml"/>
+		<mapper resource="mybatis/suggestmaster.xml" />
+		<mapper resource="mybatis/reply.xml" />
+		<mapper resource="mybatis/free.xml" /> 
+		<mapper resource="mybatis/member.xml"/>
+		<mapper resource="mybatis/clan.xml"/>
+		<mapper resource="mybatis/clanList.xml"/>
+>>>>>>> refs/heads/HJP1
 	</mappers>
+<<<<<<< HEAD
+=======
+	
+
+>>>>>>> refs/heads/HJP1
 </configuration>
