@@ -8,7 +8,7 @@
 	
 	<insert id="add">
 		INSERT INTO game
-		VALUES (GAME_CODE_SEQ.nextval, #{member_code}, #{maker}, #{title}, #{loc}, #{story}, '신청대기')
+		VALUES (GAME_CODE_SEQ.nextval, #{member_code}, #{maker}, #{title}, #{time}, #{loc}, #{recruit}, #{story})
 	</insert>
 	
 	<delete id="delete">
@@ -30,5 +30,29 @@
 	<select id="view" resultType="Game">
 		SELECT * FROM game
 		WHERE game_code=#{game_code}
+	</select>
+	
+	<select id="challenger" resultType="Challenger">
+		SELECT c.*, m.* 
+		FROM challenger c, member m
+		WHERE game_code=#{game_code}
+		AND c.member_code = m.member_code
+	</select>
+	
+	<insert id="challenge">
+		INSERT INTO challenger
+		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null)
+	</insert>
+	
+	<update id="permission">
+		UPDATE challenger
+		SET state = 1
+		WHERE game_code = #{game_code} AND member_code != #{member_code}
+	</update>
+	
+	<select id="member" resultType="Member">
+		select m.* 
+    	from game g, member m
+    	where g.game_code = #{game_code} and g.member_code = m.member_code
 	</select>
 </mapper>

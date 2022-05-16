@@ -3,11 +3,12 @@ package kr.ac.kopo.strike.model;
 public class Game {
 	private int game_code;
 	private int member_code;
-	private String title;
-	private String loc;
-	private String story;
 	private String maker;
-	private String challenger;
+	private String title;
+	private String time;
+	private String loc;
+	private int recruit;
+	private String story;
 
 	public int getGame_code() {
 		return game_code;
@@ -25,12 +26,28 @@ public class Game {
 		this.member_code = member_code;
 	}
 
+	public String getMaker() {
+		return maker;
+	}
+
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
+
 	public String getTitle() {
 		return title;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	public String getLoc() {
@@ -41,28 +58,20 @@ public class Game {
 		this.loc = loc;
 	}
 
+	public int getRecruit() {
+		return recruit;
+	}
+
+	public void setRecruit(int recruit) {
+		this.recruit = recruit;
+	}
+
 	public String getStory() {
 		return story;
 	}
 
 	public void setStory(String story) {
 		this.story = story;
-	}
-
-	public String getMaker() {
-		return maker;
-	}
-
-	public void setMaker(String maker) {
-		this.maker = maker;
-	}
-
-	public String getChallenger() {
-		return challenger;
-	}
-
-	public void setChallenger(String challenger) {
-		this.challenger = challenger;
 	}
 
 }

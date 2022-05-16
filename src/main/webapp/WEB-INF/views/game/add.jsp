@@ -7,15 +7,23 @@
 </head>
 <body>
 	<div>
-		<h1>개인 신청</h1>
+		<h1>개인 신청 게시글</h1>
 		<form method="post">
 			<div>
 				<label>제목</label>
 				<input name="title" type="text">
 			</div>
 			<div>
+				<label>시간</label>
+				<input name="time" type="text">
+			</div>
+			<div>
 				<label>위치</label>
 				<input name="loc" type="text">
+			</div>
+			<div>
+				<label>모집</label>
+				<input name="recruit" type="text">
 			</div>
 			<div>
 				<label>내용</label>

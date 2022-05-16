@@ -40,14 +40,14 @@ public class ClanController {
 	@PostMapping("/add")
 	public String add(@SessionAttribute Member member, Clan clan) {
 		
-		clan.setClan_member_code(member.getMember_code());
+		clan.setClan_master(member.getMember_code());
 		
 		service.add(clan);
 		
 		return "redirect:list";
 	}
 	
-	@GetMapping("/update/{member_code}")
+	@GetMapping("/update/{clan_code}")
 	public String update(@SessionAttribute Member member, Model model) {
 		
 		Clan item = service.item(member.getMember_code());
@@ -57,7 +57,7 @@ public class ClanController {
 		return path + "update";
 	}
 	
-	@PostMapping("/update/{member_code}")
+	@PostMapping("/update/{clan_code}")
 	public String update(@SessionAttribute Member member, Clan item) {
 		
 		service.update(item);
@@ -65,7 +65,7 @@ public class ClanController {
 		return "redirect:../list";
 	}
 	
-	@GetMapping("/delete/{member_code}")
+	@GetMapping("/delete/{clan_code}")
 	public String delete(@SessionAttribute Member member) {
 		
 		service.delete(member.getMember_code());

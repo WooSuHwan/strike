@@ -12,7 +12,6 @@
 	<mappers>
 		<mapper resource="mybatis/member.xml"/>
 		<mapper resource="mybatis/game.xml"/>
-		<mapper resource="mybatis/challenger.xml"/>
 		<mapper resource="mybatis/clan.xml"/>
 	</mappers>
 </configuration>

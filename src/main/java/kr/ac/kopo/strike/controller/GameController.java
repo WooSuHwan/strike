@@ -11,14 +11,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.GameService;
+import kr.co.kopo.strike.util.AES256Util;
+import kr.co.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/game")
 public class GameController {
 	final String path = "/game/";
+	
+	AES256Util aes256 = new AES256Util();
+	SHA256Util sha256 = new SHA256Util();
 	
 	@Autowired
 	GameService service;
@@ -82,10 +88,35 @@ public class GameController {
 	public String view(@PathVariable int game_code, Model model) {
 		
 		List<Game> view = service.view(game_code);
+		List<Member> member = service.member(game_code);
+		List<Challenger> challenger = service.challenger(game_code);
+		
+		for (Challenger item : challenger) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+		}
 		
 		model.addAttribute("view", view);
+		model.addAttribute("member", member);
+		model.addAttribute("challenger", challenger);
 		
 		return path + "view";
+	}
+	
+	@GetMapping("/challenge/{game_code}")
+	public String add(@PathVariable int game_code, @SessionAttribute Member member) {
+		
+		service.challenge(game_code, member.getMember_code());
+		
+		return "redirect:../view/" + game_code;
+	}
+	
+	@GetMapping("/permission/{game_code}")
+	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
+
+		service.permission(game_code, member.getMember_code());
+		
+		return "redirect:../view/" + game_code;
 	}
 	
 }

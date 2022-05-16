@@ -2,7 +2,6 @@ package kr.ac.kopo.strike.model;
 
 public class Member {
 	private int member_code;
-	private int tier_code;
 	private int clan_code;
 	private String id;
 	private String pw;
@@ -23,14 +22,6 @@ public class Member {
 
 	public void setMember_code(int member_code) {
 		this.member_code = member_code;
-	}
-
-	public int getTier_code() {
-		return tier_code;
-	}
-
-	public void setTier_code(int tier_code) {
-		this.tier_code = tier_code;
 	}
 
 	public int getClan_code() {

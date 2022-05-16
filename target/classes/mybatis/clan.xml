@@ -10,7 +10,6 @@
 		INSERT INTO clan
 		VALUES (
 		CLAN_CODE_SEQ.nextval,
-		null,
 		#{clan_master}, 
 		#{clan_name}, 
 		#{clan_record}, 
@@ -22,17 +21,17 @@
 	
 	<select id="item" resultType="Clan">
 		SELECT * FROM clan
-		WHERE member_code=#{member_code}
+		WHERE clan_master=#{member_code}
 	</select>
 	
 	<update id="update">
 		UPDATE clan
 		SET clan_name=#{clan_name}
-		WHERE member_code=#{member_code}
+		WHERE clan_master=#{member_code}
 	</update>
 	
 	<delete id="delete">
-		DELETE FROM clan
-		WHERE member_code=#{member_code}
+		DELETE clan
+		WHERE clan_master=#{member_code}
 	</delete>
 </mapper>
