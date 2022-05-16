@@ -24,7 +24,7 @@ public interface GameDao {
 
 	void challenge(int game_code, int member_code);
 
-	void permission(int game_code, int member_code);
+	void permission(int game_code, int challenger_code);
 
 	List<Member> member(int game_code);
 

@@ -64,10 +64,10 @@ public class GameDaoImpl implements GameDao {
 	}
 
 	@Override
-	public void permission(int game_code, int member_code) {
+	public void permission(int game_code, int challenger_code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		map.put("member_code", member_code);
+		map.put("challenger_code", challenger_code);
 		map.put("game_code", game_code);
 		
 		sql.update("game.permission", map);	

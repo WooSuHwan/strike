@@ -111,12 +111,12 @@ public class GameController {
 		return "redirect:../view/" + game_code;
 	}
 	
-	@GetMapping("/permission/{game_code}")
-	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
+	@GetMapping("/permission/{game_code}/{challenger_code}")
+	public String permission(@PathVariable int game_code, @PathVariable int challenger_code) {
 
-		service.permission(game_code, member.getMember_code());
+		service.permission(game_code, challenger_code);
 		
-		return "redirect:../view/" + game_code;
+		return path + game_code;
 	}
 	
 }

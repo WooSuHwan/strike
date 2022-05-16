@@ -47,7 +47,7 @@
 	<update id="permission">
 		UPDATE challenger
 		SET state = 1
-		WHERE game_code = #{game_code} AND member_code != #{member_code}
+		WHERE game_code = #{game_code} AND challenger_code = #{challenger_code}
 	</update>
 	
 	<select id="member" resultType="Member">

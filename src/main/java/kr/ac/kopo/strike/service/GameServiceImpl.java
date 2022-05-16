@@ -57,8 +57,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void permission(int game_code, int member_code) {
-		dao.permission(game_code, member_code);
+	public void permission(int game_code, int challenger_code) {
+		dao.permission(game_code, challenger_code);
 	}
 
 	@Override
