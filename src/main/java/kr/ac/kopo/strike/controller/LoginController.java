@@ -31,13 +31,13 @@ public class LoginController {
 		if(member == null) {
 			return "redirect:/login/login?wrong=true";
 		} else {
-<<<<<<< HEAD
-			session.setAttribute("code", user.getUser_code());
-			session.setAttribute("name", user.getName());
-			session.setAttribute("grade", user.getGrade());
-=======
+
+			session.setAttribute("code", member.getMember_code());
+			session.setAttribute("name", member.getName());
+			session.setAttribute("grade", member.getGrade());
+
 			session.setAttribute("member", member);
->>>>>>> refs/remotes/origin/master
+
 			return "redirect:/";
 		}
 	}
