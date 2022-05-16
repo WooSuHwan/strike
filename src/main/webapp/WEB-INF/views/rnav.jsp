@@ -37,7 +37,7 @@
                         <img src="../resources/img/T_icon.png" alt="clanicon">
                     </div>
                     <div class="clan_text">
-                        <a href="clan/list">클랜랭크</a>
+                        <a href="../clan/list">클랜랭크</a>
                     </div>
                 </div>
                 <div class="solo">
@@ -53,7 +53,7 @@
                         <img src="../resources/img/V_icon.png" alt="vsicon">
                     </div>
                     <div class="clan_text">
-                        <a href="clanGame/list">대결(신청)</a>
+                        <a href="../clanGame/list">대결(신청)</a>
                     </div>
                 </div>
             </div>
