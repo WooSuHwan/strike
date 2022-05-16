@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="clanMemberMember">
+	<select id="list" resultType="ClanMemberMember">
+		SELECT * 
+		FROM clan_member c, member m
+		WHERE c.clan_code=#{clan_code} 
+		AND c.member_code = m.member_code
+	</select>
+	
+	<insert id="add">
+		INSERT INTO clan_member
+		VALUES (CLAN_MEMBER_CODE_SEQ.nextval, #{clan_code}, #{member_code}, null)
+	</insert>
+	
+	<update id="permission">
+		UPDATE clan_member
+		SET state = 1
+		WHERE clan_code = #{clan_code} AND member_code != #{member_code}
+	</update>
+</mapper>
