@@ -20,8 +20,8 @@ public class IndividualDaoImpl implements IndividualDao {
 	}
 
 	@Override
-	public void add(Individual item) {
-		sql.insert("individual.add", item);
+	public void add(Individual individual) {
+		sql.insert("individual.add", individual);
 	}
 
 	@Override

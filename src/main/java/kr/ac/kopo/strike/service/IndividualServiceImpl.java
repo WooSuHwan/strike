@@ -20,8 +20,8 @@ public class IndividualServiceImpl implements IndividualService {
 	}
 
 	@Override
-	public void add(Individual item) {
-		dao.add(item);
+	public void add(Individual individual) {
+		dao.add(individual);
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public interface IndividualDao {
 
 	List<Individual> list();
 
-	void add(Individual item);
+	void add(Individual individual);
 
 	void delete(int individual_code);
 

@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import kr.ac.kopo.strike.model.User_User;
-import kr.ac.kopo.strike.service.UserService;
+import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.service.MemberService;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class MemberController {
 	final String path = "user/";
 	
 	@Autowired
-	UserService service;
+	MemberService service;
 	
 	@GetMapping("/add")
 	public String add() {
@@ -24,18 +24,14 @@ public class UserController {
 	}
 	
 	@PostMapping("add")
-	public String add(User_User user) {
+	public String add(Member member) {
 		
-		System.out.println(user.getId());
-		
-		if(service.confirm(user.getId())) {
+		if(service.confirm(member.getId())) {
 			
 			return "redirect:add";
 		}
 		
-		System.out.println(user.getUser_code());
-		
-		service.add(user);
+		service.add(member);
 		
 		return "redirect:..";
 	}
@@ -43,8 +39,6 @@ public class UserController {
 	@ResponseBody
 	@PostMapping("/same")
 	public String confirm(String user_id) {
-		
-		System.out.println("중복확인");
 		
 		boolean overlap = service.confirm(user_id);
 		if(overlap == true) {

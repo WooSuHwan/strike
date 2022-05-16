@@ -1,9 +1,9 @@
 package kr.ac.kopo.strike.dao;
 
-import kr.ac.kopo.strike.model.User_User;
+import kr.ac.kopo.strike.model.Member;
 
 public interface LoginDao {
 
-	User_User check(String encryptedId, String encryptedPw);
+	Member check(String encryptedId, String encryptedPw);
 
 }

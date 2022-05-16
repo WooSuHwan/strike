@@ -21,7 +21,8 @@
 						<th>승</th>
 						<th>패</th>
 						<th>무</th>
-						<th>승률</th>	
+						<th>승률</th>
+						<th>삭제</th>	
 					</tr>
 				</thead>
 				
@@ -31,10 +32,10 @@
 							<td colspan="9">등록 된 선수가 없습니다</td>
 						</tr>
 					</c:if>
-					<c:forEach items="${list}" var="item" varStatus="status"><!-- ${list} == var="item" -->
+					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
 							<td>${status.count}</td>
-							<td>${item.name}</td>
+							<td>${item.member_name}</td>
 							<td>${item.clan}</td>
 							<td>${item.tier}</td>
 							<td>${item.record}</td>
@@ -42,7 +43,11 @@
 							<td>${item.lose}</td>
 							<td>${item.draw}</td>
 							<td>${item.rate}</td>
-							<td><a href="delete/${item.individual_code}">삭제</a></td>
+							<td>
+								<c:if test="${sessionScope.member != null}">
+									<a href="delete/${item.individual_code}" style="text-decoration:none">삭제</a>
+								</c:if>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

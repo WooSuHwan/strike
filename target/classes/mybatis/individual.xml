@@ -2,14 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="individual">
-	<!-- 리스트화 시키는 쿼리문 -->
 	<select id="list" resultType="Individual">
 		SELECT * FROM individual
 	</select>
 	
 	<insert id="add">
 		INSERT INTO individual
-		VALUES (INDIVIDUAL_CODE_SEQ.nextval, #{name}, #{clan}, #{tier}, #{record}, #{win}, #{lose}, #{draw}, #{rate})
+		VALUES (INDIVIDUAL_CODE_SEQ.nextval, #{member_code}, #{member_name}, #{clan}, #{tier}, #{record}, #{win}, #{lose}, #{draw}, #{rate})
 	</insert>
 	
 	<delete id="delete">
