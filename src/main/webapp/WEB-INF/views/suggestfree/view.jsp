@@ -66,6 +66,12 @@
 		<div>
 			<p>${reply.replyName} / <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd" /></p>
 			<p>${reply.replyStory}</p>
+			<c:if test="${sessionScope.name == reply.replyName}">
+			<a href="../reply/${reply.replyCode}/replyupdate" >수정</a>
+			</c:if>
+			<c:if test="${sessionScope.name == reply.replyName}">
+			<a href="../reply/${reply.replyCode}/replydelete" >삭제</a>
+			</c:if> 
 		</div>
 	</li>	
 	</c:forEach>
@@ -73,16 +79,16 @@
 
 <div>
 
-	<form method="post" action="/reply/write">
+	<form method="post" action="../reply/${item.freeCode}/write">
 	
 		<p>
-			<label>댓글 작성자</label> <input type="text" name="replyName">
+			<label>댓글 작성자</label> <input type="text" name="replyName" value="${name}" readonly>
+			
 		</p>
 		<p>
 			<textarea rows="5" cols="50" name="replyStory"></textarea>
 		</p>
 		<p>
-			<input type="hidden" name="freeCode" value="${item.freeCode}">
 			<button type="submit">댓글 작성</button>
 		</p>
 	</form>

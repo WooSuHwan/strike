@@ -115,10 +115,38 @@ public class SuggestFreeContoller {
 	}
 	
 	
-
-
-
-
-
+	//댓글 생성
+	@RequestMapping(value = "/reply/{freeCode}/write", method = RequestMethod.POST)
+	public String posttWrite(Reply reply) throws Exception {
+		
+		replyservice.write(reply);
+		
+		return "redirect:../../view/" + reply.getFreeCode();
+	}
+	//댓글 삭제
+	@GetMapping("/reply/{replyCode}/replydelete")
+	public String replydelete(@PathVariable int replyCode ,Reply reply) throws Exception {
+		
+		replyservice.delete(replyCode);
+		
+		return "redirect:../../";
+	}
+	//댓글 수정
+	@GetMapping("/reply/{replyCode}/replyupdate" )
+	public String replyupdate(@PathVariable int replyCode, Model model) {
+		Reply reply = replyservice.replyitem(replyCode);
+		
+		model.addAttribute("reply", reply);
+		
+		return path + "replyupdate";
+	}
+	
+	@PostMapping("/reply/{replyCode}/replyupdate")
+	public String replyupdate(@PathVariable int replyCode,Reply reply) {
+		replyservice.update(reply);
+		System.out.println(reply);
+		
+		return "redirect:../../";
+	}
 	
 }

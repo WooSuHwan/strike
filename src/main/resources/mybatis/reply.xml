@@ -7,7 +7,7 @@
 <!-- 댓글 조회 -->
 	<select id="replyList" parameterType="int" resultType="kr.ac.kopo.strike.model.Reply">
 		select
-			reply_name, reply_story, regDate
+			reply_name, reply_story, regDate, reply_code
 		from reply
 			where free_code = #{freeCode}		
 	</select>
@@ -19,21 +19,26 @@
 	</insert>
 		
 	<!-- 댓글 수정 -->
-	<update id="replyModify" parameterType="kr.ac.kopo.strike.model.Reply">
+	<update id="replyUpdate" parameterType="kr.ac.kopo.strike.model.Reply">
 		update reply set
 			
 			reply_story = #{replyStory}
 		where reply_code = #{replyCode}
-			and free_code = #{freeCode}		
+				
 	</update>
 	
 	<!-- 댓글 삭제 -->
 	<delete id="replyDelete" parameterType="kr.ac.kopo.strike.model.Reply">
 		delete from reply
 		where reply_code = #{replyCode}
-			and free_code = #{freeCode}	
+			
 				
 	</delete>
+	
+	<select id="replyItem" resultType="kr.ac.kopo.strike.model.Reply">
+		SELECT * FROM reply
+		WHERE reply_code = #{replyCode}
+	</select>
 	
 
 </mapper>
