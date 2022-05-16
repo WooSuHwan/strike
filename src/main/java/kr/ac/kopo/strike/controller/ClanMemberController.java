@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import kr.ac.kopo.strike.model.ClanMemberMember;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanMemberService;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/clanMember")
