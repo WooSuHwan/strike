@@ -13,10 +13,24 @@ public interface ReplyDao {
 	public void write(Reply reply) throws Exception;
 
 	// 댓글 수정
-	public void modify(Reply reply) throws Exception;
-
+	
 	// 댓글 삭제
-	public void delete(Reply reply) throws Exception;
+	public void delete(int replyCode)throws Exception;
+
+	public Reply replyitem(int replyCode);
+
+	public void update(Reply replyitem);
+
+	
+
+	
+	
+	
+	
+	
+
+	
+	
 
 	
 }

@@ -33,6 +33,7 @@ public class LoginController {
 			return "redirect:/login/login?wrong=true";
 		} else {
 			session.setAttribute("member", member);
+			session.setAttribute("name", member.getName());
 			
 			
 			

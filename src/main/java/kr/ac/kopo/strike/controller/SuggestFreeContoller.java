@@ -1,6 +1,7 @@
 package kr.ac.kopo.strike.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttribute;
 
-import kr.ac.kopo.strike.model.Member;
+
+
 import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
 import kr.ac.kopo.strike.service.ReplyService;
@@ -52,18 +53,12 @@ public class SuggestFreeContoller {
 	}
 	
 	@PostMapping("/add")
-	public String add(SuggestFree item, @SessionAttribute Member member, Model model) {
-		
-		item.setMember_code(member.getMember_code());
-		
+	public String add(SuggestFree item, HttpSession session) {
 		service.add(item);
-		/**
 		String name = (String) session.getAttribute("name");
 		int member_code = (int) session.getAttribute("code");
 		item.setName(name);
-		item.setMember_code(member_code);
-		model.addAttribute("item" , item);
-		*/
+		item.setmember_code(member_code);
 		return "redirect:list";
 	}
 	
@@ -120,10 +115,38 @@ public class SuggestFreeContoller {
 	}
 	
 	
-
-
-
-
-
+	//댓글 생성
+	@RequestMapping(value = "/reply/{freeCode}/write", method = RequestMethod.POST)
+	public String posttWrite(Reply reply) throws Exception {
+		
+		replyservice.write(reply);
+		
+		return "redirect:../../view/" + reply.getFreeCode();
+	}
+	//댓글 삭제
+	@GetMapping("/reply/{replyCode}/replydelete")
+	public String replydelete(@PathVariable int replyCode ,Reply reply) throws Exception {
+		
+		replyservice.delete(replyCode);
+		
+		return "redirect:../../";
+	}
+	//댓글 수정
+	@GetMapping("/reply/{replyCode}/replyupdate" )
+	public String replyupdate(@PathVariable int replyCode, Model model) {
+		Reply reply = replyservice.replyitem(replyCode);
+		
+		model.addAttribute("reply", reply);
+		
+		return path + "replyupdate";
+	}
+	
+	@PostMapping("/reply/{replyCode}/replyupdate")
+	public String replyupdate(@PathVariable int replyCode,Reply reply) {
+		replyservice.update(reply);
+		System.out.println(reply);
+		
+		return "redirect:../../";
+	}
 	
 }

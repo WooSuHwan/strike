@@ -17,9 +17,9 @@ html, body {
     
     border-top: 1px solid #444444;
     border-collapse: collapse;
-    left: 300px;
+    left: 200px;
  	 top: 300px;
- 	 position: absolute;
+ 	 position: relative;
   }
  
   
@@ -63,9 +63,7 @@ a.{
 }
 
 button {
-    margin: 20px;
-    left: 920px;
-    
+   
     
 }
 
@@ -96,16 +94,53 @@ p {
 
   top: 200px;
 
- 
 
 }
 
 
+
+
 </style>
+
+<link rel="stylesheet" href="../index.css">
 </head>
 <body>
+	  <div class="header"> <!-- header nav 메뉴 시작 -->
+            <div class="Logo">
+                <a href="/"><img src="img/logo.png" width="100%" height="100%" alt="logo"></a>
+            </div>
+            <div class="W_1200px">
+                <div class="Menu">
+                    <ul class="Menu_list">
+                        <li>
+                            <a href="../clan/list">클랜랭크</a>
+                        </li>
+                        <li>
+                            <a href="#">개인랭크</a>
+                        </li>
+                        <li>
+                            <a href="#">대결(신청)</a>
+                        </li>
+                        <li>
+                            <a href="#">자유게시판</a>
+                        </li>
+                        <li>
+                            <a href="#">공지사항</a>
+                        </li>
+                        <li>
+                            <a href="#">중고</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           <jsp:include page="../rnav.jsp"></jsp:include>
+        </div> <!-- header nav 메뉴 끝 -->  
 
-<table width=810 height=200 >
+	<div>
+		<p style="font-size:44px;  font-weight: bold;" >Notice Board</p>
+		
+
+		<table width=810 height=200 >
       <thead>
         <tr>
           <th>No.</th><th  >글제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
@@ -119,7 +154,7 @@ p {
 		</c:if>
 	<c:forEach items="${list}" var="item" varStatus="status">
         <tr >
-        <td >${item.freeCode}</td><td  ><a href="view/${item.freeCode}">${item.title}</a></td><td >${item.name}</td><td ><fmt:formatDate value="${item.regDate}" pattern="yyyy.MM.dd"/></td><td >${item.hit}</td>
+        <td >${item.freeCode}</td><td  width=450><a href="view/${item.freeCode}">${item.title}</a></td><td >${item.name}</td><td ><fmt:formatDate value="${item.regDate}" pattern="yyyy.MM.dd"/></td><td >${item.hit}</td>
         </tr>
          </c:forEach>
       </tbody>
@@ -128,9 +163,7 @@ p {
 		<c:if test="${code ne null}">
 				<span><a href="add" style="text-decoration:none">작성</a></span>
 			</c:if>
-		 <button class="w-btn w-btn-gray" type="button" onclick = "location.href = 'add' ">
-        글쓰기
-   		 </button>
+		 <button class="w-btn w-btn-gray" type="button" onclick = "location.href = 'add' ">글쓰기</button>
 		
 		
 	</div>

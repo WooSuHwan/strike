@@ -30,19 +30,36 @@ public class ReplyServiceImpl implements ReplyService {
 		
 	}
 
+
+
 	@Override
-	public void modify(Reply reply) throws Exception {
-		
-		dao.modify(reply);
+	public void delete(int replyCode)throws Exception {
+		dao.delete(replyCode);
 		
 	}
 
 	@Override
-	public void delete(Reply reply) throws Exception {
+	public Reply replyitem(int replyCode) {
 		
-		dao.delete(reply);
+		return dao.replyitem(replyCode);
+	}
+
+	@Override
+	public void update(Reply replyitem) {
+		dao.update(replyitem);
 		
 	}
+
+	
+
+	
+	
+
+	
+
+
+
+	
 	
 	
 

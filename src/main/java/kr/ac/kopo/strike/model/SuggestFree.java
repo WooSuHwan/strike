@@ -8,11 +8,17 @@ public class SuggestFree {
 	private String title;
 	private String story;
 	private Integer hit;
+	private String id;
 	private int member_code;
 	private String name;
 	private Date regDate;
 
 	
+	
+	
+
+	
+
 	public Date getRegDate() {
 		return regDate;
 	}
@@ -29,13 +35,12 @@ public class SuggestFree {
 		this.name = name;
 	}
 
-	
-	public int getMember_code() {
+	public int getmember_code() {
 		return member_code;
 	}
 
-	public void setMember_code(int member_code) {
-		this.member_code = member_code;
+	public void setmember_code(int user_code) {
+		this.member_code = user_code;
 	}
 
 	public Integer getHit() {
@@ -45,6 +50,16 @@ public class SuggestFree {
 	public void setHit(Integer hit) {
 		this.hit = hit;
 	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	
 
 	public int getFreeCode() {
 		return freeCode;
@@ -69,6 +84,8 @@ public class SuggestFree {
 	public void setStory(String story) {
 		this.story = story;
 	}
+
+	
 
 	
 	

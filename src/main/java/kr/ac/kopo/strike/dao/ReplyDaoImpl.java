@@ -31,16 +31,36 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 
 	// 댓글 수정
+	
+
 	@Override
-	public void modify(Reply reply) throws Exception {
-		sql.update("reply.replyModify", reply);
+	public void delete(int replyCode) throws Exception{
+		sql.delete("reply.replyDelete", replyCode);
+		
 	}
 
-	// 댓글 삭제
 	@Override
-	public void delete(Reply reply) throws Exception {
-		sql.delete("reply.replyDelete", reply);
+	public Reply replyitem(int replyCode) {
+		
+		return sql.selectOne("reply.replyItem", replyCode);
 	}
+
+	@Override
+	public void update(Reply replyitem) {
+		sql.update("reply.replyUpdate", replyitem);
+		
+	}
+
+	
+
+	
+
+	
+
+	
+
+	// 댓글 삭제
+	
 	
 	
 
