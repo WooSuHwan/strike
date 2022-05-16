@@ -2,8 +2,6 @@ package kr.ac.kopo.strike.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.ac.kopo.strike.model.SuggestMaster;
-import kr.ac.kopo.strike.model.User_User;
 import kr.ac.kopo.strike.service.SuggestMasterService;
 
 @Controller

@@ -76,7 +76,7 @@
 	<form method="post" action="/reply/write">
 	
 		<p>
-			<label>댓글 작성자</label> <input type="text" name="replyName">
+			<label>댓글 작성자</label> <input type="text" name="replyName" value="${name}" readonly>
 		</p>
 		<p>
 			<textarea rows="5" cols="50" name="replyStory"></textarea>

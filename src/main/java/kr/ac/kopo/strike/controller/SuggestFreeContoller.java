@@ -1,7 +1,6 @@
 package kr.ac.kopo.strike.controller;
 
 import java.util.List;
-import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
-
-
+import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
 import kr.ac.kopo.strike.service.ReplyService;
@@ -53,12 +52,18 @@ public class SuggestFreeContoller {
 	}
 	
 	@PostMapping("/add")
-	public String add(SuggestFree item, HttpSession session) {
+	public String add(SuggestFree item, @SessionAttribute Member member, Model model) {
+		
+		item.setMember_code(member.getMember_code());
+		
 		service.add(item);
+		/**
 		String name = (String) session.getAttribute("name");
-		int user_code = (int) session.getAttribute("code");
+		int member_code = (int) session.getAttribute("code");
 		item.setName(name);
-		item.setUser_code(user_code);
+		item.setMember_code(member_code);
+		model.addAttribute("item" , item);
+		*/
 		return "redirect:list";
 	}
 	

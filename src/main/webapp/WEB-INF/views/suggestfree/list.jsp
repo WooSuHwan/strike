@@ -104,57 +104,7 @@ p {
 </style>
 </head>
 <body>
-	<div>
-		<p style="font-size:44px;  font-weight: bold;" >Notice Board</p>
-		<div class="row">
-		<!-- 로그인 전 -->
-		<div>
-<<<<<<< HEAD
-			<c:if test="${code eq null}">
-				<span><a href="../login/login" style="text-decoration:none">로그인 </a></span>
-			</c:if>
-			
-			<c:if test="${code eq null}">
-				<span><a href="../user/add" style="text-decoration:none">회원가입</a></span>
-			</c:if>
-		<!-- 로그인 후 -->	
-			<c:if test="${code ne null}">
-				${name}님 환영합니다.
-			</c:if>
-			
-			<c:if test="${code ne null}">
-				<span><a href="../login/logout" style="text-decoration:none">로그아웃</a></span>
-			</c:if>
-=======
-			<table border="1">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>입장</th>
-						<th>삭제</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<c:if test="${list.size() < 1}">
-						<tr>
-							<td colspan="4">등록 된 내용이 없습니다</td>
-						</tr>
-					</c:if>
-					<c:forEach items="${list}" var="item" varStatus="status"><!-- ${list} == var="item" -->
-						<tr>
-							<td>${status.count}</td>
-							<td>${item.title}</td>
-							<td><a href="enter/${item.free_code}">입장</a></td>
-							<td><a href="delete/${item.free_code}">삭제</a></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
->>>>>>> refs/remotes/origin/master
-		</div>
-	</div>
+
 <table width=810 height=200 >
       <thead>
         <tr>
@@ -169,7 +119,7 @@ p {
 		</c:if>
 	<c:forEach items="${list}" var="item" varStatus="status">
         <tr >
-        <td >${item.freeCode}</td><td  width=450><a href="view/${item.freeCode}">${item.title}</a></td><td >${item.name}</td><td ><fmt:formatDate value="${item.regDate}" pattern="yyyy.MM.dd"/></td><td >${item.hit}</td>
+        <td >${item.freeCode}</td><td  ><a href="view/${item.freeCode}">${item.title}</a></td><td >${item.name}</td><td ><fmt:formatDate value="${item.regDate}" pattern="yyyy.MM.dd"/></td><td >${item.hit}</td>
         </tr>
          </c:forEach>
       </tbody>

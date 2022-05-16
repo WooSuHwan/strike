@@ -4,20 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
-<title>우수환</title>
-=======
-<<<<<<< HEAD
-<title>홍종필</title>
-=======
+
 <title>메인</title>
 <link rel="stylesheet" href="../resources/css/index.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<jsp:include page="font.jsp"></jsp:include>
+
 <!-- <style> -->
 <!-- html, body { -->
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/heads/HJP1
+
 
 <style>
 html, body {
@@ -90,6 +84,10 @@ a.{
 		</div>
 		<div>
 			<a href="clanGame/list" style="text-decoration:none">클랜전 신청</a>
+		</div>
+		
+		<div>
+			<a href="suggestfree/list" style="text-decoration:none">자유게시판</a>
 		</div>
 	</div>
 		

@@ -16,7 +16,7 @@
 			</div>
 			<div>
 				<label>글쓴이:</label>
-				<input name="name" type="text"  value="${name}">
+				<input name="name" type="text"  value="${SessionScope.item.name}">
 			</div>
 			
 			<div>
