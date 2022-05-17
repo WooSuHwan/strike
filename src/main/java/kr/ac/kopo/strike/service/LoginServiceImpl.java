@@ -24,8 +24,11 @@ public class LoginServiceImpl implements LoginService {
 		
 		Member member = dao.check(encryptedId, encryptedPw);
 		if(member == null) {
+			System.out.println("널이당!!!");
 			return null;
 		} else {
+			System.out.println(member.getMember_code());
+			System.out.println(member.getName());
 			member.setName(aes256.decrypt(member.getName()));
 			return member;
 		}
