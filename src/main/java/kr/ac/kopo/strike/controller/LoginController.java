@@ -32,6 +32,7 @@ public class LoginController {
 			return "redirect:/login/login?wrong=true";
 		} else {
 			session.setAttribute("member", member);
+			System.out.println("맴버코드" + member.getMember_code());
 			return "redirect:/";
 		}
 	}

@@ -1,40 +1,27 @@
 package kr.ac.kopo.strike.model;
 
-public class ClanMemberMember {
+public class ClanMember {
 	private int clan_member_code;
-	private int clan_code;
 	private int member_code;
+	private int clan_code;
+	private int state;
+	// member
 	private String name;
-	private String tier;
 	private int record;
 	private int win;
 	private int lose;
 	private int draw;
 	private int rate;
-	private int state;
+	private int score;
+	// clan
+	private String clan_name;
 
-	public int getClan_member_code() {
-		return clan_member_code;
+	public String getClan_name() {
+		return clan_name;
 	}
 
-	public void setClan_member_code(int clan_member_code) {
-		this.clan_member_code = clan_member_code;
-	}
-
-	public int getClan_code() {
-		return clan_code;
-	}
-
-	public void setClan_code(int clan_code) {
-		this.clan_code = clan_code;
-	}
-
-	public int getMember_code() {
-		return member_code;
-	}
-
-	public void setMember_code(int member_code) {
-		this.member_code = member_code;
+	public void setClan_name(String clan_name) {
+		this.clan_name = clan_name;
 	}
 
 	public String getName() {
@@ -43,14 +30,6 @@ public class ClanMemberMember {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getTier() {
-		return tier;
-	}
-
-	public void setTier(String tier) {
-		this.tier = tier;
 	}
 
 	public int getRecord() {
@@ -93,6 +72,38 @@ public class ClanMemberMember {
 		this.rate = rate;
 	}
 
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getClan_member_code() {
+		return clan_member_code;
+	}
+
+	public void setClan_member_code(int clan_member_code) {
+		this.clan_member_code = clan_member_code;
+	}
+
+	public int getMember_code() {
+		return member_code;
+	}
+
+	public void setMember_code(int member_code) {
+		this.member_code = member_code;
+	}
+
+	public int getClan_code() {
+		return clan_code;
+	}
+
+	public void setClan_code(int clan_code) {
+		this.clan_code = clan_code;
+	}
+
 	public int getState() {
 		return state;
 	}
@@ -100,5 +111,4 @@ public class ClanMemberMember {
 	public void setState(int state) {
 		this.state = state;
 	}
-
 }

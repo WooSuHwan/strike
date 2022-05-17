@@ -6,18 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.ClanMember;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanService;
+import kr.co.kopo.strike.util.AES256Util;
+import kr.co.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/clan")
 public class ClanController {
 	final String path = "/clan/";
+	
+	AES256Util aes256 = new AES256Util();
+	SHA256Util sha256 = new SHA256Util();
 	
 	@Autowired
 	ClanService service;
@@ -25,6 +32,11 @@ public class ClanController {
 	@GetMapping("/list")
 	public String list(Model model) {
 		List<Clan> list = service.list();
+		
+		for (Clan item : list) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+		}
 		
 		model.addAttribute("list", list);
 		
@@ -40,7 +52,7 @@ public class ClanController {
 	@PostMapping("/add")
 	public String add(@SessionAttribute Member member, Clan clan) {
 		
-		clan.setClan_master(member.getMember_code());
+		clan.setClan_master_code(member.getMember_code());
 		
 		service.add(clan);
 		
@@ -71,5 +83,33 @@ public class ClanController {
 		service.delete(member.getMember_code());
 		
 		return "redirect:../list";
+	}
+	
+	@GetMapping("/view/{clan_code}")
+	public String view(@PathVariable int clan_code, Model model) {
+		
+		List<ClanMember> clanMember = service.clanMember(clan_code);
+		List<Clan> clan = service.clan(clan_code);
+		
+		model.addAttribute("clanMember", clanMember);
+		model.addAttribute("clan", clan);
+		
+		return path + "view";
+	}
+	
+	@GetMapping("/application/{clan_code}/{member_code}")
+	public String add(@PathVariable int clan_code, @SessionAttribute Member member) {
+		
+		service.application(clan_code, member.getMember_code());
+		
+		return "redirect:../view/" + clan_code;
+	}
+	
+	@GetMapping("/permission/{clan_code}/{clan_member_code}")
+	public String permission(@PathVariable int clan_code, @PathVariable int clan_member_code) {
+
+		service.permission(clan_code, clan_member_code);
+		
+		return path + "view/"+ clan_code;
 	}
 }

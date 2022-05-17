@@ -3,6 +3,7 @@ package kr.ac.kopo.strike.dao;
 import java.util.List;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.ClanMember;
 
 public interface ClanDao {
 
@@ -15,5 +16,9 @@ public interface ClanDao {
 	void update(Clan item);
 
 	void delete(int member_code);
+
+	List<ClanMember> clanMember(int clan_code);
+
+	List<Clan> clan(int clan_code);
 
 }

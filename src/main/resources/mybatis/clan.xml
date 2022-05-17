@@ -3,20 +3,22 @@
 
 <mapper namespace="clan">
 	<select id="list" resultType="Clan">
-		SELECT * FROM clan
+		SELECT c.*, m.name FROM clan c, member m
+		WHERE c.clan_master_code = m.member_code
 	</select>
 	
 	<insert id="add">
 		INSERT INTO clan
 		VALUES (
 		CLAN_CODE_SEQ.nextval,
-		#{clan_master}, 
+		#{clan_master_code}, 
 		#{clan_name}, 
 		#{clan_record}, 
 		#{clan_win}, 
 		#{clan_lose}, 
 		#{clan_draw}, 
-		#{clan_rate})
+		#{clan_rate},
+		#{clan_score})
 	</insert>
 	
 	<select id="item" resultType="Clan">
@@ -34,4 +36,15 @@
 		DELETE clan
 		WHERE clan_master=#{member_code}
 	</delete>
+	
+	<select id="view" resultType="ClanMember">
+		SELECT c.*, m.name FROM clan c, member m
+		WHERE c.clan_master_code = m.member_code
+	</select>
+	
+	<select id="clan" resultType="ClanMember">
+		SELECT clan_name
+		FROM clan
+		WHERE clan_code = #{clan_code}
+	</select>
 </mapper>

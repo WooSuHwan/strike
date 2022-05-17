@@ -7,6 +7,7 @@
 		<typeAlias type="kr.ac.kopo.strike.model.Game" alias="Game"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Challenger" alias="Challenger"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
+		<typeAlias type="kr.ac.kopo.strike.model.ClanMember" alias="ClanMember"/>
 	</typeAliases>
 	
 	<mappers>

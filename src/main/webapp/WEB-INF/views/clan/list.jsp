@@ -20,6 +20,7 @@
 						<th>패</th>
 						<th>무</th>
 						<th>승률</th>
+						<th>점수</th>
 						<th>입장</th>
 						<th>변경</th>
 						<th>삭제</th>
@@ -29,22 +30,31 @@
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="10">등록 된 클랜이 없습니다</td>
+							<td colspan="11">등록 된 클랜이 없습니다</td>
 						</tr>
 					</c:if>
 					
 					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
 							<td>${item.clan_name}</td>
-							<td>${item.clan_master}</td>
+							<td>${item.name}</td>
 							<td>${item.clan_record}</td>
 							<td>${item.clan_win}</td>
 							<td>${item.clan_lose}</td>
 							<td>${item.clan_draw}</td>
 							<td>${item.clan_rate}</td>
-							<td><a href="/clanMember/list/${item.clan_code}">입장</a></td>
-							<td><a href="update/${item.clan_code}">변경</a></td>
-							<td><a href="delete/${item.clan_code}">삭제</a></td>
+							<td>${item.clan_score}</td>
+							<td><a href="view/${item.clan_code}">입장</a></td>
+							<td>
+								<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+									<a href="update/${item.clan_code}">변경</a>
+								</c:if>
+							</td>
+							<td>
+								<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+									<a href="delete/${item.clan_code}">삭제</a>
+								</c:if>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

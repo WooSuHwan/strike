@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.ClanMember;
 
 @Repository
 public class ClanDaoImpl implements ClanDao {
@@ -37,6 +38,16 @@ public class ClanDaoImpl implements ClanDao {
 	@Override
 	public void delete(int member_code) {
 		sql.delete("clan.delete", member_code);
+	}
+
+	@Override
+	public List<ClanMember> clanMember(int clan_code) {
+		return sql.selectList("clan.view", clan_code);
+	}
+
+	@Override
+	public List<Clan> clan(int clan_code) {
+		return sql.selectList("clan.clan", clan_code);
 	}
 
 }
