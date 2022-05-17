@@ -33,7 +33,7 @@
 					</c:if>
 					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
-							<td>${list.size() - status.index}</td>
+							<td>${status.count}</td>
 							<td>${item.maker}</td>
 							<td>${item.title}</td>
 							<td>${item.time}</td>

@@ -23,7 +23,7 @@
 			</div>
 			<div>
 				<label>모집</label>
-				<input name="recruit" type="text">
+				<input name="recruit" type="number">
 			</div>
 			<div>
 				<label>내용</label>

@@ -34,7 +34,7 @@
 					
 					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
-							<td>${status.index}</td>
+							<td>${status.count}</td>
 							<td>${item.name}</td>
 							<td>${item.score}</td> <!-- 랭크 -->
 							<td>${item.clan_code}</td>

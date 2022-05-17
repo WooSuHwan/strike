@@ -26,7 +26,7 @@
 		<h1>대결 신청 게시글</h1>
 	</div>
 	
-	<c:forEach items="${view}" var="item" varStatus="status">
+	<c:forEach items="${game}" var="item" varStatus="status">
 		<div>
 			<h3>제목 : ${item.title}</h3>
 		</div>
@@ -77,7 +77,7 @@
 					</c:if>
 					<c:forEach items="${challenger}" var="item" varStatus="status">
 						<tr>
-							<td>${challenger.size() - status.index}</td>
+							<td>${status.count}</td>
 							<td>${item.name}</td>
 							<td>${item.tier}</td>
 							<td>${item.record}</td>
@@ -89,23 +89,27 @@
 								<c:when test="${item.state ne 1}"><td>승인대기</td></c:when>
 								<c:when test="${item.state eq 1}"><td>승인완료</td></c:when>
 							</c:choose>
-							<c:forEach items="${view}" var="item" varStatus="status">
+							<c:forEach items="${game}" var="item" varStatus="status">
+							<td>
 								<c:if test="${item.member_code eq sessionScope.member.member_code}">
 									<c:forEach items="${challenger}" var="item" varStatus="status">
-										<td>
-											<a href="../permission/${game_code}/${item.challenger_code}" style="text-decoration:none">승인</a>
-										</td>
+										<a href="../permission/${game_code}/${item.challenger_code}" style="text-decoration:none">승인</a>
 									</c:forEach>
 								</c:if>
+							</td>
 							</c:forEach>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-		<div>
-			<a href="../challenge/${game_code}">신청</a>
-		</div>
+		<c:forEach items="${game}" var="item" varStatus="status">
+			<c:if test="${item.member_code ne sessionScope.member.member_code}">
+				<div>
+					<a href="../challenge/${game_code}">신청</a>
+				</div>
+			</c:if>
+		</c:forEach>
 	</div>
 </body>
 </html>
