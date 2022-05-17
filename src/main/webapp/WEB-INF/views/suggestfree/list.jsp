@@ -105,36 +105,8 @@ p {
 <link rel="stylesheet" href="../index.css">
 </head>
 <body>
-	  <div class="header"> <!-- header nav 메뉴 시작 -->
-            <div class="Logo">
-                <a href="/"><img src="img/logo.png" width="100%" height="100%" alt="logo"></a>
-            </div>
-            <div class="W_1200px">
-                <div class="Menu">
-                    <ul class="Menu_list">
-                        <li>
-                            <a href="../clan/list">클랜랭크</a>
-                        </li>
-                        <li>
-                            <a href="#">개인랭크</a>
-                        </li>
-                        <li>
-                            <a href="#">대결(신청)</a>
-                        </li>
-                        <li>
-                            <a href="#">자유게시판</a>
-                        </li>
-                        <li>
-                            <a href="#">공지사항</a>
-                        </li>
-                        <li>
-                            <a href="#">중고</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-           <jsp:include page="../rnav.jsp"></jsp:include>
-        </div> <!-- header nav 메뉴 끝 -->  
+
+        
 
 	<div>
 		<p style="font-size:44px;  font-weight: bold;" >Notice Board</p>
