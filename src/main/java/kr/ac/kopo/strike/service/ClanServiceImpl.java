@@ -41,13 +41,18 @@ public class ClanServiceImpl implements ClanService {
 	}
 
 	@Override
-	public List<ClanMember> clanMember(int clan_code) {
-		return dao.clanMember(clan_code);
+	public List<ClanMember> wait(int clan_code) {
+		return dao.wait(clan_code);
 	}
 
 	@Override
 	public List<Clan> clan(int clan_code) {
 		return dao.clan(clan_code);
+	}
+
+	@Override
+	public List<ClanMember> clanMember(int clan_code) {
+		return dao.clanMember(clan_code);
 	}
 
 }

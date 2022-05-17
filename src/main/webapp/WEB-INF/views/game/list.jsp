@@ -20,8 +20,12 @@
 						<th>위치</th>
 						<th>모집인원</th>
 						<th>입장</th>
-						<th>삭제</th>
-						<th>수정</th>
+						<c:forEach items="${list}" var="item" varStatus="status">
+							<c:if test="${item.member_code eq sessionScope.member.member_code}">
+								<th>수정</th>
+								<th>삭제</th>
+							</c:if>
+						</c:forEach>
 					</tr>
 				</thead>
 				
@@ -39,17 +43,21 @@
 							<td>${item.time}</td>
 							<td>${item.loc}</td>
 							<td>${item.recruit}</td>
-							<td><a href="view/${item.game_code}">입장</a></td>
 							<td>
-								<c:if test="${item.member_code eq sessionScope.member.member_code}">
-									<a href="delete/${item.game_code}" style="text-decoration:none">삭제</a>
-								</c:if>
+								<a href="view/${item.game_code}">입장</a>
 							</td>
-							<td>
-								<c:if test="${item.member_code eq sessionScope.member.member_code}">
-									<a href="update/${item.game_code}" style="text-decoration:none">수정</a>
-								</c:if>
-							</td>
+							<c:if test="${item.member_code eq sessionScope.member.member_code}">
+								<td>
+									<c:if test="${item.member_code eq sessionScope.member.member_code}">
+										<a href="update/${item.game_code}" style="text-decoration:none">수정</a>
+									</c:if>
+								</td>
+								<td>
+									<c:if test="${item.member_code eq sessionScope.member.member_code}">
+										<a href="delete/${item.game_code}" style="text-decoration:none">삭제</a>
+									</c:if>
+								</td>
+							</c:if>
 						</tr>
 					</c:forEach>
 				</tbody>

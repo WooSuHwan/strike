@@ -8,28 +8,14 @@
 </head>
 <body>
 	<div>
-		<c:forEach items="${clan}" var="item" varStatus="status">
-			<h1>${item.clan_name}</h1>
-		</c:forEach>
+		<h1>${clan_name}</h1>
 	</div>
 	
 	<div>
-		<div>
-			클랜원 구성(인원)
-		</div>
-		<c:forEach items="${clanMember}" var="item" varStatus="status">
-			<div>
-				총 인원${status.count}
-			</div>
-		</c:forEach>
-	</div>
-		
-	<div>
-		최근 경기 내역
-	</div>
-	
-	<div>
-		클랜 신청 대기열
+		<div>클랜원 구성(인원)</div>
+			<c:forEach items="${clanMember}" var="item" varStatus="status">
+				<div>총 인원${status.count}</div>
+			</c:forEach>
 	</div>
 	<div>
 		<div>
@@ -52,14 +38,56 @@
 				<tbody>
 					<c:if test="${clanMember.size() < 1}">
 						<tr>
-							<td colspan="10">등록 된 신청자가 없습니다</td>
+							<td colspan="10">등록 된 클랜원이 없습니다</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${clanMember}" var="item" varStatus="status">
 						<tr>
 							<td>${status.count}</td>
 							<td>${item.name}</td>
-							<td>${item.tier}</td>
+							<td>${item.score}</td>
+							<td>${item.record}</td>
+							<td>${item.win}</td>
+							<td>${item.lose}</td>
+							<td>${item.draw}</td>
+							<td>${item.rate}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+		
+	<div>클랜원 신청 대기열</div>
+	<div>
+		<div>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>이름</th>
+						<th>티어</th>
+						<th>전적</th>
+						<th>승</th>
+						<th>패</th>
+						<th>무</th>
+						<th>승률</th>
+						<th>상태</th>
+						<th>승인</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<c:if test="${wait.size() < 1}">
+						<tr>
+							<td colspan="10">등록 된 신청자가 없습니다</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${wait}" var="item" varStatus="status">
+						<tr>
+							<td>${status.count}</td>
+							<td>${item.name}</td>
+							<td>${item.score}</td>
 							<td>${item.record}</td>
 							<td>${item.win}</td>
 							<td>${item.lose}</td>

@@ -22,8 +22,12 @@
 						<th>승률</th>
 						<th>점수</th>
 						<th>입장</th>
-						<th>변경</th>
-						<th>삭제</th>
+						<c:forEach items="${list}" var="item" varStatus="status">
+							<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+								<th>수정</th>
+								<th>삭제</th>
+							</c:if>
+						</c:forEach>
 					</tr>
 				</thead>
 				
@@ -45,16 +49,18 @@
 							<td>${item.clan_rate}</td>
 							<td>${item.clan_score}</td>
 							<td><a href="view/${item.clan_code}">입장</a></td>
-							<td>
-								<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
-									<a href="update/${item.clan_code}">변경</a>
-								</c:if>
-							</td>
-							<td>
-								<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
-									<a href="delete/${item.clan_code}">삭제</a>
-								</c:if>
-							</td>
+							<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+								<td>
+									<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+										<a href="update/${item.clan_code}">수정</a>
+									</c:if>
+								</td>
+								<td>
+									<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+										<a href="delete/${item.clan_code}">삭제</a>
+									</c:if>
+								</td>
+							</c:if>
 						</tr>
 					</c:forEach>
 				</tbody>

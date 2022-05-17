@@ -88,11 +88,24 @@ public class ClanController {
 	@GetMapping("/view/{clan_code}")
 	public String view(@PathVariable int clan_code, Model model) {
 		
-		List<ClanMember> clanMember = service.clanMember(clan_code);
-		List<Clan> clan = service.clan(clan_code);
+		Clan clan = service.item(clan_code);
+		List<ClanMember> wait = service.wait(clan_code);
 		
-		model.addAttribute("clanMember", clanMember);
+		for (ClanMember item : wait) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+		}
+		
+		List<ClanMember> clanMember = service.clanMember(clan_code);
+		
+		for (ClanMember item : clanMember) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+		}
+		
 		model.addAttribute("clan", clan);
+		model.addAttribute("wait", wait);
+		model.addAttribute("clanMember", clanMember);
 		
 		return path + "view";
 	}

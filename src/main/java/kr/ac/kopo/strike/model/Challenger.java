@@ -7,7 +7,7 @@ public class Challenger {
 	private int state;
 	// member
 	private String name;
-	private int tier;
+	private int score;
 	private int record;
 	private int win;
 	private int lose;
@@ -54,12 +54,12 @@ public class Challenger {
 		this.name = name;
 	}
 
-	public int getTier() {
-		return tier;
+	public int getScore() {
+		return score;
 	}
 
-	public void setTie(int tier) {
-		this.tier = tier;
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public int getRecord() {

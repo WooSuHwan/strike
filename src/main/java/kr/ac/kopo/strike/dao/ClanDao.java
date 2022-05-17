@@ -17,8 +17,10 @@ public interface ClanDao {
 
 	void delete(int member_code);
 
-	List<ClanMember> clanMember(int clan_code);
+	List<ClanMember> wait(int clan_code);
 
 	List<Clan> clan(int clan_code);
+
+	List<ClanMember> clanMember(int clan_code);
 
 }

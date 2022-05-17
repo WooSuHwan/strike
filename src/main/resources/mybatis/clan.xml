@@ -3,7 +3,8 @@
 
 <mapper namespace="clan">
 	<select id="list" resultType="Clan">
-		SELECT c.*, m.name FROM clan c, member m
+		SELECT c.*, m.name 
+		FROM clan c, member m
 		WHERE c.clan_master_code = m.member_code
 	</select>
 	
@@ -22,7 +23,8 @@
 	</insert>
 	
 	<select id="item" resultType="Clan">
-		SELECT * FROM clan
+		SELECT * 
+		FROM clan
 		WHERE clan_master=#{member_code}
 	</select>
 	
@@ -37,14 +39,29 @@
 		WHERE clan_master=#{member_code}
 	</delete>
 	
-	<select id="view" resultType="ClanMember">
-		SELECT c.*, m.name FROM clan c, member m
-		WHERE c.clan_master_code = m.member_code
-	</select>
-	
 	<select id="clan" resultType="ClanMember">
 		SELECT clan_name
 		FROM clan
 		WHERE clan_code = #{clan_code}
+	</select>
+	
+	<select id="wait" resultType="ClanMember">
+		SELECT c.*, m.name, c_m.state 
+		FROM clan c, member m, clan_member c_m
+		WHERE c.clan_master_code = m.member_code
+		AND m.clan_code = c_m.clan_code
+		AND c.clan_master_code != m.member_code 
+		AND c.clan_code = #{clan_code}
+		AND c_m.state = 0
+	</select>
+	
+	<select id="clanMember" resultType="ClanMember">
+		SELECT c.*, m.name, c_m.state 
+		FROM clan c, member m, clan_member c_m
+		WHERE c.clan_master_code = m.member_code
+		AND m.clan_code = c_m.clan_code
+		AND c.clan_master_code != m.member_code 
+		AND c.clan_code = #{clan_code} 
+		AND c_m.state = 1
 	</select>
 </mapper>

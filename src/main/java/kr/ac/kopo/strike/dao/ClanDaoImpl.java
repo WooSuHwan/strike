@@ -41,13 +41,18 @@ public class ClanDaoImpl implements ClanDao {
 	}
 
 	@Override
-	public List<ClanMember> clanMember(int clan_code) {
-		return sql.selectList("clan.view", clan_code);
+	public List<ClanMember> wait(int clan_code) {
+		return sql.selectList("clan.wait", clan_code);
 	}
 
 	@Override
 	public List<Clan> clan(int clan_code) {
 		return sql.selectList("clan.clan", clan_code);
+	}
+
+	@Override
+	public List<ClanMember> clanMember(int clan_code) {
+		return sql.selectList("clan.clanMember", clan_code);
 	}
 
 }

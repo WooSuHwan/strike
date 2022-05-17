@@ -85,9 +85,9 @@ public class GameController {
 	}
 	
 	@GetMapping("/view/{game_code}")
-	public String view(@PathVariable int game_code, Model model) {
+	public String view(@PathVariable int game_code, Model model) {	
 		
-		List<Game> game = service.view(game_code);
+		Game game = service.item(game_code);		
 		List<Member> member = service.member(game_code);
 		List<Challenger> challenger = service.challenger(game_code);
 		
@@ -116,7 +116,7 @@ public class GameController {
 
 		service.permission(game_code, challenger_code);
 		
-		return path + "view/"+ game_code;
+		return "redirect:/game/view/" + game_code;
 	}
 	
 }
