@@ -29,4 +29,17 @@ public class RootController {
 	public String faq() {
 		return "faq";
 	}
+	
+//	회원가입
+	@RequestMapping("/singup1")
+	public String singup1() {
+		return "singup1";
+	}
+	
+	@RequestMapping("/singup2")
+	public String singup2() {
+		return "singup2";
+	}
+	
+//	회원가입 끝
 }
