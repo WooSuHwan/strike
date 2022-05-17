@@ -21,6 +21,8 @@
 					<div class="font_Title">
 						<img src="../resources/img/font_title.png" alt="title">
 					</div>
+		${sessionScope.member.member_code} : 멤버코드
+		${sessionScope.member.name} : 이름
 					<div class="font_Search">
 						<div class="Search_01">
 							<input type="text" placeholder="내 티어 검색 . .">

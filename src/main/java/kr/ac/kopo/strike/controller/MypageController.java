@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,13 +27,8 @@ public class MypageController {
 	public String mypage(Member item,Model model, HttpSession session, @PathVariable int member_code) {
 		
 //		Member member = new Member();
-//		Individual individual = new Individual();
-//		
 //		member.setMember_code((Integer) session.getAttribute("code"));
-//		individual.setIndividual_code((Integer) session.getAttribute("code"));
-//		
 //		model.addAttribute("member", member);
-//		model.addAttribute("individual", individual);
 		
 		Member Mitem = memberService.mypage(item);
 		

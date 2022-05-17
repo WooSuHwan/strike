@@ -25,11 +25,6 @@ public class RootController {
 		return "index";
 	}
 	
-//	@RequestMapping("/")
-//	public String index() {
-//		return "index2";
-//	}
-	
 	@RequestMapping("/faq")
 	public String faq() {
 		return "faq";
