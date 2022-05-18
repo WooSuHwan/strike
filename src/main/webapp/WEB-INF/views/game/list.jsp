@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +15,6 @@
 	    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body>
-    <jsp:include page="../font.jsp"></jsp:include>
-    <jsp:include page="../nav.jsp"></jsp:include>
-    <jsp:include page="../rnav.jsp"></jsp:include>
 <!-- 	<div> -->
 <!-- 		<h1>개인전 리스트</h1> -->
 <!-- 		<div> -->
@@ -48,7 +47,7 @@
 <%-- 							<td>${item.time}</td> --%>
 <%-- 							<td>${item.loc}</td> --%>
 <%-- 							<td>${item.recruit}</td> --%>
-<%-- 							<td><a href="view/${item.game_code}">입장</a></td> --%>
+<%-- 							<td><a href="view/${item.game_code}">입장${game_code}</a></td> --%>
 <!-- 							<td> -->
 <%-- 								<c:if test="${item.member_code eq sessionScope.member.member_code}"> --%>
 <%-- 									<a href="delete/${item.game_code}" style="text-decoration:none">삭제</a> --%>
@@ -68,7 +67,9 @@
 <!-- 			<a href="add">등록</a> -->
 <!-- 		</div> -->
 <!-- 	</div> -->
-
+    <jsp:include page="../font.jsp"></jsp:include>
+    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="../rnav.jsp"></jsp:include>
 
 <section>
         <div class="clanAll">
@@ -127,76 +128,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <c:if test="${list.size() < 1}"> --%>
+						<tr>
+							<td colspan="9">신청 할 수 있는 대결이 없습니다.</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${list}" var="item" varStatus="status">
                         <tr>
-                            <td>1</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
+                            <td>${status.index + 1}</td>
+                            <td><a href="view/${item.game_code}">${item.title}</a></td>
+                            <td>${item.maker}</td>
                             <td>2022.05.16</td>
                             <td>10</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>28</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>14</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>56</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>40</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>41</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>180</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>05/16일 대전 볼링장에서 대결하실 한분 모집해요</td>
-                            <td>홍길동</td>
-                            <td>2022.05.16</td>
-                            <td>104</td>
-                        </tr>
+                    </c:forEach>
+                        
                     </tbody>
                 </table>
             </div>

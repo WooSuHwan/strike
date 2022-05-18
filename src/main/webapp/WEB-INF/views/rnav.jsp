@@ -20,10 +20,10 @@
             <div class="RM_tilte">
                 <div class="RM_tilte_text01">
             <c:if test="${sessionScope.member == null}">
-                    <h3><a href="../login/login">회원가입/로그인 하기</a></h3>
+                    <h3><a href="/login/login">회원가입/로그인 하기</a></h3>
 			</c:if>
 			<c:if test="${sessionScope.member != null}">
-				<h3><a href="../login/logout">로그아웃</a></h3>
+				<h3><a href="/login/logout">로그아웃</a></h3>
 			</c:if>
                 </div>
                 <div class="RM_tilte_Ricon">
@@ -36,7 +36,7 @@
                         <img src="/resources/img/T_icon.png" alt="clanicon">
                     </div>
                     <div class="clan_text">
-                        <a href="../clan/list">클랜랭크</a>
+                        <a href="/clan/list">클랜랭크</a>
                     </div>
                 </div>
                 <div class="solo">
@@ -52,7 +52,7 @@
                         <img src="/resources/img/V_icon.png" alt="vsicon">
                     </div>
                     <div class="clan_text">
-                        <a href="../clanGame/list">대결(신청)</a>
+                        <a href="/clanGame/list">대결(신청)</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <img src="/resources/img/faq_icon.png" alt="soloicon">
                 </div>
                 <div class="faq_text">
-                    <a href="../faq">FAQ 자주묻는질문</a>
+                    <a href="/faq">FAQ 자주묻는질문</a>
                 </div>
             </div>
             <div class="RM_menu">
@@ -84,7 +84,12 @@
                     </div>
                 </div>
                 <div class="battle">
-                    <div class="f_board_text"><a href="../mypage/mypage/${sessionScope.member.member_code}">마이페이지</a></div>
+	                <c:if test="${sessionScope.member == null}">
+	                    <div class="f_board_text"><a href="/login/login">마이페이지</a></div>
+					</c:if>
+	                <c:if test="${sessionScope.member != null}">
+	                    <div class="f_board_text"><a href="/mypage/mypage/${sessionScope.member.member_code}">마이페이지</a></div>
+					</c:if>
                     <div class="f_board_icon">
                         <img src="/resources/img/right.png" width="55%" alt="right">
                     </div>
