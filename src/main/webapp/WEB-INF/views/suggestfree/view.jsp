@@ -60,7 +60,6 @@
 <hr />
 
 <ul>
-		
 	<c:forEach items="${reply}" var="reply">
 	<li>
 		<div>

@@ -89,6 +89,9 @@ a.{
 		<div>
 			<a href="suggestfree/list" style="text-decoration:none">자유게시판</a>
 		</div>
+		<div>
+			<a href="suggestmaster/list" style="text-decoration:none">공지게시판</a>
+		</div>
 	</div>
 		
 	<div>

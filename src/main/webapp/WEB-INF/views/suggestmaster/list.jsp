@@ -37,25 +37,7 @@ a.{
 <body>
 	<div>
 		<h1>공지게시판</h1>
-		<div class="row">
-		<!-- 로그인 전 -->
-		<div>
-			<c:if test="${code eq null}">
-				<span><a href="../login/login" style="text-decoration:none">로그인 </a></span>
-			</c:if>
-			
-			<c:if test="${code eq null}">
-				<span><a href="../user/add" style="text-decoration:none">회원가입</a></span>
-			</c:if>
-		<!-- 로그인 후 -->	
-			<c:if test="${code ne null}">
-				${name}님 환영합니다.
-			</c:if>
-			
-			<c:if test="${code ne null}">
-				<span><a href="../login/logout" style="text-decoration:none">로그아웃</a></span>
-			</c:if>
-		</div>
+	
 	</div>
 		<div>
 			<table border="1">
@@ -93,9 +75,9 @@ a.{
 			</table>
 		</div>
 		
-		<c:if test="${sessionScope.grade == 100}">
+		
 				<span><a href="add" style="text-decoration:none">작성</a></span>
-			</c:if>
+			
 		<a href=".." >index</a></td>
 	</div>
 </body>
