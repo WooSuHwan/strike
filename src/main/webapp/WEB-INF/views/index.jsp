@@ -21,8 +21,6 @@
 					<div class="font_Title">
 						<img src="../resources/img/font_title.png" alt="title">
 					</div>
-		${sessionScope.member.member_code} : 멤버코드
-		${sessionScope.member.name} : 이름
 					<div class="font_Search">
 						<div class="Search_01">
 							<input type="text" placeholder="내 티어 검색 . .">
@@ -164,13 +162,13 @@
 									</tr>
 								</thead>
 								<tbody class="rankC01_02">
-<%-- 									<c:forEach items="${clanList}" var="item" varStatus="status"> --%>
+									<c:forEach items="${clanList}" var="item" varStatus="status">
 										<tr class="tbodyTr01">
 											<td width="20%" height="100%">1</td>
-											<td width="25%" height="100%">홍길동</td>
+											<td width="25%" height="100%">${item.clan_name}</td>
 											<td width="55%" height="100%">CHALLENGER</td>
 										</tr>
-<%-- 									</c:forEach> --%>
+									</c:forEach>
 								</tbody>
 								<tfoot class="rankC01_03">
 									<tr class="tfootTr01">
@@ -202,8 +200,8 @@
 								</tbody>
 								<tfoot class="rankC01_03">
 									<tr class="tfootTr01">
-										<td style="width: 45%;"><a href="#">개인 순위 상세보기</a></td>
-										<td style="width: 6%; line-height: 10px;"><a href="#"><img
+										<td style="width: 45%;"><a href="/rank/list">개인 순위 상세보기</a></td>
+										<td style="width: 6%; line-height: 10px;"><a href="/rank/list"><img
 												src="../resources/img/viewIcon.png" width="100%" alt="상세보기"></a></td>
 									</tr>
 								</tfoot>

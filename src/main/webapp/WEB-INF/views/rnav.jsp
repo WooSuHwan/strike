@@ -44,7 +44,7 @@
                         <img src="/resources/img/S_icon.png" alt="soloicon">
                     </div>
                     <div class="clan_text">
-                        <a href="#">개인랭크</a>
+                        <a href="/rank/list">개인랭크</a>
                     </div>
                 </div>
                 <div class="vs">
