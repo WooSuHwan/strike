@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class ClanDaoImpl implements ClanDao {
@@ -15,8 +16,8 @@ public class ClanDaoImpl implements ClanDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Clan> list() {
-		return sql.selectList("clan.list");
+	public List<Clan> list(Pager pager) {
+		return sql.selectList("clan.list", pager);
 	}
 
 	@Override
@@ -37,6 +38,16 @@ public class ClanDaoImpl implements ClanDao {
 	@Override
 	public void delete(int member_code) {
 		sql.delete("clan.delete", member_code);
+	}
+
+	@Override
+	public List<Clan> clanList() {
+		return sql.selectList("clan.clanList");
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("clan.total", pager);
 	}
 
 }

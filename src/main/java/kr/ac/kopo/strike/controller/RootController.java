@@ -8,7 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanService;
+import kr.ac.kopo.strike.service.RankService;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
 public class RootController {
@@ -16,11 +20,24 @@ public class RootController {
 	@Autowired
 	ClanService clanService;
 	
+	@Autowired
+	RankService rankService;
+	
+	AES256Util aes256 = new AES256Util();
+	SHA256Util sha256 = new SHA256Util();
+	
 	@RequestMapping("/")
 	public String index(Model model) {
-		List<Clan> clanList = clanService.list();
-		
+		List<Clan> clanList = clanService.clanList();		
 		model.addAttribute("clanList", clanList);
+		
+		List<Member> rankList = rankService.rankList();
+		model.addAttribute("rankList", rankList);
+		for (Member item : rankList) {
+					
+					item.setName( aes256.decrypt(item.getName()) );
+				}
+		
 		
 		return "index";
 	}

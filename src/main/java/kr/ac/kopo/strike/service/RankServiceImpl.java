@@ -19,4 +19,9 @@ public class RankServiceImpl implements RankService {
 		return dao.list();
 	}
 
+	@Override
+	public List<Member> rankList() {
+		return dao.rankList();
+	}
+
 }

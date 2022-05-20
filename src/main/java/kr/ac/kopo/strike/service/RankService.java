@@ -8,4 +8,6 @@ public interface RankService {
 
 	List<Member> list();
 
+	List<Member> rankList();
+
 }

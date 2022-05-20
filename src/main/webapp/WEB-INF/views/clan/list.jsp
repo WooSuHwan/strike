@@ -71,15 +71,17 @@
                     <div class="clanrankSearch_01">
                         <h2>Clan Rank</h2>
                     </div>
+                    <form method="get" action="" id="search">
                     <div class="clanrankSearch_02">
                         <p style="margin-right: 1em;">search</p>
                         <div class="clanrankSearch_02_01">
-                            <input type="text">
-                            <div class="clanrankSearch_02_02">
-                                <img src="/resources/img/premium.png" alt="돋보기" width="55%">
-                            </div>
+                            <input type="text" name="keyword" placeholder="클랜명을 입력해 주세요">
+                            <button class="clanrankSearch_02_02" type="submit">
+                               <img src="/resources/img/premium.png" alt="돋보기" width="55%">
+                            </button>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
 
@@ -113,129 +115,49 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>스트라이크</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
+                    <c:if test="${list.size() < 1}">
+						<tr>
+							<td colspan="10">조회된 클랜이 없습니다</td>
+						</tr>
+					</c:if>
+					
+					<c:forEach items="${list}" var="item" varStatus="status">
+						<tr>
+							<td>${pager.offset + status.count}</td>
+							<td>${item.clan_name}</td>
+							<td>${item.clan_record}</td>
+							<td>${item.clan_win}</td>
+							<td>${item.clan_lose}</td>
+							<td>${item.clan_draw}</td>
+							<td>${item.clan_rate}</td>
+<%-- 							<td><a href="/clanMember/list/${item.clan_code}">입장</a></td> --%>
+<%-- 							<td><a href="update/${item.clan_code}">변경</a></td> --%>
+<%-- 							<td><a href="delete/${item.clan_code}">삭제</a></td> --%>
+						</tr>
+					</c:forEach>
                     </tbody>
                 </table>
             </div>
             <div class="pagination">
                 <div class="paginate">
-                    <a href="javascript:;" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
-                    <a href="javascript:;" class="link arrow prev" data-page="1">이전 페이지</a>
-                    <span class="link mobile" data-page="1" data-end="10">
-                        <span class="now">1</span>/ 8
-                    </span>
-                    <a href="javascript:;" class="now link">1</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="2">2</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="3">3</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="4">4</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="5">5</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="6">6</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="7">7</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="8">8</a>
-                    <a href="javascript:;" class="pagebtn link arrow next" data-page="9">다음 페이지</a>
-                    <a href="javascript:;" class="pagebtn link arrow last next" data-page="66">Next</a>
+                    <a href="?page=1" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
+                    <a href="?page=${pager.prev }&${pager.query}" class="link arrow prev" data-page="1">이전 페이지</a>
+<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
+<!--                         <span class="now">1</span>/ 8 -->
+<!--                     </span> -->
+                    <c:forEach var="page" items="${pager.list}">
+						<a href="?page=${page}&${pager.query}" class="link">${page}</a>
+					</c:forEach>
+                    <a href="?page=${pager.next }&${pager.query}" class="pagebtn link arrow next" data-page="9" >다음 페이지</a>
+                    <a href="?page=${pager.last}" class="pagebtn link arrow last next" data-page="66">Next</a>
                 </div>
             </div>
         </div>
 
         <div class="wh"></div>
     </section>
-
-    <!-- script -->
-    <script>
-        w3.includeHTML();
-    </script>
     
-         <jsp:include page="../footer.jsp"></jsp:include>
+     <jsp:include page="../footer.jsp"></jsp:include>
      <script src="/resources/js/index.js"></script>
 </body>
 </html>

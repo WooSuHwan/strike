@@ -8,4 +8,6 @@ public interface RankDao {
 
 	List<Member> list();
 
+	List<Member> rankList();
+
 }

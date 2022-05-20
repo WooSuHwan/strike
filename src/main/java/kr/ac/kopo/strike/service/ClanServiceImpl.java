@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.ClanDao;
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class ClanServiceImpl implements ClanService {
@@ -15,8 +16,13 @@ public class ClanServiceImpl implements ClanService {
 	ClanDao dao;
 	
 	@Override
-	public List<Clan> list() {
-		return dao.list();
+	public List<Clan> list(Pager pager) {
+		
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override
@@ -37,6 +43,11 @@ public class ClanServiceImpl implements ClanService {
 	@Override
 	public void delete(int member_code) {
 		dao.delete(member_code);
+	}
+
+	@Override
+	public List<Clan> clanList() {
+		return dao.clanList();
 	}
 
 }

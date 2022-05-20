@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanService;
+import kr.ac.kopo.strike.util.Pager;
 
 @Controller
 @RequestMapping("/clan")
@@ -23,8 +24,8 @@ public class ClanController {
 	ClanService service;
 	
 	@GetMapping("/list")
-	public String list(Model model) {
-		List<Clan> list = service.list();
+	public String list(Model model, Pager pager) {
+		List<Clan> list = service.list(pager);
 		
 		model.addAttribute("list", list);
 		

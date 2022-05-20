@@ -164,9 +164,9 @@
 								<tbody class="rankC01_02">
 									<c:forEach items="${clanList}" var="item" varStatus="status">
 										<tr class="tbodyTr01">
-											<td width="20%" height="100%">1</td>
+											<td width="20%" height="100%">${status.index + 1}</td>
 											<td width="25%" height="100%">${item.clan_name}</td>
-											<td width="55%" height="100%">CHALLENGER</td>
+											<td width="55%" height="100%">티어수정필요함</td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -192,11 +192,13 @@
 									</tr>
 								</thead>
 								<tbody class="rankC01_02">
-									<tr class="tbodyTr01">
-										<td width="20%" height="100%">1</td>
-										<td width="25%" height="100%">프로젝트01</td>
-										<td width="55%" height="100%">CHALLENGER</td>
-									</tr>
+									<c:forEach items="${rankList}" var="item" varStatus="status">
+										<tr class="tbodyTr01">
+											<td width="20%" height="100%">${status.index + 1}</td>
+											<td width="25%" height="100%">${item.name}</td>
+											<td width="55%" height="100%">${item.score}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 								<tfoot class="rankC01_03">
 									<tr class="tfootTr01">

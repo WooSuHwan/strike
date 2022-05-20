@@ -19,4 +19,9 @@ public class RankDaoImpl implements RankDao {
 		return sql.selectList("rank.list");
 	}
 
+	@Override
+	public List<Member> rankList() {
+		return sql.selectList("rank.rankList");
+	}
+
 }

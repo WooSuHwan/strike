@@ -2,8 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="clan">
+
+	<sql id="search">
+	SELECT * FROM clan
+		<where>
+			<if test="keyword != null">
+			clan_name LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+		</where>
+	</sql>
+
 	<select id="list" resultType="Clan">
-		SELECT * FROM clan
+		SELECT * FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
 	</select>
 	
 	<insert id="add">
@@ -34,4 +48,16 @@
 		DELETE clan
 		WHERE clan_master=#{member_code}
 	</delete>
+	
+<!-- 	index 순위출력 list -->
+	<select id="clanList" resultType="Clan">
+	SELECT ROWNUM, CLAN_NAME FROM 
+			(SELECT * FROM clan) A
+		where <![CDATA[ROWNUM <= 5]]>
+	</select>
+	
+	<select id="total" resultType="Integer">
+	SELECT COUNT(*) FROM clan
+	</select>
+	
 </mapper>
