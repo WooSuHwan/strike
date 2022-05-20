@@ -66,15 +66,17 @@
                     <div class="clanrankSearch_01">
                         <h2>Personal Rank</h2>
                     </div>
-                    <div class="clanrankSearch_02">
-                        <p style="margin-right: 1em;">search</p>
-                        <div class="clanrankSearch_02_01">
-                            <input type="text">
-                            <div class="clanrankSearch_02_02">
-                                <img src="/resources/img/premium.png" alt="돋보기" width="55%">
-                            </div>
-                        </div>
-                    </div>
+                    <form method="get" action="" id="search" class="clanrankSearch_02">
+	                    <div class="zmffos">
+	                        <p style="margin-right: 1em;">search</p>
+	                        <div class="clanrankSearch_02_01">
+	                            <input type="text" name="keyword" placeholder="이름을 입력해 주세요">
+	                            <button class="clanrankSearch_02_02" type="submit">
+	                               <img src="/resources/img/premium.png" alt="돋보기" width="55%">
+	                            </button>
+	                        </div>
+	                    </div>
+                    </form>
                 </div>
             </div>
 
