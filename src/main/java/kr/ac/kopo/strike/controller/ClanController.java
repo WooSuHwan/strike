@@ -56,6 +56,10 @@ public class ClanController {
 		
 		service.add(clan);
 		
+		Clan get = service.get(member.getMember_code());
+		
+		service.change(member.getMember_code(), get.getClan_code());
+		
 		return "redirect:list";
 	}
 	
@@ -115,7 +119,7 @@ public class ClanController {
 		
 		service.application(clan_code, member.getMember_code());
 		
-		return "redirect:../view/" + clan_code;
+		return "redirect:/clan/view/" + clan_code;
 	}
 	
 	@GetMapping("/permission/{clan_code}/{clan_member_code}")
@@ -123,6 +127,10 @@ public class ClanController {
 
 		service.permission(clan_code, clan_member_code);
 		
-		return path + "view/"+ clan_code;
+		ClanMember getMember = service.getMember(clan_member_code);
+		
+		service.changeMember(getMember.getClan_code() ,getMember.getMember_code());
+		
+		return  "redirect:/clan/view/" + clan_code;
 	}
 }

@@ -22,12 +22,6 @@
 						<th>승률</th>
 						<th>점수</th>
 						<th>입장</th>
-						<c:forEach items="${list}" var="item" varStatus="status">
-							<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
-								<th>수정</th>
-								<th>삭제</th>
-							</c:if>
-						</c:forEach>
 					</tr>
 				</thead>
 				

@@ -1,5 +1,6 @@
 package kr.ac.kopo.strike.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -26,8 +27,8 @@ public class ClanDaoImpl implements ClanDao {
 	}
 
 	@Override
-	public Clan item(int member_code) {
-		return sql.selectOne("clan.item", member_code);
+	public Clan item(int clan_code) {
+		return sql.selectOne("clan.item", clan_code);
 	}
 
 	@Override
@@ -54,5 +55,57 @@ public class ClanDaoImpl implements ClanDao {
 	public List<ClanMember> clanMember(int clan_code) {
 		return sql.selectList("clan.clanMember", clan_code);
 	}
+	
+	@Override
+	public void change(int member_code, int clan_code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("member_code", member_code);
+		map.put("clan_code", clan_code);
+		
+		sql.update("clan.change", map);
+	}
 
+	@Override
+	public Clan get(int member_code) {
+		return sql.selectOne("clan.get", member_code);
+	}
+
+	@Override
+	public void application(int clan_code, int member_code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("member_code", member_code);
+		map.put("clan_code", clan_code);
+		
+		sql.insert("clan.application", map);
+	}
+
+	@Override
+	public void permission(int clan_code, int clan_member_code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("clan_member_code", clan_member_code);
+		map.put("clan_code", clan_code);
+		
+		sql.update("clan.permission", map);
+	}
+
+	@Override
+	public ClanMember getMember(int clan_member_code) {
+		return sql.selectOne("clan.getMember", clan_member_code);
+	}
+
+	@Override
+	public void changeMember(int clan_code, int member_code) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("member_code", member_code);
+		map.put("clan_code", clan_code);
+		System.out.println("맴버코드" + member_code);
+		System.out.println("클랜코드" + clan_code);
+		sql.update("clan.changeMember", map);
+		
+	}
+	
 }

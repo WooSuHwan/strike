@@ -15,6 +15,15 @@ public class ClanMember {
 	private int score;
 	// clan
 	private String clan_name;
+	private int clan_master_code;
+
+	public int getClan_master_code() {
+		return clan_master_code;
+	}
+
+	public void setClan_master_code(int clan_master_code) {
+		this.clan_master_code = clan_master_code;
+	}
 
 	public String getClan_name() {
 		return clan_name;

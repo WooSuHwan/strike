@@ -8,14 +8,28 @@
 </head>
 <body>
 	<div>
-		<h1>${clan_name}</h1>
+		<h1>${clan.clan_name}</h1>
 	</div>
 	
 	<div>
-		<div>클랜원 구성(인원)</div>
-			<c:forEach items="${clanMember}" var="item" varStatus="status">
-				<div>총 인원${status.count}</div>
-			</c:forEach>
+		<h3>최근 전적</h3>
+	</div>
+	
+	<div>
+		<h3>승 : ${clan.clan_win}</h3>
+	</div>
+	<div>
+		<h3>패 : ${clan.clan_lose}</h3>
+	</div>
+	<div>
+		<h3>무 : ${clan.clan_draw}</h3>
+	</div>
+	<div>
+		<h3>승률 : ${clan.clan_rate}</h3>
+	</div>
+	
+	<div>
+		<h3>클랜원 구성(인원)</h3>
 	</div>
 	<div>
 		<div>
@@ -30,15 +44,13 @@
 						<th>패</th>
 						<th>무</th>
 						<th>승률</th>
-						<th>상태</th>
-						<th>승인</th>
 					</tr>
 				</thead>
 				
 				<tbody>
 					<c:if test="${clanMember.size() < 1}">
 						<tr>
-							<td colspan="10">등록 된 클랜원이 없습니다</td>
+							<td colspan="8">등록 된 클랜원이 없습니다</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${clanMember}" var="item" varStatus="status">
@@ -58,7 +70,9 @@
 		</div>
 	</div>
 		
-	<div>클랜원 신청 대기열</div>
+	<div>
+		<h3>클랜원 신청 대기열</h3>
+	</div>
 	<div>
 		<div>
 			<table border="1">
@@ -97,27 +111,21 @@
 								<c:when test="${item.state ne 1}"><td>승인대기</td></c:when>
 								<c:when test="${item.state eq 1}"><td>승인완료</td></c:when>
 							</c:choose>
-							<c:forEach items="${game}" var="item" varStatus="status">
 							<td>
-								<c:if test="${item.member_code eq sessionScope.member.member_code}">
-									<c:forEach items="${challenger}" var="item" varStatus="status">
-										<a href="../permission/${game_code}/${item.clan_member_code}" style="text-decoration:none">승인</a>
-									</c:forEach>
+								<c:if test="${item.clan_master_code eq sessionScope.member.member_code}">
+									<a href="../permission/${clan_code}/${item.clan_member_code}" style="text-decoration:none">승인</a>
 								</c:if>
 							</td>
-							</c:forEach>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-		<c:forEach items="${clanMember}" var="item" varStatus="status">
-			<c:if test="${item.member_code ne sessionScope.member.member_code}">
-				<div>
-					<a href="../challenge/${clan_code}/${member_code}">신청</a>
-				</div>
-			</c:if>
-		</c:forEach>
+		<c:if test="${game.member_code ne sessionScope.member.member_code}">
+			<div>
+				<a href="../application/${clan_code}/${sessionScope.member.member_code}">신청</a>
+			</div>
+		</c:if>
 	</div>
 </body>
 </html>

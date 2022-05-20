@@ -55,4 +55,35 @@ public class ClanServiceImpl implements ClanService {
 		return dao.clanMember(clan_code);
 	}
 
+	@Override
+	public void change(int member_code, int clan_code) {
+		dao.change(member_code, clan_code);
+	}
+
+	@Override
+	public Clan get(int member_code) {
+		return dao.get(member_code);
+	}
+
+	@Override
+	public void application(int clan_code, int member_code) {
+		dao.application(clan_code, member_code);
+	}
+
+	@Override
+	public void permission(int clan_code, int clan_member_code) {
+		dao.permission(clan_code, clan_member_code);
+	}
+
+	@Override
+	public ClanMember getMember(int clan_member_code) {
+		return dao.getMember(clan_member_code);
+	}
+
+	@Override
+	public void changeMember(int clan_code, int member_code) {
+		dao.changeMember(clan_code, member_code);
+
+	}
+
 }

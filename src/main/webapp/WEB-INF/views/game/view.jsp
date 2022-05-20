@@ -27,23 +27,23 @@
 	</div>
 	
 	<div>
-			<h3>제목 : ${game.title}</h3>
-		</div>
-		<div>
-			<h3>작성자 : ${game.maker}</h3>
-		</div>
-		<div>
-			<h3>시간 : ${game.time}</h3>
-		</div>
-		<div>
-			<h3>위치 : ${game.loc}</h3>
-		</div>
-		<div>
-			<h3>모집인원 : ${game.recruit}명</h3>
-		</div>
-		<div>
-			<h3>내용 : ${game.story}</h3>
-		</div>
+		<h3>제목 : ${game.title}</h3>
+	</div>
+	<div>
+		<h3>작성자 : ${game.maker}</h3>
+	</div>
+	<div>
+		<h3>시간 : ${game.time}</h3>
+	</div>
+	<div>
+		<h3>위치 : ${game.loc}</h3>
+	</div>
+	<div>
+		<h3>모집인원 : ${game.recruit}명</h3>
+	</div>
+	<div>
+		<h3>내용 : ${game.story}</h3>
+	</div>
 	
 	<div>
 		<h1>신청자</h1>
@@ -100,10 +100,10 @@
 			</table>
 		</div>
 		<c:if test="${game.member_code ne sessionScope.member.member_code}">
-				<div>
-					<a href="../challenge/${game_code}">신청</a>
-				</div>
-			</c:if>
+			<div>
+				<a href="../challenge/${game_code}">신청</a>
+			</div>
+		</c:if>
 	</div>
 </body>
 </html>

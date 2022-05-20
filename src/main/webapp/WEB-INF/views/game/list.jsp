@@ -20,12 +20,10 @@
 						<th>위치</th>
 						<th>모집인원</th>
 						<th>입장</th>
-						<c:forEach items="${list}" var="item" varStatus="status">
-							<c:if test="${item.member_code eq sessionScope.member.member_code}">
-								<th>수정</th>
-								<th>삭제</th>
-							</c:if>
-						</c:forEach>
+						<c:if test="${game.member_code eq sessionScope.member.member_code}">
+							<th>수정</th>
+							<th>삭제</th>
+						</c:if>
 					</tr>
 				</thead>
 				

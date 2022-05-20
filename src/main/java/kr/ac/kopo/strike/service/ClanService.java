@@ -23,4 +23,16 @@ public interface ClanService {
 
 	List<ClanMember> clanMember(int clan_code);
 
+	void change(int member_code, int clan_code);
+
+	Clan get(int member_code);
+
+	void application(int clan_code, int member_code);
+
+	void permission(int clan_code, int clan_member_code);
+
+	ClanMember getMember(int clan_member_code);
+
+	void changeMember(int clan_code, int member_code);
+
 }
