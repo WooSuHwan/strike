@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>STRIKE</title>
 </head>
 <body>
 <div class="header"> <!-- header nav 메뉴 시작 -->

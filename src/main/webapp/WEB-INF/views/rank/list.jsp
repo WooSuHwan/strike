@@ -110,116 +110,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>홍길동</td>
-                            <td>348</td>
-                            <td>55</td>
-                            <td>1</td>
-                            <td>19</td>
-                            <td>50%</td>
-                        </tr>
+					<c:forEach items="${list}" var="item" varStatus="status">
+						<tr>
+							<td>${pager.offset + status.count}</td>
+							<td>${item.name}</td>
+							<td>${item.record}</td>
+<%-- 							<td>${item.score}</td> <!-- 랭크 --> --%>
+<%-- 							<td>${item.clan_code}</td> --%>
+							<td>${item.win}</td>
+							<td>${item.lose}</td>
+							<td>${item.draw}</td>
+							<td>${item.rate}</td>
+						</tr>
+					</c:forEach>
                     </tbody>
                 </table>
             </div>
             <div class="pagination">
                 <div class="paginate">
-                    <a href="javascript:;" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
-                    <a href="javascript:;" class="link arrow prev" data-page="1">이전 페이지</a>
-                    <span class="link mobile" data-page="1" data-end="10">
-                        <span class="now">1</span>/ 8
-                    </span>
-                    <a href="javascript:;" class="now link">1</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="2">2</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="3">3</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="4">4</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="5">5</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="6">6</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="7">7</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="8">8</a>
-                    <a href="javascript:;" class="pagebtn link arrow next" data-page="9">다음 페이지</a>
-                    <a href="javascript:;" class="pagebtn link arrow last next" data-page="66">Next</a>
+                    <a href="?page=1" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
+                    <a href="?page=${pager.prev }&${pager.query}" class="link arrow prev" data-page="1">이전 페이지</a>
+<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
+<!--                         <span class="now">1</span>/ 8 -->
+<!--                     </span> -->
+                    <c:forEach var="page" items="${pager.list}">
+						<a href="?page=${page}&${pager.query}" class="link now${page == pager.page ? '': 'active' }">${page}</a>
+					</c:forEach>
+                    <a href="?page=${pager.next }&${pager.query}" class="pagebtn link arrow next" data-page="9" >다음 페이지</a>
+                    <a href="?page=${pager.last}" class="pagebtn link arrow last next" data-page="66">Next</a>
                 </div>
             </div>
         </div>

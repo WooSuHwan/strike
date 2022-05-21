@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.RankDao;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class RankServiceImpl implements RankService {
@@ -15,8 +16,13 @@ public class RankServiceImpl implements RankService {
 	RankDao dao;
 	
 	@Override
-	public List<Member> list() {
-		return dao.list();
+	public List<Member> list(Pager pager) {
+		
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override

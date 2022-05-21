@@ -146,7 +146,7 @@
 <!--                         <span class="now">1</span>/ 8 -->
 <!--                     </span> -->
                     <c:forEach var="page" items="${pager.list}">
-						<a href="?page=${page}&${pager.query}" class="link">${page}</a>
+						<a href="?page=${page}&${pager.query}" class="link now${page == pager.page ? '': 'active' }">${page}</a>
 					</c:forEach>
                     <a href="?page=${pager.next }&${pager.query}" class="pagebtn link arrow next" data-page="9" >다음 페이지</a>
                     <a href="?page=${pager.last}" class="pagebtn link arrow last next" data-page="66">Next</a>
