@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>STRIKE</title>
  	<link rel="stylesheet" href="../resources/css/font.css">
     <link rel="stylesheet" href="../resources/css/singup3.css">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
@@ -24,13 +24,13 @@
             <div class="singupStep">
                 <div class="stepbar"></div>
                 <div class="sstep1">
-                    <h3><a href="/singup.html">1. 약관동의</a></h3>
+                    <h3><a href="/singup1">1. 약관동의</a></h3>
                 </div>
                 <div class="sstep2">
-                    <h3><a href="/singup2.html">2. 정보입력</a></h3>
+                    <h3><a href="../member/add">2. 정보입력</a></h3>
                 </div>
                 <div class="sstep3">
-                    <h3><a href="/singup3.html">3. 가입완료</a></h3>
+                    <h3><a href="/singup2">3. 가입완료</a></h3>
                 </div>
             </div>
            

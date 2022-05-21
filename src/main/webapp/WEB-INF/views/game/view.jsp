@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>STRIKE</title>
 <link rel="stylesheet" href="/resources/css/font.css">
     <link rel="stylesheet" href="/resources/css/personaldetails.css">
     <link rel="stylesheet" href="/resources/css/index.css">

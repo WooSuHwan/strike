@@ -32,7 +32,7 @@
                     <h3><a href="../member/add">2. 정보입력</a></h3>
                 </div>
                 <div class="sstep3">
-                    <h3><a href="/singup3.html">3. 가입완료</a></h3>
+                    <h3><a href="/singup2">3. 가입완료</a></h3>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                         </div>
                         <div class="singupBox_01_01_02">
                             <div class="membershipIn_01img">
-                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스">
+                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스" name="1-1">
                                 <div id="imgDisplay4" style="display: none;"><img src="../resources/img/checkbox2.png" height="18px" width="18px" alt="체크박스"></div>
                             </div>
                             <div class="membershipIn_01txt">
@@ -86,7 +86,7 @@
                     <div class="singupBox_01_01">
                         <div class="singupBox_01_01_01">
                             <div class="membershipIn_01img">
-                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스">
+                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스" name="2-1">
                                 <div id="imgDisplay2" style="display: none;"><img src="../resources/img/checkbox2.png" height="18px" width="18px" alt="체크박스"></div>
                             </div>
                             <div class="membershipIn_01txt">

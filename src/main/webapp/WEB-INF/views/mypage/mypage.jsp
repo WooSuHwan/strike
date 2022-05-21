@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지</title>
+<title>STRIKE</title>
 
     <link rel="stylesheet" href="/resources/css/font.css">
     <link rel="stylesheet" href="/resources/css/mypagemain.css">
