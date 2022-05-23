@@ -19,31 +19,31 @@
 	
 	<delete id="delete">
 		DELETE FROM free
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</delete>
 	
 	<update id="update">
 		UPDATE free
 		SET title=#{title}, story = #{story}
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</update>
 	
 	<select id="item" resultType="suggestfree">
 		SELECT * FROM free
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestFree">
 		SELECT *
 		FROM FREE
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</select>
 	
 	<update id="addcount">
 		UPDATE FREE
 		SET hit = hit + 1
 		WHERE
-			free_code = #{freeCode}
+			free_code = #{free_code}
 	</update>
 	
 </mapper>

@@ -44,10 +44,10 @@
 			<div style="width:650px; text-align: center;">
 				<br>						
 						<a href=".." >목록</a></td>
-							<c:if test="${sessionScope.name == item.name}">
-						<a href="../update/${item.freeCode}" >변경</a>
- 						<a href="../delete/${item.freeCode}" >삭제</a> 
-						</c:if>
+						
+						<a href="../update/${item.free_code}" >변경</a>
+ 						<a href="../delete/${item.free_code}" >삭제</a> 
+						
 							</tr>
 						</tbody>			
 					</table>
@@ -63,8 +63,14 @@
 	<c:forEach items="${reply}" var="reply">
 	<li>
 		<div>
-			<p>${reply.replyName} / <fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd" /></p>
-			<p>${reply.replyStory}</p>
+			<p>${reply.reply_name} / <fmt:formatDate value="${reply.reg_date}" pattern="yyyy-MM-dd" /></p>
+			<p>${reply.reply_story}</p>
+			<c:if test="${sessionScope.name == reply.reply_name}">
+			<a href="../reply/${reply.reply_code}/replyupdate" >수정</a>
+			</c:if>
+			<c:if test="${sessionScope.name == reply.reply_name}">
+			<a href="../reply/${reply.reply_code}/replydelete" >삭제</a>
+			</c:if> 
 		</div>
 	</li>	
 	</c:forEach>
@@ -72,16 +78,16 @@
 
 <div>
 
-	<form method="post" action="/reply/write">
+	<form method="post" action="../reply/${item.free_code}/write">
 	
 		<p>
-			<label>댓글 작성자</label> <input type="text" name="replyName" value="${name}" readonly>
+			<label>댓글 작성자</label> <input type="text" name="reply_name" value="${name}" readonly>
 		</p>
 		<p>
-			<textarea rows="5" cols="50" name="replyStory"></textarea>
+			<textarea rows="5" cols="50" name="reply_story"></textarea>
 		</p>
 		<p>
-			<input type="hidden" name="freeCode" value="${item.freeCode}">
+			<input type="hidden" name="free_code" value="${item.free_code}">
 			<button type="submit">댓글 작성</button>
 		</p>
 	</form>

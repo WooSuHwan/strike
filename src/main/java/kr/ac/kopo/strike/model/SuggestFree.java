@@ -4,87 +4,72 @@ import java.util.Date;
 
 public class SuggestFree {
 	
-	private int freeCode;
+	private int free_code;
 	private String title;
 	private String story;
 	private Integer hit;
 	private String id;
 	private int member_code;
 	private String name;
-	private Date regDate;
-
+	private Date reg_date;
 	
 	
-	
-
-	
-
-	public Date getRegDate() {
-		return regDate;
+	public int getFree_code() {
+		return free_code;
 	}
-
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setFree_code(int free_code) {
+		this.free_code = free_code;
 	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getmember_code() {
-		return member_code;
-	}
-
-	public void setmember_code(int user_code) {
-		this.member_code = user_code;
-	}
-
-	public Integer getHit() {
-		return hit;
-	}
-
-	public void setHit(Integer hit) {
-		this.hit = hit;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	
-
-	public int getFreeCode() {
-		return freeCode;
-	}
-
-	public void setFreeCode(int freeCode) {
-		this.freeCode = freeCode;
-	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public String getStory() {
 		return story;
 	}
-
 	public void setStory(String story) {
 		this.story = story;
 	}
+	public Integer getHit() {
+		return hit;
+	}
+	public void setHit(Integer hit) {
+		this.hit = hit;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public int getMember_code() {
+		return member_code;
+	}
+	public void setMember_code(int member_code) {
+		this.member_code = member_code;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Date getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
+	}
 
+	
+	
+	
+
+	
+
+	
 	
 
 	

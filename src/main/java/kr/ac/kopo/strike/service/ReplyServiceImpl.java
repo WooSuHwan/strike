@@ -18,9 +18,9 @@ public class ReplyServiceImpl implements ReplyService {
 	ReplyDao dao;
 
 	@Override
-	public List<Reply> list(int freeCode) throws Exception {
+	public List<Reply> list(int free_code) throws Exception {
 		
-		return dao.list(freeCode);
+		return dao.list(free_code);
 	}
 
 	@Override
@@ -29,19 +29,16 @@ public class ReplyServiceImpl implements ReplyService {
 		dao.write(reply);
 		
 	}
-
-
-
 	@Override
-	public void delete(int replyCode)throws Exception {
-		dao.delete(replyCode);
+	public void delete(int reply_code)throws Exception {
+		dao.delete(reply_code);
 		
 	}
 
 	@Override
-	public Reply replyitem(int replyCode) {
+	public Reply replyitem(int reply_code) {
 		
-		return dao.replyitem(replyCode);
+		return dao.replyitem(reply_code);
 	}
 
 	@Override

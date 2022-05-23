@@ -83,11 +83,11 @@
 					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
 
-							<td>${item.freeCode}</td>
-							<td><a href="view/${item.freeCode}">${item.title}</a></td>
+							<td>${item.free_code}</td>
+							<td><a href="view/${item.free_code}">${item.title}</a></td>
 							<td>${item.name}</td>
 							<td>${item.hit}</td>
-							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy.MM.dd"/></td>
+							<td><fmt:formatDate value="${item.reg_date}" pattern="yyyy.MM.dd"/></td>
 									
 							
 						</tr>

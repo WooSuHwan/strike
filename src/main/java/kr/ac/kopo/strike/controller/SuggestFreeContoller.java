@@ -58,42 +58,42 @@ public class SuggestFreeContoller {
 		String name = (String) session.getAttribute("name");
 		int member_code = (int) session.getAttribute("code");
 		item.setName(name);
-		item.setmember_code(member_code);
+		item.setMember_code(member_code);
 		return "redirect:list";
 	}
 	
-	@GetMapping("/delete/{freeCode}")
-	public String delete(@PathVariable int freeCode) {
-		service.delete(freeCode);
+	@GetMapping("/delete/{free_code}")
+	public String delete(@PathVariable int free_code) {
+		service.delete(free_code);
 		
 		return "redirect:..";
 	}
 	
-	@GetMapping("/update/{freeCode}" )
-	public String update(@PathVariable int freeCode, Model model) {
-		SuggestFree item = service.item(freeCode);
+	@GetMapping("/update/{free_code}" )
+	public String update(@PathVariable int free_code, Model model) {
+		SuggestFree item = service.item(free_code);
 		
 		model.addAttribute("item", item);
 		
 		return path + "update";
 	}
 	
-	@PostMapping("/update/{freeCode}")
-	public String update(@PathVariable int freeCode, SuggestFree item) {
+	@PostMapping("/update/{free_code}")
+	public String update(@PathVariable int free_code, SuggestFree item) {
 		service.update(item);
 		System.out.println(item);
 		return "redirect:..";
 	}
 	
-	@GetMapping("/view/{freeCode}")
-	public String view(@PathVariable int freeCode,Model model) throws Exception{
-		SuggestFree item = service.item(freeCode);
-		service.addCount(freeCode);
+	@GetMapping("/view/{free_code}")
+	public String view(@PathVariable int free_code,Model model) throws Exception{
+		SuggestFree item = service.item(free_code);
+		service.addCount(free_code);
 		model.addAttribute("item", item);
 		
 		// 댓글 조회
 		List<Reply> reply = null;
-		reply = replyservice.list(freeCode);
+		reply = replyservice.list(free_code);
 		model.addAttribute("reply", reply);
 		
 		
@@ -101,11 +101,11 @@ public class SuggestFreeContoller {
 	}
 	
 	@RequestMapping(value= "/readView", method = RequestMethod.GET)
-	public String read(SuggestFree suggestFree,Model model, int freeCode) throws Exception{
+	public String read(SuggestFree suggestFree,Model model, int free_code) throws Exception{
 		
 		
 		logger.info("read");
-		model.addAttribute("read", service.read(suggestFree.getFreeCode()));
+		model.addAttribute("read", service.read(suggestFree.getFree_code()));
 		
 		
 		
@@ -116,33 +116,33 @@ public class SuggestFreeContoller {
 	
 	
 	//댓글 생성
-	@RequestMapping(value = "/reply/{freeCode}/write", method = RequestMethod.POST)
+	@RequestMapping(value = "/reply/{free_code}/write", method = RequestMethod.POST)
 	public String posttWrite(Reply reply) throws Exception {
 		
 		replyservice.write(reply);
 		
-		return "redirect:../../view/" + reply.getFreeCode();
+		return "redirect:../../view/" + reply.getFree_code();
 	}
 	//댓글 삭제
-	@GetMapping("/reply/{replyCode}/replydelete")
-	public String replydelete(@PathVariable int replyCode ,Reply reply) throws Exception {
+	@GetMapping("/reply/{free_code}/replydelete")
+	public String replydelete(@PathVariable int reply_code ,Reply reply) throws Exception {
 		
-		replyservice.delete(replyCode);
+		replyservice.delete(reply_code);
 		
 		return "redirect:../../";
 	}
 	//댓글 수정
-	@GetMapping("/reply/{replyCode}/replyupdate" )
-	public String replyupdate(@PathVariable int replyCode, Model model) {
-		Reply reply = replyservice.replyitem(replyCode);
+	@GetMapping("/reply/{reply_code}/replyupdate" )
+	public String replyupdate(@PathVariable int reply_code, Model model) {
+		Reply reply = replyservice.replyitem(reply_code);
 		
 		model.addAttribute("reply", reply);
 		
 		return path + "replyupdate";
 	}
 	
-	@PostMapping("/reply/{replyCode}/replyupdate")
-	public String replyupdate(@PathVariable int replyCode,Reply reply) {
+	@PostMapping("/reply/{reply_code}/replyupdate")
+	public String replyupdate(@PathVariable int reply_code,Reply reply) {
 		replyservice.update(reply);
 		System.out.println(reply);
 		

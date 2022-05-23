@@ -27,15 +27,15 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 	}
 
 	@Override
-	public void delete(int freeCode) {
-		sql.delete("suggestfree.delete", freeCode);
+	public void delete(int free_code) {
+		sql.delete("suggestfree.delete", free_code);
 		
 	}
 	
 	@Override
-	public SuggestFree item(int freeCode) {
+	public SuggestFree item(int free_code) {
 		
-		return sql.selectOne("suggestfree.item", freeCode);
+		return sql.selectOne("suggestfree.item", free_code);
 	}
 
 	@Override
@@ -45,14 +45,14 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 	}
 
 	@Override
-	public SuggestFree read(int freeCode) throws Exception {
+	public SuggestFree read(int free_code) throws Exception {
 		
-		return sql.selectOne("suggestfree.read", freeCode);
+		return sql.selectOne("suggestfree.read", free_code);
 	}
 
 	@Override
-	public void addCount(int freeCode) {
-		sql.update("suggestfree.addcount", freeCode);
+	public void addCount(int free_code) {
+		sql.update("suggestfree.addcount", free_code);
 		
 	}
 	

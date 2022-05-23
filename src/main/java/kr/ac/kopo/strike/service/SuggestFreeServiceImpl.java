@@ -29,16 +29,16 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 	}
 
 	@Override
-	public void delete(int freeCode) {
+	public void delete(int free_code) {
 		
-		dao.delete(freeCode);
+		dao.delete(free_code);
 		
 	}
 
 	@Override
-	public SuggestFree item(int freeCode) {
+	public SuggestFree item(int free_code) {
 	
-		return dao.item(freeCode);
+		return dao.item(free_code);
 	}
 
 	@Override
@@ -49,14 +49,14 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 	}
 
 	@Override
-	public SuggestFree read(int freeCode) throws Exception {
+	public SuggestFree read(int free_code) throws Exception {
 		
-		return dao.read(freeCode);
+		return dao.read(free_code);
 	}
 
 	@Override
-	public void addCount(int freeCode) {
-		dao.addCount(freeCode);
+	public void addCount(int free_code) {
+		dao.addCount(free_code);
 		
 	}
 	

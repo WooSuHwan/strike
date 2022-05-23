@@ -20,8 +20,8 @@ public class ReplyDaoImpl implements ReplyDao {
 
 	// 댓글 조회
 	@Override
-	public List<Reply> list(int freeCode) throws Exception {
-		return sql.selectList("reply.replyList", freeCode);
+	public List<Reply> list(int free_code) throws Exception {
+		return sql.selectList("reply.replyList", free_code);
 	}
 
 	// 댓글 작성
@@ -34,15 +34,15 @@ public class ReplyDaoImpl implements ReplyDao {
 	
 
 	@Override
-	public void delete(int replyCode) throws Exception{
-		sql.delete("reply.replyDelete", replyCode);
+	public void delete(int reply_code) throws Exception{
+		sql.delete("reply.replyDelete", reply_code);
 		
 	}
 
 	@Override
-	public Reply replyitem(int replyCode) {
+	public Reply replyitem(int reply_code) {
 		
-		return sql.selectOne("reply.replyItem", replyCode);
+		return sql.selectOne("reply.replyItem", reply_code);
 	}
 
 	@Override
