@@ -4,8 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>STRIKE</title>
 <link rel="stylesheet" href="../resources/css/index.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://www.w3schools.com/lib/w3.js"></script>

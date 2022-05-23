@@ -172,6 +172,22 @@ a {
     line-height: 60px;
 }
 
+.clanRtable .clanRtable_01 tbody tr:first-child td a{
+    color: #ffb93b;
+}
+
+.clanRtable .clanRtable_01 tbody tr:nth-child(2) td a{
+    color: #92b1bd;
+}
+
+.clanRtable .clanRtable_01 tbody tr:nth-child(3) td a{
+    color: #ca9372;
+}
+
+.clanRtable .clanRtable_01 tbody tr td a{
+    color: #fff;
+}
+
 .clanRtable .clanRtable_01 tbody tr:first-child td{
     color: #ffb93b;
     background-color: #2d2f37;
