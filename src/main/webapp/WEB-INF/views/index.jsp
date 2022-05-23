@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -12,8 +12,8 @@
 <jsp:include page="font.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="nav.jsp"></jsp:include>
-	<section>
+   <jsp:include page="nav.jsp"></jsp:include>
+   <section>
         <div class="inAll">
             <div class="hnone"></div> <!-- nav밑 빈영역 채우기 -->
             <div class="upperArea">  <!-- 위에 내용 -->
@@ -132,14 +132,14 @@
                                 </tr>
                             </thead>
                             <tbody class="rankC01_02">
-								<c:forEach items="${clanList}" var="item" varStatus="status">
-									<tr class="tbodyTr01">
-										<td width="20%" height="100%">${status.index + 1}</td>
-										<td width="25%" height="100%">${item.clan_name}</td>
-										<td width="55%" height="100%">티어수정필요함</td>
-									</tr>
-								</c:forEach>
-							</tbody>
+                        <c:forEach items="${clanList}" var="item" varStatus="status">
+                           <tr class="tbodyTr01">
+                              <td width="20%" height="100%">${status.index + 1}</td>
+                              <td width="25%" height="100%">${item.clan_name}</td>
+                              <td width="55%" height="100%">티어수정필요함</td>
+                           </tr>
+                        </c:forEach>
+                     </tbody>
                             <tfoot class="rankC01_03">
                                 <tr class="tfootTr01">
                                     <td style="width: 40%;"><a href="clan/list">팀 순위 상세보기</a></td>
@@ -160,14 +160,14 @@
                                 </tr>
                             </thead>
                             <tbody class="rankC01_02">
-								<c:forEach items="${rankList}" var="item" varStatus="status">
-									<tr class="tbodyTr01">
-										<td width="20%" height="100%">${status.index + 1}</td>
-										<td width="25%" height="100%">${item.name}</td>
-										<td width="55%" height="100%">${item.score}</td>
-									</tr>
-								</c:forEach>
-							</tbody>
+                        <c:forEach items="${rankList}" var="item" varStatus="status">
+                           <tr class="tbodyTr01">
+                              <td width="20%" height="100%">${status.index + 1}</td>
+                              <td width="25%" height="100%">${item.name}</td>
+                              <td width="55%" height="100%">${item.score}</td>
+                           </tr>
+                        </c:forEach>
+                     </tbody>
                             <tfoot class="rankC01_03">
                                 <tr class="tfootTr01">
                                     <td style="width: 45%;"><a href="/rank/list">개인 순위 상세보기</a></td>
@@ -180,13 +180,13 @@
             </div>
         </div> <!-- 랭크 컨텐츠 부분 -->
     </section>
-		
-	</div>
-		<jsp:include page="footer.jsp"></jsp:include>
-		
-		<!-- script부분 -->
-		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-     	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-		<script src="../resources/js/index.js"></script>
+      
+   </div>
+      <jsp:include page="footer.jsp"></jsp:include>
+      
+      <!-- script부분 -->
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script src="../resources/js/index.js"></script>
 </body>
 </html>
