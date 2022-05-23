@@ -81,6 +81,9 @@ a.{
 		<div>
 			<a href="rank/list" style="text-decoration:none">개인 랭크</a>
 		</div>
+		<div>
+			<a href="manager/view" style="text-decoration:none">관리자</a>
+		</div>
 	</div>
 		
 	<div>

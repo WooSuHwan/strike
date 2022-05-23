@@ -26,12 +26,14 @@ public class RankController {
 	
 	@GetMapping("list")
 	public String list(Model model) {
+		
 		List<Member> list = service.list();
 		
 		for (Member item : list) {
 			
 			item.setName( aes256.decrypt(item.getName()) );
 		}
+		
 		model.addAttribute("list", list);
 		
 		return path + "list";

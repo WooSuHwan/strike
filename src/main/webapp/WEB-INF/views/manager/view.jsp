@@ -7,13 +7,16 @@
 </head>
 <body>
 	<div>
-		<a href="">등록 된 개인 목록</a>
+		1.<a href="memberList">등록 된 개인 목록</a>
 	</div>
 	<div>
-		<a href="">등록 된 개인 경기 목록</a>
+		2.<a href="gameList">등록 된 개인 경기 목록</a>
 	</div>
 	<div>
-		<a href="">등록 된 개인 경기 목록</a>
+		3.<a href="clanList">등록 된 클랜 목록</a>
+	</div>	
+	<div>
+		4.<a href="">등록 된 클랜 경기 목록</a>
 	</div>
 </body>
 </html>
