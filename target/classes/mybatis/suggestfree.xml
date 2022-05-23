@@ -8,6 +8,7 @@
 	<select id="list" resultType="suggestfree">
 		SELECT free_code, title, story, hit, name, reg_date
 		FROM free 
+		ORDER BY free_code DESC
 	</select>
 	
 	<insert id="add">

@@ -93,10 +93,11 @@
 	<div class="mypageNavSM"></div>
 <div class="containerBox2">
     <div>
-        <button class="w-btn w-btn-gray" type="button"   style="width:150; float: right;">글쓰기</button>
+        <button  class="w-btn w-btn-gray"  value="submit request" style="width:150; float: right;">글쓰기</button>
+        
     </div>
     <div>
-        <button class="w-btn w-btn-white" type="button" onclick = "location.href = 'list' " style="width:100; float: right;">목록</button>
+        <button class="w-btn w-btn-white" type="button" onclick = "location.href = 'list'" style="width:100; float: right;">목록</button>
     </div>
         
 </div>
