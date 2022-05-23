@@ -1,5 +1,7 @@
 package kr.ac.kopo.strike.model;
 
+import java.util.Date;
+
 public class Clan {
 	private int clan_code;
 	private int clan_master_code;
@@ -10,6 +12,7 @@ public class Clan {
 	private int clan_draw;
 	private int clan_rate;
 	private int clan_score;
+	private Date time;
 	// member
 	private String name;
 
@@ -83,6 +86,14 @@ public class Clan {
 
 	public void setClan_score(int clan_score) {
 		this.clan_score = clan_score;
+	}
+
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
 	}
 
 	public String getName() {

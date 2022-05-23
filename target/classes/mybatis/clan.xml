@@ -19,7 +19,8 @@
 		#{clan_lose}, 
 		#{clan_draw}, 
 		#{clan_rate},
-		#{clan_score})
+		#{clan_score},
+		sysdate)
 	</insert>
 	
 	<select id="item" resultType="Clan">

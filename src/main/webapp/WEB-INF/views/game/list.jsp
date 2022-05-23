@@ -38,12 +38,10 @@
 							<td>${status.count}</td>
 							<td>${item.maker}</td>
 							<td>${item.title}</td>
-							<td>${item.time}</td>
+							<td>${item.clock}</td>
 							<td>${item.loc}</td>
 							<td>${item.recruit}</td>
-							<td>
-								<a href="view/${item.game_code}">입장</a>
-							</td>
+							<td><a href="view/${item.game_code}">입장</a></td>
 							<c:if test="${item.member_code eq sessionScope.member.member_code}">
 								<td>
 									<c:if test="${item.member_code eq sessionScope.member.member_code}">

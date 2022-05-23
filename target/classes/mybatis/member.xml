@@ -12,7 +12,7 @@
 		SELECT COUNT(*) FROM member WHERE id = #{member_id}
 	</select>
 	<!-- 로그인 -->
-	<select id="check" parameterType="HashMap" resultType="member">
+	<select id="check" parameterType="HashMap" resultType="Member">
 		SELECT * FROM member WHERE id=#{id} AND pw=#{pw}
 	</select>
 </mapper>

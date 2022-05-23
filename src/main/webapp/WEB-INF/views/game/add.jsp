@@ -15,7 +15,7 @@
 			</div>
 			<div>
 				<label>시간</label>
-				<input name="time" type="text">
+				<input name="clock" type="text">
 			</div>
 			<div>
 				<label>위치</label>

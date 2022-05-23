@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>우수환</title>
+<title></title>
 
 <style>
 html, body {
@@ -83,6 +83,12 @@ a.{
 		</div>
 		<div>
 			<a href="manager/view" style="text-decoration:none">관리자</a>
+		</div>
+		<div>
+			<a href="franchisee/add" style="text-decoration:none">가맹점 회원가입</a>
+		</div>
+		<div>
+			<a href="franchiseeLogin/login" style="text-decoration:none">가맹점 로그인</a>
 		</div>
 	</div>
 		

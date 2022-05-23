@@ -1,14 +1,17 @@
 package kr.ac.kopo.strike.model;
 
+import java.util.Date;
+
 public class Game {
 	private int game_code;
 	private int member_code;
 	private String maker;
 	private String title;
-	private String time;
+	private String clock;
 	private String loc;
 	private int recruit;
 	private String story;
+	private Date time;
 
 	public int getGame_code() {
 		return game_code;
@@ -42,12 +45,12 @@ public class Game {
 		this.title = title;
 	}
 
-	public String getTime() {
-		return time;
+	public String getClock() {
+		return clock;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setClock(String clock) {
+		this.clock = clock;
 	}
 
 	public String getLoc() {
@@ -72,6 +75,14 @@ public class Game {
 
 	public void setStory(String story) {
 		this.story = story;
+	}
+
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
 	}
 
 }

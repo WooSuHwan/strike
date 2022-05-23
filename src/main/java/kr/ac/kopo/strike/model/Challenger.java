@@ -1,10 +1,13 @@
 package kr.ac.kopo.strike.model;
 
+import java.util.Date;
+
 public class Challenger {
 	private int challenger_code;
 	private int member_code;
 	private int game_code;
 	private int state;
+	private Date time;
 	// member
 	private String name;
 	private int score;
@@ -44,6 +47,14 @@ public class Challenger {
 
 	public void setState(int state) {
 		this.state = state;
+	}
+
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
 	}
 
 	public String getName() {
