@@ -77,21 +77,23 @@
                 <div class="clanrankSearch1200">
                     <div class="clanrankSearch_01">
                         <div class="clanrankSearch_01_01">
-                            <a href="clanVs.html">클랜 대결신청</a>
+                            <a href="">클랜 대결신청</a>
                         </div>
                         <div class="clanrankSearch_01_02">
-                            <a href="personalVs.html">개인 대결신청</a>
+                            <a href="/game/list">개인 대결신청</a>
                         </div>
                     </div>
-                    <div class="clanrankSearch_02">
-                        <p style="margin-right: 1em;">search</p>
-                        <div class="clanrankSearch_02_01">
-                            <input type="text">
-                            <div class="clanrankSearch_02_02">
-                                <img src="/resources/img/premium.png" alt="돋보기" width="55%">
-                            </div>
-                        </div>
-                    </div>
+                    <form method="get" action="" id="search" class="clanrankSearch_02">
+	                    <div class="zmffos">
+	                        <p style="margin-right: 1em;">search</p>
+	                        <div class="clanrankSearch_02_01">
+	                            <input type="text" name="keyword" placeholder="제목을 입력해 주세요">
+	                            <button class="clanrankSearch_02_02" type="submit">
+	                               <img src="/resources/img/premium.png" alt="돋보기" width="55%">
+	                            </button>
+	                        </div>
+	                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -146,24 +148,21 @@
                     </tbody>
                 </table>
             </div>
-            
-            <div class="pagination">
+        <div>
+			<a href="add">등록</a>
+		</div>
+			<div class="pagination">
                 <div class="paginate">
-                    <a href="javascript:;" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
-                    <a href="javascript:;" class="link arrow prev" data-page="1">이전 페이지</a>
-                    <span class="link mobile" data-page="1" data-end="10">
-                        <span class="now">1</span>/ 8
-                    </span>
-                    <a href="javascript:;" class="now link">1</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="2">2</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="3">3</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="4">4</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="5">5</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="6">6</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="7">7</a>
-                    <a href="javascript:;" class="pagebtn link" data-page="8">8</a>
-                    <a href="javascript:;" class="pagebtn link arrow next" data-page="9">다음 페이지</a>
-                    <a href="javascript:;" class="pagebtn link arrow last next" data-page="66">Next</a>
+                    <a href="?page=1" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
+                    <a href="?page=${pager.prev }&${pager.query}" class="link arrow prev" data-page="1">이전 페이지</a>
+<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
+<!--                         <span class="now">1</span>/ 8 -->
+<!--                     </span> -->
+                    <c:forEach var="page" items="${pager.list}">
+						<a href="?page=${page}&${pager.query}" class="link now${page == pager.page ? '': 'active' }">${page}</a>
+					</c:forEach>
+                    <a href="?page=${pager.next }&${pager.query}" class="pagebtn link arrow next" data-page="9" >다음 페이지</a>
+                    <a href="?page=${pager.last}" class="pagebtn link arrow last next" data-page="66">Next</a>
                 </div>
             </div>
         </div>
