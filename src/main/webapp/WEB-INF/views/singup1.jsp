@@ -49,21 +49,19 @@
                 <div class="singupBox_01">
                     <div class="singupBox_01_01">
                         <div class="singupBox_01_01_01">
-                            <div class="membershipIn_01img">
-                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스">
-                                <div id="imgDisplay" style="display: none;"><img src="../resources/img/checkbox2.png" height="18px" width="18px" alt="체크박스"></div>
-                            </div>
-                            <div class="membershipIn_01txt">
-                                <a style="text-decoration: none; font-size: 0.97em;" href="javascript:doDisplay();">서비스 이용 약관 동의(필수)</a>
+                             <div class="membershipIn_01txt">
+                                <label for="agree">
+                                    <input type="checkbox" name="agree" value="1" style="margin-right: 1.2em;">
+                                </label>
+                                <span>서비스 이용 약관 동의(필수)</span>
                             </div>
                         </div>
                         <div class="singupBox_01_01_02">
-                            <div class="membershipIn_01img">
-                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스" name="1-1">
-                                <div id="imgDisplay4" style="display: none;"><img src="../resources/img/checkbox2.png" height="18px" width="18px" alt="체크박스"></div>
-                            </div>
-                            <div class="membershipIn_01txt">
-                                <a style="text-decoration: none; font-size: 0.97em; margin-left: 1.6em; color: rgb(58, 58, 58);" href="javascript:doDisplay4();">전체 동의</a>
+                            <div class="membershipIn_02txt">
+                                <label for="agree_all" style="display: flex; align-items: center;">
+                                    <input type="checkbox" name="agree_all" id="agree_all" style="margin-right: 1.2em;">
+                                    <span>전체 동의</span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -85,12 +83,11 @@
                 <div class="singupBox_02">
                     <div class="singupBox_01_01">
                         <div class="singupBox_01_01_01">
-                            <div class="membershipIn_01img">
-                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스" name="2-1">
-                                <div id="imgDisplay2" style="display: none;"><img src="../resources/img/checkbox2.png" height="18px" width="18px" alt="체크박스"></div>
-                            </div>
-                            <div class="membershipIn_01txt">
-                                <a style="text-decoration: none; font-size: 0.97em;" href="javascript:doDisplay2();">개인정보 수집 및 이용 동의(필수)</a>
+                             <div class="membershipIn_01txt">
+                                <label for="agree">
+                                    <input type="checkbox" name="agree" value="2" style="margin-right: 1.2em;">
+                                </label>
+                                <span>개인정보 수집 및 이용 동의(필수)</span>
                             </div>
                         </div>
                     </div>
@@ -131,12 +128,11 @@
                 <div class="singupBox_03">
                     <div class="singupBox_01_01">
                         <div class="singupBox_01_01_01">
-                            <div class="membershipIn_01img">
-                                <img src="../resources/img/boxicon.png" style="height: 80%; cursor: pointer;" alt="체크박스">
-                                <div id="imgDisplay3" style="display: none;"><img src="../resources/img/checkbox2.png" height="18px" width="18px" alt="체크박스"></div>
-                            </div>
-                            <div class="membershipIn_01txt">
-                                <a style="text-decoration: none; font-size: 0.97em; color: rgb(58, 58, 58);"  href="javascript:doDisplay3();">위치기반서비스 이용 약관 동의(선택)</a>
+                             <div class="membershipIn_01txt">
+                                <label for="agree">
+                                    <input type="checkbox" name="agree" value="3" style="margin-right: 1.2em;">
+                                </label>
+                                <span style="color: rgb(58, 58, 58); margin-top: 0.1em;">위치기반서비스 이용 동의<strong class="select_disable">(선택)</strong></span>
                             </div>
                         </div>
                     </div>

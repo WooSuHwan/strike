@@ -130,6 +130,15 @@ function doDisplay4(){
 
 }
 
+// 동의 모두선택 / 해제
+const agreeChkAll = document.querySelector('input[name=agree_all]');
+    agreeChkAll.addEventListener('change', (e) => {
+		let agreeChk = document.querySelectorAll('input[name=agree]');
+		for(let i = 0; i < agreeChk.length; i++){
+			agreeChk[i].checked = e.target.checked;
+		}
+});
+
  /** 우편번호 찾기 */
  function execDaumPostcode() {
   daum.postcode.load(function () {
