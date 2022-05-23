@@ -16,6 +16,7 @@ import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
@@ -30,9 +31,9 @@ public class GameController {
 	GameService service;
 	
 	@GetMapping("/list")
-	public String list(Model model) {
+	public String list(Model model, Pager pager) {
 
-		List<Game> list = service.list();
+		List<Game> list = service.list(pager);
 		
 		model.addAttribute("list", list);
 		
@@ -113,7 +114,8 @@ public class GameController {
 	
 	@GetMapping("/permission/{game_code}")
 	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
-
+		System.out.println("게임코드" + game_code);
+		System.out.println("멤버코드" + member.getMember_code());
 		service.permission(game_code, member.getMember_code());
 		
 		return "redirect:../view/" + game_code;
