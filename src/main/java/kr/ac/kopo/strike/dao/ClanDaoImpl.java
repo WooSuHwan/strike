@@ -102,8 +102,7 @@ public class ClanDaoImpl implements ClanDao {
 		
 		map.put("member_code", member_code);
 		map.put("clan_code", clan_code);
-		System.out.println("맴버코드" + member_code);
-		System.out.println("클랜코드" + clan_code);
+
 		sql.update("clan.changeMember", map);
 		
 	}
