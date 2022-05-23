@@ -124,7 +124,7 @@ public class SuggestFreeContoller {
 		return "redirect:../../view/" + reply.getFree_code();
 	}
 	//댓글 삭제
-	@GetMapping("/reply/{free_code}/replydelete")
+	@GetMapping("/reply/{reply_code}/replydelete")
 	public String replydelete(@PathVariable int reply_code ,Reply reply) throws Exception {
 		
 		replyservice.delete(reply_code);
