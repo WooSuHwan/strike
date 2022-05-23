@@ -65,12 +65,9 @@
 		<div>
 			<p>${reply.reply_name} / <fmt:formatDate value="${reply.reg_date}" pattern="yyyy-MM-dd" /></p>
 			<p>${reply.reply_story}</p>
-			<c:if test="${sessionScope.name == reply.reply_name}">
 			<a href="../reply/${reply.reply_code}/replyupdate" >수정</a>
-			</c:if>
-			<c:if test="${sessionScope.name == reply.reply_name}">
 			<a href="../reply/${reply.reply_code}/replydelete" >삭제</a>
-			</c:if> 
+			
 		</div>
 	</li>	
 	</c:forEach>

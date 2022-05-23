@@ -12,8 +12,6 @@
 	</typeAliases>
 	
 	<mappers>
-	
-		
 		<mapper resource="mybatis/suggestfree.xml" />
 		<mapper resource="mybatis/suggestmaster.xml" />
 		<mapper resource="mybatis/reply.xml" />
