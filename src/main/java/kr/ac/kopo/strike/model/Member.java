@@ -1,5 +1,7 @@
 package kr.ac.kopo.strike.model;
 
+import java.util.Date;
+
 public class Member {
 	private int member_code;
 	private int clan_code;
@@ -15,6 +17,14 @@ public class Member {
 	private int draw;
 	private int rate;
 	private int score;
+	private Date time;
+	
+	public Date getTime() {
+		return time;
+	}
+	public void setTime(Date time) {
+		this.time = time;
+	}
 	public int getMember_code() {
 		return member_code;
 	}

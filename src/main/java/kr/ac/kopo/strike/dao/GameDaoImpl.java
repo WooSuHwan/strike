@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class GameDaoImpl implements GameDao {
@@ -18,7 +19,7 @@ public class GameDaoImpl implements GameDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Game> list() {
+	public List<Game> list(Pager pager) {
 		return sql.selectList("game.list");
 	}
 
@@ -76,6 +77,11 @@ public class GameDaoImpl implements GameDao {
 	@Override
 	public List<Member> member(int game_code) {
 		return sql.selectList("game.member", game_code);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("game.total", pager);
 	}
 
 }

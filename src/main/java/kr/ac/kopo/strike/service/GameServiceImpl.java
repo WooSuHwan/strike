@@ -9,6 +9,7 @@ import kr.ac.kopo.strike.dao.GameDao;
 import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -17,8 +18,13 @@ public class GameServiceImpl implements GameService {
 	GameDao dao;
 	
 	@Override
-	public List<Game> list() {
-		return dao.list();
+	public List<Game> list(Pager pager) {
+		
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override

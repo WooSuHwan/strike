@@ -124,13 +124,13 @@
 					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
 							<td>${pager.offset + status.count}</td>
-							<td>${item.clan_name}</td>
+							<td><a href="view/${item.clan_code}">${item.clan_name}</a></td>
 							<td>${item.clan_record}</td>
 							<td>${item.clan_win}</td>
 							<td>${item.clan_lose}</td>
 							<td>${item.clan_draw}</td>
 							<td>${item.clan_rate}</td>
-<%-- 							<td><a href="/clanMember/list/${item.clan_code}">입장</a></td> --%>
+<%-- 							<td><a href="/view/${item.clan_code}">입장</a></td> --%>
 <%-- 							<td><a href="update/${item.clan_code}">변경</a></td> --%>
 <%-- 							<td><a href="delete/${item.clan_code}">삭제</a></td> --%>
 						</tr>
@@ -138,6 +138,7 @@
                     </tbody>
                 </table>
             </div>
+                <a href="add">등록</a>
             <div class="pagination">
                 <div class="paginate">
                     <a href="?page=1" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>

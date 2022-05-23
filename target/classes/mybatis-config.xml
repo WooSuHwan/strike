@@ -2,15 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<settings>
-      <setting name="mapUnderscoreToCamelCase" value="false"/>
-   </settings>
-
 	<typeAliases>
 		<typeAlias type="kr.ac.kopo.strike.model.Member" alias="Member"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Game" alias="Game"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Challenger" alias="Challenger"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
+		<typeAlias type="kr.ac.kopo.strike.model.ClanMember" alias="ClanMember"/>
 		
 		<typeAlias type="kr.ac.kopo.strike.model.SuggestFree" alias="SuggestFree"/>
       	<typeAlias type="kr.ac.kopo.strike.model.SuggestMaster" alias="SuggestMaster"/>
