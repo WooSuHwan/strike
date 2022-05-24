@@ -75,10 +75,8 @@ public class MemberServiceImpl implements MemberService {
 			item.setName(aes256.decrypt(member.getName()));
 			item.setBirth(aes256.decrypt(member.getBirth()));
 			item.setId(aes256.decrypt(member.getId()));
-//			item.setPw(sha256.decrypt(member.getPw()));
+//			item.setPw(sha256.encrypt(member.getPw()));
 			item.setTel(aes256.decrypt(member.getTel()));
-			
-			System.out.println(item.getMember_code()+"$$$$$$$$$$$$$$$$$$$$$");
 			
 			return dao.mypage(item);
 		

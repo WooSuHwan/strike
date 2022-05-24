@@ -225,7 +225,7 @@ td,th {
 .mypageUpdate {
     display: flex;
     width: 80%;
-    height: 70em;
+    height: 60em;
     flex-direction: column;
 
     justify-content: center;
@@ -281,7 +281,8 @@ td,th {
     border-radius: 0.6em;
 }
 
-.loginBtn button{
+.loginBtn a{
+	display:flex;
     width: 100%;
     background-color: #434343;
     border-radius: 0.6em;
@@ -289,7 +290,9 @@ td,th {
     cursor: pointer;
     font-family: 'S-CoreDream-6Bold';
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    justify-content: center;
+    align-items: center;
 }
 
 .singup2Txt{
@@ -338,7 +341,7 @@ td,th {
     background-color: #fff;
     display: flex;
     width: 100%;
-    height: 50em;
+    height: 40em;
     margin-top: 0.5em;
 
 }
@@ -368,21 +371,13 @@ tbody>tr>td{
     margin-left: 0.5em;
 }
 
-.tableInput>input{
-    margin-left: 1.5em;
-    height: 50%;
-    width: 49%;
-    font-family: 'S-CoreDream-5Medium';
-    outline: none;
-    color: #5a5a5a;
-}
-
 .tableInput{
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     border-bottom: 1px solid #c6c6c6;
+    text-align: center;
 }
 
 .tableInput>span{
@@ -442,4 +437,8 @@ tbody>tr>td{
 
 .wh{
     height: 13em;
+}
+
+.nt {
+    color: #f6cd00;
 }

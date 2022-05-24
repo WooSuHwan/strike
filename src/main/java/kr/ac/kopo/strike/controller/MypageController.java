@@ -64,9 +64,14 @@ public class MypageController {
 		return "redirect:../mypage";
 	}
 	
-	@GetMapping("/delete")
+	@RequestMapping("/delete")
+	public String delete(Member item,Model model) {
+		return path + "delete";
+	}
+	
+	@GetMapping("/delete/{member_code}")
 	public String delete(@PathVariable int member_code) {
 		memberService.delete(member_code);
-		return "redirect:../mypage";
+		return "redirect:../index";
 	}
 }
