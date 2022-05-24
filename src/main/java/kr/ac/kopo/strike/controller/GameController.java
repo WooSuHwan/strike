@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.GameService;
@@ -40,7 +41,11 @@ public class GameController {
 	}
 	
 	@GetMapping("/add")
-	public String add() {
+	public String add(Model model) {
+		
+		List<Franchisee> location = service.location();
+		
+		model.addAttribute("location", location);
 		
 		return path + "add";
 	}

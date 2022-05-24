@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 
@@ -76,6 +77,11 @@ public class GameDaoImpl implements GameDao {
 	@Override
 	public List<Member> member(int game_code) {
 		return sql.selectList("game.member", game_code);
+	}
+
+	@Override
+	public List<Franchisee> location() {
+		return sql.selectList("game.location");
 	}
 
 }

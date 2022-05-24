@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.strike.model.Franchisee;
-import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.FranchiseeLoginService;
-import kr.ac.kopo.strike.service.LoginService;
 
 @Controller
 @RequestMapping("/franchiseeLogin")
@@ -34,7 +32,7 @@ public class FranchiseeLoginController {
 			return "redirect:/franchiseeLogin/login?wrong=true";
 		} else {
 			session.setAttribute("franchisee", franchisee);
-			System.out.println("가맹정코드" + franchisee.getFranchisee_code());
+			
 			return "redirect:/";
 		}
 	}

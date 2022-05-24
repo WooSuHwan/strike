@@ -55,4 +55,8 @@
     	from game g, member m
     	where g.game_code = #{game_code} and g.member_code = m.member_code
 	</select>
+	
+	<select id="location" resultType="Franchisee">
+		SELECT * FROM franchisee
+	</select>
 </mapper>

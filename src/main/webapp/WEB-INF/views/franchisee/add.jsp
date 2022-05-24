@@ -49,7 +49,7 @@ function confirm(event) {
 	// 아이디 중복 확인
 	$.ajax({
 		url:"same",
-		data:{"franchsee_id" : id},
+		data:{"franchisee_id" : id},
 		method:"POST",
 		dataType:"TEXT",
 		success:function(data) {
@@ -130,7 +130,12 @@ $(function() {
 			event.preventDefault()
 			return false;
 		}
-			
+		
+		if($("#address").val()=="") {
+			alert("주소가 비었습니다")
+			event.preventDefault()
+			return false;
+		}
 	})
 	// 보여주는 용도
 	$("#pw").on("keyup", function() {
@@ -171,6 +176,10 @@ $(function() {
 				<div style="font-weight: 600">전화번호</div>
 				<input type="tel" name="tel" id="tel" size=40>
 				<div id="tel_message"></div>
+				
+				<div style="font-weight: 600">주소</div>
+				<input type="text" name="address" id="address" size=40>
+				<div id="address_message"></div>
 				
 				<div style="font-weight: 600">생년월일</div>
 				<input type="date" name="birth" id="birth" size=40>

@@ -24,12 +24,12 @@ public class MemberServiceImpl implements MemberService {
 		
 		int count = dao.idCount(aes256.encrypt(id));
 		
-				if(count > 0) {
-					return true;
-				} else {
-					return false;	
-				}
-			}
+		if(count > 0) {
+			return true;
+		} else {
+			return false;	
+		}
+	}
 
 	@Override
 	public void add(Member member) {

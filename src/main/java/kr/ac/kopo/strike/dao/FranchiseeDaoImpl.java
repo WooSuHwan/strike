@@ -7,19 +7,19 @@ import org.springframework.stereotype.Repository;
 import kr.ac.kopo.strike.model.Franchisee;
 
 @Repository
-public class FranchisessDaoImpl implements FranchisessDao {
+public class FranchiseeDaoImpl implements FranchiseeDao {
 
 	@Autowired
 	SqlSession sql;
-	
-	@Override
-	public boolean confirm(String franchisee_id) {
-		return sql.selectOne("franchisess.confirm", franchisee_id);
-	}
 
 	@Override
 	public void add(Franchisee franchisee) {
-		sql.insert("franchisess.add", franchisee);
+		sql.insert("franchisee.add", franchisee);
+	}
+
+	@Override
+	public int idCount(String franchisee_id) {
+		return sql.selectOne("franchisee.idCount", franchisee_id);
 	}
 
 }

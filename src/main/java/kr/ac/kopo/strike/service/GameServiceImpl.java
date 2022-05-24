@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.GameDao;
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 
@@ -64,6 +65,11 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public List<Member> member(int game_code) {
 		return dao.member(game_code);
+	}
+
+	@Override
+	public List<Franchisee> location() {
+		return dao.location();
 	}
 
 }

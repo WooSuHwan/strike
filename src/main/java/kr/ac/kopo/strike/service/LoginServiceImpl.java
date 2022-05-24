@@ -19,6 +19,7 @@ public class LoginServiceImpl implements LoginService {
 	
 	@Override
 	public Member check(String id, String pw) {
+		
 		String encryptedId = aes256.encrypt(id);
 		String encryptedPw = sha256.encrypt(pw);
 		

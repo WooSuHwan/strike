@@ -3,6 +3,7 @@ package kr.ac.kopo.strike.dao;
 import java.util.List;
 
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 
@@ -27,5 +28,7 @@ public interface GameDao {
 	void permission(int game_code, int challenger_code);
 
 	List<Member> member(int game_code);
+
+	List<Franchisee> location();
 
 }

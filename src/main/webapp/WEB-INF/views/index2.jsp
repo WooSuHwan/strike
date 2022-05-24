@@ -39,24 +39,36 @@ a.{
 	<div class="row">
 		<!-- 로그인 전 -->
 		<div>
-			<c:if test="${sessionScope.member == null}">
-				<span><a href="login/login" style="text-decoration:none">로그인 </a></span>
+			<c:if test="${sessionScope.member == null && sessionScope.franchisee == null}">
+				<div><a href="login/login" style="text-decoration:none">로그인 </a></div>
+				<div><a href="franchiseeLogin/login" style="text-decoration:none">가맹점 로그인</a></div>
 			</c:if>
 			
-			<c:if test="${sessionScope.member == null}">
-				<span><a href="member/add" style="text-decoration:none">회원가입</a></span>
+			<c:if test="${sessionScope.member == null && sessionScope.franchisee == null}">
+				<div><a href="member/add" style="text-decoration:none">회원가입</a></div>
+				<div><a href="franchisee/add" style="text-decoration:none">가맹점 회원가입</a></div>
 			</c:if>
-		<!-- 로그인 후 -->	
+		<!-- 로그인 후 -->
+			<!-- 이름 -->	
 			<c:if test="${sessionScope.member != null}">
-				${sessionScope.member.name}님 환영합니다.
+				${sessionScope.member.name} 사용자님 환영합니다.
 			</c:if>
-			
-			<c:if test="${sessionScope.member != null}">
-				<span><a href="login/logout" style="text-decoration:none">로그아웃</a></span>
+			<c:if test="${sessionScope.franchisee != null}">
+				${sessionScope.franchisee.name} 관리자님 환영합니다.
 			</c:if>
-			
+			<!-- 로그아웃 -->
 			<c:if test="${sessionScope.member != null}">
-				<span><a href="myPage/myPage" style="text-decoration:none">마이페이지</a></span>
+				<span><a href="login/logout" style="text-decoration:none">사용자 로그아웃</a></span>
+			</c:if>
+			<c:if test="${sessionScope.franchisee != null}">
+				<span><a href="franchisee/logout" style="text-decoration:none">관리자 로그아웃</a></span>
+			</c:if>
+			<!-- 마이페이지 -->
+			<c:if test="${sessionScope.member != null}">
+				<span><a href="myPage/myPage" style="text-decoration:none">사용자 마이페이지</a></span>
+			</c:if>
+			<c:if test="${sessionScope.franchisee != null}">
+				<span><a href="franchiseePage/view" style="text-decoration:none">관리자 마이페이지</a></span>
 			</c:if>
 		</div>
 	</div>
@@ -82,13 +94,7 @@ a.{
 			<a href="rank/list" style="text-decoration:none">개인 랭크</a>
 		</div>
 		<div>
-			<a href="manager/view" style="text-decoration:none">관리자</a>
-		</div>
-		<div>
-			<a href="franchisee/add" style="text-decoration:none">가맹점 회원가입</a>
-		</div>
-		<div>
-			<a href="franchiseeLogin/login" style="text-decoration:none">가맹점 로그인</a>
+			<a href="manager/view" style="text-decoration:none">토탈 관리자</a>
 		</div>
 	</div>
 		

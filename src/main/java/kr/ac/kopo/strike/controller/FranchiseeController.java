@@ -38,9 +38,9 @@ public class FranchiseeController {
 	
 	@ResponseBody
 	@PostMapping("/same")
-	public String confirm(String franchsee_id) {
+	public String confirm(String franchisee_id) {
 		
-		boolean overlap = service.confirm(franchsee_id);
+		boolean overlap = service.confirm(franchisee_id);
 		if(overlap == true) {
 			return "overlap";
 		} else {
