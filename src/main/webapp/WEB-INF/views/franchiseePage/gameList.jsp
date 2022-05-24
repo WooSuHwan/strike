@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<h1>개인전 리스트</h1>
+		<h1>등록 된 개인전 리스트</h1>
 		<div>
 			<table border="1">
 				<thead>
@@ -38,7 +38,7 @@
 							<td>${item.clock}</td>
 							<td>${item.loc}</td>
 							<td>${item.recruit}</td>
-							<td><a href="view/${item.game_code} "style="text-decoration:none">입장</a></td>
+							<td><a href="gameView/${item.game_code} "style="text-decoration:none">입장</a></td>
 							<td><a href="update/${item.game_code}" style="text-decoration:none">수정</a></td>
 							<td><a href="delete/${item.game_code}" style="text-decoration:none">삭제</a></td>
 						</tr>

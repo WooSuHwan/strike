@@ -1,9 +1,11 @@
 package kr.ac.kopo.strike.dao;
 
+import java.util.List;
+
 import kr.ac.kopo.strike.model.Game;
 
 public interface FranchiseePageDao {
 
-	Game game(String address);
+	List<Game> game(String address);
 
 }

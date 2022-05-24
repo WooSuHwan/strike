@@ -41,7 +41,7 @@
 	
 	<insert id="challenge">
 		INSERT INTO challenger
-		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null)
+		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null, sysdate)
 	</insert>
 	
 	<update id="permission">

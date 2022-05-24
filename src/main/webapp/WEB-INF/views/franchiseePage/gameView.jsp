@@ -33,7 +33,7 @@
 		<h3>작성자 : ${game.maker}</h3>
 	</div>
 	<div>
-		<h3>시간 : ${game.clock}</h3>
+		<h3>시간 : ${game.time}</h3>
 	</div>
 	<div>
 		<h3>위치 : ${game.loc}</h3>
@@ -43,9 +43,6 @@
 	</div>
 	<div>
 		<h3>내용 : ${game.story}</h3>
-	</div>
-	<div>
-		<h3>작성일 : ${game.time}</h3>
 	</div>
 	
 	<div>
