@@ -30,10 +30,19 @@ public class MypageController {
 //		member.setMember_code((Integer) session.getAttribute("code"));
 //		model.addAttribute("member", member);
 		
+//		Member user = (Member) session.getAttribute("user");
 		Member Mitem = memberService.mypage(item);
 		
-		System.out.println(item.getName()+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		model.addAttribute("item", item);
+		//유저 아이디가 admin이면 사원 목록으로 가고
+		//admin이 아니면 로그인한 사원 개인 페이지로 간다
+//		if("/mypage/".equals(user.getMember_code())) {
+//			return path + "mypage";
+//		} else {
+//			return "redirect:myinfo";
+//		}
+		
+//		System.out.println(item.getName()+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		
 		return path + "mypage";
 	}

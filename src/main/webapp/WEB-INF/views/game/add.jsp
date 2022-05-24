@@ -2,10 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>STRIKE</title>
+	<link rel="stylesheet" href="/resources/css/font.css">
+	<link rel="stylesheet" href="/resources/css/mypagemain.css">
+	<link rel="stylesheet" href="/resources/css/index.css">
 </head>
 <body>
+    <jsp:include page="../font.jsp"></jsp:include>
+    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="../rnav.jsp"></jsp:include>
+    
+    <div class="mypageNav"></div>
 	<div>
 		<h1>개인 신청 게시글</h1>
 		<form method="post">
@@ -34,5 +40,7 @@
 			</div>
 		</form>
 	</div>
+	 <jsp:include page="../footer.jsp"></jsp:include>
+     <script src="../resources/js/index.js"></script>
 </body>
 </html>

@@ -12,11 +12,11 @@
 	</sql>
 
 	<select id="list" resultType="Game">
-	SELECT * FROM game
-<!-- 		(SELECT ROWNUM rnum, sub.* FROM -->
-<!-- 			(<include refid="search"></include>) sub) -->
-<!-- 		<![CDATA[  -->
-<!-- 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]> -->
+	SELECT * FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
 	</select>
 	
 <!-- 	pager -->

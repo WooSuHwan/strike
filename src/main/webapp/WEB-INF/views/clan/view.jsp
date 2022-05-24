@@ -3,10 +3,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title></title>
+	<link rel="stylesheet" href="/resources/css/font.css">
+	<link rel="stylesheet" href="/resources/css/clanrankdetails.css">
+	<link rel="stylesheet" href="/resources/css/index.css">
 </head>
 <body>
+    <jsp:include page="../font.jsp"></jsp:include>
+    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="../rnav.jsp"></jsp:include>
+ <section>
+        <div class="clanAll">
+            <div class="clanrankSearch">
+                <div class="clanrankSearch1200">
+                    <div class="clanrankSearch_01">
+                        <h2>Clan Rank</h2>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="clanRdetails01">
+                <div class="cdetail01">
+                    <div class="cdetail01_01">
+                        <img src="/resources/img/clandetailsicon.png" alt="아이콘">
+                    </div>
+                    <div class="cdetail01_02">
+                        <div class="cdetail01_02_01">
+                            <h1>${clan.clan_name}</h1>
+                        </div>
+                        <div class="cdetail01_02_02">
+                            <a href="clanrankdetails.html">최신정보</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cdetail02">
+                    <div class="cdetail02_01">
+                        <h3>상세</h3>
+                    </div>
+                </div>
+            </div>
+
+<!--             <div class="clanRdetails02"> -->
+<!--                 <div class="clanRdetails02_01"> -->
+<!--                     <div class="clanRdetails02_01_01"> -->
+<!--                         <h3>클랜원 구성 (인원)</h3> -->
+<!--                     </div> -->
+<!--                     <div class="clanRdetails02_01_02"> -->
+<!--                         <p>총 인원 <span>6 </span>명</p> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--                 <div class="clanRdetails02_02"> -->
+<%-- 					<c:if test="${clanMember.size() < 1}"> --%>
+<!-- 						<tr> -->
+<!-- 							<td colspan="8">등록 된 클랜원이 없습니다</td> -->
+<!-- 						</tr> -->
+<%-- 					</c:if> --%>
+<%--                     <c:forEach items="${clanMember}" var="item" varStatus="status"> --%>
+<!-- 						<tr> -->
+<%-- 							<td>${status.count}</td> --%>
+<%-- 							<td>${item.name}</td> --%>
+<%-- 							<td>${item.score}</td> --%>
+<%-- 							<td>${item.record}</td> --%>
+<%-- 							<td>${item.win}</td> --%>
+<%-- 							<td>${item.lose}</td> --%>
+<%-- 							<td>${item.draw}</td> --%>
+<%-- 							<td>${item.rate}</td> --%>
+<!-- 						</tr> -->
+<!--                     <div class="clanRdetails02_02_01"> -->
+<!--                         <div class="clanRdetails02_02_01_01"> -->
+<!--                             <h3>클랜장</h3> -->
+<!--                         </div> -->
+<!--                         <div class="clanRdetails02_02_01_02"> -->
+<%--                             <h3>${item.clan_master_code }</h3> --%>
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="clanRdetails02_02_02"> -->
+<!--                         <div class="clanRdetails02_02_01_01"> -->
+<!--                             <h3>클랜원</h3> -->
+<!--                         </div> -->
+<!--                         <div class="clanRdetails02_02_01_02"> -->
+<%--                             <h3>${item.name}</h3> --%>
+<!--                         </div> -->
+<!--                     </div> -->
+ <%-- 					</c:forEach> --%>
+<!--                 </div> -->
+<!--             </div> -->
+
+<!--             <div class="clanRdetails03"> -->
+<!--                 <div class="clanRdetails03_01"> -->
+<!--                     <h3>최근경기내역</h3> -->
+<!--                 </div> -->
+<!--                 <div class="clanRdetails03_02"> -->
+<!--                     <div class="clanRdetails03_02_01"> -->
+<!--                         <div class="clanRdetails03_02_01_01"> -->
+<!--                             <div class="clanRdetails03_02_01_01_01"> -->
+<!--                                 <p>2022.05.16</p> -->
+<!--                             </div> -->
+<!--                             <div class="clanRdetails03_02_01_01_02"> -->
+<!--                                 <p>클랜전</p> -->
+<!--                             </div> -->
+<!--                         </div> -->
+
+<!--                         <div class="clanRdetails03_02_01_02"> -->
+<!--                             <div class="winorlose01"> -->
+<!--                                 <h2>win or lose</h2> -->
+<!--                             </div> -->
+<!--                             <div class="winorlose02"> -->
+<!--                                 <div class="winorlose02in01"> -->
+<!--                                     <h1>홍길동</h1> -->
+<!--                                 </div> -->
+<!--                                 <div class="winorlose02in02"> -->
+<!--                                     <div class="winlose01"> -->
+<!--                                         <h1>승</h1> -->
+<!--                                     </div> -->
+<!--                                     <div class="winlose02"> -->
+<!--                                         <h1>:</h1> -->
+<!--                                     </div> -->
+<!--                                     <div class="winlose03"> -->
+<!--                                         <h1>패</h1> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                                 <div class="winorlose02in03"> -->
+<!--                                     <h1>신짱구</h1> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
 	<div>
 		<h1>${clan.clan_name}</h1>
 	</div>
@@ -127,5 +250,13 @@
 			</div>
 		</c:if>
 	</div>
+
+        <div class="wh"></div>
+
+     <jsp:include page="../footer.jsp"></jsp:include>
+     <script src="../resources/js/index.js"></script>
+    </section>
+     
+     
 </body>
 </html>

@@ -20,7 +20,7 @@ public class GameDaoImpl implements GameDao {
 	
 	@Override
 	public List<Game> list(Pager pager) {
-		return sql.selectList("game.list");
+		return sql.selectList("game.list",pager);
 	}
 
 	@Override

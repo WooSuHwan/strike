@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>STRIKE</title>
     <link rel="stylesheet" href="/resources/css/font.css">
     <link rel="stylesheet" href="/resources/css/personalVs.css">
     <link rel="stylesheet" href="/resources/css/index.css">
@@ -130,14 +126,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <c:if test="${list.size() < 1}"> --%>
+                    <c:if test="${list.size() < 1}">
 						<tr>
 							<td colspan="9">신청 할 수 있는 대결이 없습니다.</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${list}" var="item" varStatus="status">
                         <tr>
-                            <td>${status.index + 1}</td>
+                            <td>${pager.offset + status.count}</td>
                             <td><a href="view/${item.game_code}">${item.title}</a></td>
                             <td>${item.maker}</td>
                             <td>2022.05.16</td>
