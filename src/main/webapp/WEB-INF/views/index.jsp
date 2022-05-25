@@ -6,6 +6,7 @@
 <head>
 <link rel="stylesheet" href="../resources/css/index.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <jsp:include page="font.jsp"></jsp:include>
 </head>
 <body>
@@ -52,7 +53,7 @@
                         </div>
                         <div class="sw02">
                             <div class="sw02_01">
-                                <img src="../resources/img/bImg.png" width="65%" height="90%" alt="캐릭터">
+                                <img src="../resources/img/sbo1.png" width="65%" height="90%" alt="캐릭터">
                             </div>
                         </div>
                     </div>
@@ -72,6 +73,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="sw02">
+                            <div class="sw02_01">
+                                <img src="../resources/img/sbo2.png" width="65%" height="90%" alt="캐릭터">
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="sw01">
@@ -87,6 +93,11 @@
                                 <div class="sw01_date">
                                     <p>2022년 04월 20일</p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="sw02">
+                            <div class="sw02_01">
+                                <img src="../resources/img/clandetailsicon.png" width="45%" height="70%" alt="캐릭터">
                             </div>
                         </div>
                     </div>
@@ -178,9 +189,12 @@
         </div> <!-- 랭크 컨텐츠 부분 -->
     </section>
       
+   </div>
       <jsp:include page="footer.jsp"></jsp:include>
       
       <!-- script부분 -->
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script src="../resources/js/index.js"></script>
 </body>
 </html>

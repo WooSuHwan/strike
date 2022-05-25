@@ -9,7 +9,7 @@ body, ul, li {
 body::-webkit-scrollbar { width: 0; }
 
 table {
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
 }
 
 td,th {
@@ -37,7 +37,7 @@ a {
 
 
 .wh{
-    height: 13em;
+    height: 10em;
     background-color: #fff;
 }
 
@@ -62,197 +62,140 @@ a {
     align-items: center;
     justify-content: flex-start;
     width: 50%;
-    height: 100%;
-}
-
-.clanrankSearch_01_01>a{
-    color: #fff;
-    font-family: 'S-CoreDream-6Bold';
-}
-
-.clanrankSearch_01_02>a{
-    color: #fff;
-    font-family: 'S-CoreDream-6Bold';
-}
-
-.clanrankSearch_01_01{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1em;
-    width: 35%;
-    height: 100%;
-}
-.zmffos{
-	align-items: center;
-	width: 100%;
-    height: 100%;
-    display: flex;
-    font-family: 'S-CoreDream-6Bold';
-    justify-content: flex-end;
-}
-
-.clanrankSearch_02{
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-family: 'S-CoreDream-6Bold';
     height: 60%;
-    width: 50%;
-}
-
-.clanrankSearch_02_01>input{
-    height: 100%;
-    width: 75%;
-    margin-left: 2em;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    font-family: 'S-CoreDream-6Bold';
-}
-
-.clanrankSearch_02_01{
-    display: flex;
-    width: 60%;
-    height: 100%;
-    background-color: #fff;
-}
-
-.clanrankSearch_02_01>button{
-    display: flex;
-    border: none;
-    background: none;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    width: 15%;
-    height: 100%;
-    margin-left: 1em;
-}
-
-.clanrankSearch_01_02{
-    display: flex;
-    align-items: center;
-    font-size: 1.1em;
-    justify-content: center;
-    width: 35%;
-    height: 100%;
-    background-color: #fbce00;
-}
-
-.clanrankSearch_02{
-    display: flex;
-    align-items: center;
     color: #fff;
-    font-family: 'S-CoreDream-6Bold';
-    justify-content: flex-end;
-    height: 60%;
-    width: 50%;
+    font-family: 'S-CoreDream-8Heavy';
 }
 
-.clanrankSearch_02_01>input{
-    height: 100%;
-    width: 75%;
-    margin-left: 2em;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    font-family: 'S-CoreDream-6Bold';
-}
-
-.clanrankSearch_02_01{
-    display: flex;
-    width: 60%;
-    height: 100%;
-    background-color: #fff;
-}
-
-.clanrankSearch_02_02{
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    width: 15%;
-    height: 100%;
-    margin-left: 1em;
-}
-
-.personalvs01{
-    display: flex;
-    width: 62.4%;
-    height: 8em;
-    margin-top: 7em;
-}
-
-.personalvs02{
+.vspost{
     display: flex;
     flex-direction: column;
-    background-color: #fff;
     width: 62.4%;
-    height: auto;
-    margin-top: 6.5em;
+    height: 46.125em;
+    margin-top: 5.5em;
 }
 
-.personalvs01_01{
+.vspost_01{
     display: flex;
+    width: 100%;
+    height: 6.5%;
     align-items: center;
-    justify-content: center;
-    width: 10%;
-    height: 100%;
+    font-size: 1.15em;
+    font-family: 'S-CoreDream-6Bold';
 }
 
-.personalvs01_02{
+.vspost_02{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
-    height: 100%;
-    margin-left: 3.5em;
+    align-items: center;    
+    width: 100%;
+    height: 74%;
+    margin-top: 2em;
+    border-radius: 12px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 2px solid #dcdcdc;
 }
 
-.personalvs01_02_01{
+.vspost_02_01{
     display: flex;
     align-items: center;
     font-family: 'S-CoreDream-6Bold';
-    width: 100%;
-    height: 50%;
-    font-size: 1.4em;
+    font-size: 1.2em;
+    width: 85%;
+    height: 15%;
 }
 
-.personalvs01_02_02{
+.vspost_02_01>label{
+    font-size: 1.2em;
     display: flex;
     align-items: center;
-    font-family: 'S-CoreDream-5Medium';
-    width: 100%;
-    height: 30%;
-    color: #171717;
-    font-size: 1.2em;
-}
-
-.personalvs02_01>table{
-    width: 100%;
+    width: 8%;
     height: 100%;
 }
 
-.personalvs02>table>thead{
-    color: #fff;
-    width: 100%;
-    height: 3em;
-    background: #363944;
-    font-family: 'S-CoreDream-6Bold';
-    font-size: 1.2em;
-}
-
-.personalvs02_01 tbody tr td{
-    line-height: 5em;
+.vspost_02_01>input{
     font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 70%;
+    outline: none;
+}
+
+.vspost_02_02{
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    width: 85%;
+    height: 15%;
+    margin-top: 1.5em;
     border-bottom: 1px solid #bfbfbf;
+    box-sizing: border-box;
 }
+
+.vspost_02_txt{
+    display: flex;
+    font-family: 'S-CoreDream-6Bold';
+    align-items: center;
+    font-size: 0.95em;
+    width: 50%;
+    height: 40%;
+}
+
+.vspost_02_date{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 35%;
+    margin-top: 0.5em;
+}
+
+.vspost_02_03{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+    height: 50%;
+    margin-top: 2.5em;
+}
+
+.vspost_02_date01{
+    display: flex;
+    align-items: center;
+    width: 23%;
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 1.2em;
+    height: 100%;
+    color: #9e9e9e;
+}
+
+.vspost_02_date02{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 1.2em;
+    height: 100%;
+    color: #9e9e9e;
+}
+
+.vpostCo01{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 1.3em;
+    font-family: 'S-CoreDream-6Bold';
+    height: 15%;
+    margin-bottom: 0.4em;
+}
+
 
 
 
 .pagination {
-    margin-top: 4em;
+    margin-top: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -334,20 +277,20 @@ a {
     justify-content: flex-end;
     width: 62.5%;
     height: 2.5em;
-    margin-top: 3em;
 }
 
-.cbtn1{
+.cbtn0>button{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 8%;
+    font-size: 1em;
+    outline: none;
+    border: none;
     border-radius: 7px;
     height: 100%;
     background-color: #393939;
-}
-
-.cbtn1>a{
     color: #fff;
     font-family: 'S-CoreDream-6Bold';
 }
+

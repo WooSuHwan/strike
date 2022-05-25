@@ -215,8 +215,35 @@ a {
     line-height: 75px;
 }
 
+.cbtn0{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 62.5%;
+    height: 2.5em;
+    margin-top: 3em;
+}
+
+.cbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    border-radius: 7px;
+    height: 100%;
+    background-color: #393939;
+}
+
+.cbtn1>a{
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+
+
+
 .pagination {
-    margin-top: 5em;
+    margin-top: 1.5em;
     display: flex;
     justify-content: center;
     align-items: center;

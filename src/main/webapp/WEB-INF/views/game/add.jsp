@@ -3,7 +3,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="/resources/css/font.css">
-	<link rel="stylesheet" href="/resources/css/mypagemain.css">
+	<link rel="stylesheet" href="/resources/css/battleBtn.css">
 	<link rel="stylesheet" href="/resources/css/index.css">
 </head>
 <body>
@@ -12,34 +12,51 @@
     <jsp:include page="../rnav.jsp"></jsp:include>
     
     <div class="mypageNav"></div>
-	<div>
-		<h1>개인 신청 게시글</h1>
-		<form method="post">
-			<div>
-				<label>제목</label>
-				<input name="title" type="text">
-			</div>
-			<div>
-				<label>시간</label>
-				<input name="time" type="text">
-			</div>
-			<div>
-				<label>위치</label>
-				<input name="loc" type="text">
-			</div>
-			<div>
-				<label>모집</label>
-				<input name="recruit" type="text">
-			</div>
-			<div>
-				<label>내용</label>
-				<input name="story" type="text">
-			</div>
-			<div>
+	 <section>
+        <div class="clanAll">
+            <div class="clanrankSearch">
+                <div class="clanrankSearch1200">
+                    <div class="clanrankSearch_01">
+                        <h2>대결 신청 등록</h2>
+                    </div>
+                </div>
+            </div>
+        
+            <form method="post" class="vspost">
+                <div class="vspost_01">
+                    <h3>대결 신청 등록</h3>
+                </div>
+                <div class="vspost_02">
+                    <div class="vspost_02_01">
+                        <label>제목</label>
+                        <input type="text" name="title">
+                    </div>
+                    <div class="vspost_02_01">
+                        <label>시간</label>
+                        <input type="text" name="time">
+                    </div>
+                    <div class="vspost_02_01">
+                        <label>위치</label>
+                        <input type="text" name="loc">
+                    </div>
+                    <div class="vspost_02_01">
+                        <label>모집</label>
+                        <input type="text" name="recruit">
+                    </div>
+                    <div class="vspost_02_01">
+                        <label>내용</label>
+                        <input type="text" name="story">
+                    </div>
+                </div>
+            </form>
+            <div class="cbtn0">
 				<button>등록</button>
 			</div>
-		</form>
-	</div>
+        </div>
+        
+        <div class="wh"></div>
+    </section>
+	
 	 <jsp:include page="../footer.jsp"></jsp:include>
      <script src="../resources/js/index.js"></script>
 </body>

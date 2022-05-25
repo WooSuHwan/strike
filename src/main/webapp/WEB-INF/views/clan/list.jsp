@@ -138,7 +138,11 @@
                     </tbody>
                 </table>
             </div>
-                <a href="add">등록</a>
+           <div class="cbtn0">
+                <div class="cbtn1">,
+                    <a href="add">등록</a>
+                </div>
+            </div>
             <div class="pagination">
                 <div class="paginate">
                     <a href="?page=1" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a>
