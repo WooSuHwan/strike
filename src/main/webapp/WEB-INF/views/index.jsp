@@ -6,7 +6,6 @@
 <head>
 <link rel="stylesheet" href="../resources/css/index.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://www.w3schools.com/lib/w3.js"></script>
 <jsp:include page="font.jsp"></jsp:include>
 </head>
 <body>
@@ -179,12 +178,9 @@
         </div> <!-- 랭크 컨텐츠 부분 -->
     </section>
       
-   </div>
       <jsp:include page="footer.jsp"></jsp:include>
       
       <!-- script부분 -->
-      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script src="../resources/js/index.js"></script>
 </body>
 </html>
