@@ -7,4 +7,12 @@
 		FROM game
 		WHERE loc = #{address}
 	</select>
+	
+	<select id="franchiseeGame" resultType="FranchiseeGame">
+		select g.game_code, g.member_code, c.member_code
+		from game g, challenger c
+		where g.game_code = c.game_code
+		and g.game_code = #{game_code}
+		and c.state = 1
+	</select>
 </mapper>

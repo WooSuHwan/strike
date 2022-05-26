@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.FranchiseePageDao;
+import kr.ac.kopo.strike.model.FranchiseeGame;
 import kr.ac.kopo.strike.model.Game;
 
 @Service
@@ -17,6 +18,11 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	@Override
 	public List<Game> game(String address) {
 		return dao.game(address);
+	}
+
+	@Override
+	public List<FranchiseeGame> franchiseeGame(int game_code) {
+		return dao.franchiseeGame(game_code);
 	}
 
 }

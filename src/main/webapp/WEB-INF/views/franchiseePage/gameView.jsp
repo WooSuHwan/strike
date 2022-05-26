@@ -8,21 +8,6 @@
 </head>
 <body>
 	<div>
-		<h1>최근 전적</h1>
-	</div>
-	
-	<c:forEach items="${member}" var="item" varStatus="status">
-		<thead>
-			<tr>
-				<td>승 ${item.win}</td>
-				<td>패 ${item.lose}</td>
-				<td>무 ${item.draw}</td>
-				<td>승률 ${item.rate}</td>
-			</tr>
-		</thead>
-	</c:forEach>
-	
-	<div>
 		<h1>대결 신청 게시글</h1>
 	</div>
 	
@@ -33,7 +18,7 @@
 		<h3>작성자 : ${game.maker}</h3>
 	</div>
 	<div>
-		<h3>시간 : ${game.time}</h3>
+		<h3>시간 : ${game.clock}</h3>
 	</div>
 	<div>
 		<h3>위치 : ${game.loc}</h3>
@@ -44,66 +29,12 @@
 	<div>
 		<h3>내용 : ${game.story}</h3>
 	</div>
-	
 	<div>
-		<h1>신청자</h1>
+		<h3>작성일 : ${game.time}</h3>
 	</div>
 	
 	<div>
-		<div>
-			<table border="1">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>이름</th>
-						<th>티어</th>
-						<th>전적</th>
-						<th>승</th>
-						<th>패</th>
-						<th>무</th>
-						<th>승률</th>
-						<th>상태</th>
-						<c:if test="${game.member_code eq sessionScope.member.member_code}">
-							<th>승인</th>
-						</c:if>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<c:if test="${challenger.size() < 1}">
-						<tr>
-							<td colspan="10">등록 된 신청자가 없습니다</td>
-						</tr>
-					</c:if>
-					<c:forEach items="${challenger}" var="item" varStatus="status">
-						<tr>
-							<td>${status.count}</td>
-							<td>${item.name}</td>
-							<td>${item.score}</td>
-							<td>${item.record}</td>
-							<td>${item.win}</td>
-							<td>${item.lose}</td>
-							<td>${item.draw}</td>
-							<td>${item.rate}</td>
-							<c:choose>
-								<c:when test="${item.state ne 1}"><td>승인대기</td></c:when>
-								<c:when test="${item.state eq 1}"><td>승인완료</td></c:when>
-							</c:choose>
-							<c:if test="${game.member_code eq sessionScope.member.member_code}">
-								<td>								
-									<a href="../permission/${game_code}/${item.challenger_code}" style="text-decoration:none">승인</a>								
-								</td>
-							</c:if>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-		<c:if test="${game.member_code ne sessionScope.member.member_code}">
-			<div>
-				<a href="../challenge/${game_code}">신청</a>
-			</div>
-		</c:if>
+		<h1>성립이 된 대결</h1>
 	</div>
 </body>
 </html>

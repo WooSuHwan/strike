@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Franchisee;
+import kr.ac.kopo.strike.model.FranchiseeGame;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.FranchiseePageService;
@@ -53,8 +54,8 @@ public class FranchiseePageController {
 	public String gameView(@PathVariable int game_code, Model model) {
 		
 		Game game = gameService.item(game_code);		
-		List<Member> member = gameService.member(game_code);
 		List<Challenger> challenger = gameService.challenger(game_code);
+		List<FranchiseeGame> franchiseeGame = service.franchiseeGame(game_code);
 		
 		for (Challenger item : challenger) {
 			
@@ -62,7 +63,6 @@ public class FranchiseePageController {
 		}
 		
 		model.addAttribute("game", game);
-		model.addAttribute("member", member);
 		model.addAttribute("challenger", challenger);
 		
 		return path + "gameView";

@@ -38,7 +38,7 @@
 							<td>${item.clock}</td>
 							<td>${item.loc}</td>
 							<td>${item.recruit}</td>
-							<td><a href="gameView/${item.game_code} "style="text-decoration:none">입장</a></td>
+							<td><a href="/franchiseePage/gameView/${item.game_code} "style="text-decoration:none">입장</a></td>
 							<td><a href="update/${item.game_code}" style="text-decoration:none">수정</a></td>
 							<td><a href="delete/${item.game_code}" style="text-decoration:none">삭제</a></td>
 						</tr>
