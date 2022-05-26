@@ -28,5 +28,7 @@ public interface GameService {
 	void permission(int game_code, int member_code);
 
 	List<Member> member(int game_code);
+
+	List<Game> mypageGame(Pager pager);
 	
 }

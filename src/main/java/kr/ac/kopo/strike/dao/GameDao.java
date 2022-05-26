@@ -31,4 +31,6 @@ public interface GameDao {
 
 	int total(Pager pager);
 
+	List<Game> mypageGame(Pager pager);
+
 }

@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.MemberService;
+import kr.ac.kopo.strike.util.Pager;
 
 @Controller
 @RequestMapping("/mypage")
@@ -22,6 +25,9 @@ public class MypageController {
 	
 	@Autowired
 	MemberService memberService;
+	
+	@Autowired
+	GameService gameService;
 	
 	@GetMapping("/mypage/{member_code}")
 	public String mypage(Member item,Model model, HttpSession session, @PathVariable int member_code) {
@@ -73,5 +79,14 @@ public class MypageController {
 	public String delete(@PathVariable int member_code) {
 		memberService.delete(member_code);
 		return "redirect:../index";
+	}
+	
+	@GetMapping("/gameDetail/{member_code}")
+	public String gameDetail(@PathVariable int member_code, Model model, Pager pager) {
+		
+		List<Game> mypageGame =  gameService.mypageGame(pager);
+		model.addAttribute("mypageGame", mypageGame);
+		
+		return path + "gameDetail";
 	}
 }

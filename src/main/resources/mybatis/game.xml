@@ -73,4 +73,12 @@
     	from game g, member m
     	where g.game_code = #{game_code} and g.member_code = m.member_code
 	</select>
+	
+	<select id="mypageGame" resultType="Game">
+	SELECT * FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+ 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
+	</select>
 </mapper>

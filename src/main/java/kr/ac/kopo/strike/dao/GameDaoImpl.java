@@ -84,4 +84,9 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectOne("game.total", pager);
 	}
 
+	@Override
+	public List<Game> mypageGame(Pager pager) {
+		return sql.selectList("game.mypageGame",pager);
+	}
+
 }

@@ -13,7 +13,6 @@
 <body>
     <jsp:include page="../font.jsp"></jsp:include>
     <jsp:include page="../nav.jsp"></jsp:include>
-    <jsp:include page="../rnav.jsp"></jsp:include>
 
 	
 	<div class="mypageNav"></div>
@@ -39,9 +38,9 @@
                     </div>
             </div>
 
-            <div class="navList">
+                <div class="navList">
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="#">내 정보 관리</a></div>
+                    <div class="navListDivName"><a href="../update/${sessionScope.member.member_code}">내 정보 관리</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -53,7 +52,7 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="#">신청내역</a></div>
+                    <div class="navListDivName"><a href="../gameDetail/${sessionScope.member.member_code}">신청내역</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>

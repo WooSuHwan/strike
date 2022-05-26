@@ -25,46 +25,39 @@
 						<img src="/resources/img/mypage1.png" alt="1">
 					</div>
 					<div class="proFont">
-						<div class="proName">${item.name }</div>
+						<div class="proName">${sessionScope.member.name}</div>
 						<div class="proName2">&nbsp;님</div>
 					</div>
 				</div>
 
-				<div class="navList">
-					<div class="navListDiv">
-						<div class="navListDivName nt">
-							<a href="../update">내 정보 관리</a>
-						</div>
-						<div class="navListDivImg">
-							<img src="/resources/img/right.png" alt="">
-						</div>
-					</div>
-					<div class="navListDiv">
-						<div class="navListDivName">
-							<a href="#">개인전적</a>
-						</div>
-						<div class="navListDivImg">
-							<img src="/resources/img/right.png" alt="">
-						</div>
-					</div>
-					<div class="navListDiv">
-						<div class="navListDivName">
-							<a href="#">신청내역</a>
-						</div>
-						<div class="navListDivImg">
-							<img src="/resources/img/right.png" alt="">
-						</div>
-					</div>
-					<div class="navListDiv">
-						<div class="navListDivName nt">
-							회원탈퇴
-						</div>
-						<div class="navListDivImg">
-							<img src="/resources/img/right.png" alt="">
-						</div>
-					</div>
-					<div class="navListDiv"></div>
-				</div>
+	                <div class="navList">
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../mypage/update/${sessionScope.member.member_code}">내 정보 관리</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="#">개인전적</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../mypage/gameDetail/${sessionScope.member.member_code}">신청내역</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName nt">회원탈퇴</div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                </div>
+            </div>
 
 			</div>
 

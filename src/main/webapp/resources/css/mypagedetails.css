@@ -236,7 +236,7 @@ th {
 }
 
 .pagination>.paginate>.link.arrow.prev.start {
-    background-image: url('img/pagerLeft2.png');
+    background-image: url('/resources/img/pagerLeft2.png');
 }
 
 .pagination>.paginate>.link.arrow {
@@ -262,7 +262,7 @@ th {
 }
 
 .pagination>.paginate>.link.arrow.prev {
-    background-image: url('img/pagerLeft1.png');
+    background-image: url('/resources/img/pagerLeft1.png');
 }
 
 .pagination>.paginate>.link.mobile {
@@ -280,9 +280,9 @@ th {
 }
 
 .pagination>.paginate>.link.arrow.next {
-    background-image: url('img/pagerRight1.png');
+    background-image: url('/resources/img/pagerRight1.png');
 }
 
 .pagination>.paginate>.link.arrow.next.last {
-    background-image: url('img/pagerRight2.png');
+    background-image: url('/resources/img/pagerRight2.png');
 }

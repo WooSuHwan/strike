@@ -72,4 +72,9 @@ public class GameServiceImpl implements GameService {
 		return dao.member(game_code);
 	}
 
+	@Override
+	public List<Game> mypageGame(Pager pager) {
+		return dao.mypageGame(pager);
+	}
+
 }
