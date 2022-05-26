@@ -64,6 +64,12 @@
                     </div>
                 </div>
                 <div class="navListDiv">
+                    <div class="navListDivName"><a href="/mypage/mypage/${sessionScope.member.member_code}">마이페이지 홈</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
                 </div>
             </div>
             
