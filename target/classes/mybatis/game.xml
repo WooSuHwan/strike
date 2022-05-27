@@ -8,7 +8,7 @@
 	
 	<insert id="add">
 		INSERT INTO game
-		VALUES (GAME_CODE_SEQ.nextval, #{member_code}, #{maker}, #{title}, #{clock}, #{loc}, #{recruit}, #{story}, sysdate)
+		VALUES (GAME_CODE_SEQ.nextval, #{maker_code}, #{maker}, #{title}, #{clock}, #{loc}, #{recruit}, #{story}, sysdate)
 	</insert>
 	
 	<delete id="delete">

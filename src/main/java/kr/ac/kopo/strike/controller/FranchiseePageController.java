@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.FranchiseeGame;
 import kr.ac.kopo.strike.model.Game;
-import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.FranchiseePageService;
 import kr.ac.kopo.strike.service.GameService;
 import kr.co.kopo.strike.util.AES256Util;
@@ -54,16 +52,15 @@ public class FranchiseePageController {
 	public String gameView(@PathVariable int game_code, Model model) {
 		
 		Game game = gameService.item(game_code);		
-		List<Challenger> challenger = gameService.challenger(game_code);
 		List<FranchiseeGame> franchiseeGame = service.franchiseeGame(game_code);
-		
-		for (Challenger item : challenger) {
+		/**
+		for (FranchiseeGame item : franchiseeGame) {
 			
 			item.setName( aes256.decrypt(item.getName()) );
 		}
-		
+		*/
 		model.addAttribute("game", game);
-		model.addAttribute("challenger", challenger);
+		model.addAttribute("franchiseeGame", franchiseeGame);
 		
 		return path + "gameView";
 	}

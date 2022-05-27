@@ -9,10 +9,10 @@
 	</select>
 	
 	<select id="franchiseeGame" resultType="FranchiseeGame">
-		select g.game_code, g.member_code, c.member_code
-		from game g, challenger c
-		where g.game_code = c.game_code
-		and g.game_code = #{game_code}
-		and c.state = 1
+		SELECT g.game_code, g.member_code, c.member_code as challenger_code, m.name, cm.name
+    	FROM game g 
+   		JOIN challenger c ON g.game_code=#{game_code} AND c.state=1 AND g.game_code = c.game_code
+    	JOIN member m ON g.member_code = m.member_code        
+    	JOIN member cm ON c.member_code = cm.member_code
 	</select>
 </mapper>

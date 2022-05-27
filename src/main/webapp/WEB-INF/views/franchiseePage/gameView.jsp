@@ -36,5 +36,38 @@
 	<div>
 		<h1>성립이 된 대결</h1>
 	</div>
+	
+	<div>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>만든이</th>
+					<th>상태</th>
+					<th>VS</th>
+					<th>도전자</th>
+					<th>상태</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<c:if test="${franchiseeGame.size() < 1}">
+					<tr>
+						<td colspan="6">등록 된 개인 대결이 없습니다</td>
+					</tr>
+				</c:if>
+				<c:forEach items="${franchiseeGame}" var="item" varStatus="status">
+					<tr>
+						<td>${status.count}</td>
+						<td>${item.name}</td>
+						<td>대기중</td>
+						<td>VS</td>
+						<td>${item.name_1}</td>
+						<td>대기중</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
