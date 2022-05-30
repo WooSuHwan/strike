@@ -29,7 +29,7 @@
 	
 	<update id="update">
 		UPDATE member 
-		SET id = #{id}, pw = #{pw}, name = #{name}, birth = #{birth}, sex = #{sex}, tel = #{tel}
+		SET name = #{name}, birth = #{birth}, sex = #{sex}, tel = #{tel}
 		WHERE member_code = #{member_code}
 	</update>
 	

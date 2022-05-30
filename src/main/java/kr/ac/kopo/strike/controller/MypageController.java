@@ -59,7 +59,6 @@ public class MypageController {
 		memberService.item(member);
 		
 		model.addAttribute("item", member);
-		System.out.println(member.getName()+"**^*^^*^^*^^");
 		return path + "update";
 	}
 	
@@ -67,7 +66,7 @@ public class MypageController {
 	public String update(@PathVariable int member_code, Member item) {
 		memberService.update(item);
 		
-		return "redirect:../mypage";
+		return "redirect:/mypage/mypage/{member_code}";
 	}
 	
 	@RequestMapping("/delete")

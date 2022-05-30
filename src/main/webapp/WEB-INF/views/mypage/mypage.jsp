@@ -146,10 +146,10 @@
                                     <td class="tableColor">성별</td>
                                     <td class="tableInput" style="border-bottom: none;">
                                      <c:choose>
-								       <c:when test = "${item.sex == 0}">
+								       <c:when test = "${sessionScope.member.sex == 0}">
 								          남자
 								       </c:when>
-								       <c:when test = "${item.sex == 1}">
+								       <c:when test = "${sessionScope.member.sex == 1}">
 								          여자
 								       </c:when>
 								       <c:otherwise>

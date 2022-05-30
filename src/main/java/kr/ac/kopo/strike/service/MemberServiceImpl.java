@@ -59,6 +59,14 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void update(Member item) {
+		
+//		item.setId(aes256.encrypt(item.getId())); 
+		item.setName(aes256.encrypt(item.getName()));
+		item.setBirth(aes256.encrypt(item.getBirth()));
+		item.setTel(aes256.encrypt(item.getTel()));
+		
+//		item.setPw(sha256.encrypt(item.getPw()));
+		
 		dao.update(item);
 	}
 
