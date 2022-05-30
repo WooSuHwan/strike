@@ -25,4 +25,24 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 		return dao.franchiseeGame(game_code);
 	}
 
+	@Override
+	public void makerWin(int member_code) {
+		dao.makerWin(member_code);
+	}
+
+	@Override
+	public void challengerWin(int challenger_code) {
+		dao.challengerWin(challenger_code);
+	}
+
+	@Override
+	public void challengerLose(int challenger_code) {
+		dao.challengerLose(challenger_code);
+	}
+
+	@Override
+	public void makerLose(int member_code) {
+		dao.makerLose(member_code);
+	}
+
 }

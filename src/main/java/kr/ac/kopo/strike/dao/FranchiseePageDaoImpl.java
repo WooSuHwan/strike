@@ -25,4 +25,28 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 		return sql.selectList("franchiseePage.franchiseeGame", game_code);
 	}
 
+	@Override
+	public void makerWin(int member_code) {
+		System.out.println(member_code);
+		sql.update("franchiseePage.makerWin", member_code);
+	}
+
+	@Override
+	public void challengerWin(int challenger_code) {
+		System.out.println(challenger_code);
+		sql.update("franchiseePage.challengerWin", challenger_code);
+	}
+
+	@Override
+	public void challengerLose(int challenger_code) {
+		System.out.println(challenger_code);
+		sql.update("franchiseePage.challengerLose", challenger_code);
+	}
+
+	@Override
+	public void makerLose(int member_code) {
+		System.out.println(member_code);
+		sql.update("franchiseePage.makerLose", member_code);
+	}
+
 }

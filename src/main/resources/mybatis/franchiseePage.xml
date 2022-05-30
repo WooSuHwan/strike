@@ -15,4 +15,36 @@
     	JOIN member m ON g.member_code = m.member_code        
     	JOIN member cm ON c.member_code = cm.member_code
 	</select>
+	<!-- 제작자 승리 -->
+	<update id="makerWin">
+		update member 
+		set
+		record = record + 1,
+		win = win + 1
+		where member_code = #{member_code}
+	</update>
+	<!-- 도전자 패배 -->
+	<update id="challengerLose">
+		update member 
+		set
+		record = record + 1,
+		lose = lose + 1
+		where member_code = #{challenger_code}
+	</update>
+	<!-- 도전자 승리 -->
+	<update id="challengerWin">
+		update member 
+		set
+		record = record + 1,
+		win = win + 1
+		where member_code = #{challenger_code}
+	</update>
+	<!-- 제작자 패배 -->
+	<update id="makerLose">
+		update member 
+		set
+		record = record + 1,
+		lose = lose + 1
+		where member_code = #{member_code}
+	</update>
 </mapper>

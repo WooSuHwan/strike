@@ -59,11 +59,11 @@
 				<c:forEach items="${franchiseeGame}" var="item" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-						<td>코드 : ${item.member_code} : ${item.name}</td>
+						<td><a href="../makerWin/${game_code}/${item.member_code}/${item.challenger_code}">${item.name}</a></td>
 						<td>대기중</td>
 						<td>VS</td>
 						<td>대기중</td>
-						<td>코드 : ${item.challenger_code} : ${item.challenger_name}</td>
+						<td><a href="../challengerWin/${game_code}/${item.challenger_code}/${item.member_code}">${item.challenger_name}</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -66,4 +66,23 @@ public class FranchiseePageController {
 		return path + "gameView";
 	}
 	
+	@GetMapping("/makerWin/{game_code}/{member_code}/{challenger_code}")
+	public String makerWin(@PathVariable int game_code, @PathVariable int member_code, @PathVariable int challenger_code) {
+		System.out.println("코드 : " + member_code);
+		System.out.println("코드 : " + challenger_code);
+		service.makerWin(member_code);
+		service.challengerLose(challenger_code);
+		
+		return "redirect:/franchiseePage/gameView/" + game_code;
+	}
+	
+	@GetMapping("/challengerWin/{game_code}/{challenger_code}/{member_code}")
+	public String challengerWin(@PathVariable int game_code, @PathVariable int challenger_code, @PathVariable int member_code) {
+		System.out.println("코드 : " + member_code);
+		System.out.println("코드 : " + challenger_code);
+		service.challengerWin(challenger_code);
+		service.makerLose(member_code);
+		
+		return "redirect:/franchiseePage/gameView/" + game_code;
+	}
 }

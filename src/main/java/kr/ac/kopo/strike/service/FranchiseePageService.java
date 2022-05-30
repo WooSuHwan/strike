@@ -11,4 +11,12 @@ public interface FranchiseePageService {
 
 	List<FranchiseeGame> franchiseeGame(int game_code);
 
+	void makerWin(int member_code);
+
+	void challengerWin(int challenger_code);
+
+	void challengerLose(int challenger_code);
+
+	void makerLose(int member_code);
+
 }
