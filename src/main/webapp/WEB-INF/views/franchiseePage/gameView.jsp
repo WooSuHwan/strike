@@ -45,8 +45,8 @@
 					<th>만든이</th>
 					<th>상태</th>
 					<th>VS</th>
-					<th>도전자</th>
 					<th>상태</th>
+					<th>도전자</th>
 				</tr>
 			</thead>
 			
@@ -59,11 +59,11 @@
 				<c:forEach items="${franchiseeGame}" var="item" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-						<td>${item.name}</td>
+						<td>코드 : ${item.member_code} : ${item.name}</td>
 						<td>대기중</td>
 						<td>VS</td>
-						<td>${item.name_1}</td>
 						<td>대기중</td>
+						<td>코드 : ${item.challenger_code} : ${item.challenger_name}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

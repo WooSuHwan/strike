@@ -53,12 +53,13 @@ public class FranchiseePageController {
 		
 		Game game = gameService.item(game_code);		
 		List<FranchiseeGame> franchiseeGame = service.franchiseeGame(game_code);
-		/**
+		
 		for (FranchiseeGame item : franchiseeGame) {
 			
 			item.setName( aes256.decrypt(item.getName()) );
+			item.setChallenger_name( aes256.decrypt(item.getChallenger_name()) );
 		}
-		*/
+		
 		model.addAttribute("game", game);
 		model.addAttribute("franchiseeGame", franchiseeGame);
 		

@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="franchiseeGame" resultType="FranchiseeGame">
-		SELECT g.game_code, g.member_code, c.member_code as challenger_code, m.name, cm.name
+		SELECT g.game_code, g.member_code, m.name, c.member_code as challenger_code, cm.name as challenger_name
     	FROM game g 
    		JOIN challenger c ON g.game_code=#{game_code} AND c.state=1 AND g.game_code = c.game_code
     	JOIN member m ON g.member_code = m.member_code        
