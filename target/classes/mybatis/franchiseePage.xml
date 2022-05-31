@@ -9,18 +9,20 @@
 	</select>
 	
 	<select id="franchiseeGame" resultType="FranchiseeGame">
-		SELECT g.game_code, g.member_code, m.name, c.member_code as challenger_code, cm.name as challenger_name
+		SELECT gr.game_record_code, g.game_code, g.member_code, m.name, c.member_code as challenger_code, cm.name as challenger_name, gr.winner_code, gr.loser_code, gr.draw, g.clock
     	FROM game g 
    		JOIN challenger c ON g.game_code=#{game_code} AND c.state=1 AND g.game_code = c.game_code
     	JOIN member m ON g.member_code = m.member_code        
     	JOIN member cm ON c.member_code = cm.member_code
+    	JOIN game_record gr ON g.game_code = gr.game_code
 	</select>
 	<!-- 제작자 승리 -->
 	<update id="makerWin">
 		update member 
 		set
 		record = record + 1,
-		win = win + 1
+		win = win + 1,
+		score = score + 10
 		where member_code = #{member_code}
 	</update>
 	<!-- 도전자 패배 -->
@@ -28,7 +30,8 @@
 		update member 
 		set
 		record = record + 1,
-		lose = lose + 1
+		lose = lose + 1,
+		score = score - 3
 		where member_code = #{challenger_code}
 	</update>
 	<!-- 도전자 승리 -->
@@ -36,7 +39,8 @@
 		update member 
 		set
 		record = record + 1,
-		win = win + 1
+		win = win + 1,
+		score = score + 10
 		where member_code = #{challenger_code}
 	</update>
 	<!-- 제작자 패배 -->
@@ -44,7 +48,31 @@
 		update member 
 		set
 		record = record + 1,
-		lose = lose + 1
+		lose = lose + 1,
+		score = score - 3
 		where member_code = #{member_code}
 	</update>
+	<!-- 무승부 -->
+	<update id="draw">
+		update member 
+		set
+		record = record + 1,
+		draw = draw + 1
+		where member_code = #{member_code} or member_code = #{challenger_code}
+	</update>
+	<!-- 기록 -->
+	<insert id="makerWinGameRecord">
+		insert into game_record
+		values(GAME_RECORD_CODE_SEQ.nextval, #{game_code}, #{challenger_code}, #{member_code}, #{member_code}, #{challenger_code}, null)
+	</insert>
+	
+	<insert id="challengerWinGameRecord">
+		insert into game_record
+		values(GAME_RECORD_CODE_SEQ.nextval, #{game_code}, #{challenger_code}, #{member_code}, #{challenger_code}, #{member_code}, null)
+	</insert>
+	
+	<insert id="drawGameRecord">
+		insert into game_record
+		values(GAME_RECORD_CODE_SEQ.nextval, #{game_code}, #{challenger_code}, #{member_code}, null, null, 1)
+	</insert>
 </mapper>

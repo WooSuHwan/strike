@@ -31,4 +31,6 @@ public interface GameDao {
 
 	List<Franchisee> location();
 
+	void addGame(int game_code, int challenger_code, int member_code);
+
 }

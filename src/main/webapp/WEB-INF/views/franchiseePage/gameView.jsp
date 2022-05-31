@@ -43,8 +43,10 @@
 				<tr>
 					<th>번호</th>
 					<th>만든이</th>
+					<th>무승부</th>
 					<th>상태</th>
 					<th>VS</th>
+					<th>무승부</th>
 					<th>상태</th>
 					<th>도전자</th>
 				</tr>
@@ -60,9 +62,11 @@
 					<tr>
 						<td>${status.count}</td>
 						<td><a href="../makerWin/${game_code}/${item.member_code}/${item.challenger_code}">${item.name}</a></td>
+						<td><a href="../draw/${game_code}/${item.member_code}/${item.challenger_code}">무승부</a>
 						<td>대기중</td>
 						<td>VS</td>
 						<td>대기중</td>
+						<td><a href="../draw/${game_code}/${item.member_code}/${item.challenger_code}">무승부</a>
 						<td><a href="../challengerWin/${game_code}/${item.challenger_code}/${item.member_code}">${item.challenger_name}</a></td>
 					</tr>
 				</c:forEach>
