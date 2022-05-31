@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.MemberDao;
 import kr.ac.kopo.strike.model.Member;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -43,7 +43,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		dao.add(member);
 	}
-
+	
 	@Override
 	public Member item(Member member) {
 		
@@ -59,6 +59,14 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void update(Member item) {
+		
+//		item.setId(aes256.encrypt(item.getId())); 
+		item.setName(aes256.encrypt(item.getName()));
+		item.setBirth(aes256.encrypt(item.getBirth()));
+		item.setTel(aes256.encrypt(item.getTel()));
+		
+//		item.setPw(sha256.encrypt(item.getPw()));
+		
 		dao.update(item);
 	}
 
@@ -75,10 +83,8 @@ public class MemberServiceImpl implements MemberService {
 			item.setName(aes256.decrypt(member.getName()));
 			item.setBirth(aes256.decrypt(member.getBirth()));
 			item.setId(aes256.decrypt(member.getId()));
-//			item.setPw(sha256.decrypt(member.getPw()));
+//			item.setPw(sha256.encrypt(member.getPw()));
 			item.setTel(aes256.decrypt(member.getTel()));
-			
-			System.out.println(item.getName()+"$$$$$$$$$$$$$$$$$$$$$");
 			
 			return dao.mypage(item);
 		

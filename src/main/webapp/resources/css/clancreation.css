@@ -1,0 +1,201 @@
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body::-webkit-scrollbar { width: 0; }
+
+table {
+    border-collapse: collapse;
+}
+
+td,th {
+    border: none;
+    text-align: center;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 내용 영역 */
+
+.clanAll{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    align-items: center;
+    background-image: url(../img/backclancreat.jpg);
+}
+
+
+
+.wh{
+    height: 13em;
+    background-color: #fff;
+}
+
+.clanrankSearch{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #2c2f36;
+    height: 4em;
+    margin-top: 5.5em;
+}
+
+.clanrankSearch1200{
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 100%;
+}
+
+.clanrankSearch_01{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 60%;
+    color: #fff;
+    font-family: 'S-CoreDream-8Heavy';
+}
+
+.clancr01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62.4%;
+    height: 100vh;
+}
+
+.clancr01_01{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+    width: 57%;
+    height: 55%;
+    border-radius: 15px;
+    background-color: #2c303b;
+    box-shadow: 0 0 15px #20a4e1;
+}
+
+.clancr01_b{
+    display: flex;
+    width: 38%;
+    height: 1.5%;
+    background-color: #09c0d8;
+}
+
+.clancr01_b01{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    margin-top: 2em;
+}
+
+.clancr01_b01_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 12%;
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clancr01_b01_02{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    margin-top: 5em;
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clancr01_b01_03{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    margin-top: 2.8em;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanc001{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 30%;
+}
+
+.clanc002{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 55%;
+    margin-top: 1em;
+}
+
+.clanc002>input{
+    outline: none;
+    width: 85%;
+    border-radius: 10px;
+    height: 100%;
+    border: none;
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 1.1em;
+}
+
+.clanc003{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26%;
+    background-color: #3c4759;
+    height: 60%;
+    border-radius: 8px;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanc004{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26%;
+    background-color: #228dbe;
+    height: 60%;
+    margin-left: 1em;
+    border-radius: 8px;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanc003>a{
+    color: #fff;
+}
+
+.clanc004>button{
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #228dbe;
+    height: 100%;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1em;
+    font-family: 'S-CoreDream-6Bold';
+}

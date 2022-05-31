@@ -1,0 +1,444 @@
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,th {
+    border: none;
+}
+.mypageNav{
+    display: flex;
+    height: 5.5em;
+}
+
+/* main */
+.mypageTotal {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.itemTotal {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-left: 9%;
+}
+
+.leftNav {
+    display: flex;
+    height: auto;
+    width: 20%;
+    border: 1px solid #c8c8c8;
+    background-color: #ffffff;
+    margin-right: 50px;
+    flex-direction: column;
+}
+
+.navPro {
+    display: flex;
+    height: 23em;
+    width: 100%;
+    background-color: #f5f5f5;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.proOne {
+    display: flex;
+    width: 100%;
+    height: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.proOne>img {
+    height: 75%;
+}
+
+.proFont {
+    display: flex;
+    width: 100%;
+    height: 20%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.proName {
+    font-size: 25px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.proName2 {
+    font-size: 25px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #535353;
+}
+
+.navListDiv {
+    display: flex;
+    width: 100%;
+    height: 5.5em;
+    align-items: center;
+
+    border-top: 1px solid #c8c8c8;
+}
+
+.navListDivImg > img {
+    height: 1.2em;
+    filter: opacity(0.5) drop-shadow(0 0 0 #545454);
+}
+
+.navListDivName {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+    color: #545454;
+    font-size: 20px;
+    
+    align-items: center;
+    margin-left: 15%;
+}
+
+.navListDivImg {
+    display: flex;
+    width: 15%;
+    margin-left: 20%;
+}
+
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+}
+
+.name {
+    display: flex;
+    font-size: 15px;
+    line-height: 30px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #535353;
+}
+
+.mypageName {
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.namePoint {
+    font-size: 20px;
+    font-weight: bold;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tear {
+    display: flex;
+    height: 15em;
+    border: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    width: 50%;
+    margin-right: 15px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mypageClan {
+    display: flex;
+    height: 15em;
+    border: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total {
+    display: flex;
+    height: 10em;
+    border: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.mypageBox {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.mypageUpdate {
+    display: flex;
+    width: 80%;
+    height: 60em;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.namePorintTear{
+    display: flex;
+
+    font-size: 20.5px;
+    font-weight: bold;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #f6cd00;
+}
+
+.nameTearPoint {
+    display: flex;
+    flex-direction: row;
+}
+
+.myText{
+    display: flex;
+    margin-left: 40px;
+    flex-direction: column;
+}
+
+.myText>a>img{
+    height: 75%;
+}
+
+.myTitle {
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.myTitle2 {
+    word-spacing: 20px;
+}
+
+.loginBtn{
+    display: flex;
+    margin-top: 1.3em;
+    background-color: #434343;
+    width: 60%;
+    height: 4.5em;
+    margin-top: 5em;
+    border-radius: 0.6em;
+}
+
+.loginBtn a{
+	display:flex;
+    width: 100%;
+    background-color: #434343;
+    border-radius: 0.6em;
+    border: none;
+    cursor: pointer;
+    font-family: 'S-CoreDream-6Bold';
+    color: #fff;
+    font-size: 1.3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.singup2Txt{
+    width: 60%;
+    height: 3em;
+    margin-top: 4em;
+    display: flex;
+    font-family: 'S-CoreDream-5Medium';
+    align-items: center;
+}
+
+.singup2simple{
+    display: flex;
+    font-family: 'S-CoreDream-5Medium';
+    align-items: center;
+    width: 100%;
+    height: 2.5em;
+    margin-top: 3em;
+}
+
+.singup2simple_01{
+    display: flex;
+    align-items: center;
+    font-family: 'S-CoreDream-5Medium';
+    width: 20%;
+    height: 80%;
+}
+
+.singup2simple_02{
+    display: flex;
+    font-family: 'S-CoreDream-5Medium';
+    width: 30%;
+    height: 80%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 37.5em;
+    font-size: 0.9em;
+}
+
+.singup2simple_02>span{
+    color: #ff5a00;
+}
+
+
+.singup2Table{
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    height: 40em;
+    margin-top: 0.5em;
+
+}
+
+.singup2Table>table{
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #434343;
+    border-bottom: 2px solid #434343;
+    box-sizing: border-box;
+    margin-left: auto;
+}
+
+.tableColor{
+    padding-left: 1.5em;
+    background-color: #f1f1f1;
+    width: 28%;
+    border-right: 1px solid #c6c6c6;
+}
+
+tbody>tr>td{
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.tableColor>span{
+    color: #ff5a00;
+    margin-left: 0.5em;
+}
+
+.tableInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    border-bottom: 1px solid #c6c6c6;
+    text-align: center;
+}
+
+.tableInput>span{
+    font-size: 0.85em;
+    color: #5a5a5a;
+    font-family: 'S-CoreDream-5Medium';
+    margin-left: 1em;
+}
+
+.tableInput>select{
+    margin-left: 1.5em;
+    height: 50%;
+    width: 49%;
+    outline: none;
+    color: #5a5a5a;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.tableBtn0{
+    margin-left: 0.7em;
+    height: 80%;
+    background-color: #434343;
+    color: #fff;
+    font-family: 'S-CoreDream-5Medium';
+    width: 18%;
+}
+
+.tableInput_01{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.tableInput_02{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.tableInput_01>input{
+    height: 75%;
+    margin-left: 1.5em;
+    outline: none;
+    color: #5a5a5a;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.tableInput_02>input{
+    color: #5a5a5a;
+    height: 75%;
+    width: 40%;
+    outline: none;
+    font-family: 'S-CoreDream-5Medium';
+}
+
+.wh{
+    height: 13em;
+}
+
+.nt {
+    color: #f6cd00;
+}

@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.LoginDao;
 import kr.ac.kopo.strike.model.Member;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Service
 public class LoginServiceImpl implements LoginService {
@@ -24,8 +24,11 @@ public class LoginServiceImpl implements LoginService {
 		
 		Member member = dao.check(encryptedId, encryptedPw);
 		if(member == null) {
+			System.out.println("널이당!!!");
 			return null;
 		} else {
+			System.out.println(member.getMember_code());
+			System.out.println(member.getName());
 			member.setName(aes256.decrypt(member.getName()));
 			return member;
 		}

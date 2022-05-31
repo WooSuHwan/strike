@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>STRIKE</title>
 <link rel="stylesheet" href="../resources/css/login.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -98,7 +98,7 @@ $(function() {
 								<img src="../resources/img/Lock.png" alt="자물쇠">
 							</div>
 							<div class="membershipIn_01txt">
-								<a href="../user/add">회원가입 하기</a>
+								<a href="../singup1">회원가입 하기</a>
 							</div>
 						</div>
 					</div>

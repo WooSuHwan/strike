@@ -41,5 +41,4 @@ public class MemberDaoImpl implements MemberDao {
 	public Member mypage(Member item) {
 		return sql.selectOne("member.mypage", item);
 	}
-
 }

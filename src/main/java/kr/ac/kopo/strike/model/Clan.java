@@ -2,14 +2,40 @@ package kr.ac.kopo.strike.model;
 
 public class Clan {
 	private int clan_code;
-	private int member_code;
+	private int clan_master_code;
 	private String clan_name;
-	private String clan_master;
 	private int clan_record;
 	private int clan_win;
-	private int clan_lost;
+	private int clan_lose;
 	private int clan_draw;
 	private int clan_rate;
+	private int clan_score;
+	// member
+	private String name;
+	
+	public int getClan_score() {
+		return clan_score;
+	}
+
+	public void setClan_score(int clan_score) {
+		this.clan_score = clan_score;
+	}
+
+	public int getClan_master_code() {
+		return clan_master_code;
+	}
+
+	public void setClan_master_code(int clan_master_code) {
+		this.clan_master_code = clan_master_code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public int getClan_code() {
 		return clan_code;
@@ -19,28 +45,12 @@ public class Clan {
 		this.clan_code = clan_code;
 	}
 
-	public int getMember_code() {
-		return member_code;
-	}
-
-	public void setMember_code(int member_code) {
-		this.member_code = member_code;
-	}
-
 	public String getClan_name() {
 		return clan_name;
 	}
 
 	public void setClan_name(String clan_name) {
 		this.clan_name = clan_name;
-	}
-
-	public String getClan_master() {
-		return clan_master;
-	}
-
-	public void setClan_master(String clan_master) {
-		this.clan_master = clan_master;
 	}
 
 	public int getClan_record() {
@@ -59,12 +69,12 @@ public class Clan {
 		this.clan_win = clan_win;
 	}
 
-	public int getClan_lost() {
-		return clan_lost;
+	public int getClan_lose() {
+		return clan_lose;
 	}
 
-	public void setClan_lost(int clan_lost) {
-		this.clan_lost = clan_lost;
+	public void setClan_lose(int clan_lose) {
+		this.clan_lose = clan_lose;
 	}
 
 	public int getClan_draw() {
