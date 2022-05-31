@@ -42,6 +42,18 @@ public class RootController {
 		return "index";
 	}
 	
+	@RequestMapping("/franchisee")
+	public String franchisee() {
+		
+		return "franchisee";
+	}
+	
+	@RequestMapping("/manger")
+	public String manger() {
+		
+		return "manger";
+	}
+	
 	@RequestMapping("/faq")
 	public String faq() {
 		return "faq";

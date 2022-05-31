@@ -7,34 +7,39 @@
 <!-- 댓글 조회 -->
 	<select id="replyList" parameterType="int" resultType="kr.ac.kopo.strike.model.Reply">
 		select
-			reply_name, reply_story, regDate
+			reply_name, reply_story, reg_date, reply_code
 		from reply
-			where free_code = #{freeCode}		
+			where free_code = #{free_code}		
 	</select>
 	
 	<!-- 댓글 작성 -->
 	<insert id="replyWrite" parameterType="kr.ac.kopo.strike.model.Reply">
-		insert into reply(reply_code,free_code, reply_name, reply_story, regDate)
-			values(REPLY_CODE_SEQ.nextval, #{freeCode}, #{replyName}, #{replyStory} ,sysdate)
+		insert into reply(reply_code,free_code, reply_name, reply_story, reg_date)
+			values(REPLY_CODE_SEQ.nextval, #{free_code}, #{reply_name}, #{reply_story} ,sysdate)
 	</insert>
 		
 	<!-- 댓글 수정 -->
-	<update id="replyModify" parameterType="kr.ac.kopo.strike.model.Reply">
+	<update id="replyUpdate" parameterType="kr.ac.kopo.strike.model.Reply">
 		update reply set
 			
-			reply_story = #{replyStory}
-		where reply_code = #{replyCode}
-			and free_code = #{freeCode}		
+			reply_story = #{reply_story}
+		where reply_code = #{reply_code}
+					
 	</update>
 	
 	<!-- 댓글 삭제 -->
 	<delete id="replyDelete" parameterType="kr.ac.kopo.strike.model.Reply">
 		delete from reply
-		where reply_code = #{replyCode}
-			and free_code = #{freeCode}	
+		where reply_code = #{reply_code}
+				
 				
 	</delete>
 	
+<select id="replyItem" resultType="kr.ac.kopo.strike.model.Reply" >
+		SELECT * FROM reply
+		WHERE reply_code = #{reply_code}
+	</select>
+
 
 </mapper>
 

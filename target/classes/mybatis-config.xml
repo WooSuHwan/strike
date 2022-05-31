@@ -8,6 +8,8 @@
 		<typeAlias type="kr.ac.kopo.strike.model.Challenger" alias="Challenger"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
 		<typeAlias type="kr.ac.kopo.strike.model.ClanMember" alias="ClanMember"/>
+		<typeAlias type="kr.ac.kopo.strike.model.Franchisee" alias="Franchisee"/>
+		<typeAlias type="kr.ac.kopo.strike.model.GameRecord" alias="GameRecord"/>
 		
 		<typeAlias type="kr.ac.kopo.strike.model.SuggestFree" alias="SuggestFree"/>
       	<typeAlias type="kr.ac.kopo.strike.model.SuggestMaster" alias="SuggestMaster"/>
@@ -20,6 +22,8 @@
 		<mapper resource="mybatis/game.xml"/>
 		<mapper resource="mybatis/clan.xml"/>
 		<mapper resource="mybatis/rank.xml"/>
+		<mapper resource="mybatis/franchisee.xml"/>
+		<mapper resource="mybatis/franchiseePage.xml"/>
 		
 		<mapper resource="mybatis/suggestfree.xml" />
       	<mapper resource="mybatis/suggestmaster.xml" />

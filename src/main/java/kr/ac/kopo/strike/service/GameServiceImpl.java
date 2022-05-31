@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.GameDao;
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.util.Pager;
@@ -16,14 +17,14 @@ public class GameServiceImpl implements GameService {
 
 	@Autowired
 	GameDao dao;
-	
+
 	@Override
 	public List<Game> list(Pager pager) {
-		
+
 		int total = dao.total(pager);
-		
+
 		pager.setTotal(total);
-		
+
 		return dao.list(pager);
 	}
 
@@ -41,12 +42,12 @@ public class GameServiceImpl implements GameService {
 	public void update(Game item) {
 		dao.update(item);
 	}
-	
+
 	@Override
 	public Game item(int game_code) {
 		return dao.item(game_code);
 	}
-	
+
 	@Override
 	public List<Game> view(int game_code) {
 		return dao.view(game_code);
@@ -63,13 +64,23 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void permission(int game_code, int member_code) {
-		dao.permission(game_code, member_code);
+	public void permission(int game_code, int challenger_code) {
+		dao.permission(game_code, challenger_code);
 	}
 
 	@Override
 	public List<Member> member(int game_code) {
 		return dao.member(game_code);
+	}
+
+	@Override
+	public List<Franchisee> location() {
+		return dao.location();
+	}
+
+	@Override
+	public void addGame(int game_code, int challenger_member_code, int member_code) {
+		dao.addGame(game_code, challenger_member_code, member_code);
 	}
 
 	@Override

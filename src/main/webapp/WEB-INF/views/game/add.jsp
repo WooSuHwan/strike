@@ -32,7 +32,7 @@
 						<label>제목</label> <input type="text" name="title">
 					</div>
 					<div class="vspost_02_01">
-						<label>시간</label> <input type="text" name="time">
+						<label>시간</label> <input type="text" name="clock">
 					</div>
 					<div class="vspost_02_01">
 						<label>위치</label> <input type="text" name="loc">

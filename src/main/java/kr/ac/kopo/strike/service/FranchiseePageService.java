@@ -1,0 +1,30 @@
+package kr.ac.kopo.strike.service;
+
+import java.util.List;
+
+import kr.ac.kopo.strike.model.GameRecord;
+import kr.ac.kopo.strike.model.Game;
+
+public interface FranchiseePageService {
+
+	List<Game> game(String address);
+
+	List<GameRecord> gameRecord(int game_code);
+
+	void makerWin(int member_code);
+
+	void challengerWin(int challenger_code);
+
+	void challengerLose(int challenger_code);
+
+	void makerLose(int member_code);
+
+	void makerWinGameRecord(int game_code, int member_code, int challenger_code);
+
+	void challengerWinGameRecord(int game_code, int challenger_code, int member_code);
+
+	void draw(int member_code, int challenger_code);
+
+	void drawGameRecord(int game_code, int member_code, int challenger_code);
+
+}

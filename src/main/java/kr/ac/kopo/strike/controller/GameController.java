@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.GameService;
@@ -41,7 +42,7 @@ public class GameController {
 	}
 	
 	@GetMapping("/add")
-	public String add() {
+	public String add(Model model) {
 		
 		return path + "add";
 	}
@@ -86,9 +87,9 @@ public class GameController {
 	}
 	
 	@GetMapping("/view/{game_code}")
-	public String view(@PathVariable int game_code, Model model) {
+	public String view(@PathVariable int game_code, Model model) {	
 		
-		List<Game> view = service.view(game_code);
+		Game game = service.item(game_code);		
 		List<Member> member = service.member(game_code);
 		List<Challenger> challenger = service.challenger(game_code);
 		
@@ -97,7 +98,7 @@ public class GameController {
 			item.setName( aes256.decrypt(item.getName()) );
 		}
 		
-		model.addAttribute("view", view);
+		model.addAttribute("game", game);
 		model.addAttribute("member", member);
 		model.addAttribute("challenger", challenger);
 		
@@ -112,13 +113,13 @@ public class GameController {
 		return "redirect:../view/" + game_code;
 	}
 	
-	@GetMapping("/permission/{game_code}")
-	public String permission(@PathVariable int game_code, @SessionAttribute Member member) {
-		System.out.println("게임코드" + game_code);
-		System.out.println("멤버코드" + member.getMember_code());
-		service.permission(game_code, member.getMember_code());
+	@GetMapping("/permission/{game_code}/{challenger_code}/{challenger_member_code}/{member_code}")
+	public String permission(@PathVariable int game_code, @PathVariable int challenger_code, @PathVariable int challenger_member_code, @SessionAttribute Member member) {
 		
-		return "redirect:../view/" + game_code;
+		service.permission(game_code, challenger_code);
+		service.addGame(game_code, challenger_member_code, member.getMember_code());
+		System.out.println("3");
+		return "redirect:/game/view/" + game_code;
 	}
 	
 }

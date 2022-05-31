@@ -6,133 +6,86 @@
 <head>
 <meta charset="UTF-8">
 <title>자유게시판 리스트</title>
-<style>
-html, body {
-
-}
-
-  table {
-   margin-left:auto; 
-    margin-right:auto;
-    
-    border-top: 1px solid #444444;
-    border-collapse: collapse;
-    left: 300px;
- 	 top: 300px;
- 	 position: absolute;
-  }
- 
-  
-  th, td {
-    border-bottom: 1px solid #c0c0c0;
-    padding: 10px;
-    text-align: center;
-    
-   
-  }
-  th {
-    background-color: #eeeeee;
-     
-     font-size : 18px;
-     
-  }
-  td {
-  	font-weight: 600;
-  }
-
-.login {
-	text-align : right;
-}
-
-.image-center {
-	height : calc(100% - 250px);
-	display : flex;
-    align-items : center;
-    justify-content : center;
-    margin-top: 100px;
-}
-.row {
-	display : flex;
-    align-items : center;
-    justify-content : space-between;
-    style="text-decoration:none"
-}
-
-a.{
-	text-decoration-line: none;
-}
-
-button {
-    margin: 20px;
-    left: 920px;
-    
-    
-}
-
-.w-btn-gray {
-    background-color: #393939;
-    color: #fefefe;
-}
-
-.w-btn {
-    position: relative;
-    border: none;
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-family: "paybooc-Light", sans-serif;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s;
-}
 
 
-p {
-
-  position: absolute;
-
-  left: 200px;
-
-  top: 200px;
-
- 
-
-}
-
-
-</style>
+<link rel="stylesheet" href="/resources/css/list.css">
+<jsp:include page="font.jsp"></jsp:include>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<table width=810 height=200 >
+<div class="mypageNav"></div>
+    <jsp:include page="nav.jsp"></jsp:include>
+        
+    <div class="container">
+        
+	
+		<p style="font-size:44px;  font-weight: bold;" >Notice Board</p>
+        <p style="font-size:20px;">회원들 간의 다양한 정보를 나눌 수 있는 공간입니다.</p>
+		<div class="mypageNavSM"></div>
+        <div class="whiteBox" >
+          
+            <div class="searchButton">
+                    <div style="text-align: center">
+                        <span class="material-icons-outlined" style="color: white; font-size:31px;"  >
+                         search
+                        </span>
+                    </div>
+                
+            </div>
+            <div  class="searchBar" >
+                        <input type="text"></div>
+                            <div class="mypageNavSM"></div>
+                        <p style="font-size:17px;  font-weight: bold;">search</p>
+            </div>
+       
+        <div class="mypageNavSM"></div>
+		<table>
       <thead>
         <tr>
-          <th>No.</th><th  >글제목</th><th>작성자</th><th>작성일</th><th>조회수</th>
+          <th>No.</th><th style="width:50%">제목</th><th >작성자</th><th >조회수</th><th >작성일</th>
         </tr>
       </thead>
       <tbody >
-		<c:if test="${list.size() < 1}">
-		<tr>
-		<td colspan="4">등록 된 내용이 없습니다</td>
-		</tr>
-		</c:if>
-	<c:forEach items="${list}" var="item" varStatus="status">
-        <tr >
-        <td >${item.freeCode}</td><td  ><a href="view/${item.freeCode}">${item.title}</a></td><td >${item.name}</td><td ><fmt:formatDate value="${item.regDate}" pattern="yyyy.MM.dd"/></td><td >${item.hit}</td>
-        </tr>
-         </c:forEach>
+        <c:if test="${list.size() < 1}">
+						<tr>
+							<td colspan="4">등록 된 내용이 없습니다</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
+						<tr>
+
+							<td>${item.free_code}</td>
+							<td><a href="view/${item.free_code}">${item.title}</a></td>
+							<td>${item.name}</td>
+							<td>${item.hit}</td>
+							<td><fmt:formatDate value="${item.reg_date}" pattern="yyyy.MM.dd"/></td>
+									
+							
+						</tr>
+					</c:forEach>
       </tbody>
     </table>
-		
-		<c:if test="${code ne null}">
-				<span><a href="add" style="text-decoration:none">작성</a></span>
-			</c:if>
-		 <button class="w-btn w-btn-gray" type="button" onclick = "location.href = 'add' ">
-        글쓰기
-   		 </button>
-		
-		
+    <div class="mypageNavSM"></div>
+</div>
+    <div class="container">
+    
+        <div>
+		    <button class="w-btn w-btn-gray" type="button" onclick = "location.href = 'add' " style="width:100; float: right;">글쓰기</button>
+        </div> 
+         
+        
+         
 	</div>
+			
+        <div class="mypageNav"></div>
+        <div class="mypageNav"></div>
+        <div class="mypageNav"></div>
+         <jsp:include page="../footer.jsp"></jsp:include>
+     <script src="/resources/js/index.js"></script>
 </body>
 </html>

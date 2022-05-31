@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.strike.dao.SuggestFreeDao;
 import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class SuggestFreeServiceImpl implements SuggestFreeService {
@@ -17,8 +18,12 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 	
 	
 	@Override
-	public List<SuggestFree> list() {
-		return dao.list();
+	public List<SuggestFree> list(Pager pager) {
+		
+		int total = dao.total(pager);
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override
@@ -29,16 +34,16 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 	}
 
 	@Override
-	public void delete(int freeCode) {
+	public void delete(int free_code) {
 		
-		dao.delete(freeCode);
+		dao.delete(free_code);
 		
 	}
 
 	@Override
-	public SuggestFree item(int freeCode) {
+	public SuggestFree item(int free_code) {
 	
-		return dao.item(freeCode);
+		return dao.item(free_code);
 	}
 
 	@Override
@@ -49,15 +54,26 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 	}
 
 	@Override
-	public SuggestFree read(int freeCode) throws Exception {
+	public SuggestFree read(int free_code) throws Exception {
 		
-		return dao.read(freeCode);
+		return dao.read(free_code);
 	}
 
 	@Override
-	public void addCount(int freeCode) {
-		dao.addCount(freeCode);
+	public void addCount(int free_code) {
+		dao.addCount(free_code);
 		
+	}
+
+	@Override
+	public List<SuggestFree> list() {
+		Pager pager = new Pager();
+		int total = dao.total(pager);
+		pager.setTotal(total);
+		pager.setPerPage(total);
+		
+		
+		return dao.list(pager);
 	}
 	
 

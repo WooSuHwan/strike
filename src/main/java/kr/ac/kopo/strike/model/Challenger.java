@@ -1,18 +1,29 @@
 package kr.ac.kopo.strike.model;
 
+import java.util.Date;
+
 public class Challenger {
 	private int challenger_code;
-	private int member_code;
+	private int challenger_member_code;
 	private int game_code;
 	private int state;
+	private Date time;
 	// member
 	private String name;
-	private int tier;
+	private int score;
 	private int record;
 	private int win;
 	private int lose;
 	private int draw;
 	private int rate;
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
 
 	public int getChallenger_code() {
 		return challenger_code;
@@ -22,12 +33,12 @@ public class Challenger {
 		this.challenger_code = challenger_code;
 	}
 
-	public int getMember_code() {
-		return member_code;
+	public int getChallenger_member_code() {
+		return challenger_member_code;
 	}
 
-	public void setMember_code(int member_code) {
-		this.member_code = member_code;
+	public void setChallenger_member_code(int challenger_member_code) {
+		this.challenger_member_code = challenger_member_code;
 	}
 
 	public int getGame_code() {
@@ -46,6 +57,14 @@ public class Challenger {
 		this.state = state;
 	}
 
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -54,12 +73,12 @@ public class Challenger {
 		this.name = name;
 	}
 
-	public int getTier() {
-		return tier;
+	public int getScore() {
+		return score;
 	}
 
-	public void setTie(int tier) {
-		this.tier = tier;
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public int getRecord() {
@@ -92,14 +111,6 @@ public class Challenger {
 
 	public void setDraw(int draw) {
 		this.draw = draw;
-	}
-
-	public int getRate() {
-		return rate;
-	}
-
-	public void setRate(int rate) {
-		this.rate = rate;
 	}
 
 }

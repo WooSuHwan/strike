@@ -3,11 +3,25 @@
 
 <mapper namespace="suggestfree">
 	<!-- 리스트화 시키는 쿼리문 -->
+	
+	<sql id="search">
+		<where>
+			<if test="search==1">
+				free.code=#{keyword}
+			</if>
+			<if test="search==2">
+				free.title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>	
+		</where>
+	</sql>
+
+
 
 
 	<select id="list" resultType="suggestfree">
 		SELECT free_code, title, story, hit, name, reg_date
-		FROM free
+		FROM free 
+		ORDER BY free_code DESC
 	</select>
 	
 	<insert id="add">
@@ -17,33 +31,39 @@
 		
 	</insert>
 	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM free
+		<include refid="search"></include>
+	</select>
+	
+	
 	<delete id="delete">
 		DELETE FROM free
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</delete>
 	
 	<update id="update">
 		UPDATE free
 		SET title=#{title}, story = #{story}
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</update>
 	
 	<select id="item" resultType="suggestfree">
 		SELECT * FROM free
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestFree">
 		SELECT *
 		FROM FREE
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</select>
 	
 	<update id="addcount">
 		UPDATE FREE
 		SET hit = hit + 1
 		WHERE
-			free_code = #{freeCode}
+			free_code = #{free_code}
 	</update>
 	
 </mapper>
