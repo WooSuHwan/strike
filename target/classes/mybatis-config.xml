@@ -9,7 +9,7 @@
 		<typeAlias type="kr.ac.kopo.strike.model.Clan" alias="Clan"/>
 		<typeAlias type="kr.ac.kopo.strike.model.ClanMember" alias="ClanMember"/>
 		<typeAlias type="kr.ac.kopo.strike.model.Franchisee" alias="Franchisee"/>
-		<typeAlias type="kr.ac.kopo.strike.model.FranchiseeGame" alias="FranchiseeGame"/>
+		<typeAlias type="kr.ac.kopo.strike.model.GameRecord" alias="GameRecord"/>
 	</typeAliases>
 	
 	<mappers>

@@ -31,6 +31,6 @@ public interface GameService {
 
 	List<Franchisee> location();
 
-	void addGame(int game_code, int challenger_code, int member_code);
+	void addGame(int game_code, int challenger_member_code, int member_code);
 	
 }

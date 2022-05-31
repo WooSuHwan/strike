@@ -1,17 +1,17 @@
 package kr.ac.kopo.strike.model;
 
-public class FranchiseeGame {
+public class GameRecord {
 	private int game_record_code;
 	private int game_code;
-	private int member_code;
-	private String name;
 	private int challenger_code;
-	private String challenger_name;
+	private int member_code;
 	private int winner_code;
 	private int loser_code;
 	private int draw;
-	private String clock;
-
+	// member
+	private String challenger_name;
+	private String name;
+	
 	public int getGame_record_code() {
 		return game_record_code;
 	}
@@ -82,14 +82,6 @@ public class FranchiseeGame {
 
 	public void setDraw(int draw) {
 		this.draw = draw;
-	}
-
-	public String getClock() {
-		return clock;
-	}
-
-	public void setClock(String clock) {
-		this.clock = clock;
 	}
 
 }

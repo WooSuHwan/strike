@@ -116,12 +116,12 @@ public class GameController {
 		return "redirect:../view/" + game_code;
 	}
 	
-	@GetMapping("/permission/{game_code}/{challenger_code}/{member_code}")
-	public String permission(@PathVariable int game_code, @PathVariable int challenger_code, @PathVariable int member_code) {
+	@GetMapping("/permission/{game_code}/{challenger_code}/{challenger_member_code}/{member_code}")
+	public String permission(@PathVariable int game_code, @PathVariable int challenger_code, @PathVariable int challenger_member_code, @SessionAttribute Member member) {
 		
 		service.permission(game_code, challenger_code);
-		service.addGame(game_code, challenger_code, member_code);
-		
+		service.addGame(game_code, challenger_member_code, member.getMember_code());
+		System.out.println("3");
 		return "redirect:/game/view/" + game_code;
 	}
 	

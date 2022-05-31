@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Franchisee;
-import kr.ac.kopo.strike.model.FranchiseeGame;
+import kr.ac.kopo.strike.model.GameRecord;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.service.FranchiseePageService;
 import kr.ac.kopo.strike.service.GameService;
@@ -53,16 +53,16 @@ public class FranchiseePageController {
 	public String gameView(@PathVariable int game_code, Model model) {
 		
 		Game game = gameService.item(game_code);		
-		List<FranchiseeGame> franchiseeGame = service.franchiseeGame(game_code);
+		List<GameRecord> gameRecord = service.gameRecord(game_code);
 		
-		for (FranchiseeGame item : franchiseeGame) {
+		for (GameRecord item : gameRecord) {
 			
 			item.setName( aes256.decrypt(item.getName()) );
 			item.setChallenger_name( aes256.decrypt(item.getChallenger_name()) );
 		}
 		
 		model.addAttribute("game", game);
-		model.addAttribute("franchiseeGame", franchiseeGame);
+		model.addAttribute("gameRecord", gameRecord);
 		
 		return path + "gameView";
 	}

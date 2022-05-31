@@ -73,8 +73,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void addGame(int game_code, int challenger_code, int member_code) {
-		dao.addGame(game_code, challenger_code, member_code);
+	public void addGame(int game_code, int challenger_member_code, int member_code) {
+		dao.addGame(game_code, challenger_member_code, member_code);
 	}
 
 }

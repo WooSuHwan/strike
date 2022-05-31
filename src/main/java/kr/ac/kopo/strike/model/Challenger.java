@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Challenger {
 	private int challenger_code;
-	private int member_code;
+	private int challenger_member_code;
 	private int game_code;
 	private int state;
 	private Date time;
@@ -15,7 +15,6 @@ public class Challenger {
 	private int win;
 	private int lose;
 	private int draw;
-	private int rate;
 
 	public int getChallenger_code() {
 		return challenger_code;
@@ -25,12 +24,12 @@ public class Challenger {
 		this.challenger_code = challenger_code;
 	}
 
-	public int getMember_code() {
-		return member_code;
+	public int getChallenger_member_code() {
+		return challenger_member_code;
 	}
 
-	public void setMember_code(int member_code) {
-		this.member_code = member_code;
+	public void setChallenger_member_code(int challenger_member_code) {
+		this.challenger_member_code = challenger_member_code;
 	}
 
 	public int getGame_code() {
@@ -112,5 +111,7 @@ public class Challenger {
 	public void setRate(int rate) {
 		this.rate = rate;
 	}
+
+	private int rate;
 
 }

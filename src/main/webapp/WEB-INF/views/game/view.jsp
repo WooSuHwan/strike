@@ -94,7 +94,7 @@
 							</c:choose>
 							<c:if test="${game.member_code eq sessionScope.member.member_code}">
 								<td>								
-									<a href="../permission/${game_code}/${item.challenger_code}/${sessionScope.member.member_code}" style="text-decoration:none">승인</a>								
+									<a href="../permission/${game_code}/${item.challenger_code}/${item.challenger_member_code}/${sessionScope.member.member_code}" style="text-decoration:none">승인</a>								
 								</td>
 							</c:if>
 						</tr>

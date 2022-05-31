@@ -36,7 +36,7 @@
 		SELECT c.*, m.* 
 		FROM challenger c, member m
 		WHERE game_code=#{game_code}
-		AND c.member_code = m.member_code
+		AND c.challenger_member_code = m.member_code
 	</select>
 	
 	<insert id="challenge">
@@ -52,7 +52,7 @@
 	
 	<insert id="addGame">
 		insert into game_record
-		values(GAME_RECORD_CODE_SEQ.nextval, #{game_code}, #{challenger_code}, #{member_code}, null, null, null)
+		values(GAME_RECORD_CODE_SEQ.nextval, #{game_code}, #{challenger_member_code}, #{member_code}, 0, 0, 0)
 	</insert>
 	
 	<select id="member" resultType="Member">

@@ -46,26 +46,36 @@
 					<th>무승부</th>
 					<th>상태</th>
 					<th>VS</th>
-					<th>무승부</th>
 					<th>상태</th>
+					<th>무승부</th>
 					<th>도전자</th>
 				</tr>
 			</thead>
 			
 			<tbody>
-				<c:if test="${franchiseeGame.size() < 1}">
+				<c:if test="${gameRecord.size() < 1}">
 					<tr>
 						<td colspan="6">등록 된 개인 대결이 없습니다</td>
 					</tr>
 				</c:if>
-				<c:forEach items="${franchiseeGame}" var="item" varStatus="status">
+				<c:forEach items="${gameRecord}" var="item" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
 						<td><a href="../makerWin/${game_code}/${item.member_code}/${item.challenger_code}">${item.name}</a></td>
 						<td><a href="../draw/${game_code}/${item.member_code}/${item.challenger_code}">무승부</a>
-						<td>대기중</td>
+						<td><c:choose>
+							<c:when test="${item.winner_code eq member_code}"><td>승리</td></c:when>
+							<c:when test="${item.loser_code eq member_code}"><td>패배</td></c:when>
+							<c:when test="${item.draw eq 1}"><td>무승부</td></c:when>
+							<c:when test="${item.draw eq 1}"><td>무승부</td></c:when>
+							<c:when test="${item.draw eq 0}"><td>무승부</td></c:when>
+						</c:choose></td>
 						<td>VS</td>
-						<td>대기중</td>
+						<c:choose>
+							<c:when test="${item.winner_code eq challenger_code}"><td>승리</td></c:when>
+							<c:when test="${item.loser_code eq challenger_code}"><td>패배</td></c:when>
+							<c:when test="${item.draw eq 1}"><td>무승부</td></c:when>
+						</c:choose>
 						<td><a href="../draw/${game_code}/${item.member_code}/${item.challenger_code}">무승부</a>
 						<td><a href="../challengerWin/${game_code}/${item.challenger_code}/${item.member_code}">${item.challenger_name}</a></td>
 					</tr>

@@ -85,12 +85,12 @@ public class GameDaoImpl implements GameDao {
 	}
 
 	@Override
-	public void addGame(int game_code, int challenger_code, int member_code) {
+	public void addGame(int game_code, int challenger_member_code, int member_code) {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("game_code", game_code);
-		map.put("challenger_code", challenger_code);
+		map.put("challenger_member_code", challenger_member_code);
 		map.put("member_code", member_code);
 		
 		sql.insert("game.addGame", map);
