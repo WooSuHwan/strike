@@ -15,6 +15,15 @@ public class Challenger {
 	private int win;
 	private int lose;
 	private int draw;
+	private int rate;
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
 
 	public int getChallenger_code() {
 		return challenger_code;
@@ -103,15 +112,5 @@ public class Challenger {
 	public void setDraw(int draw) {
 		this.draw = draw;
 	}
-
-	public int getRate() {
-		return rate;
-	}
-
-	public void setRate(int rate) {
-		this.rate = rate;
-	}
-
-	private int rate;
 
 }

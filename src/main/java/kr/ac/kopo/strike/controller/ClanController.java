@@ -15,8 +15,9 @@ import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanMember;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanService;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.Pager;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/clan")
@@ -30,8 +31,8 @@ public class ClanController {
 	ClanService service;
 	
 	@GetMapping("/list")
-	public String list(Model model) {
-		List<Clan> list = service.list();
+	public String list(Model model, Pager pager) {
+		List<Clan> list = service.list(pager);
 		
 		for (Clan item : list) {
 			

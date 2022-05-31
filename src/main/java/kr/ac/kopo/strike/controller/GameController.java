@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
-import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.GameService;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.Pager;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/game")
@@ -31,9 +31,9 @@ public class GameController {
 	GameService service;
 	
 	@GetMapping("/list")
-	public String list(Model model) {
+	public String list(Model model, Pager pager) {
 
-		List<Game> list = service.list();
+		List<Game> list = service.list(pager);
 		
 		model.addAttribute("list", list);
 		
@@ -42,10 +42,6 @@ public class GameController {
 	
 	@GetMapping("/add")
 	public String add(Model model) {
-		
-		List<Franchisee> location = service.location();
-		
-		model.addAttribute("location", location);
 		
 		return path + "add";
 	}
@@ -94,6 +90,13 @@ public class GameController {
 		
 		Game game = service.item(game_code);		
 		List<Member> member = service.member(game_code);
+		List<Challenger> admitChallenger = service.admitChallenger(game_code);
+		
+		for (Challenger item : admitChallenger) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+		}
+		
 		List<Challenger> challenger = service.challenger(game_code);
 		
 		for (Challenger item : challenger) {
@@ -104,6 +107,7 @@ public class GameController {
 		model.addAttribute("game", game);
 		model.addAttribute("member", member);
 		model.addAttribute("challenger", challenger);
+		model.addAttribute("admitChallenger", admitChallenger);
 		
 		return path + "view";
 	}

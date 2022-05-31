@@ -16,7 +16,6 @@ public class LoginDaoImpl implements LoginDao {
 	
 	@Override
 	public Member check(String id, String pw) {
-		
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pw", pw);

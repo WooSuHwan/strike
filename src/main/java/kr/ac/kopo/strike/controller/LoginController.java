@@ -1,3 +1,4 @@
+
 package kr.ac.kopo.strike.controller;
 
 import javax.servlet.http.HttpSession;
@@ -32,7 +33,10 @@ public class LoginController {
 			return "redirect:/login/login?wrong=true";
 		} else {
 			session.setAttribute("member", member);
-			System.out.println("맴버코드" + member.getMember_code());
+			System.out.println(member.getMember_code());
+			System.out.println(member.getName());
+			
+			
 			return "redirect:/";
 		}
 	}
@@ -43,3 +47,4 @@ public class LoginController {
 		return "redirect:/";
 	}
 }
+

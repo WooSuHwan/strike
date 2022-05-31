@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.RankService;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.Pager;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/rank")
@@ -25,15 +26,13 @@ public class RankController {
 	RankService service;
 	
 	@GetMapping("list")
-	public String list(Model model) {
-		
-		List<Member> list = service.list();
+	public String list(Model model, Pager pager) {
+		List<Member> list = service.list(pager);
 		
 		for (Member item : list) {
 			
 			item.setName( aes256.decrypt(item.getName()) );
 		}
-		
 		model.addAttribute("list", list);
 		
 		return path + "list";

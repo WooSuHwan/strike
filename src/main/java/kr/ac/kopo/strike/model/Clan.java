@@ -1,7 +1,5 @@
 package kr.ac.kopo.strike.model;
 
-import java.util.Date;
-
 public class Clan {
 	private int clan_code;
 	private int clan_master_code;
@@ -12,16 +10,15 @@ public class Clan {
 	private int clan_draw;
 	private int clan_rate;
 	private int clan_score;
-	private Date time;
 	// member
 	private String name;
-
-	public int getClan_code() {
-		return clan_code;
+	
+	public int getClan_score() {
+		return clan_score;
 	}
 
-	public void setClan_code(int clan_code) {
-		this.clan_code = clan_code;
+	public void setClan_score(int clan_score) {
+		this.clan_score = clan_score;
 	}
 
 	public int getClan_master_code() {
@@ -30,6 +27,22 @@ public class Clan {
 
 	public void setClan_master_code(int clan_master_code) {
 		this.clan_master_code = clan_master_code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getClan_code() {
+		return clan_code;
+	}
+
+	public void setClan_code(int clan_code) {
+		this.clan_code = clan_code;
 	}
 
 	public String getClan_name() {
@@ -78,30 +91,6 @@ public class Clan {
 
 	public void setClan_rate(int clan_rate) {
 		this.clan_rate = clan_rate;
-	}
-
-	public int getClan_score() {
-		return clan_score;
-	}
-
-	public void setClan_score(int clan_score) {
-		this.clan_score = clan_score;
-	}
-
-	public Date getTime() {
-		return time;
-	}
-
-	public void setTime(Date time) {
-		this.time = time;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 }

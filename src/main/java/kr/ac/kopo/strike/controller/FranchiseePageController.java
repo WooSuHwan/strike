@@ -15,8 +15,8 @@ import kr.ac.kopo.strike.model.GameRecord;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.service.FranchiseePageService;
 import kr.ac.kopo.strike.service.GameService;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
 @RequestMapping("/franchiseePage")

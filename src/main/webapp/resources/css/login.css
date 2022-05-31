@@ -6,13 +6,15 @@ body, ul, li {
     list-style: none;
 }
 
-body {
+body::-webkit-scrollbar { width: 0; }
+
+/* body {
     -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
     display: none;
-}
+} */
 
 a {
     text-decoration: none;
@@ -20,10 +22,6 @@ a {
 
 
 /* 전체 영역 */
-
-form{
-	
-}
 
 .loginAll{
     background-color: #efefef;
@@ -55,17 +53,6 @@ form{
     justify-content: center;
 }
 
-.LoginCenterLogo>img{
-	max-width: 100%;
-	text-align: center;
-}
-
-.LoginCenterLogo>a{
-	display: flex;
-    justify-content: center;
-}
-
-   
 
 /* 아디 박스 */
 

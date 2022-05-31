@@ -6,10 +6,11 @@ import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.Pager;
 
 public interface GameService {
 
-	List<Game> list();
+	List<Game> list(Pager pager);
 
 	void add(Game game);
 
@@ -32,5 +33,9 @@ public interface GameService {
 	List<Franchisee> location();
 
 	void addGame(int game_code, int challenger_member_code, int member_code);
+
+	List<Game> mypageGame(Pager pager);
+
+	List<Challenger> admitChallenger(int game_code);
 	
 }

@@ -33,7 +33,7 @@ public class MemberController {
 		
 		service.add(member);
 		
-		return "redirect:..";
+		return "redirect:../singup2";
 	}
 	
 	@ResponseBody

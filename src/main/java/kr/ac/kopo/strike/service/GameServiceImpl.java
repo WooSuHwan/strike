@@ -10,16 +10,22 @@ import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class GameServiceImpl implements GameService {
 
 	@Autowired
 	GameDao dao;
-	
+
 	@Override
-	public List<Game> list() {
-		return dao.list();
+	public List<Game> list(Pager pager) {
+
+		int total = dao.total(pager);
+
+		pager.setTotal(total);
+
+		return dao.list(pager);
 	}
 
 	@Override
@@ -36,12 +42,12 @@ public class GameServiceImpl implements GameService {
 	public void update(Game item) {
 		dao.update(item);
 	}
-	
+
 	@Override
 	public Game item(int game_code) {
 		return dao.item(game_code);
 	}
-	
+
 	@Override
 	public List<Game> view(int game_code) {
 		return dao.view(game_code);
@@ -75,6 +81,16 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public void addGame(int game_code, int challenger_member_code, int member_code) {
 		dao.addGame(game_code, challenger_member_code, member_code);
+	}
+
+	@Override
+	public List<Game> mypageGame(Pager pager) {
+		return dao.mypageGame(pager);
+	}
+
+	@Override
+	public List<Challenger> admitChallenger(int game_code) {
+		return dao.admitChallenger(game_code);
 	}
 
 }

@@ -11,16 +11,17 @@ import kr.ac.kopo.strike.model.Challenger;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class GameDaoImpl implements GameDao {
 
 	@Autowired
 	SqlSession sql;
-	
+
 	@Override
-	public List<Game> list() {
-		return sql.selectList("game.list");
+	public List<Game> list(Pager pager) {
+		return sql.selectList("game.list", pager);
 	}
 
 	@Override
@@ -56,22 +57,22 @@ public class GameDaoImpl implements GameDao {
 	@Override
 	public void challenge(int game_code, int member_code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		
+
 		map.put("game_code", game_code);
 		map.put("member_code", member_code);
-		
+
 		sql.insert("game.challenge", map);
-		
+
 	}
 
 	@Override
 	public void permission(int game_code, int challenger_code) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		
+
 		map.put("challenger_code", challenger_code);
 		map.put("game_code", game_code);
-		
-		sql.update("game.permission", map);	
+
+		sql.update("game.permission", map);
 	}
 
 	@Override
@@ -86,14 +87,29 @@ public class GameDaoImpl implements GameDao {
 
 	@Override
 	public void addGame(int game_code, int challenger_member_code, int member_code) {
-		
+
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		
+
 		map.put("game_code", game_code);
 		map.put("challenger_member_code", challenger_member_code);
 		map.put("member_code", member_code);
-		
+
 		sql.insert("game.addGame", map);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("game.total", pager);
+	}
+
+	@Override
+	public List<Game> mypageGame(Pager pager) {
+		return sql.selectList("game.mypageGame", pager);
+	}
+
+	@Override
+	public List<Challenger> admitChallenger(int game_code) {
+		return sql.selectList("game.admitChallenger", game_code);
 	}
 
 }

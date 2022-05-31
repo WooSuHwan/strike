@@ -4,10 +4,11 @@ import java.util.List;
 
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanMember;
+import kr.ac.kopo.strike.util.Pager;
 
 public interface ClanDao {
 
-	List<Clan> list();
+	List<Clan> list(Pager pager);
 
 	void add(Clan clan);
 
@@ -34,5 +35,9 @@ public interface ClanDao {
 	ClanMember getMember(int clan_member_code);
 
 	void changeMember(int clan_code, int member_code);
+
+	int total(Pager pager);
+
+	List<Clan> clanList();
 
 }
