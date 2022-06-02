@@ -33,13 +33,13 @@
                         <li>
                             <!-- 이름	 -->
 			<c:if test="${sessionScope.franchisee != null}">
-				${sessionScope.franchisee.name} 관리자님 환영합니다.
+				${sessionScope.franchisee.name}님 환영합니다.
 			</c:if>
                         </li>
                         <li>
                            <!-- 로그아웃 -->
 			<c:if test="${sessionScope.franchisee != null}">
-				<span><a href="franchiseeLogin/logout" style="text-decoration:none">관리자 로그아웃</a></span>
+				<span><a href="franchiseeLogin/logout" style="text-decoration:none">로그아웃</a></span>
 			</c:if>
                         </li>
                     </ul>

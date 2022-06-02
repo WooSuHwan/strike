@@ -108,7 +108,6 @@
                 </div>
             </div>
 
-			<div>
 				 <div class="applicant">
                 <div class="applicant_01">
                     <h3>대결자</h3>
@@ -155,7 +154,7 @@
                         </tbody>
                     </table>
                 </div>
-			</div>
+                </div>
 			
             <div class="applicant">
                 <div class="applicant_01">
@@ -219,8 +218,7 @@
                     <a href="../challenge/${game_code}">신청</a>
                 </div>
             </div>
-        </div>
-
+</div>
         <div class="wh"></div>
     </section>        
      <jsp:include page="../footer.jsp"></jsp:include>

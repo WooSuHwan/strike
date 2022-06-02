@@ -7,7 +7,7 @@
 <title>STRIKE</title>
 <link rel="stylesheet" href="/resources/css/font.css">
     <link rel="stylesheet" href="/resources/css/personaldetails.css">
-    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/franchisee/franchiseeIndex.css">
 </head>
 <body>
     <jsp:include page="../font.jsp"></jsp:include>
