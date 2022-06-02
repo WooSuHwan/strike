@@ -26,8 +26,8 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	}
 
 	@Override
-	public void makerWin(int member_code) {
-		dao.makerWin(member_code);
+	public void makerWin(int maker_code) {
+		dao.makerWin(maker_code);
 	}
 
 	@Override
@@ -41,28 +41,33 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	}
 
 	@Override
-	public void makerLose(int member_code) {
-		dao.makerLose(member_code);
+	public void makerLose(int maker_code) {
+		dao.makerLose(maker_code);
 	}
 
 	@Override
-	public void makerWinGameRecord(int game_code, int member_code, int challenger_code) {
-		dao.makerWinGameRecord(game_code, member_code, challenger_code);
+	public void draw(int maker_code, int challenger_code) {
+		dao.draw(maker_code, challenger_code);
 	}
 
 	@Override
-	public void challengerWinGameRecord(int game_code, int challenger_code, int member_code) {
-		dao.challengerWinGameRecord(game_code, challenger_code, member_code);
+	public void makerWinGameRecord(int game_record_code, int maker_code, int challenger_code) {
+		dao.makerWinGameRecord(game_record_code, maker_code, challenger_code);
 	}
 
 	@Override
-	public void draw(int member_code, int challenger_code) {
-		dao.draw(member_code, challenger_code);
+	public void challengerWinGameRecord(int game_record_code, int challenger_code, int maker_code) {
+		dao.challengerWinGameRecord(game_record_code, challenger_code, maker_code);
 	}
 
 	@Override
-	public void drawGameRecord(int game_code, int member_code, int challenger_code) {
-		dao.drawGameRecord(game_code, member_code, challenger_code);
+	public void drawGameRecord(int game_record_code) {
+		dao.drawGameRecord(game_record_code);
+	}
+
+	@Override
+	public List<GameRecord> gameRecordEnd(int game_code) {
+		return dao.gameRecordEnd(game_code);
 	}
 
 }

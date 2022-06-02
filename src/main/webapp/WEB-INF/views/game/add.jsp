@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,11 +44,45 @@
 						<label>내용</label> <input type="text" name="story">
 					</div>
 				</div>
+				
+				<div class="applicant">
+	                <div class="applicant_01">
+	                    <h3>등록이 된 가쟁점 위치</h3>
+	                </div>
+                		<div class="applicant_02">
+                   			<table class="applicanttable">
+                    		    <colgroup>
+		                            <col style="width: 10%;">
+		                            <col style="width: 15%;">
+		                            <col style="width: 10%;">
+		                            <col style="width: 8%;">
+		                            <col style="width: 8%;">
+		                            <col style="width: 8%;">
+		                            <col style="width: 10%;">
+		                            <col style="width: 10%;">
+		                            <col style="width: 10%;">
+                        		</colgroup>
+		                        <thead>
+		                            <tr>
+		                            	<th>No.</th>
+		                                <th>주소</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                        <c:forEach items="${franchiseeList}" var="item" varStatus="status">
+		                            <tr>
+		                            	<td>${status.index + 1 }</td>
+		                                <td>${item.address}</td>
+								</c:forEach>
+		                        </tbody>
+		                    </table>
+		                </div>
+					</div>
+				
 				<div class="cbtn0">
 					<button>등록</button>
 				</div>
 			</form>
-
 		</div>
 
 		<div class="wh"></div>

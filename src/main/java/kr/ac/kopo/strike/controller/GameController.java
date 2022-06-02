@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
+import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.GameService;
@@ -42,6 +43,10 @@ public class GameController {
 	
 	@GetMapping("/add")
 	public String add(Model model) {
+		
+		List<Franchisee> franchiseeList = service.franchiseeList();
+		
+		model.addAttribute("franchiseeList", franchiseeList);
 		
 		return path + "add";
 	}
@@ -125,7 +130,7 @@ public class GameController {
 		
 		service.permission(game_code, challenger_code);
 		service.addGame(game_code, challenger_member_code, member.getMember_code());
-		System.out.println("3");
+		
 		return "redirect:/game/view/" + game_code;
 	}
 	

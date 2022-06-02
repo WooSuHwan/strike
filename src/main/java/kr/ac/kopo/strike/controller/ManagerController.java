@@ -18,7 +18,7 @@ import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.RankService;
 import kr.ac.kopo.strike.util.AES256Util;
 import kr.ac.kopo.strike.util.SHA256Util;
-
+/**
 @Controller
 @RequestMapping("/manager")
 public class ManagerController {
@@ -26,10 +26,10 @@ public class ManagerController {
 	
 	AES256Util aes256 = new AES256Util();
 	SHA256Util sha256 = new SHA256Util();
-	/**
+	
 	@Autowired
 	ManagerService service;
-	*/
+	
 	@Autowired
 	RankService member;
 	
@@ -85,3 +85,4 @@ public class ManagerController {
 		return path + "clanList";
 	}
 }
+*/

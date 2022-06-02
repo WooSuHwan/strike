@@ -93,4 +93,9 @@ public class GameServiceImpl implements GameService {
 		return dao.admitChallenger(game_code);
 	}
 
+	@Override
+	public List<Franchisee> franchiseeList() {
+		return dao.franchiseeList();
+	}
+
 }

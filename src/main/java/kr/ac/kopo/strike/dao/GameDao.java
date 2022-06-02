@@ -40,4 +40,6 @@ public interface GameDao {
 
 	List<Challenger> admitChallenger(int game_code);
 
+	List<Franchisee> franchiseeList();
+
 }
