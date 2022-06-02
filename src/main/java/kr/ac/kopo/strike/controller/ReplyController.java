@@ -18,14 +18,14 @@ public class ReplyController {
 	ReplyService service;
 	
 	// 댓글 작성
-	@ResponseBody
-	@RequestMapping(value = "/write", method = RequestMethod.POST)
-	public String posttWirte(Reply reply) throws Exception {
-		
-		service.write(reply);
-		
-		return "redirect:/suggestfree/view?freeCode=" + reply.getFreeCode();
-	}
+//	@ResponseBody
+//	@RequestMapping(value = "/write", method = RequestMethod.POST)
+//	public String posttWirte(Reply reply) throws Exception {
+//		
+//		service.write(reply);
+//		
+//		return "redirect:/suggestfree/view?freeCode=" + reply.getFreeCode();
+//	}
 	
 
 

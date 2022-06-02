@@ -38,4 +38,5 @@ public interface ClanService {
 
 	List<Clan> clanList();
 
+
 }

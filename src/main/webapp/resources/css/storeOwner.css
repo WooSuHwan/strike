@@ -1,0 +1,114 @@
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body::-webkit-scrollbar { width: 0; }
+
+a {
+    text-decoration: none;
+}
+
+
+/* 내용 영역 */
+
+.storeOwnerAll{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    align-items: center;
+}
+
+.storeOwner1200{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 100vh;
+    align-items: center;
+}
+
+
+.wh{
+    height: 10em;
+    background-color: #fff;
+}
+
+.store01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    margin-top: 5.5em;
+}
+
+.sssW{
+    display: flex;
+    width: 100%;
+    height: 5.5em;
+    background-color: #fff;
+}
+
+.store02{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    /* align-items: center; */
+    margin-top: 8em;
+}
+
+.store02_01{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+    height: 100%;
+}
+
+.store02_02{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 49%;
+    height: 100%;
+}
+
+.stbar{
+    display: flex;
+    background-color: black;
+    width: 1px;
+    height: 40%;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    margin-top: 5em;
+}
+
+.store02_01Img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62%;
+    height: 75%;
+    cursor: pointer;
+}
+
+.store02_01Txt{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 62%;
+    height: 20%;
+}
+
+.store02_01Txt>a{
+    font-family: 'S-CoreDream-6Bold';
+    color: black;
+    font-size: 1.8em;
+}

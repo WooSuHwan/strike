@@ -96,4 +96,6 @@ public class ClanServiceImpl implements ClanService {
 	public List<Clan> clanList() {
 		return dao.clanList();
 	}
+
+
 }
