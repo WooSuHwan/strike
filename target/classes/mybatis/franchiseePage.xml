@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="franchiseePage">
+	<select id="game" resultType="Game">
+		SELECT * 
+		FROM game
+		WHERE loc = #{address}
+	</select>
+	
+	<select id ="gameRecord" resultType="GameRecord">
+		select gr.*, m.name, cm.name as challenger_name
+		from game_record gr
+    	JOIN challenger c ON gr.game_code=#{game_code} AND c.state=1 AND gr.game_code = c.game_code
+    	JOIN member m ON gr.maker_code = m.member_code        
+    	JOIN member cm ON c.challenger_member_code = cm.member_code AND gr.challenger_code = cm.member_code
+    	where gr.time_end is null
+	</select>
+	
+	<select id ="gameRecordEnd" resultType="GameRecord">
+		select gr.*, m.name, cm.name as challenger_name
+		from game_record gr
+    	JOIN challenger c ON gr.game_code=#{game_code} AND c.state=1 AND gr.game_code = c.game_code
+    	JOIN member m ON gr.maker_code = m.member_code        
+    	JOIN member cm ON c.challenger_member_code = cm.member_code AND gr.challenger_code = cm.member_code
+    	where gr.time_end is not null
+	</select>	
+	<!-- 제작자 승리 -->
+	<update id="makerWin">
+		update member 
+		set
+		record = record + 1,
+		win = win + 1,
+		score = score + 10
+		where member_code = #{maker_code}
+	</update>
+	<!-- 도전자 패배 -->
+	<update id="challengerLose">
+		update member 
+		set
+		record = record + 1,
+		lose = lose + 1,
+		score = score - 3
+		where member_code = #{challenger_code}
+	</update>
+	<!-- 도전자 승리 -->
+	<update id="challengerWin">
+		update member 
+		set
+		record = record + 1,
+		win = win + 1,
+		score = score + 10
+		where member_code = #{challenger_code}
+	</update>
+	<!-- 제작자 패배 -->
+	<update id="makerLose">
+		update member 
+		set
+		record = record + 1,
+		lose = lose + 1,
+		score = score - 3
+		where member_code = #{maker_code}
+	</update>
+	<!-- 무승부 -->
+	<update id="draw">
+		update member 
+		set
+		record = record + 1,
+		draw = draw + 1
+		where member_code = #{maker_code} or member_code = #{challenger_code}
+	</update>
+	
+	<update id="makerWinGameRecord">
+		update game_record 
+		set
+		winner_code = #{maker_code},
+		loser_code = #{challenger_code},
+		time_end = sysdate
+		where game_record_code = #{game_record_code}
+	</update>
+	
+	<update id="challengerWinGameRecord">
+		update game_record 
+		set
+		winner_code = #{challenger_code},
+		loser_code = #{maker_code},
+		time_end = sysdate
+		where game_record_code = #{game_record_code}
+	</update>
+	
+	<update id="drawGameRecord">
+		update game_record 
+		set
+		draw = 1,
+		time_end = sysdate
+		where game_record_code = #{game_record_code}
+	</update>
+</mapper>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 공통  */
 
 *{margin: 0; padding: 0;}
@@ -428,4 +429,436 @@ a {
 
 .pagination>.paginate>.link.arrow.next.last {
     background-image: url('img/pagerRight2.png');
+=======
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mypageNav{
+    display: flex;
+    height: 5.5em;
+}
+
+.menuPro>a {
+    color: #000;
+}
+
+.menuClan>a {
+    color: #000;
+}
+
+/* main */
+.mypageTotal {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.itemTotal {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-left: 9%;
+}
+
+.leftNav {
+    display: flex;
+    height: 100em;
+    width: 20%;
+    border: 1px solid #c8c8c8;
+    background-color: #ffffff;
+    margin-right: 50px;
+    flex-direction: column;
+}
+
+.navPro {
+    display: flex;
+    height: 23em;
+    width: 100%;
+    background-color: #f5f5f5;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.proOne {
+    display: flex;
+    width: 100%;
+    height: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.proOne>img {
+    height: 75%;
+}
+
+.proFont {
+    display: flex;
+    width: 100%;
+    height: 20%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.proName {
+    font-size: 25px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.proName2 {
+    font-size: 25px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #535353;
+}
+
+.navListDiv {
+    display: flex;
+    width: 100%;
+    height: 5.5em;
+    align-items: center;
+
+    border-top: 1px solid #c8c8c8;
+}
+
+.navListDivImg > img {
+    height: 1.2em;
+    filter: opacity(0.5) drop-shadow(0 0 0 #545454);
+}
+
+.navListDivName {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+    color: #545454;
+    font-size: 20px;
+    
+    align-items: center;
+    margin-left: 15%;
+}
+
+.navListDivImg {
+    display: flex;
+    width: 15%;
+    margin-left: 20%;
+}
+
+.nt {
+    color: #f6cd00;
+}
+
+.recordMain {
+    display: flex;
+    width: 60%;
+    height: 100em;
+
+    /* background-color: aqua; */
+
+    flex-direction: column;
+
+}
+
+.recordMainTitle {
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    align-items: center;
+
+    font-size: 20px;
+}
+
+.menuList {
+    display: flex;
+    width: 100%;
+    height: 2.5em;
+
+}
+
+.menuList > .menuClan {
+    margin-left: 8%;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 17px;
+    
+}
+
+.listBorder > .menuPro {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 17px;
+}
+
+.recordMainMenu {
+    display: flex;
+    width: 100%;
+    height: 7em;
+
+    margin-top: 5em;
+}
+
+.listBorder {
+    display: flex;
+    width: 15.5%;
+    justify-content: center;
+
+    border-bottom: 10px solid #f6cd00;
+
+    padding-top: 1px;
+}
+
+.recordMainList {
+    display: flex;
+    width: 100%;
+    height: 12em;
+
+    border: 1px solid #535353;
+    box-sizing: border-box;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.rankRulstBackWin {
+    background-color: #ffe2e4;
+}
+.rankRulstBackLose {
+    background-color: #e3f3ff;
+}
+
+.rankRulstFontWin {
+    display: flex;
+    width: 100%;
+    color: #ffaaab;
+    justify-content: center;
+}
+
+.rankRulstFontlose {
+    display: flex;
+    width: 100%;
+    color: #82cffd;
+    justify-content: center;
+}
+
+.listLine {
+    display: flex;
+    width: 100%;
+    height: 4em;
+
+    border-bottom: 1px solid #545454;
+    box-sizing: border-box;
+
+    align-items: center;
+}
+
+.listLineDate {
+    display: flex;
+    width: 50%;
+
+    margin-left: 40px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #545454;
+}
+
+.listLineName {
+    display: flex;
+    width: 50%;
+
+    margin-right: 40px;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #545454;
+
+    justify-content: flex-end;
+}
+
+.winOrLose {
+    display: flex;
+    width: 100%;
+    height: 2em;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    color: #545454;
+    font-size: 15px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 23px;
+}
+
+.listScore {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.listScore > div{
+    width: 30%;
+
+    text-align: center;
+
+}
+
+.WOL > div:nth-child(1){
+    font-size: 40px;
+}
+.WOL > div:nth-child(2){
+    font-size: 40px;
+}
+.WOL > div:nth-child(3){
+    font-size: 40px;
+}
+
+.WOL {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.pagination {
+    margin-top: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5em;
+}
+
+
+.paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    color: #545454;
+    font-size: 0.9em;
+
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pagination>.paginate>.link.arrow.prev.start {
+    background-image: url('img/pagerLeft2.png');
+}
+
+.pagination>.paginate>.link.arrow {
+    padding: 0 0.5em;
+    font-size: 0.813em;
+    text-align: left;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #f0f0f0;
+}
+
+.pagination>.paginate>.link {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+    height: 70%;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d2;
+    border-radius: 0.188em;
+    line-height: 1.750em;
+    color: #888888;
+}
+
+.pagination>.paginate>.link.arrow.prev {
+    background-image: url('img/pagerLeft1.png');
+}
+
+.pagination>.paginate>.link.mobile {
+    display: none;
+    padding: 0 0.5em;
+}
+
+.pagination>.paginate>.link+.link {
+    margin-left: 0.33em;
+}
+
+.now {
+    background-color: #0087e5;
+    color: #fff !important;
+}
+
+.pagination>.paginate>.link.arrow.next {
+    background-image: url('img/pagerRight1.png');
+}
+
+.pagination>.paginate>.link.arrow.next.last {
+    background-image: url('img/pagerRight2.png');
+>>>>>>> refs/heads/WSH
 }

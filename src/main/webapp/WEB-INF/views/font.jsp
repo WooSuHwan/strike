@@ -3,8 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>Insert title here</title>
+=======
+>>>>>>> refs/heads/WSH
  <!-- font -->
  <style>
      @font-face {

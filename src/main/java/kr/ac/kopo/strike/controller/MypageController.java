@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.MemberService;
+import kr.ac.kopo.strike.util.Pager;
 
 @Controller
 @RequestMapping("/mypage")
@@ -23,6 +26,9 @@ public class MypageController {
 	@Autowired
 	MemberService memberService;
 	
+	@Autowired
+	GameService gameService;
+	
 	@GetMapping("/mypage/{member_code}")
 	public String mypage(Member item,Model model, HttpSession session, @PathVariable int member_code) {
 		
@@ -30,10 +36,19 @@ public class MypageController {
 //		member.setMember_code((Integer) session.getAttribute("code"));
 //		model.addAttribute("member", member);
 		
+//		Member user = (Member) session.getAttribute("user");
 		Member Mitem = memberService.mypage(item);
 		
-		System.out.println(item.getName()+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		model.addAttribute("item", item);
+		//유저 아이디가 admin이면 사원 목록으로 가고
+		//admin이 아니면 로그인한 사원 개인 페이지로 간다
+//		if("/mypage/".equals(user.getMember_code())) {
+//			return path + "mypage";
+//		} else {
+//			return "redirect:myinfo";
+//		}
+		
+//		System.out.println(item.getName()+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		
 		return path + "mypage";
 	}
@@ -44,7 +59,6 @@ public class MypageController {
 		memberService.item(member);
 		
 		model.addAttribute("item", member);
-		System.out.println(member.getName()+"**^*^^*^^*^^");
 		return path + "update";
 	}
 	
@@ -52,12 +66,26 @@ public class MypageController {
 	public String update(@PathVariable int member_code, Member item) {
 		memberService.update(item);
 		
-		return "redirect:../mypage";
+		return "redirect:/mypage/mypage/{member_code}";
 	}
 	
-	@GetMapping("/delete")
+	@RequestMapping("/delete")
+	public String delete(Member item,Model model) {
+		return path + "delete";
+	}
+	
+	@GetMapping("/delete/{member_code}")
 	public String delete(@PathVariable int member_code) {
 		memberService.delete(member_code);
-		return "redirect:../mypage";
+		return "redirect:../index";
+	}
+	
+	@GetMapping("/gameDetail/{member_code}")
+	public String gameDetail(@PathVariable int member_code, Model model, Pager pager) {
+		
+		List<Game> mypageGame =  gameService.mypageGame(pager);
+		model.addAttribute("mypageGame", mypageGame);
+		
+		return path + "gameDetail";
 	}
 }

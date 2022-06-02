@@ -4,8 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>Insert title here</title>
+=======
+>>>>>>> refs/heads/WSH
 </head>
 <body>
  <div class="Ham_button">
