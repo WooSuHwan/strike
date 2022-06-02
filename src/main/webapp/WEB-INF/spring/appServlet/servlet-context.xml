@@ -22,10 +22,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="kr.ac.kopo" />
-	
-<<<<<<< HEAD
-	
-=======
 <!-- 	유저인터셉터 권한 -->
 <!-- 	<interceptors> -->
 <!-- 		<interceptor> -->
@@ -33,7 +29,4 @@
 <!-- 			<beans:bean class="kr.ac.kopo.strike.util.UserInterceptor"></beans:bean> -->
 <!-- 		</interceptor> -->
 <!-- 	</interceptors> -->
->>>>>>> refs/heads/WSH
-		
-	
 </beans:beans>
