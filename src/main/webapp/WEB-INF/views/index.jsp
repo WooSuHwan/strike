@@ -1,18 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	pageEncoding="UTF-8"%>
 =======
    pageEncoding="UTF-8"%>
 >>>>>>> refs/heads/WSH
+=======
+   pageEncoding="UTF-8"%>
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>STRIKE</title>
 =======
 >>>>>>> refs/heads/WSH
+=======
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
 <link rel="stylesheet" href="../resources/css/index.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://www.w3schools.com/lib/w3.js"></script>
@@ -20,8 +27,13 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<jsp:include page="nav.jsp"></jsp:include>
 	<section>
+=======
+   <jsp:include page="nav.jsp"></jsp:include>
+   <section>
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
         <div class="inAll">
             <div class="hnone"></div> <!-- nav밑 빈영역 채우기 -->
             <div class="upperArea">  <!-- 위에 내용 -->
@@ -63,7 +75,7 @@
                         </div>
                         <div class="sw02">
                             <div class="sw02_01">
-                                <img src="../resources/img/bImg.png" width="65%" height="90%" alt="캐릭터">
+                                <img src="../resources/img/sbo1.png" width="65%" height="90%" alt="캐릭터">
                             </div>
                         </div>
                     </div>
@@ -83,6 +95,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="sw02">
+                            <div class="sw02_01">
+                                <img src="../resources/img/sbo2.png" width="65%" height="90%" alt="캐릭터">
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="sw01">
@@ -98,6 +115,11 @@
                                 <div class="sw01_date">
                                     <p>2022년 04월 20일</p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="sw02">
+                            <div class="sw02_01">
+                                <img src="../resources/img/clandetailsicon.png" width="45%" height="70%" alt="캐릭터">
                             </div>
                         </div>
                     </div>
@@ -140,14 +162,14 @@
                                 </tr>
                             </thead>
                             <tbody class="rankC01_02">
-								<c:forEach items="${clanList}" var="item" varStatus="status">
-									<tr class="tbodyTr01">
-										<td width="20%" height="100%">${status.index + 1}</td>
-										<td width="25%" height="100%">${item.clan_name}</td>
-										<td width="55%" height="100%">티어수정필요함</td>
-									</tr>
-								</c:forEach>
-							</tbody>
+                        <c:forEach items="${clanList}" var="item" varStatus="status">
+                           <tr class="tbodyTr01">
+                              <td width="20%" height="100%">${status.index + 1}</td>
+                              <td width="25%" height="100%">${item.clan_name}</td>
+                              <td width="55%" height="100%">티어수정필요함</td>
+                           </tr>
+                        </c:forEach>
+                     </tbody>
                             <tfoot class="rankC01_03">
                                 <tr class="tfootTr01">
                                     <td style="width: 40%;"><a href="clan/list">팀 순위 상세보기</a></td>
@@ -168,14 +190,14 @@
                                 </tr>
                             </thead>
                             <tbody class="rankC01_02">
-								<c:forEach items="${rankList}" var="item" varStatus="status">
-									<tr class="tbodyTr01">
-										<td width="20%" height="100%">${status.index + 1}</td>
-										<td width="25%" height="100%">${item.name}</td>
-										<td width="55%" height="100%">${item.score}</td>
-									</tr>
-								</c:forEach>
-							</tbody>
+                        <c:forEach items="${rankList}" var="item" varStatus="status">
+                           <tr class="tbodyTr01">
+                              <td width="20%" height="100%">${status.index + 1}</td>
+                              <td width="25%" height="100%">${item.name}</td>
+                              <td width="55%" height="100%">${item.score}</td>
+                           </tr>
+                        </c:forEach>
+                     </tbody>
                             <tfoot class="rankC01_03">
                                 <tr class="tfootTr01">
                                     <td style="width: 45%;"><a href="/rank/list">개인 순위 상세보기</a></td>
@@ -188,6 +210,7 @@
             </div>
         </div> <!-- 랭크 컨텐츠 부분 -->
     </section>
+<<<<<<< HEAD
 		
 	</div>
 		<jsp:include page="footer.jsp"></jsp:include>
@@ -384,5 +407,15 @@
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script src="../resources/js/index.js"></script>
 >>>>>>> refs/heads/WSH
+=======
+      
+   </div>
+      <jsp:include page="footer.jsp"></jsp:include>
+      
+      <!-- script부분 -->
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script src="../resources/js/index.js"></script>
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
 </body>
 </html>

@@ -84,6 +84,52 @@ a {
     width: 35%;
     height: 100%;
 }
+.zmffos{
+	align-items: center;
+	width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: 'S-CoreDream-6Bold';
+    justify-content: flex-end;
+}
+
+.clanrankSearch_02{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+    height: 60%;
+    width: 50%;
+}
+
+.clanrankSearch_02_01>input{
+    height: 100%;
+    width: 75%;
+    margin-left: 2em;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanrankSearch_02_01{
+    display: flex;
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.clanrankSearch_02_01>button{
+    display: flex;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 100%;
+    margin-left: 1em;
+}
 
 .clanrankSearch_01_02{
     display: flex;
@@ -144,7 +190,7 @@ a {
     flex-direction: column;
     background-color: #fff;
     width: 62.4%;
-    height: 60.750em;
+    height: auto;
     margin-top: 6.5em;
 }
 
@@ -281,6 +327,7 @@ a {
 
 .pagination>.paginate>.link.arrow.next.last {
     background-image: url('../img/pagerRight2.png');
+<<<<<<< HEAD
 }
 =======
 /* 공통  */
@@ -637,3 +684,30 @@ a {
     font-family: 'S-CoreDream-6Bold';
 }
 >>>>>>> refs/heads/WSH
+=======
+}
+
+.cbtn0{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 62.5%;
+    height: 2.5em;
+    margin-top: 3em;
+}
+
+.cbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    border-radius: 7px;
+    height: 100%;
+    background-color: #393939;
+}
+
+.cbtn1>a{
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git

@@ -107,14 +107,4 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectList("game.mypageGame", pager);
 	}
 
-	@Override
-	public List<Challenger> admitChallenger(int game_code) {
-		return sql.selectList("game.admitChallenger", game_code);
-	}
-
-	@Override
-	public List<Franchisee> franchiseeList() {
-		return sql.selectList("game.franchiseeList");
-	}
-
 }

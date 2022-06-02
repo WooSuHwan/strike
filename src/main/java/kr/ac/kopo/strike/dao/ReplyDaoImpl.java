@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.Reply;
@@ -15,10 +16,12 @@ public class ReplyDaoImpl implements ReplyDao {
 	@Inject
 	private SqlSession sql;
 
+	
+
 	// 댓글 조회
 	@Override
-	public List<Reply> list(int freeCode) throws Exception {
-		return sql.selectList("reply.replyList", freeCode);
+	public List<Reply> list(int free_code) throws Exception {
+		return sql.selectList("reply.replyList", free_code);
 	}
 
 	// 댓글 작성
@@ -28,15 +31,37 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 
 	// 댓글 수정
+	
+
 	@Override
-	public void modify(Reply reply) throws Exception {
-		sql.update("reply.replyModify", reply);
+	public void delete(int reply_code) throws Exception{
+		sql.delete("reply.replyDelete", reply_code);
+		
 	}
 
-	// 댓글 삭제
 	@Override
-	public void delete(Reply reply) throws Exception {
-		sql.delete("reply.replyDelete", reply);
+	public Reply replyitem(int reply_code) {
+		
+		return sql.selectOne("reply.replyItem", reply_code);
 	}
+
+	@Override
+	public void update(Reply replyitem) {
+		sql.update("reply.replyUpdate", replyitem);
+		
+	}
+
 	
+
+	
+
+	
+
+	
+
+	// 댓글 삭제
+	
+	
+	
+
 }

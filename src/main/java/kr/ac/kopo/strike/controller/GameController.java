@@ -44,10 +44,6 @@ public class GameController {
 	@GetMapping("/add")
 	public String add(Model model) {
 		
-		List<Franchisee> franchiseeList = service.franchiseeList();
-		
-		model.addAttribute("franchiseeList", franchiseeList);
-		
 		return path + "add";
 	}
 	
@@ -95,13 +91,6 @@ public class GameController {
 		
 		Game game = service.item(game_code);		
 		List<Member> member = service.member(game_code);
-		List<Challenger> admitChallenger = service.admitChallenger(game_code);
-		
-		for (Challenger item : admitChallenger) {
-			
-			item.setName( aes256.decrypt(item.getName()) );
-		}
-		
 		List<Challenger> challenger = service.challenger(game_code);
 		
 		for (Challenger item : challenger) {
@@ -112,7 +101,6 @@ public class GameController {
 		model.addAttribute("game", game);
 		model.addAttribute("member", member);
 		model.addAttribute("challenger", challenger);
-		model.addAttribute("admitChallenger", admitChallenger);
 		
 		return path + "view";
 	}
@@ -130,7 +118,7 @@ public class GameController {
 		
 		service.permission(game_code, challenger_code);
 		service.addGame(game_code, challenger_member_code, member.getMember_code());
-		
+		System.out.println("3");
 		return "redirect:/game/view/" + game_code;
 	}
 	

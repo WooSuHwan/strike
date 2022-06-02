@@ -43,6 +43,7 @@ public class FranchiseePageController {
 		
 		List<Game> game = service.game(franchisee.getAddress());
 		
+		
 		model.addAttribute("game", game);
 		
 		return path + "gameList";
@@ -60,46 +61,37 @@ public class FranchiseePageController {
 			item.setChallenger_name( aes256.decrypt(item.getChallenger_name()) );
 		}
 		
-		List<GameRecord> gameRecordEnd = service.gameRecordEnd(game_code);
-		
-		for (GameRecord item : gameRecordEnd) {
-			
-			item.setName( aes256.decrypt(item.getName()) );
-			item.setChallenger_name( aes256.decrypt(item.getChallenger_name()) );
-		}
-		
 		model.addAttribute("game", game);
 		model.addAttribute("gameRecord", gameRecord);
-		model.addAttribute("gameRecordEnd", gameRecordEnd);
 		
 		return path + "gameView";
 	}
 	
-	@GetMapping("/makerWin/{game_code}/{game_record_code}/{maker_code}/{challenger_code}")
-	public String makerWin(@PathVariable int game_code, @PathVariable int game_record_code, @PathVariable int maker_code, @PathVariable int challenger_code) {
-		
-		service.makerWin(maker_code);
+	@GetMapping("/makerWin/{game_code}/{member_code}/{challenger_code}")
+	public String makerWin(@PathVariable int game_code, @PathVariable int member_code, @PathVariable int challenger_code) {
+
+		service.makerWin(member_code);
 		service.challengerLose(challenger_code);
-		service.makerWinGameRecord(game_record_code, maker_code, challenger_code);
+		service.makerWinGameRecord(game_code, member_code, challenger_code);
 		
 		return "redirect:/franchiseePage/gameView/" + game_code;
 	}
 	
-	@GetMapping("/challengerWin/{game_code}/{game_record_code}/{challenger_code}/{maker_code}")
-	public String challengerWin(@PathVariable int game_code, @PathVariable int game_record_code, @PathVariable int challenger_code, @PathVariable int maker_code) {
+	@GetMapping("/challengerWin/{game_code}/{challenger_code}/{member_code}")
+	public String challengerWin(@PathVariable int game_code, @PathVariable int challenger_code, @PathVariable int member_code) {
 
 		service.challengerWin(challenger_code);
-		service.makerLose(maker_code);
-		service.challengerWinGameRecord(game_record_code, challenger_code, maker_code);
+		service.makerLose(member_code);
+		service.challengerWinGameRecord(game_code, challenger_code, member_code);
 		
 		return "redirect:/franchiseePage/gameView/" + game_code;
 	}
 	
-	@GetMapping("/draw/{game_code}/{game_record_code}/{maker_code}/{challenger_code}")
-	public String draw(@PathVariable int game_code, @PathVariable int game_record_code, @PathVariable int maker_code, @PathVariable int challenger_code) {
+	@GetMapping("/draw/{game_code}/{member_code}/{challenger_code}")
+	public String draw(@PathVariable int game_code, @PathVariable int member_code, @PathVariable int challenger_code) {
 		
-		service.draw(maker_code, challenger_code);
-		service.drawGameRecord(game_record_code);
+		service.draw(member_code, challenger_code);
+		service.drawGameRecord(game_code, member_code, challenger_code);
 		
 		return "redirect:/franchiseePage/gameView/" + game_code;
 	}

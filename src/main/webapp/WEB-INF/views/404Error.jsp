@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>STRIKE</title>
-<link rel="stylesheet" href="../resources/css/font.css">
-<link rel="stylesheet" href="../resources/css/error.css">
+<link rel="stylesheet" href="/resources/css/font.css">
+<link rel="stylesheet" href="/resources/css/error.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
@@ -17,7 +17,7 @@
         <div class="error01">
             <div class="er01">
                 <div class="er01_01">
-                    <img src="../resources/img/error.png" height="100%" alt="에러">
+                    <img src="/resources/img/error.png" height="100%" alt="에러">
                 </div>
                 <div class="er01_02">
                     <h2>

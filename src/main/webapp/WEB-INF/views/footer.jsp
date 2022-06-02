@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,8 @@
 </head>
 =======
 >>>>>>> refs/heads/WSH
+=======
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
 <body>
 <div class="footer">
             <div class="footerL01">

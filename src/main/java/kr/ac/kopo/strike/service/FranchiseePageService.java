@@ -11,22 +11,20 @@ public interface FranchiseePageService {
 
 	List<GameRecord> gameRecord(int game_code);
 
-	void makerWin(int maker_code);
+	void makerWin(int member_code);
 
 	void challengerWin(int challenger_code);
 
 	void challengerLose(int challenger_code);
 
-	void makerLose(int maker_code);
+	void makerLose(int member_code);
 
-	void draw(int maker_code, int challenger_code);
+	void makerWinGameRecord(int game_code, int member_code, int challenger_code);
 
-	void makerWinGameRecord(int game_record_code, int maker_code, int challenger_code);
+	void challengerWinGameRecord(int game_code, int challenger_code, int member_code);
 
-	void challengerWinGameRecord(int game_record_code, int challenger_code, int maker_code);
+	void draw(int member_code, int challenger_code);
 
-	void drawGameRecord(int game_record_code);
-
-	List<GameRecord> gameRecordEnd(int game_code);
+	void drawGameRecord(int game_code, int member_code, int challenger_code);
 
 }

@@ -2,6 +2,8 @@ package kr.ac.kopo.strike.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.ac.kopo.strike.model.SuggestMaster;
+
 import kr.ac.kopo.strike.service.SuggestMasterService;
 
 @Controller
@@ -47,10 +50,7 @@ public class SuggestMasterController {
 	@PostMapping("/add")
 	public String add(SuggestMaster item, HttpSession session) {
 		service.add(item);
-		String name = (String) session.getAttribute("name");
-		int user_code = (int) session.getAttribute("code");
-		item.setName(name);
-		item.setUser_code(user_code);
+		
 		return "redirect:list";
 	}
 	@GetMapping("/delete/{MasterCode}")
@@ -90,4 +90,6 @@ public class SuggestMasterController {
 		
 		return "suggest/readView";
 	}
+	
+	
 }

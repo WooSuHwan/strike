@@ -15,12 +15,12 @@
 		<form method="post">
 			<div>
 				<label>댓글작성자</label>
-				<input type="text" name="reply_name" value="${reply.replyName}">	
+				<input type="text" name="reply_name" value="${reply.reply_name}">	
 			</div>
 			
 			<div>
 				<label>내용</label>
-				<textarea  name="replyStory">${reply.replyStory}</textarea>	
+				<textarea  name="reply_story">${reply.reply_story}</textarea>	
 			</div>
 			
 			<div>

@@ -1046,7 +1046,7 @@ a {
 
 .mypageNavSM3{
     display: flex;
-    width: 6px;
+    width: 30px;
     height: 1.5em;
 }
 .mypageNavSM4{
@@ -1076,6 +1076,8 @@ a {
 .w-btn-gray {
     background-color: #393939;
     color: #fefefe;
+   
+    
 }
 
 .w-btn-white {
@@ -1095,6 +1097,7 @@ a {
     text-decoration: none;
     font-weight: 600;
     transition: 0.25s;
+    
 }
 
 input {

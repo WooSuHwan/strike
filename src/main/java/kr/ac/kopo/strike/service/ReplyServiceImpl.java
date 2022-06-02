@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.ReplyDao;
@@ -16,9 +18,9 @@ public class ReplyServiceImpl implements ReplyService {
 	ReplyDao dao;
 
 	@Override
-	public List<Reply> list(int freeCode) throws Exception {
+	public List<Reply> list(int free_code) throws Exception {
 		
-		return dao.list(freeCode);
+		return dao.list(free_code);
 	}
 
 	@Override
@@ -27,18 +29,37 @@ public class ReplyServiceImpl implements ReplyService {
 		dao.write(reply);
 		
 	}
-
 	@Override
-	public void modify(Reply reply) throws Exception {
-		
-		dao.modify(reply);
+	public void delete(int reply_code)throws Exception {
+		dao.delete(reply_code);
 		
 	}
 
 	@Override
-	public void delete(Reply reply) throws Exception {
+	public Reply replyitem(int reply_code) {
 		
-		dao.delete(reply);
+		return dao.replyitem(reply_code);
+	}
+
+	@Override
+	public void update(Reply replyitem) {
+		dao.update(replyitem);
 		
 	}
+
+	
+
+	
+	
+
+	
+
+
+
+	
+	
+	
+
+	
+
 }

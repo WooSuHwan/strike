@@ -4,20 +4,21 @@
 <html lang="en">
 <head>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STRIKE</title>
+=======
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
     <link rel="stylesheet" href="../resources/css/font.css">
     <link rel="stylesheet" href="../resources/css/faq.css">
     <link rel="stylesheet" href="../resources/css/index.css">
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body>
     <!-- 햄버거 버튼 -->
     <jsp:include page="font.jsp"></jsp:include>
     <jsp:include page="nav.jsp"></jsp:include>
-    <jsp:include page="rnav.jsp"></jsp:include>
 
     <section>
         
@@ -138,11 +139,23 @@
      <jsp:include page="footer.jsp"></jsp:include>
      <script src="../resources/js/index.js"></script>
     </section>
-
-    <!-- script -->
     <script>
-        w3.includeHTML();
+ // html dom 이 다 로딩된 후 실행된다.
+    $(document).ready(function(){
+        // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+        $(".faqwh_01").click(function(){
+            var submenu = $(this).next(".faqhide");
+
+            // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        });
+    });
     </script>
+<<<<<<< HEAD
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
@@ -292,5 +305,7 @@
     });
     </script>
 >>>>>>> refs/heads/WSH
+=======
+>>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
 </body>
 </html>

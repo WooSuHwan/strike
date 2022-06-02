@@ -27,8 +27,8 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 	}
 
 	@Override
-	public void makerWin(int maker_code) {
-		sql.update("franchiseePage.makerWin", maker_code);
+	public void makerWin(int member_code) {
+		sql.update("franchiseePage.makerWin", member_code);
 	}
 
 	@Override
@@ -42,53 +42,55 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 	}
 
 	@Override
-	public void makerLose(int maker_code) {
-		sql.update("franchiseePage.makerLose", maker_code);
+	public void makerLose(int member_code) {
+		sql.update("franchiseePage.makerLose", member_code);
 	}
 
 	@Override
-	public void draw(int maker_code, int challenger_code) {
+	public void makerWinGameRecord(int game_code, int member_code, int challenger_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("game_code", game_code);
+		map.put("member_code", member_code);
+		map.put("challenger_code", challenger_code);
+		
+		sql.insert("franchiseePage.makerWinGameRecord", map);
+	}
+
+	@Override
+	public void challengerWinGameRecord(int game_code, int challenger_code, int member_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("game_code", game_code);
+		map.put("challenger_code", challenger_code);
+		map.put("member_code", member_code);
+		
+		sql.insert("franchiseePage.challengerWinGameRecord", map);
+	}
+
+	@Override
+	public void draw(int member_code, int challenger_code) {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("challenger_code", challenger_code);
-		map.put("maker_code", maker_code);
+		map.put("member_code", member_code);
 		
 		sql.update("franchiseePage.draw", map);
 	}
 
 	@Override
-	public void makerWinGameRecord(int game_record_code, int maker_code, int challenger_code) {
+	public void drawGameRecord(int game_code, int member_code, int challenger_code) {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		map.put("game_record_code", game_record_code);
+		map.put("game_code", game_code);
 		map.put("challenger_code", challenger_code);
-		map.put("maker_code", maker_code);
+		map.put("member_code", member_code);
 		
-		sql.update("franchiseePage.makerWinGameRecord", map);
-	}
-
-	@Override
-	public void challengerWinGameRecord(int game_record_code, int challenger_code, int maker_code) {
-		
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		
-		map.put("game_record_code", game_record_code);
-		map.put("challenger_code", challenger_code);
-		map.put("maker_code", maker_code);
-		
-		sql.update("franchiseePage.challengerWinGameRecord", map);
-	}
-
-	@Override
-	public void drawGameRecord(int game_record_code) {
-		sql.update("franchiseePage.drawGameRecord", game_record_code);
-	}
-
-	@Override
-	public List<GameRecord> gameRecordEnd(int game_code) {
-		return sql.selectList("franchiseePage.gameRecordEnd", game_code);
+		sql.insert("franchiseePage.drawGameRecord", map);
 	}
 
 }

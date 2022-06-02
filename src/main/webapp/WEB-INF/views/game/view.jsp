@@ -71,18 +71,18 @@
                 <div class="vspost_01">
                     <h3>대결 신청 게시글</h3>
                 </div>
-                <c:forEach items="${view}" var="item" varStatus="status">
+               
                 <div class="vspost_02">
                     <div class="vspost_02_01">
-                        <h1>${item.title}</h1>
+                        <h1>${game.title}</h1>
                     </div>
                     <div class="vspost_02_02">
                         <div class="vspost_02_txt">
-                            <h2>${item.maker}</h2>
+                            <h2>${game.maker}</h2>
                         </div>
                         <div class="vspost_02_date">
                             <div class="vspost_02_date01">
-                                <p>2022.05.16</p>
+                                <p>${game.time}</p>
                             </div>
                             <div class="vspost_02_date02">
                                 <p>조회 56</p>
@@ -91,23 +91,23 @@
                     </div>
                     <div class="vspost_02_03">
                         <div class="vpostCo01">
-                            <p>[ ${item.loc} ] 에서 개인 대결하실 분 찾아요</p>
+                            <p>[ ${game.loc} ] 에서 개인 대결하실 분 찾아요</p>
                         </div>
                         <div class="vpostCo01">
-                            <p>시간 :  ${item.time}</p>
+                            <p>시간 :  ${game.clock}</p>
                         </div>
                         <div class="vpostCo01">
-                            <p>위치 : ${item.loc}</p>
+                            <p>위치 : ${game.loc}</p>
                         </div>
                         <div class="vpostCo01">
-                            <p>모집인원 : ${item.recruit}명</p>
+                            <p>모집인원 : ${game.recruit}명</p>
                         </div>
                         <div class="vpostCo01">
-                            <p>주의사항(내용) : ${item.story}</p>
+                            <p>주의사항(내용) : ${game.story}</p>
                         </div>
                     </div>
                 </div>
-                </c:forEach>
+                
             </div>
 
             <div class="applicant">
@@ -150,7 +150,7 @@
                             <tr>
                             	<td>${status.index + 1 }</td>
                                 <td>${item.name}</td>
-                                <td style="color: #ffb400;">${item.tier}</td>
+                                <td style="color: #ffb400;">${item.score}</td>
                                 <td>${item.record}</td>
                                 <td>${item.win}</td>
                                 <td>${item.lose}</td>
@@ -161,15 +161,10 @@
                                 <c:when test="${item.state eq 1}"><td style="border-right: none; cursor: pointer;">승인</td></c:when>
                                 </c:choose>
                                 
-                                <c:forEach items="${view}" var="item" varStatus="status">
-									<c:if test="${item.member_code eq sessionScope.member.member_code}">
-								<td>
-										<a href="../permission/${item.game_code}" style="text-decoration:none">승인</a>
-								</td>
-									</c:if>
-							</c:forEach>
-                            </tr>
-                            </c:forEach>
+								<c:if test="${game.member_code eq sessionScope.member.member_code}">
+									<td><a href="../permission/${game_code}/${item.challenger_code}/${item.challenger_member_code}/${sessionScope.member.member_code}">승인</a></td>
+								</c:if>
+						</c:forEach>
                         </tbody>
                     </table>
                 </div>

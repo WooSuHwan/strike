@@ -88,14 +88,4 @@ public class GameServiceImpl implements GameService {
 		return dao.mypageGame(pager);
 	}
 
-	@Override
-	public List<Challenger> admitChallenger(int game_code) {
-		return dao.admitChallenger(game_code);
-	}
-
-	@Override
-	public List<Franchisee> franchiseeList() {
-		return dao.franchiseeList();
-	}
-
 }
