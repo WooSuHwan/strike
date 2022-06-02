@@ -20,7 +20,7 @@
 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
 	</select>
 	
-		<insert id="add">
+	<insert id="add">
 		INSERT INTO clan
 		VALUES (
 		CLAN_CODE_SEQ.nextval,
@@ -31,7 +31,9 @@
 		#{clan_lose}, 
 		#{clan_draw}, 
 		#{clan_rate},
-		#{clan_score})
+		#{clan_score},
+		sysdate
+		)
 	</insert>
 	
 	<select id="item" resultType="Clan">
@@ -89,12 +91,14 @@
 	
 	<insert id="application">
 		INSERT INTO clan_member
-		VALUES (CLAN_MEMBER_CODE_SEQ.nextval, #{member_code}, #{clan_code}, null)
+		VALUES (CLAN_MEMBER_CODE_SEQ.nextval, #{member_code}, #{clan_code}, null, sysdate)
 	</insert>
 	
 	<update id="permission">
 		update clan_member
-		set state = 1
+		set 
+		state = 1,
+		time = sysdate
 		where clan_member_code = #{clan_member_code} and clan_code = #{clan_code}
 	</update>
 	

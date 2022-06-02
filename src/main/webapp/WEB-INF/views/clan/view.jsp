@@ -110,6 +110,58 @@
 
 			<div class="applicant">
 				<div class="applicant_01">
+					<h3>클랜원</h3>
+				</div>
+				<div class="applicant_02">
+					<table class="applicanttable">
+						<colgroup>
+							<col style="width: 10%;">
+							<col style="width: 15%;">
+							<col style="width: 10%;">
+							<col style="width: 8%;">
+							<col style="width: 8%;">
+							<col style="width: 8%;">
+							<col style="width: 10%;">
+							<col style="width: 10%;">
+							<col style="width: 10%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>이름</th>
+								<th>티어</th>
+								<th>전적</th>
+								<th>승</th>
+								<th>패</th>
+								<th>무</th>
+								<th>승률</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:if test="${wait.size() < 1}">
+								<tr>
+									<td colspan="8">등록 된 클랜원이 없습니다</td>
+								</tr>
+							</c:if>
+							<c:forEach items="${clanMember}" var="item" varStatus="status">
+								<tr>
+									<td>${status.count}</td>
+									<td>${item.name}</td>
+									<td>${item.score}</td>
+									<td>${item.record}</td>
+									<td>${item.win}</td>
+									<td>${item.lose}</td>
+									<td>${item.draw}</td>
+									<td>${item.rate}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="applicant">
+				<div class="applicant_01">
 					<h3>클랜원 신청 대기</h3>
 				</div>
 				<div class="applicant_02">
@@ -164,9 +216,6 @@
 										<c:when test="${item.state ne 1}">
 											<td>승인대기</td>
 										</c:when>
-										<c:when test="${item.state eq 1}">
-											<td>승인완료</td>
-										</c:when>
 									</c:choose>
 									<c:if
 										test="${item.clan_master_code eq sessionScope.member.member_code}">
@@ -180,8 +229,7 @@
 					</table>
 				</div>
 				<div class="applicant_03">
-					<a
-						href="../application/${clan_code}/${sessionScope.member.member_code}">신청</a>
+					<a href="../application/${clan_code}/${sessionScope.member.member_code}">신청</a>
 				</div>
 			</div>
 

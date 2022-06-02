@@ -74,7 +74,7 @@
 				<div class="clanrankSearch1200">
 					<div class="clanrankSearch_01">
 						<div class="clanrankSearch_01_01">
-							<a href="">클랜 대결신청</a>
+							<a href="/clanGame/list">클랜 대결신청</a>
 						</div>
 						<div class="clanrankSearch_01_02">
 							<a href="/game/list">개인 대결신청</a>
