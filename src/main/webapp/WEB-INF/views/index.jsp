@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/index.css">
+<link rel="stylesheet" href="/resources/css/index.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <jsp:include page="font.jsp"></jsp:include>
+   <jsp:include page="nav.jsp"></jsp:include>
 </head>
 <body>
-   <jsp:include page="nav.jsp"></jsp:include>
    <section>
         <div class="inAll">
             <div class="hnone"></div> <!-- nav밑 빈영역 채우기 -->

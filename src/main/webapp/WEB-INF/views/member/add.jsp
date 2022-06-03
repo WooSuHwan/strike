@@ -150,156 +150,141 @@ $(function() {
     <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body class="body">
-<%-- <jsp:include page="../font.jsp"></jsp:include> --%>
-<%-- <jsp:include page="../rnav.jsp"></jsp:include> --%>
-<!-- <form class="efef"> -->
-<!--         <section class="singup1200px"> -->
+<jsp:include page="../font.jsp"></jsp:include>
+<jsp:include page="../rnav.jsp"></jsp:include>
+<form class="efef" action="add" method="post" id="add">
+        <section class="singup1200px">
             
 <!--             logo 부분 -->
-<!--             <div class="singupLogo"> -->
-<!--                 <img src="../resources/img/logo.png" height="100%" alt="logo"> -->
-<!--             </div> -->
+            <div class="singupLogo">
+                <img src="../resources/img/logo.png" height="100%" alt="logo">
+            </div>
 
 <!--             단계 부분 -->
-<!--             <div class="singupStep"> -->
-<!--                 <div class="stepbar"></div> -->
-<!--                 <div class="sstep1"> -->
-<!--                     <h3><a href="/singup1">1. 약관동의</a></h3> -->
-<!--                 </div> -->
-<!--                 <div class="sstep2"> -->
-<!--                     <h3><a href="../member/add">2. 정보입력</a></h3> -->
-<!--                 </div> -->
-<!--                 <div class="sstep3"> -->
-<!--                     <h3><a href="/singup2">3. 가입완료</a></h3> -->
-<!--                 </div> -->
-<!--             </div> -->
+            <div class="singupStep">
+                <div class="stepbar"></div>
+                <div class="sstep1">
+                    <h3><a href="/singup1">1. 약관동의</a></h3>
+                </div>
+                <div class="sstep2">
+                    <h3><a href="../member/add">2. 정보입력</a></h3>
+                </div>
+                <div class="sstep3">
+                    <h3><a href="/singup2">3. 가입완료</a></h3>
+                </div>
+            </div>
 
-<!--             <div class="singup2Txt"> -->
-<!--                 <h2>회원정보를 입력해주세요.</h2> -->
-<!--             </div> -->
+            <div class="singup2Txt">
+                <h2>회원정보를 입력해주세요.</h2>
+            </div>
 
-<!--             <div class="singup2simple"> -->
-<!--                 <div class="singup2simple_01"> -->
-<!--                     <p>기본정보</p> -->
-<!--                 </div> -->
-<!--                 <div class="singup2simple_02"> -->
-<!--                     <span>*</span>&nbsp; 표시는 필수항목 입니다. -->
-<!--                 </div> -->
-<!--             </div> -->
+            <div class="singup2simple">
+                <div class="singup2simple_01">
+                    <p>기본정보</p>
+                </div>
+                <div class="singup2simple_02">
+                    <span>*</span>&nbsp; 표시는 필수항목 입니다.
+                </div>
+            </div>
 
-<!--                 <div class="singup2Table"> -->
-<!--             <form action="add" method="post" id="add"> -->
-<!--                     <table> -->
-<!--                         <tbody> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">아이디 <span>*</span></td> -->
-<!--                                 <td class="tableInput"><input type="text" name="id" id="id" ><div id="id_message"></div></td> -->
+                <div class="singup2Table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="tableColor">아이디 <span>*</span></td>
+                                <td class="tableInput"><input type="text" name="id" id="id" ><div id="id_message"></div></td>
                                 
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">비밀번호 <span>*</span></td> -->
-<!--                                 <td class="tableInput"><input type="password" name="pw" id="pw"> <div id="pw_message"></div></td> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">비밀번호 확인 <span>*</span></td> -->
-<!--                                 <td class="tableInput"><input type="password" name="pw_confirm" id="pw_confirm"><div id="pw_confirm_message"></div></td> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">이름 <span>*</span></td> -->
-<!--                                 <td class="tableInput"><input type="text" name="name" id="name"><div id="name_message"></div></td> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">주소 (수정필요)<span>*</span></td> -->
-<!--                                 <td class="tableInput"> -->
-<!--                                     <div class="tableInput_01"> -->
-<!--                                         <input type="text" style="width: 23%;" name="postcode" id="postcode"  placeholder="우편번호" readonly> -->
-<!--                                         <button type="button" class="tableBtn0" onclick="execDaumPostcode()">우편번호</button> -->
-<!--                                     </div> -->
-<!--                                     <div class="tableInput_02"> -->
-<!--                                         <input type="text" style="margin-left: 1.5em;" class="tableBtn1" name="address" id="address" placeholder="도로명 주소" readonly /> -->
-<!--                                         <input type="text" style="margin-left: 0.7em;" name="detailAddress" placeholder="상세 주소" required /> -->
-<!--                                     </div> -->
-<!--                                 </td> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">휴대전화 <span>*</span></td> -->
-<!--                                 <td class="tableInput"><input type="tel" name="tel" id="tel"></td> -->
-<!--                                 <div id="tel_message"></div> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">생년월일 <span>*</span></td> -->
-<!--                                 <td class="tableInput"><input type="date" name="birth" id="birth"></td> -->
-<!--                                 <div id="birth_message"></div> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td class="tableColor">성별 <span>*</span></td> -->
-<!--                                 <td class="tableInput" style="border-bottom: none;"> -->
-<!--                                     <select name="sex" id="sex"> -->
-<!--                                         <option value="0">남자</option> -->
-<!--                                         <option value="1">여자</option> -->
-<!--                                     </select> -->
-<!--                                 </td> -->
-<!--                             </tr> -->
-<!--                         </tbody> -->
-<!--                     </table> -->
-<!--             </form> -->
-<!--                 </div> -->
-           
-
-<!--             <div class="loginBtn add"> -->
-<!--                 <button id="confirm" disabled="disabled" class="add_add"> 확인</button> -->
-<!--             </div> -->
-            
-<!--             <div class="wh"></div> -->
-<!--         </section> -->
-<!--     </form> -->
+                            </tr>
+                            <tr>
+                                <td class="tableColor">비밀번호 <span>*</span></td>
+                                <td class="tableInput"><input type="password" name="pw" id="pw"> <div id="pw_message"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tableColor">비밀번호 확인 <span>*</span></td>
+                                <td class="tableInput"><input type="password" name="pw_confirm" id="pw_confirm"><div id="pw_confirm_message"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="tableColor">이름 <span>*</span></td>
+                                <td class="tableInput"><input type="text" name="name" id="name"><div id="name_message"></div></td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="tableColor">휴대전화 <span>*</span></td>
+                                <td class="tableInput"><input type="tel" name="tel" id="tel"></td>
+                                <div id="tel_message"></div>
+                            </tr>
+                            <tr>
+                                <td class="tableColor">생년월일 <span>*</span></td>
+                                <td class="tableInput"><input type="date" name="birth" id="birth"></td>
+                                <div id="birth_message"></div>
+                            </tr>
+                            <tr>
+                                <td class="tableColor">성별 <span>*</span></td>
+                                <td class="tableInput" style="border-bottom: none;">
+                                    <select name="sex" id="sex">
+                                        <option value="0">남자</option>
+                                        <option value="1">여자</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <div class="loginBtn add">
+                <button id="confirm" disabled="disabled" class="add_add" type="submit"> 확인</button>
+            </div>
+            <div class="wh"></div>
+        </section>
+    </form>
     
-<!--     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>  autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다. 우편번호 -->
-<!--     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
-<!--     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 햄버거버튼 -->
-<!--     <script src="../resources/js/index.js"></script> -->
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>  
+<!--     autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다. 우편번호 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+<!--     햄버거버튼 -->
+    <script src="../resources/js/index.js"></script>
 
 
-	<div class="text">
-		<form action="add" method="post" id="add">			
-			<div class="text_text">
-				<div style="font-weight: 600">아이디:</div>
-				<input type="text" name="id" id="id" required maxlength="16" size=40>
-				<div id="id_message"></div>
+<!-- 	<div class="text"> -->
+<!-- 		<form action="add" method="post" id="add">			 -->
+<!-- 			<div class="text_text"> -->
+<!-- 				<div style="font-weight: 600">아이디:</div> -->
+<!-- 				<input type="text" name="id" id="id" required maxlength="16" size=40> -->
+<!-- 				<div id="id_message"></div> -->
 				
-				<div style="font-weight: 600">비밀번호:</div>
-				<input type="password" name="pw" id="pw" size=40>
-				<div id="pw_message"></div>
+<!-- 				<div style="font-weight: 600">비밀번호:</div> -->
+<!-- 				<input type="password" name="pw" id="pw" size=40> -->
+<!-- 				<div id="pw_message"></div> -->
 				
-				<div style="font-weight: 600">비밀번호 확인:</div>
-				<input type="password" name="pw_confirm" id="pw_confirm" size=40>
-				<div id="pw_confirm_message"></div>
+<!-- 				<div style="font-weight: 600">비밀번호 확인:</div> -->
+<!-- 				<input type="password" name="pw_confirm" id="pw_confirm" size=40> -->
+<!-- 				<div id="pw_confirm_message"></div> -->
 				
-				<div style="font-weight: 600">이름</div>
-				<input type="text" name="name" id="name" size=40>
-				<div id="name_message"></div>
+<!-- 				<div style="font-weight: 600">이름</div> -->
+<!-- 				<input type="text" name="name" id="name" size=40> -->
+<!-- 				<div id="name_message"></div> -->
 				
-				<div style="font-weight: 600">전화번호</div>
-				<input type="tel" name="tel" id="tel" size=40>
-				<div id="tel_message"></div>
+<!-- 				<div style="font-weight: 600">전화번호</div> -->
+<!-- 				<input type="tel" name="tel" id="tel" size=40> -->
+<!-- 				<div id="tel_message"></div> -->
 				
-				<div style="font-weight: 600">생년월일</div>
-				<input type="date" name="birth" id="birth" size=40>
-				<div id="birth_message"></div>
+<!-- 				<div style="font-weight: 600">생년월일</div> -->
+<!-- 				<input type="date" name="birth" id="birth" size=40> -->
+<!-- 				<div id="birth_message"></div> -->
 				
-				<div style="font-weight: 600">성별</div>	
-				<select name="sex" id="sex">
-					<option value="0">남자</option>
-					<option value="1">여자</option>
-				</select>
+<!-- 				<div style="font-weight: 600">성별</div>	 -->
+<!-- 				<select name="sex" id="sex"> -->
+<!-- 					<option value="0">남자</option> -->
+<!-- 					<option value="1">여자</option> -->
+<!-- 				</select> -->
 				
-				<br>
+<!-- 				<br> -->
 				
-				<div class="add">
-					<button id="confirm" disabled="disabled" class="add_add">등록</button>
-				</div>	
-			</div>			
-		</form>
-	</div>
+<!-- 				<div class="add"> -->
+<!-- 					<button id="confirm" disabled="disabled" class="add_add">등록</button> -->
+<!-- 				</div>	 -->
+<!-- 			</div>			 -->
+<!-- 		</form> -->
+<!-- 	</div> -->
 </body>
 </html>

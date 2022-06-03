@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>STRIKE</title>
 </head>
 <body>
 <div class="header"> <!-- header nav 메뉴 시작 -->
@@ -30,7 +29,7 @@
                             <a href="/suggestmaster/list"">공지사항</a>
                         </li>
                         <li>
-                            <a href="#">중고</a>
+                            <a href="/faq">고객센터</a>
                         </li>
                     </ul>
                 </div>

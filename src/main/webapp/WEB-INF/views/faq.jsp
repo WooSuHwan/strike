@@ -128,6 +128,24 @@
                         </p>
                     </div>
                 </div>
+                <div class="faqwh_01All">
+                    <div class="faqwh_01">
+                        <div class="faqwh_01_01">
+                            <h1>06</h1>
+                        </div>
+                        <div class="faqwh_01_02">
+                            <p>Q. &nbsp; 가맹점 회원가입은 어떻게 하나요?</p>
+                        </div>
+                        <div class="faqwh_01_03">
+                            <img src="../resources/img/dwonarrow.png" height="20%" alt="화살표">
+                        </div>
+                    </div>
+                    <div class="faqhide" style="display: none;">
+                        <p>
+                            가맹점 신청을 한 후 체택이 되면 회원가입 링크를 드립니다.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 

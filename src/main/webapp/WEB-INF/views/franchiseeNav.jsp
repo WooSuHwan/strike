@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>STRIKE</title>
+<link rel="shortcut icon" type="image/x-icon" href="../resources/img/Ologo.png" />
 </head>
 <body>
 <div class="header"> <!-- header nav 메뉴 시작 -->
@@ -14,13 +15,13 @@
             	<div class="row">
 		<!-- 로그인 전 -->
 		<div>
-			<c:if test="${sessionScope.member == null && sessionScope.franchisee == null}">
-				<div><a href="franchiseeLogin/login" style="text-decoration:none">가맹점 로그인</a></div>
-			</c:if>
+<%-- 			<c:if test="${sessionScope.member == null && sessionScope.franchisee == null}"> --%>
+<!-- 				<div><a href="franchiseeLogin/login" style="text-decoration:none">가맹점 로그인</a></div> -->
+<%-- 			</c:if> --%>
 			
-			<c:if test="${sessionScope.member == null && sessionScope.franchisee == null}">
-				<div><a href="franchisee/add" style="text-decoration:none">가맹점 회원가입</a></div>
-			</c:if>
+<%-- 			<c:if test="${sessionScope.member == null && sessionScope.franchisee == null}"> --%>
+<!-- 				<div><a href="franchisee/add" style="text-decoration:none">가맹점 회원가입</a></div> -->
+<%-- 			</c:if> --%>
 		<!-- 로그인 후 -->
 			
 			
@@ -37,8 +38,12 @@
 			</c:if>
                         </li>
                         <li>
-                           <!-- 로그아웃 -->
-			<c:if test="${sessionScope.franchisee != null}">
+                           <!-- 로그아웃 --> 
+                           <c:if test="${sessionScope.member == null && sessionScope.franchisee == null}">
+							<div>
+								<a href="franchiseeLogin/login" style="text-decoration: none">로그인</a>
+							</div>
+						</c:if> <c:if test="${sessionScope.franchisee != null}">
 				<span><a href="franchiseeLogin/logout" style="text-decoration:none">로그아웃</a></span>
 			</c:if>
                         </li>

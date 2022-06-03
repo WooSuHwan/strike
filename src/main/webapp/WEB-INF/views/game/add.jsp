@@ -5,13 +5,14 @@
 <head>
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/battleBtn.css">
+<link rel="stylesheet" href="/resources/css/clanrankdetails.css">
 <link rel="stylesheet" href="/resources/css/index.css">
+<link rel="stylesheet" href="../resources/css/singup2.css"/>
+	<jsp:include page="../font.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="../font.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<jsp:include page="../rnav.jsp"></jsp:include>
-
 	<div class="mypageNav"></div>
 	<section>
 		<div class="clanAll">
@@ -34,9 +35,16 @@
 					<div class="vspost_02_01">
 						<label>시간</label> <input type="text" name="clock">
 					</div>
-					<div class="vspost_02_01">
-						<label>위치</label> <input type="text" name="loc">
-					</div>
+					<div class="vspost_02_01 tableInput">
+							<label>위치</label>
+							<div class="tableInput_01">
+	                            <input type="text" style="width: 23%;" name="postcode" id="postcode"  placeholder="우편번호" readonly>
+	                            <button type="button" class="tableBtn0" onclick="execDaumPostcode()">우편번호</button>
+	                        </div>
+	                        <div class="tableInput_02">
+	                            <input type="text" style="margin-left: 1.5em;" class="tableBtn1" name="loc" id="address" placeholder="도로명 주소" readonly />
+	                        </div>
+	                </div>
 					<div class="vspost_02_01">
 						<label>모집</label> <input type="text" name="recruit">
 					</div>
@@ -52,15 +60,8 @@
                 		<div class="applicant_02">
                    			<table class="applicanttable">
                     		    <colgroup>
-		                            <col style="width: 10%;">
-		                            <col style="width: 15%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 10%;">
+		                            <col style="width: 30%;">
+		                            <col style="width: 70%;">
                         		</colgroup>
 		                        <thead>
 		                            <tr>
@@ -87,7 +88,7 @@
 
 		<div class="wh"></div>
 	</section>
-
+	    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script> 
 	<jsp:include page="../footer.jsp"></jsp:include>
 	<script src="../resources/js/index.js"></script>
 </body>

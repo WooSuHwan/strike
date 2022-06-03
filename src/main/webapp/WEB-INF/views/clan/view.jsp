@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/clanrankdetails.css">
 <link rel="stylesheet" href="/resources/css/index.css">
+	<jsp:include page="../font.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="../font.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<section>
 		<div class="clanAll">
@@ -101,7 +101,7 @@
 								</div>
 							</c:if>
 							<c:forEach items="${clanMember}" var="item" varStatus="status">
-								<h3>${item.name}, &nbsp;</h3>
+								<h3>${item.name} &nbsp;</h3>
 							</c:forEach>
 						</div>
 					</div>
@@ -137,7 +137,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:if test="${wait.size() < 1}">
+							<c:if test="${clanMember.size() < 1}">
 								<tr>
 									<td colspan="8">등록 된 클랜원이 없습니다</td>
 								</tr>
@@ -444,7 +444,7 @@
 			<!-- 			</div> -->
 			<%-- 		</c:if> --%>
 			<!-- 	</div> -->
-
+</div>
 			<div class="wh"></div>
 
 			<jsp:include page="../footer.jsp"></jsp:include>

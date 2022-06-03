@@ -17,6 +17,13 @@
 
 	<section>
 		<div class="clanAll">
+		   <div class="clanrankSearch">
+                <div class="clanrankSearch1200">
+                    <div class="clanrankSearch_01">
+                        <h2>개인전 경기 목록</h2>
+                    </div>
+                </div>
+            </div>
 			<div class="personalvs01">
 				<div class="personalvs01_01">
 					<img src="/resources/img/vs.png" alt="vs">

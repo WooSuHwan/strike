@@ -18,7 +18,7 @@
             <div class="RM_tilte">
                 <div class="RM_tilte_text01">
             <c:if test="${sessionScope.member == null}">
-                    <h3><a href="/login/login">회원가입/로그인 하기</a></h3>
+                    <h3><a href="/loginSelect">회원가입/로그인 하기</a></h3>
 			</c:if>
 			<c:if test="${sessionScope.member != null}">
 				<h3><a href="/login/logout">로그아웃</a></h3>

@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
 <title>STRIKE</title>
+<link rel="shortcut icon" type="image/x-icon" href="../resources/img/Ologo.png" />
 <link rel="stylesheet" href="../resources/css/font.css">
 <link rel="stylesheet" href="../resources/css/singup.css">
 <script>

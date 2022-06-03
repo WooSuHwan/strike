@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>STRIKE</title>
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/Ologo.png" />
  <!-- font -->
  <style>
      @font-face {

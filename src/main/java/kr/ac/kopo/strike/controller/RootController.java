@@ -71,4 +71,9 @@ public class RootController {
 	}
 	
 //	회원가입 끝
+	
+	@RequestMapping("/loginSelect")
+	public String loginSelect() {
+		return "loginSelect";
+	}
 }

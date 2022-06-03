@@ -33,7 +33,7 @@ public class FranchiseeLoginController {
 		} else {
 			session.setAttribute("franchisee", franchisee);
 			
-			return "redirect:/";
+			return "redirect:/franchisee";
 		}
 	}
 	

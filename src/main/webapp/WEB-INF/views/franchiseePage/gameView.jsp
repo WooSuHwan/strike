@@ -17,7 +17,7 @@
             <div class="clanrankSearch">
                 <div class="clanrankSearch1200">
                     <div class="clanrankSearch_01">
-                        <h2>개인 대결 신청</h2>
+                        <h2>개인전 경기 결과 등록</h2>
                     </div>
                 </div>
             </div>

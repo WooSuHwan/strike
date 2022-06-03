@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,9 @@
 <link rel="stylesheet" href="/resources/css/font.css">
     <link rel="stylesheet" href="/resources/css/personaldetails.css">
     <link rel="stylesheet" href="/resources/css/index.css">
+    <jsp:include page="../font.jsp"></jsp:include>
 </head>
 <body>
-    <jsp:include page="../font.jsp"></jsp:include>
     <jsp:include page="../nav.jsp"></jsp:include>
     <jsp:include page="../rnav.jsp"></jsp:include>
 <section>
@@ -27,7 +28,7 @@
                 <div class="cdetail01">
                     <div class="cdetail01_02">
                         <div class="cdetail01_02_01">
-                            <h1>strike</h1>
+                            <h1>${game.maker }</h1>
                         </div>
                         <div class="cdetail01_02_02">
                             <a href="#">최신정보</a>
@@ -81,7 +82,7 @@
                         </div>
                         <div class="vspost_02_date">
                             <div class="vspost_02_date01">
-                                <p>${game.time}</p>
+                            <fmt:formatDate value="${game.time}" type="date" pattern="YYYY.MM.dd"/>
                             </div>
                             <div class="vspost_02_date02">
                                 <p>조회 56</p>
