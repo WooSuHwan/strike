@@ -4,14 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<meta charset="UTF-8">
-<title>Insert title here</title>
-=======
->>>>>>> refs/heads/WSH
-=======
->>>>>>> branch 'master' of https://github.com/WooSuHwan/strike.git
 </head>
 <body>
  <div class="Ham_button">

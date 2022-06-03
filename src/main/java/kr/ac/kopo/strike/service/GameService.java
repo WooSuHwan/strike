@@ -35,5 +35,9 @@ public interface GameService {
 	void addGame(int game_code, int challenger_member_code, int member_code);
 
 	List<Game> mypageGame(Pager pager);
+
+	List<Challenger> admitChallenger(int game_code);
+
+	List<Franchisee> franchiseeList();
 	
 }
