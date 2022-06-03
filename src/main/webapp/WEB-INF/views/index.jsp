@@ -8,6 +8,10 @@
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <jsp:include page="font.jsp"></jsp:include>
    <jsp:include page="nav.jsp"></jsp:include>
+   
+   <script>
+   window.open("../resources/img/faq_icon.png","popup","width=500, height=500, left=0, top=180px")
+   </script>
 </head>
 <body>
    <section>
@@ -187,7 +191,9 @@
             </div>
         </div> <!-- 랭크 컨텐츠 부분 -->
     </section>
-	</div>
+    <map name="popup" id="popup">
+        <area shape="rect" coords="380,457,487,492" href="#" alt="close" onclick="window.close();">
+   </map>
 		<jsp:include page="footer.jsp"></jsp:include>
 		
 		<!-- script부분 -->
