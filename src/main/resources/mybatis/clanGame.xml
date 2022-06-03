@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="clanGame">
+	<select id="list" resultType="ClanGame">
+		select cg.*, c.*
+		from clan_game cg
+    	JOIN clan c ON cg.clan_code = c.clan_code
+	</select>
+	
+	<insert id="add">
+		INSERT INTO clan_game
+		VALUES (CLAN_GAME_CODE_SEQ.nextval, #{member_code}, #{clan_code}, #{title}, #{clock}, #{loc}, #{clan_recruit}, #{story}, #{style}, sysdate)
+	</insert>
+	
+	<select id="item" resultType="Clan">
+		select cg.*, c.* 
+		from clan_game cg
+		join clan c on cg.clan_code = c.clan_code AND cg.clan_game_code = #{clan_game_code}
+	</select>
+</mapper>
