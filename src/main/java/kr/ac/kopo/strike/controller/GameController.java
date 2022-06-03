@@ -93,7 +93,7 @@ public class GameController {
 	@GetMapping("/view/{game_code}")
 	public String view(@PathVariable int game_code, Model model) {	
 		
-		Game game = service.item(game_code);		
+		Game game = service.item(game_code);
 		List<Member> member = service.member(game_code);
 		List<Challenger> admitChallenger = service.admitChallenger(game_code);
 		

@@ -129,7 +129,7 @@
 					<tbody>
 						<c:if test="${list.size() < 1}">
 							<tr>
-								<td colspan="9">신청 할 수 있는 대결이 없습니다.</td>
+								<td colspan="5">신청 할 수 있는 대결이 없습니다.</td>
 							</tr>
 						</c:if>
 						<c:forEach items="${list}" var="item" varStatus="status">

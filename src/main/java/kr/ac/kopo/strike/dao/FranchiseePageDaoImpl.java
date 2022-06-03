@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.GameRecord;
+import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Game;
 
 @Repository
@@ -15,7 +17,7 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 
 	@Autowired
 	SqlSession sql;
-
+	// 개인 게임
 	@Override
 	public List<Game> game(String address) {
 		return sql.selectList("franchiseePage.game", address);
@@ -89,6 +91,61 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 	@Override
 	public List<GameRecord> gameRecordEnd(int game_code) {
 		return sql.selectList("franchiseePage.gameRecordEnd", game_code);
+	}
+	// 클랜 게임
+	@Override
+	public List<ClanGame> clanGame(String address) {
+		return sql.selectList("franchiseePage.clanGame", address);
+	}
+
+	@Override
+	public List<ClanGameRecord> clanGameRecord(int clan_game_code) {
+		return sql.selectList("franchiseePage.clanGameRecord", clan_game_code);
+	}
+
+	@Override
+	public List<ClanGameRecord> clanGameRecordEnd(int clan_game_code) {
+		return sql.selectList("franchiseePage.clanGameRecordEnd", clan_game_code);
+	}
+
+	@Override
+	public void clanMakerWin(int clan_maker_code) {
+		sql.
+	}
+
+	@Override
+	public void clanChallengerLose(int clan_challenger_code) {
+		
+	}
+
+	@Override
+	public void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int clan_challenger_code) {
+		
+	}
+
+	@Override
+	public void clanChallengerWin(int clan_challenger_code) {
+		
+	}
+
+	@Override
+	public void clanMakerLose(int clan_maker_code) {
+		
+	}
+
+	@Override
+	public void clanChallengerWinGameRecord(int clan_game_record_code, int clan_challenger_code, int clan_maker_code) {
+		
+	}
+
+	@Override
+	public void clanDraw(int clan_maker_code, int clan_challenger_code) {
+		
+	}
+
+	@Override
+	public void clanDrawGameRecord(int clan_game_record_code) {
+		
 	}
 
 }

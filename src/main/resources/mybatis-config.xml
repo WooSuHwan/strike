@@ -11,6 +11,7 @@
 		<typeAlias type="kr.ac.kopo.strike.model.Franchisee" alias="Franchisee"/>
 		<typeAlias type="kr.ac.kopo.strike.model.GameRecord" alias="GameRecord"/>
 		<typeAlias type="kr.ac.kopo.strike.model.ClanGame" alias="ClanGame"/>
+		<typeAlias type="kr.ac.kopo.strike.model.ClanChallenger" alias="ClanChallenger"/>
 		
 		<typeAlias type="kr.ac.kopo.strike.model.SuggestFree" alias="SuggestFree"/>
       	<typeAlias type="kr.ac.kopo.strike.model.SuggestMaster" alias="SuggestMaster"/>

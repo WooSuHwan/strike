@@ -6,7 +6,6 @@ public class ClanGame {
 	private int clan_game_code;
 	private int member_code;
 	private int clan_code;
-	private String clan_maker;
 	private String title;
 	private String clock;
 	private String loc;
@@ -15,16 +14,8 @@ public class ClanGame {
 	private String style;
 	private Date time;
 	// clan
-	private int challenger_clan_code;
-	private int clan_master_code;
 	private String clan_name;
-	private int clan_record;
-	private int clan_win;
-	private int clan_lose;
-	private int clan_draw;
-	private int clan_rate;
 	private int clan_score;
-	private Date clan_time;
 
 	public int getClan_score() {
 		return clan_score;
@@ -34,28 +25,12 @@ public class ClanGame {
 		this.clan_score = clan_score;
 	}
 
-	public String getStyle() {
-		return style;
-	}
-
-	public void setStyle(String style) {
-		this.style = style;
-	}
-
 	public String getClan_name() {
 		return clan_name;
 	}
 
 	public void setClan_name(String clan_name) {
 		this.clan_name = clan_name;
-	}
-
-	public String getClan_maker() {
-		return clan_maker;
-	}
-
-	public void setClan_maker(String clan_maker) {
-		this.clan_maker = clan_maker;
 	}
 
 	public int getClan_game_code() {
@@ -122,6 +97,14 @@ public class ClanGame {
 		this.story = story;
 	}
 
+	public String getStyle() {
+		return style;
+	}
+
+	public void setStyle(String style) {
+		this.style = style;
+	}
+
 	public Date getTime() {
 		return time;
 	}
@@ -129,4 +112,5 @@ public class ClanGame {
 	public void setTime(Date time) {
 		this.time = time;
 	}
+
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.ClanGameDao;
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.ClanChallenger;
 import kr.ac.kopo.strike.model.ClanGame;
 
 @Service
@@ -31,8 +32,33 @@ public class ClanGameServiceImpl implements ClanGameService {
 	}
 
 	@Override
-	public List<Clan> clan(int clan_game_code) {
-		return clan(clan_game_code);
+	public Clan clanItem(int clan_code) {
+		return dao.clanItem(clan_code);
+	}
+
+	@Override
+	public List<ClanChallenger> admitClanChallenger(int clan_game_code) {
+		return dao.admitClanChallenger(clan_game_code);
+	}
+
+	@Override
+	public List<ClanChallenger> challenger(int clan_game_code) {
+		return dao.challenger(clan_game_code);
+	}
+
+	@Override
+	public void challenge(int clan_game_code, int clan_code) {
+		dao.challenge(clan_game_code, clan_code);
+	}
+
+	@Override
+	public void permission(int clan_game_code, int clan_challenger_code) {
+		dao.permission(clan_game_code, clan_challenger_code);
+	}
+
+	@Override
+	public void addClanGame(int clan_game_code, int clan_challenger_code, int clan_code) {
+		dao.addClanGame(clan_game_code, clan_challenger_code, clan_code);
 	}
 	
 }
