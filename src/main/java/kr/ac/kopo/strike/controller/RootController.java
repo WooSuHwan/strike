@@ -2,10 +2,13 @@ package kr.ac.kopo.strike.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.annotation.SessionScope;
 
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.Member;
@@ -27,7 +30,7 @@ public class RootController {
 	SHA256Util sha256 = new SHA256Util();
 	
 	@RequestMapping("/")
-	public String index(Model model) {
+	public String index(Model model, HttpSession session) {
 		List<Clan> clanList = clanService.clanList();		
 		model.addAttribute("clanList", clanList);
 		
@@ -37,8 +40,7 @@ public class RootController {
 					
 					item.setName( aes256.decrypt(item.getName()) );
 				}
-		
-		
+
 		return "index";
 	}
 	

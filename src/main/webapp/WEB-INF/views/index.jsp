@@ -10,7 +10,7 @@
    <jsp:include page="nav.jsp"></jsp:include>
    
    <script>
-   window.open("../resources/img/faq_icon.png","popup","width=500, height=500, left=0, top=180px")
+   window.open("../resources/img/popup_store.png","popup","width=600, height=701, left=0, top=180px")
    </script>
 </head>
 <body>

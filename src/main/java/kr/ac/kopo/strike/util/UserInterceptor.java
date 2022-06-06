@@ -18,16 +18,13 @@ public class UserInterceptor extends HandlerInterceptorAdapter {
 		
 		HttpSession session = request.getSession();
 		
-		Member member = (Member) session.getAttribute("user");
+		Member member = (Member) session.getAttribute("member");
 		
-		//로그인 했으면 트루
-		//멤버가 아니면 로그인 페이지로
-		if(member != null) {
-			return true;
-		}
-		
-		response.sendRedirect("/login");
-		return false;
+		if(member == null) {
+			response.sendRedirect(request.getContextPath()+"/login/login");
+			return false;
+		}		
+		return true;
 	}
 
 }

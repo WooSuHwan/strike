@@ -27,7 +27,7 @@ public class LoginController {
 	@PostMapping("/login")
 	String login(String id, String pw, HttpSession session) {
 		Member member = service.check(id, pw);
-
+		
 		if(member == null) {
 			return "redirect:/login/login?wrong=true";
 		} else {
@@ -37,6 +37,9 @@ public class LoginController {
 			
 			return "redirect:/";
 		}
+		
+		
+		
 	}
 	
 	@RequestMapping("/logout")
