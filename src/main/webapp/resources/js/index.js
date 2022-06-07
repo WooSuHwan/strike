@@ -18,14 +18,18 @@ $(burger).on("click", function () {
     $('.ham-con').animate({
       right: '0',
       opacity: 1
-    }, 500);
+    }, 500,"swing", function() {
+      $('.ham-con2').css("display", "block");  // animate가 끝나고 보여라
+    });
     $(this).addClass('active-1');
     h++;
   } else if (h == 1) {
     $('.ham-con').animate({
       right: '-20%',
       opacity: 0
-    }, 500);
+    }, 500,"swing", function() {
+      $('.ham-con2').css("display", "none"); // animate가 끝나고 보이지말아라
+    });
     $(this).removeClass('active-1');
     h--;
   }
@@ -41,6 +45,58 @@ $(burger).on("click", function () {
     }
   });
 })
+
+
+// 햄버거 버튼 위에서 아래로
+
+var burger = $('.menu-trigger2');
+
+burger.each(function (index) {
+  var $this = $(this);
+
+  $this.on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('active-' + (index + 1));
+  })
+});
+
+var h = 0;
+
+$(burger).on("click", function () {
+  if (h == 0) {
+
+    $('.ham-con2').animate({
+      top: '0',
+      opacity: 1      
+    }, 500, "swing",  function(){
+      $('.ham-con2').css("display", "block");
+    });
+
+    $(this).addClass('active-1');
+    h++;
+  } else if (h == 1) {
+    $('.ham-con2').animate({
+        top: '0%',
+      opacity: 0
+    }, 500, "swing", function() {
+      $('.ham-con2').css("display", "none");
+    });
+    $(this).removeClass('active-1');
+    h--;
+  }
+  $(window).scroll(function () {
+    sct = $(window).scrollTop();
+    if (sct > 30) {
+      $('.ham-con2').css({
+        opacity: 0,
+        top: '0%'
+      }, 500);
+      $(burger).removeClass('active-1');
+      h = 0;
+    }
+  });
+})
+
 
 
 // 슬라이드
