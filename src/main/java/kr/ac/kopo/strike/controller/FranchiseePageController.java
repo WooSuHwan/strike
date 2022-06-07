@@ -111,7 +111,7 @@ public class FranchiseePageController {
 	}
 	// 클랜 게임 부분
 	@GetMapping("/clanGameList/{franchisee_code}")
-	public String ClanGameList(@PathVariable int franchisee_code, Model model, @SessionAttribute Franchisee franchisee) {
+	public String clanGameList(@PathVariable int franchisee_code, Model model, @SessionAttribute Franchisee franchisee) {
 		
 		List<ClanGame> clanGame = service.clanGame(franchisee.getAddress());
 		
@@ -121,7 +121,7 @@ public class FranchiseePageController {
 	}
 	
 	@GetMapping("/clanGameView/{clan_game_code}")
-	public String ClanGameView(@PathVariable int clan_game_code, Model model) {
+	public String clanGameView(@PathVariable int clan_game_code, Model model) {
 		
 		ClanGame clanGame = clanGameService.item(clan_game_code);		
 		List<ClanGameRecord> clanGameRecord = service.clanGameRecord(clan_game_code);
@@ -134,30 +134,30 @@ public class FranchiseePageController {
 		return path + "clanGameView";
 	}
 	
-	@GetMapping("/clanMakerWin/{clan_game_code}/{clan_game_record_code}/{clan_maker_code}/{clan_challenger_code}")
-	public String clanMakerWin(@PathVariable int clan_game_code, @PathVariable int clan_game_record_code, @PathVariable int clan_maker_code, @PathVariable int clan_challenger_code) {
-		
+	@GetMapping("/clanMakerWin/{clan_game_code}/{clan_game_record_code}/{clan_maker_code}/{challenger_clan_code}")
+	public String clanMakerWin(@PathVariable int clan_game_code, @PathVariable int clan_game_record_code, @PathVariable int clan_maker_code, @PathVariable int challenger_clan_code) {
+		System.out.println("제작자 코드" + clan_maker_code + "도전자 코드" + challenger_clan_code);
 		service.clanMakerWin(clan_maker_code);
-		service.clanChallengerLose(clan_challenger_code);
-		service.clanMakerWinGameRecord(clan_game_record_code, clan_maker_code, clan_challenger_code);
+		service.clanChallengerLose(challenger_clan_code);
+		service.clanMakerWinGameRecord(clan_game_record_code, clan_maker_code, challenger_clan_code);
 		
 		return "redirect:/franchiseePage/clanGameView/" + clan_game_code;
 	}
 	
-	@GetMapping("/clanChallengerWin/{clan_game_code}/{clan_game_record_code}/{clan_challenger_code}/{clan_maker_code}")
-	public String clanChallengerWin(@PathVariable int clan_game_code, @PathVariable int clan_game_record_code, @PathVariable int clan_challenger_code, @PathVariable int clan_maker_code) {
-
-		service.clanChallengerWin(clan_challenger_code);
+	@GetMapping("/clanChallengerWin/{clan_game_code}/{clan_game_record_code}/{challenger_clan_code}/{clan_maker_code}")
+	public String clanChallengerWin(@PathVariable int clan_game_code, @PathVariable int clan_game_record_code, @PathVariable int challenger_clan_code, @PathVariable int clan_maker_code) {
+		System.out.println("제작자 코드" + clan_maker_code + "도전자 코드" + challenger_clan_code);
+		service.clanChallengerWin(challenger_clan_code);
 		service.clanMakerLose(clan_maker_code);
-		service.clanChallengerWinGameRecord(clan_game_record_code, clan_challenger_code, clan_maker_code);
+		service.clanChallengerWinGameRecord(clan_game_record_code, challenger_clan_code, clan_maker_code);
 		
 		return "redirect:/franchiseePage/clanGameView/" + clan_game_code;
 	}
 	
-	@GetMapping("/clanDraw/{clan_game_code}/{clan_game_record_code}/{clan_maker_code}/{clan_challenger_code}")
-	public String clanDraw(@PathVariable int clan_game_code, @PathVariable int clan_game_record_code, @PathVariable int clan_maker_code, @PathVariable int clan_challenger_code) {
-		
-		service.clanDraw(clan_maker_code, clan_challenger_code);
+	@GetMapping("/clanDraw/{clan_game_code}/{clan_game_record_code}/{clan_maker_code}/{challenger_clan_code}")
+	public String clanDraw(@PathVariable int clan_game_code, @PathVariable int clan_game_record_code, @PathVariable int clan_maker_code, @PathVariable int challenger_clan_code) {
+		System.out.println("제작자 코드" + clan_maker_code + "도전자 코드" + challenger_clan_code);
+		service.clanDraw(clan_maker_code, challenger_clan_code);
 		service.clanDrawGameRecord(clan_game_record_code);
 		
 		return "redirect:/franchiseePage/clanGameView/" + clan_game_code;

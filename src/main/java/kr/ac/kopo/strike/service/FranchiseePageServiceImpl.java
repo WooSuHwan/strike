@@ -93,18 +93,18 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	}
 
 	@Override
-	public void clanChallengerLose(int clan_challenger_code) {
-		dao.clanChallengerLose(clan_challenger_code);
+	public void clanChallengerLose(int challenger_clan_code) {
+		dao.clanChallengerLose(challenger_clan_code);
 	}
 
 	@Override
-	public void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int clan_challenger_code) {
-		dao.clanMakerWinGameRecord(clan_game_record_code, clan_maker_code, clan_challenger_code);
+	public void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int challenger_clan_code) {
+		dao.clanMakerWinGameRecord(clan_game_record_code, clan_maker_code, challenger_clan_code);
 	}
 
 	@Override
-	public void clanChallengerWin(int clan_challenger_code) {
-		dao.clanChallengerWin(clan_challenger_code);
+	public void clanChallengerWin(int challenger_clan_code) {
+		dao.clanChallengerWin(challenger_clan_code);
 	}
 
 	@Override
@@ -113,13 +113,13 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	}
 
 	@Override
-	public void clanChallengerWinGameRecord(int clan_game_record_code, int clan_challenger_code, int clan_maker_code) {
-		dao.clanChallengerWinGameRecord(clan_game_record_code, clan_challenger_code, clan_maker_code);
+	public void clanChallengerWinGameRecord(int clan_game_record_code, int challenger_clan_code, int clan_maker_code) {
+		dao.clanChallengerWinGameRecord(clan_game_record_code, challenger_clan_code, clan_maker_code);
 	}
 
 	@Override
-	public void clanDraw(int clan_maker_code, int clan_challenger_code) {
-		dao.clanDraw(clan_maker_code, clan_challenger_code);
+	public void clanDraw(int clan_maker_code, int challenger_clan_code) {
+		dao.clanDraw(clan_maker_code, challenger_clan_code);
 	}
 
 	@Override

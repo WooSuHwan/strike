@@ -110,42 +110,62 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 
 	@Override
 	public void clanMakerWin(int clan_maker_code) {
-		sql.
+		sql.update("franchiseePage.clanMakerWin", clan_maker_code);
 	}
 
 	@Override
-	public void clanChallengerLose(int clan_challenger_code) {
-		
+	public void clanChallengerLose(int challenger_clan_code) {
+		sql.update("franchiseePage.clanChallengerLose", challenger_clan_code);
 	}
 
 	@Override
-	public void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int clan_challenger_code) {
+	public void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int challenger_clan_code) {
 		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("clan_game_record_code", clan_game_record_code);
+		map.put("challenger_clan_code", challenger_clan_code);
+		map.put("clan_maker_code", clan_maker_code);
+		
+		sql.update("franchiseePage.clanMakerWinGameRecord", map);
 	}
 
 	@Override
-	public void clanChallengerWin(int clan_challenger_code) {
-		
+	public void clanChallengerWin(int challenger_clan_code) {
+		sql.update("franchiseePage.clanChallengerWin", challenger_clan_code);
 	}
 
 	@Override
 	public void clanMakerLose(int clan_maker_code) {
-		
+		sql.update("franchiseePage.clanMakerLose", clan_maker_code);
 	}
 
 	@Override
-	public void clanChallengerWinGameRecord(int clan_game_record_code, int clan_challenger_code, int clan_maker_code) {
+	public void clanChallengerWinGameRecord(int clan_game_record_code, int challenger_clan_code, int clan_maker_code) {
 		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("clan_game_record_code", clan_game_record_code);
+		map.put("challenger_clan_code", challenger_clan_code);
+		map.put("clan_maker_code", clan_maker_code);
+		
+		sql.update("franchiseePage.clanChallengerWinGameRecord", map);
 	}
 
 	@Override
-	public void clanDraw(int clan_maker_code, int clan_challenger_code) {
+	public void clanDraw(int clan_maker_code, int challenger_clan_code) {
 		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("challenger_clan_code", challenger_clan_code);
+		map.put("clan_maker_code", clan_maker_code);
+		
+		sql.update("franchiseePage.clanDraw", map);
 	}
 
 	@Override
 	public void clanDrawGameRecord(int clan_game_record_code) {
-		
+		sql.update("franchiseePage.clanDrawGameRecord", clan_game_record_code);
 	}
 
 }

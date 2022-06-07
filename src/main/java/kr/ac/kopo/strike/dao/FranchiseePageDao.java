@@ -39,17 +39,17 @@ public interface FranchiseePageDao {
 
 	void clanMakerWin(int clan_maker_code);
 
-	void clanChallengerLose(int clan_challenger_code);
+	void clanChallengerLose(int challenger_clan_code);
 
-	void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int clan_challenger_code);
+	void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int challenger_clan_code);
 
-	void clanChallengerWin(int clan_challenger_code);
+	void clanChallengerWin(int challenger_clan_code);
 
 	void clanMakerLose(int clan_maker_code);
 
-	void clanChallengerWinGameRecord(int clan_game_record_code, int clan_challenger_code, int clan_maker_code);
+	void clanChallengerWinGameRecord(int clan_game_record_code, int challenger_clan_code, int clan_maker_code);
 
-	void clanDraw(int clan_maker_code, int clan_challenger_code);
+	void clanDraw(int clan_maker_code, int challenger_clan_code);
 
 	void clanDrawGameRecord(int clan_game_record_code);
 

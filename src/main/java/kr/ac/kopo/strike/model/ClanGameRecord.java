@@ -13,7 +13,16 @@ public class ClanGameRecord {
 	private Date time_end;
 	// clan
 	private String clan_challenger_name;
+	private int challenger_clan_code;
 	private String clan_name;
+
+	public int getChallenger_clan_code() {
+		return challenger_clan_code;
+	}
+
+	public void setChallenger_clan_code(int challenger_clan_code) {
+		this.challenger_clan_code = challenger_clan_code;
+	}
 
 	public int getClan_game_record_code() {
 		return clan_game_record_code;
