@@ -25,22 +25,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:if test="${game.size() < 1}">
+					<c:if test="${clanGame.size() < 1}">
 						<tr>
 							<td colspan="9">등록 된 개인 대결이 없습니다</td>
 						</tr>
 					</c:if>
-					<c:forEach items="${game}" var="item" varStatus="status">
+					<c:forEach items="${clanGame}" var="item" varStatus="status">
 						<tr>
 							<td>${status.count}</td>
-							<td>${item.maker}</td>
+							<td>${item.clan_name}</td>
 							<td>${item.title}</td>
 							<td>${item.clock}</td>
 							<td>${item.loc}</td>
-							<td>${item.recruit}</td>
-							<td><a href="/franchiseePage/gameView/${item.game_code} "style="text-decoration:none">입장</a></td>
-							<td><a href="update/${item.game_code}" style="text-decoration:none">수정</a></td>
-							<td><a href="delete/${item.game_code}" style="text-decoration:none">삭제</a></td>
+							<td>${item.clan_recruit}</td>
+							<td><a href="/franchiseePage/clanGameView/${item.clan_game_code} "style="text-decoration:none">입장</a></td>
+							<td><a href="update/${item.clan_game_code}" style="text-decoration:none">수정</a></td>
+							<td><a href="delete/${item.clan_game_code}" style="text-decoration:none">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

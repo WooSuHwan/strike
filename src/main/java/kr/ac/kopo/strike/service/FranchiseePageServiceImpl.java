@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.FranchiseePageDao;
 import kr.ac.kopo.strike.model.GameRecord;
+import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Game;
 
 @Service
@@ -68,6 +70,61 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	@Override
 	public List<GameRecord> gameRecordEnd(int game_code) {
 		return dao.gameRecordEnd(game_code);
+	}
+
+	@Override
+	public List<ClanGame> clanGame(String address) {
+		return dao.clanGame(address);
+	}
+
+	@Override
+	public List<ClanGameRecord> clanGameRecord(int clan_game_code) {
+		return dao.clanGameRecord(clan_game_code);
+	}
+
+	@Override
+	public List<ClanGameRecord> clanGameRecordEnd(int clan_game_code) {
+		return dao.clanGameRecordEnd(clan_game_code);
+	}
+
+	@Override
+	public void clanMakerWin(int clan_maker_code) {
+		dao.clanMakerWin(clan_maker_code);
+	}
+
+	@Override
+	public void clanChallengerLose(int challenger_clan_code) {
+		dao.clanChallengerLose(challenger_clan_code);
+	}
+
+	@Override
+	public void clanMakerWinGameRecord(int clan_game_record_code, int clan_maker_code, int challenger_clan_code) {
+		dao.clanMakerWinGameRecord(clan_game_record_code, clan_maker_code, challenger_clan_code);
+	}
+
+	@Override
+	public void clanChallengerWin(int challenger_clan_code) {
+		dao.clanChallengerWin(challenger_clan_code);
+	}
+
+	@Override
+	public void clanMakerLose(int clan_maker_code) {
+		dao.clanMakerLose(clan_maker_code);
+	}
+
+	@Override
+	public void clanChallengerWinGameRecord(int clan_game_record_code, int challenger_clan_code, int clan_maker_code) {
+		dao.clanChallengerWinGameRecord(clan_game_record_code, challenger_clan_code, clan_maker_code);
+	}
+
+	@Override
+	public void clanDraw(int clan_maker_code, int challenger_clan_code) {
+		dao.clanDraw(clan_maker_code, challenger_clan_code);
+	}
+
+	@Override
+	public void clanDrawGameRecord(int clan_game_record_code) {
+		dao.clanDrawGameRecord(clan_game_record_code);
 	}
 
 }

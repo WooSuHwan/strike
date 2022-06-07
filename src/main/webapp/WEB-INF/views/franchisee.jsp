@@ -21,7 +21,7 @@
                 </div>
                 <div class="listLink"> 
                     <a href="/franchiseePage/gameList/${sessionScope.franchisee.franchisee_code}" class="pre"><div class="link">개인전 경기 목록</div></a>
-                    <a href="" class="clan"><div class="link">클랜전 경기 목록</div></a>
+                    <a href="/franchiseePage/clanGameList/${sessionScope.franchisee.franchisee_code}" class="clan"><div class="link">클랜전 경기 목록</div></a>
                 </div>
             </div>
 		</div>

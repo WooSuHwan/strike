@@ -12,25 +12,25 @@
 	</div>
 	
 	<div>
-		<h3>제목 : ${game.title}</h3>
+		<h3>제목 : ${clanGame.title}</h3>
 	</div>
 	<div>
-		<h3>작성자 : ${game.maker}</h3>
+		<h3>작성자 : ${clanGame.clan_name}</h3>
 	</div>
 	<div>
-		<h3>시간 : ${game.clock}</h3>
+		<h3>시간 : ${clanGame.clock}</h3>
 	</div>
 	<div>
-		<h3>위치 : ${game.loc}</h3>
+		<h3>위치 : ${clanGame.loc}</h3>
 	</div>
 	<div>
-		<h3>모집인원 : ${game.recruit}명</h3>
+		<h3>모집인원 : ${clanGame.clan_recruit}명</h3>
 	</div>
 	<div>
-		<h3>내용 : ${game.story}</h3>
+		<h3>내용 : ${clanGame.story}</h3>
 	</div>
 	<div>
-		<h3>작성일 : ${game.time}</h3>
+		<h3>작성일 : ${clanGame.time}</h3>
 	</div>
 	
 	<div>
@@ -54,30 +54,30 @@
 			</thead>
 			
 			<tbody>
-				<c:if test="${gameRecordEnd.size() < 1}">
+				<c:if test="${clanGameRecordEnd.size() < 1}">
 					<tr>
 						<td colspan="6">등록 된 개인 대결이 없습니다</td>
 					</tr>
 				</c:if>
-				<c:forEach items="${gameRecordEnd}" var="item" varStatus="status">
+				<c:forEach items="${clanGameRecordEnd}" var="item" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-						<td>${item.game_record_code}</td>
-						<td>${item.maker_code}</td>
-						<td>${item.name}</td>
+						<td>${item.clan_game_record_code}</td>
+						<td>${item.clan_maker_code}</td>
+						<td>${item.clan_name}</td>
 						<c:choose>
-							<c:when test="${item.winner_code eq item.maker_code}"><td>승리</td></c:when>
-							<c:when test="${item.loser_code eq item.maker_code}"><td>패배</td></c:when>
+							<c:when test="${item.winner_code eq item.clan_maker_code}"><td>승리</td></c:when>
+							<c:when test="${item.loser_code eq item.clan_maker_code}"><td>패배</td></c:when>
 							<c:when test="${item.draw eq 1}"><td>무승부</td></c:when>
 						</c:choose>
 						<td>VS</td>
 						<c:choose>
-							<c:when test="${item.winner_code eq item.challenger_code}"><td>승리</td></c:when>
-							<c:when test="${item.loser_code eq item.challenger_code}"><td>패배</td></c:when>
+							<c:when test="${item.winner_code eq item.challenger_clan_code}"><td>승리</td></c:when>
+							<c:when test="${item.loser_code eq item.challenger_clan_code}"><td>패배</td></c:when>
 							<c:when test="${item.draw eq 1}"><td>무승부</td></c:when>
 						</c:choose>
-						<td>${item.challenger_name}</td>
-						<td>${item.challenger_code}</td>
+						<td>${item.clan_challenger_name}</td>
+						<td>${item.challenger_clan_code}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -103,20 +103,20 @@
 			</thead>
 			
 			<tbody>
-				<c:if test="${gameRecord.size() < 1}">
+				<c:if test="${clanGameRecord.size() < 1}">
 					<tr>
 						<td colspan="6">등록 된 개인 대결이 없습니다</td>
 					</tr>
 				</c:if>
-				<c:forEach items="${gameRecord}" var="item" varStatus="status">
+				<c:forEach items="${clanGameRecord}" var="item" varStatus="status">
 					<tr>
 						<td>${status.count}</td>
-						<td>${item.game_record_code}</td>
-						<td><a href="../draw/${item.game_code}/${item.game_record_code}/${item.maker_code}/${item.challenger_code}">무승부</a>
-						<td>${item.maker_code}</td>
-						<td><a href="../makerWin/${item.game_code}/${item.game_record_code}/${item.maker_code}/${item.challenger_code}">${item.name}</a></td>
-						<td>${item.challenger_code}</td>
-						<td><a href="../challengerWin/${item.game_code}/${item.game_record_code}/${item.challenger_code}/${item.maker_code}">${item.challenger_name}</a></td>
+						<td>${item.clan_game_record_code}</td>
+						<td><a href="../clanDraw/${item.clan_game_code}/${item.clan_game_record_code}/${item.clan_maker_code}/${item.challenger_clan_code}">무승부</a>
+						<td>${item.clan_maker_code}</td>
+						<td><a href="../clanMakerWin/${item.clan_game_code}/${item.clan_game_record_code}/${item.clan_maker_code}/${item.challenger_clan_code}">${item.clan_name}</a></td>
+						<td>${item.challenger_clan_code}</td>
+						<td><a href="../clanChallengerWin/${item.clan_game_code}/${item.clan_game_record_code}/${item.challenger_clan_code}/${item.clan_maker_code}">${item.clan_challenger_name}</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

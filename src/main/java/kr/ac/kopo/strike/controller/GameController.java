@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Challenger;
@@ -42,13 +43,22 @@ public class GameController {
 	}
 	
 	@GetMapping("/add")
-	public String add(Model model) {
+	public String add(Model model) {	
 		
 		List<Franchisee> franchiseeList = service.franchiseeList();
 		
 		model.addAttribute("franchiseeList", franchiseeList);
 		
 		return path + "add";
+	}
+	// 카카오 지도
+	@GetMapping("add/map")
+	@ResponseBody
+	public List<Franchisee> map() {
+		
+		List<Franchisee> map = service.map();
+		System.out.println("지도" + map);
+		return map;
 	}
 	
 	@PostMapping("/add")
@@ -93,7 +103,7 @@ public class GameController {
 	@GetMapping("/view/{game_code}")
 	public String view(@PathVariable int game_code, Model model) {	
 		
-		Game game = service.item(game_code);		
+		Game game = service.item(game_code);
 		List<Member> member = service.member(game_code);
 		List<Challenger> admitChallenger = service.admitChallenger(game_code);
 		
