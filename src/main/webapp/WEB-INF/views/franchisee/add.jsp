@@ -119,12 +119,6 @@ $(function() {
 			return false;
 		}
 		
-		if($("#birth").val()=="") {
-			alert("생년월일이 비었습니다")
-			event.preventDefault()
-			return false;
-		}
-		
 		if($("#tel").val()=="") {
 			alert("전화번호가 비었습니다")
 			event.preventDefault()
@@ -133,6 +127,24 @@ $(function() {
 		
 		if($("#address").val()=="") {
 			alert("주소가 비었습니다")
+			event.preventDefault()
+			return false;
+		}
+		
+		if($("#latitude").val()=="") {
+			alert("위도가 비었습니다")
+			event.preventDefault()
+			return false;
+		}
+		
+		if($("#longitude").val()=="") {
+			alert("경도가 비었습니다")
+			event.preventDefault()
+			return false;
+		}
+		
+		if($("#birth").val()=="") {
+			alert("생년월일이 비었습니다")
 			event.preventDefault()
 			return false;
 		}
@@ -180,6 +192,14 @@ $(function() {
 				<div style="font-weight: 600">주소</div>
 				<input type="text" name="address" id="address" size=40>
 				<div id="address_message"></div>
+				
+				<div style="font-weight: 600">위도</div>
+				<input type="text" name="latitude" id="latitude" size=40>
+				<div id="latitude_message"></div>
+				
+				<div style="font-weight: 600">경도</div>
+				<input type="text" name="longitude" id="longitude" size=40>
+				<div id="longitude_message"></div>
 				
 				<div style="font-weight: 600">생년월일</div>
 				<input type="date" name="birth" id="birth" size=40>

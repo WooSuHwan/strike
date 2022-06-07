@@ -52,7 +52,8 @@ public class GameController {
 		return path + "add";
 	}
 	// 카카오 지도
-	@GetMapping("add/map")
+	// loadMap
+	@GetMapping("/add/map")
 	@ResponseBody
 	public List<Franchisee> map() {
 		

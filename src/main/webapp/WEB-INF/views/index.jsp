@@ -188,7 +188,7 @@
             </div>
         </div> <!-- 랭크 컨텐츠 부분 -->
     </section>
-      
+    
    </div>
       <jsp:include page="footer.jsp"></jsp:include>
       

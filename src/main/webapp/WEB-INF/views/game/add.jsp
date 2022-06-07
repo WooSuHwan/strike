@@ -1,11 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/battleBtn.css">
 <link rel="stylesheet" href="/resources/css/index.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+function loadMap() { // 지도 데이터를 들고오는 코드
+	console.log("loadMap()");
+	$.ajax({
+		url : "/game/add/map",
+		method : "GET",
+		dataType : "JSON",
+		success : function(server_data) {
+			console.log(server_data);
+		}
+	})
+}
+
+$(function() { // 입장과 동시에 실행
+	
+	loadMap(); //지도 데이터를 들고오는 코드
+})
+</script>
+
 </head>
 <body>
 	<jsp:include page="../font.jsp"></jsp:include>
@@ -44,41 +67,42 @@
 						<label>내용</label> <input type="text" name="story">
 					</div>
 				</div>
-				
+
 				<div class="applicant">
-	                <div class="applicant_01">
-	                    <h3>등록이 된 가쟁점 위치</h3>
-	                </div>
-                		<div class="applicant_02">
-                   			<table class="applicanttable">
-                    		    <colgroup>
-		                            <col style="width: 10%;">
-		                            <col style="width: 15%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 10%;">
-                        		</colgroup>
-		                        <thead>
-		                            <tr>
-		                            	<th>No.</th>
-		                                <th>주소</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                        <c:forEach items="${franchiseeList}" var="item" varStatus="status">
-		                            <tr>
-		                            	<td>${status.index + 1 }</td>
-		                                <td>${item.address}</td>
-								</c:forEach>
-		                        </tbody>
-		                    </table>
-		                </div>
+					<div class="applicant_01">
+						<h3>등록이 된 가쟁점 위치</h3>
 					</div>
-				
+					<div class="applicant_02">
+						<table class="applicanttable">
+							<colgroup>
+								<col style="width: 10%;">
+								<col style="width: 15%;">
+								<col style="width: 10%;">
+								<col style="width: 8%;">
+								<col style="width: 8%;">
+								<col style="width: 8%;">
+								<col style="width: 10%;">
+								<col style="width: 10%;">
+								<col style="width: 10%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>주소</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${franchiseeList}" var="item"
+									varStatus="status">
+									<tr>
+										<td>${status.index + 1 }</td>
+										<td>${item.address}</td>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
 				<div class="cbtn0">
 					<button>등록</button>
 				</div>
@@ -88,7 +112,9 @@
 		<div class="wh"></div>
 	</section>
 	<!-- 카카오 지도 API 시작 -->
-	<div id="map" style="width:500px;height:400px;"></div>
+	<!-- 카카오 지도 보여주는 div -->
+	<div id="map" style="width: 500px; height: 400px;"></div>
+	<!-- 카카오 지도 보여주는 div -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f281014ca014b8210d45a1c3d8663784"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div  

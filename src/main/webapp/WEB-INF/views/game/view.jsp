@@ -60,7 +60,7 @@
                         <p>승률 <span>${item.rate}</span></p>
                     </div>
                     <div class="newRecord02_05">
-                        <p>티어 <span>PLATINUM</span></p>
+                        <p>티어 <span>${item.tier}</span></p>
                     </div>
                 </div>
                 </c:forEach>
