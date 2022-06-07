@@ -76,7 +76,7 @@ $(burger).on("click", function () {
     h++;
   } else if (h == 1) {
     $('.ham-con2').animate({
-        top: '0%',
+        top: '-20%',
       opacity: 0
     }, 500, "swing", function() {
       $('.ham-con2').css("display", "none");
