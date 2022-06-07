@@ -42,4 +42,6 @@ public interface GameDao {
 
 	List<Franchisee> franchiseeList();
 
+	List<Franchisee> map();
+
 }

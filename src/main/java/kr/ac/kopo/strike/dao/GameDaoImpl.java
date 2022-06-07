@@ -117,4 +117,9 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectList("game.franchiseeList");
 	}
 
+	@Override
+	public List<Franchisee> map() {
+		return sql.selectList("game.map");
+	}
+
 }

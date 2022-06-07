@@ -97,5 +97,10 @@ public class GameServiceImpl implements GameService {
 	public List<Franchisee> franchiseeList() {
 		return dao.franchiseeList();
 	}
+	
+	@Override
+	public List<Franchisee> map() {
+		return dao.map();
+	}
 
 }
