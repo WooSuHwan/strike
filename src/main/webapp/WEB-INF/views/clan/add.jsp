@@ -6,6 +6,40 @@
 	<link rel="stylesheet" href="/resources/css/clancreation.css">
 	<link rel="stylesheet" href="/resources/css/index.css">
 </head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+function confirm(event) {
+	var clan_code = ${sessionScope.member.clan_code}.val();
+	
+	if(clan_code == "") {
+		return false;
+	}
+	// 클랜코드
+	$.ajax({
+		url:""me",
+		data:{"user_id" : id},
+		method:"POST",
+		dataType:"TEXT",
+		success:function(data) {
+			console.log(data);
+			
+			if(data == "overlap") {
+				$("#id_message").text("아이디가 중복이 되었습니다")
+				$("#confirm").attr("disabled", true);
+			} else {
+				$("#id_message").text("멋있는 아이디 입니다.")
+				$("#confirm").attr("disabled", false);
+			}
+		},
+		error:function(){
+			console.err("에러")
+		}
+	})
+}
+}
+</script>
+
 <body>
     <jsp:include page="../font.jsp"></jsp:include>
     <jsp:include page="../nav.jsp"></jsp:include>

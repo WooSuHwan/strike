@@ -28,6 +28,7 @@
 		<mapper resource="mybatis/franchisee.xml"/>
 		<mapper resource="mybatis/franchiseePage.xml"/>
 		<mapper resource="mybatis/clanGame.xml"/>
+		<mapper resource="mybatis/manager.xml"/>
 		
 		<mapper resource="mybatis/suggestfree.xml" />
       	<mapper resource="mybatis/suggestmaster.xml" />

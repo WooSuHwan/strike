@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="/resources/css/font.css">
     <link rel="stylesheet" href="/resources/css/clanrank.css">
     <link rel="stylesheet" href="/resources/css/index.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	    <script src="https://www.w3schools.com/lib/w3.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	
+</script>
 </head>
 <body>
     <jsp:include page="../font.jsp"></jsp:include>

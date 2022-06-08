@@ -45,7 +45,7 @@ public class ClanController {
 	}
 
 	@GetMapping("/add")
-	public String add() {
+	public String add(@SessionAttribute Member member) {
 		
 		return path + "add";
 	}
