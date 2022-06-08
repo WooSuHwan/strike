@@ -1479,6 +1479,15 @@ a {
 }
 
 @media  all and (max-width: 1025px) {
+
+	 .Hnav>li>a{
+	 	font-size: 1.3em;
+	 }
+	 
+	 .ham-con2{
+	 	height: 602px;
+	 }
+	
 	 .All2 {
         display: block;
     }
@@ -1630,6 +1639,10 @@ a {
 
     .rankC01_02>tr>td {
         font-size: 17px;
+    }
+    
+    .ham-con2{
+    	left: 0px;
     }
 }
 

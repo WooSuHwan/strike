@@ -246,7 +246,7 @@
 									<tr class="tfootTr01 tdtd">
 										<td><a href="#">팀 순위 상세보기</a></td>
 										<td style="width: 6%; line-height: 10px;"><a href="#"><img
-												src="../Img/viewIcon.png" width="100%" alt="상세보기"></a></td>
+												src="../resources/img/viewIcon.png" width="100%" alt="상세보기"></a></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -285,7 +285,7 @@
 								<tr class="tfootTr01">
 									<td><a href="#">개인 순위 상세보기</a></td>
 									<td style="width: 6%; line-height: 10px;"><a href="#"><img
-											src="../Img/viewIcon.png" width="100%" alt="상세보기"></a></td>
+											src="../resources/img/viewIcon.png" width="100%" alt="상세보기"></a></td>
 								</tr>
 							</tfoot>
 						</table>
