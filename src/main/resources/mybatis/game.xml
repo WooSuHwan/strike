@@ -101,7 +101,7 @@
 	</select>
 	
 	<select id="map" resultType="Franchisee">
-		select address
+		select *
 		from franchisee
 	</select>
 </mapper>
