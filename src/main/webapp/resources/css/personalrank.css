@@ -114,18 +114,23 @@ a {
     margin-left: 1em;
 }
 
+.clanbanner>img{
+	max-width: 100%;
+}
+
 .clanbanner{
+	position:relative;
     display: flex;
     width: 62.5%;
     align-items: center;
     height: 15.313em;
     background-repeat: no-repeat;
-    background-color: rebeccapurple;
     margin-top: 8em;
-    background-image: url(../img/personalrank.jpg);
+/*     background-image: url(../img/personalrank.jpg); */
 }
 
 .clanbanner_01{
+	position:absolute;
     display: flex;
     width: 30%;
     height: 60%;

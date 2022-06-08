@@ -81,6 +81,7 @@
             </div>
 
             <div class="clanbanner">
+            	<img alt="배너" width="100%" src="/resources/img/personalrank.jpg">
                 <div class="clanbanner_01">
                     <h1>개인 순위표</h1>
                     <div class="Cbar"></div>
