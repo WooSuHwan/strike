@@ -99,4 +99,9 @@
 		select *
 		from franchisee
 	</select>
+	
+	<select id="map" resultType="Franchisee">
+		select *
+		from franchisee
+	</select>
 </mapper>

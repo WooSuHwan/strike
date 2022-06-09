@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="font.jsp"></jsp:include>
-<link rel="stylesheet" href="/resources/css/index.css">
+<%-- <jsp:include page="font.jsp"></jsp:include> --%>
+<!-- <link rel="stylesheet" href="/resources/css/index.css"> -->
 <!-- <link rel="stylesheet" href="/resources/css/Mham.css"> -->
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://www.w3schools.com/lib/w3.js"></script>
+<!-- <link rel="stylesheet" -->
+<!-- 	href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+<!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
 </head>
 <body>
 	<div class="All">

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.SuggestMaster;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class SuggestMasterDaoImpl implements SuggestMasterDao {
@@ -27,8 +28,8 @@ public class SuggestMasterDaoImpl implements SuggestMasterDao {
 	}
 
 	@Override
-	public void delete(int masterCode) {
-		sql.delete("suggestmaster.delete", masterCode);
+	public void delete(int master_code) {
+		sql.delete("suggestmaster.delete", master_code);
 
 	}
 
@@ -39,21 +40,27 @@ public class SuggestMasterDaoImpl implements SuggestMasterDao {
 	}
 
 	@Override
-	public void addCount(int masterCode) {
-		sql.update("suggestmaster.addcount", masterCode);
+	public void addCount(int master_code) {
+		sql.update("suggestmaster.addcount", master_code);
 
 	}
 
 	@Override
-	public SuggestMaster read(int masterCode) throws Exception{
+	public SuggestMaster read(int master_code) throws Exception{
 		
-		return sql.selectOne("suggestmaster.read", masterCode);
+		return sql.selectOne("suggestmaster.read", master_code);
 	}
 
 	@Override
-	public SuggestMaster item(int masterCode) {
+	public SuggestMaster item(int master_code) {
 		
-		return sql.selectOne("suggestmaster.item", masterCode);
+		return sql.selectOne("suggestmaster.item", master_code);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		
+		return sql.selectOne("suggestfree.total",pager);
 	}
 
 }

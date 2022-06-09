@@ -4,8 +4,8 @@
 <mapper namespace="franchisee">
 	<!-- 회원가입 -->
 	<insert id="add">
-		INSERT INTO franchisee (franchisee_code, id, pw, name, birth, sex, tel, address, time)
-		VALUES (FRANCHISEE_CODE_SEQ.nextval, #{id}, #{pw}, #{name}, #{birth}, #{sex}, #{tel}, #{address}, sysdate)
+		INSERT INTO franchisee (franchisee_code, id, pw, name, birth, sex, tel, address, latitude, longitude, time)
+		VALUES (FRANCHISEE_CODE_SEQ.nextval, #{id}, #{pw}, #{name}, #{birth}, #{sex}, #{tel}, #{address}, #{latitude}, #{longitude}, sysdate)
 	</insert>
 	<!-- 중복확인 -->
 	<select id="idCount" parameterType="String" resultType="Integer">

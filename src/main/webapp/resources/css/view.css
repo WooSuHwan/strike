@@ -68,6 +68,12 @@
     height: 20px;
 }
 
+.mypageNavSM12{
+    display: flex;
+    width: 400px;
+}
+
+
 .container {
     margin:0 auto;
     display: flex;
@@ -79,6 +85,11 @@
 
 .w-btn-gray {
     background-color: #393939;
+    color: #fefefe;
+}
+
+.w-btn-red {
+    background-color: #ff0000;
     color: #fefefe;
 }
 
@@ -213,8 +224,8 @@ textarea{
 .containerBox2 {
     margin:0 auto;
     display: flex;
-    flex-direction: row-reverse;
+    
     width:700px;
-    justify-content: space-between;
+    
     
 }

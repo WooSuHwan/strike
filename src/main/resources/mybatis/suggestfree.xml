@@ -7,7 +7,7 @@
 	<sql id="search">
 		<where>
 			<if test="search==1">
-				free.code=#{keyword}
+				free.free_code=#{keyword}
 			</if>
 			<if test="search==2">
 				free.title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
@@ -19,15 +19,15 @@
 
 
 	<select id="list" resultType="suggestfree">
-		SELECT free_code, title, story, hit, name, reg_date
+		SELECT free_code, title,  hit, name, reg_date
 		FROM free 
 		ORDER BY free_code DESC
 	</select>
 	
 	<insert id="add">
-		INSERT INTO free (free_code, title, story, hit, name, reg_date)
+		INSERT INTO free ( story,free_code, title, hit, name, reg_date,member_code)
 	
-		VALUES(FREE_CODE_SEQ.nextval,#{title}, #{story}, 0, #{name}, sysdate )
+		VALUES(#{story}, FREE_CODE_SEQ.nextval,#{title}, 0, #{name}, sysdate, #{member_code} )
 		
 	</insert>
 	
@@ -49,12 +49,13 @@
 	</update>
 	
 	<select id="item" resultType="suggestfree">
-		SELECT * FROM free
+		SELECT story ,free_code, title,  hit, name, reg_date, member_code
+		FROM free
 		WHERE free_code = #{free_code}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestFree">
-		SELECT *
+		SELECT story, free_code, title,  hit, name, reg_date
 		FROM FREE
 		WHERE free_code = #{free_code}
 	</select>

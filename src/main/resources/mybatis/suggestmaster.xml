@@ -4,6 +4,17 @@
 <mapper namespace="suggestmaster">
 	<!-- 리스트화 시키는 쿼리문 -->
 
+	<sql id="search">
+		<where>
+			<if test="search==1">
+				suggestmaster.master_code=#{keyword}
+			</if>
+			<if test="search==2">
+				suggestmaster.title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>	
+		</where>
+	</sql>
+
 
 	<select id="list" resultType="suggestmaster">
 		SELECT master_code, title, story, hit, name, reg_date  FROM suggest_master 
@@ -44,5 +55,10 @@
 		WHERE
 			master_code = #{masterCode}
 	</update>
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM suggest_master
+		<include refid="search"></include>
+	</select>
 	
 </mapper>

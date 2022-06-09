@@ -6,8 +6,43 @@
 <meta charset="UTF-8">
 <title>STRIKE</title>
 <link rel="stylesheet" href="/resources/css/font.css">
-    <link rel="stylesheet" href="/resources/css/personaldetails.css">
-    <link rel="stylesheet" href="/resources/css/index.css">
+<link rel="stylesheet" href="/resources/css/personaldetails.css">
+<link rel="stylesheet" href="/resources/css/index.css">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+//아이디 중복 확인
+function confirm(event) {
+	var clan_code = $("#challenge").val();
+	var 
+	
+	if(id == "") {
+		return false;
+	}
+	// 신청자 중복 확인
+	$.ajax({
+		url:"confirm",
+		data:{"user_id" : id},
+		method:"POST",
+		dataType:"TEXT",
+		success:function(data) {
+			console.log(data);
+			
+			if(data == "overlap") {
+				$("#id_message").text("아이디가 중복이 되었습니다")
+				$("#confirm").attr("disabled", true);
+			} else {
+				$("#id_message").text("멋있는 아이디 입니다.")
+				$("#confirm").attr("disabled", false);
+			}
+		},
+		error:function(){
+			console.err("에러")
+		}
+	})
+}
+</script>
+
 </head>
 <body>
     <jsp:include page="../font.jsp"></jsp:include>
@@ -217,7 +252,7 @@
                     </table>
                 </div>
                 <div class="applicant_03">
-                    <a href="../challenge/${clan_game_code}">신청</a>
+                    <a href="../challenge/${clan_game_code}" id="challenge" name="challenge">신청</a>
                 </div>
             </div>
         </div>

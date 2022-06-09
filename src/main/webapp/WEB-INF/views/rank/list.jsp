@@ -15,7 +15,6 @@
 <body>
     <jsp:include page="../font.jsp"></jsp:include>
     <jsp:include page="../nav.jsp"></jsp:include>
-    <jsp:include page="../rnav.jsp"></jsp:include>
 <!-- 	<div> -->
 <!-- 		<h1>개인 랭크</h1> -->
 <!-- 		<div> -->

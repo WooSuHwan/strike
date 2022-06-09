@@ -1186,7 +1186,9 @@ a {
 #footer_5{font-size: 18px;}
 
 
+
 .pagination {
+    margin-top: 4em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1204,7 +1206,6 @@ a {
     text-align: center;
     color: #545454;
     font-size: 0.9em;
-
     font-family: 'S-CoreDream-5Medium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
     font-weight: normal;
@@ -1212,7 +1213,7 @@ a {
 }
 
 .pagination>.paginate>.link.arrow.prev.start {
-    background-image: url('img/pagerLeft2.png');
+    background-image: url('../img/pagerLeft2.png');
 }
 
 .pagination>.paginate>.link.arrow {
@@ -1238,7 +1239,7 @@ a {
 }
 
 .pagination>.paginate>.link.arrow.prev {
-    background-image: url('img/pagerLeft1.png');
+    background-image: url('../img/pagerLeft1.png');
 }
 
 .pagination>.paginate>.link.mobile {
@@ -1256,9 +1257,34 @@ a {
 }
 
 .pagination>.paginate>.link.arrow.next {
-    background-image: url('img/pagerRight1.png');
+    background-image: url('../img/pagerRight1.png');
 }
 
 .pagination>.paginate>.link.arrow.next.last {
-    background-image: url('img/pagerRight2.png');
+    background-image: url('../img/pagerRight2.png');
 }
+
+.cbtn0{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 62.5%;
+    height: 2.5em;
+    margin-top: 3em;
+}
+
+.cbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    border-radius: 7px;
+    height: 100%;
+    background-color: #393939;
+}
+
+.cbtn1>a{
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+

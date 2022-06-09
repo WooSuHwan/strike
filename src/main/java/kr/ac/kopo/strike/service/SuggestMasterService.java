@@ -3,21 +3,22 @@ package kr.ac.kopo.strike.service;
 import java.util.List;
 
 import kr.ac.kopo.strike.model.SuggestMaster;
+import kr.ac.kopo.strike.util.Pager;
 
 public interface SuggestMasterService {
 
-	List<SuggestMaster> list();
+	List<SuggestMaster> list(Pager pager);
 
 	void add(SuggestMaster item);
 
-	void delete(int masterCode);
+	void delete(int master_code);
 
 	void update(SuggestMaster item);
 
-	void addCount(int masterCode);
+	void addCount(int master_code);
 
-	public SuggestMaster read(int masterCode)throws Exception;
+	public SuggestMaster read(int master_code)throws Exception;
 
-	SuggestMaster item(int masterCode);
+	SuggestMaster item(int master_code);
 
 }

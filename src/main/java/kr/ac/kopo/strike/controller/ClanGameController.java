@@ -1,6 +1,10 @@
 package kr.ac.kopo.strike.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Clan;
@@ -56,12 +61,22 @@ public class ClanGameController {
 	}
 	
 	@PostMapping("/add")
-	public String add(@SessionAttribute Member member, ClanGame clanGame) {
+	public String add(@SessionAttribute Member member, ClanGame clanGame, HttpServletResponse response) throws IOException {
 		
-		clanGame.setMember_code(member.getMember_code());
-		clanGame.setClan_code(member.getClan_code());
-		System.out.println("멤버코드" + member.getMember_code() + "클랜코드" + member.getClan_code());
-		service.add(clanGame);
+		if(member.getClan_code() == 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('클랜을 만들거나 들어가주세요'); </script>");
+			out.println("<script>location.href='list';</script>");
+			out.flush();
+			
+		} else {
+			
+			clanGame.setMember_code(member.getMember_code());
+			clanGame.setClan_code(member.getClan_code());
+			
+			service.add(clanGame);
+		}
 		
 		return "redirect:list";
 	}
@@ -99,4 +114,15 @@ public class ClanGameController {
 		return "redirect:/clanGame/view/" + clan_game_code;
 	}
 	
+	@ResponseBody
+	@PostMapping("/confirm")
+	public String confirm(String user_id) {
+		
+		boolean overlap = service.confirm(user_id);
+		if(overlap == true) {
+			return "overlap";
+		} else {
+			return "/use";
+		}
+	}
 }

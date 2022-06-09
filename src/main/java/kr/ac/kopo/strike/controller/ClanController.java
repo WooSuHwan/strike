@@ -1,6 +1,10 @@
 package kr.ac.kopo.strike.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,15 +55,25 @@ public class ClanController {
 	}
 	
 	@PostMapping("/add")
-	public String add(@SessionAttribute Member member, Clan clan) {
+	public String add(@SessionAttribute Member member, Clan clan, HttpServletResponse response) throws IOException {
 		
-		clan.setClan_master_code(member.getMember_code());
-		
-		service.add(clan);
-		
-		Clan get = service.get(member.getMember_code());
-		
-		service.change(member.getMember_code(), get.getClan_code());
+		if(member.getClan_code() != 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('이미 클랜이 있습니다'); </script>");
+			out.println("<script>location.href='list';</script>");
+			out.flush();
+			
+		} else {
+			
+			clan.setClan_master_code(member.getMember_code());
+			
+			service.add(clan);
+			
+			Clan get = service.get(member.getMember_code());
+			
+			service.change(member.getMember_code(), get.getClan_code());
+		}
 		
 		return "redirect:list";
 	}

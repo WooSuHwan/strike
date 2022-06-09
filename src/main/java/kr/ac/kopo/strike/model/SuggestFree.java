@@ -1,6 +1,7 @@
 package kr.ac.kopo.strike.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class SuggestFree {
 	
@@ -62,6 +63,8 @@ public class SuggestFree {
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
 	}
+	
+	
 
 	
 	

@@ -4,29 +4,44 @@ import java.util.Date;
 
 public class SuggestMaster {
 
-	private int MasterCode;
+	private int master_code;
 	private String title;
 	private String story;
 	private Integer hit;
 	private String id;
 	private int member_code;
 	private String name;
-	private Date regDate;
+	private Date reg_date;
 	private int grade;
 	
 	
 	
+	
+	
+	public Date getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
+	}
+	public int getMember_code() {
+		return member_code;
+	}
+	public void setMember_code(int member_code) {
+		this.member_code = member_code;
+	}
 	public int getGrade() {
 		return grade;
 	}
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
-	public int getMasterCode() {
-		return MasterCode;
+	
+	public int getMaster_code() {
+		return master_code;
 	}
-	public void setMasterCode(int masterCode) {
-		MasterCode = masterCode;
+	public void setMaster_code(int master_code) {
+		this.master_code = master_code;
 	}
 	public String getTitle() {
 		return title;
@@ -64,12 +79,7 @@ public class SuggestMaster {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getRegDate() {
-		return regDate;
-	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
-	}
+	
 	
 	
 	

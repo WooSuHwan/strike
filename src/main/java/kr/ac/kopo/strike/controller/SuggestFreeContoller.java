@@ -40,6 +40,9 @@ public class SuggestFreeContoller {
 	
 	@RequestMapping({"/", "list"})
 	public String list(Pager pager, Model model) {
+		
+		
+	
 		List<SuggestFree> list = service.list(pager);
 				
 		model.addAttribute("list", list);
@@ -50,14 +53,18 @@ public class SuggestFreeContoller {
 	@GetMapping("/add")
 	public String add() {
 		
+		
+	
 		return path + "add";
 	}
 	
 	@PostMapping("/add")
 	   public String add(SuggestFree item, @SessionAttribute Member member, Model model) {
 		
-	      item.setMember_code(member.getMember_code());
-	      item.setName(member.getName());
+		item.setMember_code(member.getMember_code());
+		item.setName(member.getName());
+		
+		
 	      service.add(item);
 	      return "redirect:list";
 	   }
@@ -86,7 +93,10 @@ public class SuggestFreeContoller {
 	}
 	
 	@GetMapping("/view/{free_code}")
-	public String view(@PathVariable int free_code,Model model) throws Exception{
+	public String view(@PathVariable int free_code,Model model, @SessionAttribute Member member) throws Exception{
+		
+		member.setMember_code(member.getMember_code());
+	    member.setName(member.getName());
 		
 		SuggestFree item = service.item(free_code);
 		service.addCount(free_code);
@@ -97,14 +107,16 @@ public class SuggestFreeContoller {
 		reply = replyservice.list(free_code);
 		model.addAttribute("reply", reply);
 		
-		
+	
 		return path+"view";
 	}
 	
 	@RequestMapping(value= "/readView", method = RequestMethod.GET)
-	public String read(SuggestFree suggestFree,Model model, int free_code) throws Exception{
+	public String read(SuggestFree suggestFree,Model model, int free_code,@SessionAttribute Member member) throws Exception{
 		
-		
+		member.setMember_code(member.getMember_code());
+		member.setName(member.getName());
+	
 		logger.info("read");
 		model.addAttribute("read", service.read(suggestFree.getFree_code()));
 		
@@ -118,8 +130,8 @@ public class SuggestFreeContoller {
 	
 	//댓글 생성
 	@RequestMapping(value = "/reply/{free_code}/write", method = RequestMethod.POST)
-	public String posttWrite(Reply reply) throws Exception {
-		
+	public String posttWrite(Reply reply, @SessionAttribute Member member) throws Exception {
+		reply.setReply_name(member.getName());
 		replyservice.write(reply);
 		
 		return "redirect:../../view/" + reply.getFree_code();
