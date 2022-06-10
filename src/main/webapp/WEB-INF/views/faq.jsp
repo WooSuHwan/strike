@@ -54,7 +54,7 @@
                             <h1>02</h1>
                         </div>
                         <div class="faqwh_01_02">
-                            <p>Q. &nbsp; 내가 구매한 구매기록은 어디서 확인하나요 ?</p>
+                            <p>Q. &nbsp; 팀장으로 권한 승급 받고싶은데 어떻게 해야되나요 ?</p>
                         </div>
                         <div class="faqwh_01_03">
                             <img src="../resources/img/dwonarrow.png" height="20%" alt="화살표">
@@ -74,7 +74,7 @@
                             <h1>03</h1>
                         </div>
                         <div class="faqwh_01_02">
-                            <p>Q. &nbsp; 팀장으로 권한 승급 받고싶은데 어떻게 해야되나요 ?</p>
+                            <p>Q. &nbsp; 지역 볼링게임에 참여하고 싶은데 참여 양식이 있나요 ?</p>
                         </div>
                         <div class="faqwh_01_03">
                             <img src="../resources/img/dwonarrow.png" height="20%" alt="화살표">
@@ -94,26 +94,6 @@
                             <h1>04</h1>
                         </div>
                         <div class="faqwh_01_02">
-                            <p>Q. &nbsp; 지역 볼링게임에 참여하고 싶은데 참여 양식이 있나요 ?</p>
-                        </div>
-                        <div class="faqwh_01_03">
-                            <img src="../resources/img/dwonarrow.png" height="20%" alt="화살표">
-                        </div>
-                    </div>
-                    <div class="faqhide" style="display: none;">
-                        <p>
-                            랭크 점수는 한게임에서 플레이 할때 낸 점수를 반영하여 <br>
-                            100점당 한티어씩 오르게 됩니다. 예시 문구 입니다 내용 채워야 됨<br>
-                            내용을 적어주세요 답변 내용입니다.
-                        </p>
-                    </div>
-                </div>
-                <div class="faqwh_01All">
-                    <div class="faqwh_01">
-                        <div class="faqwh_01_01">
-                            <h1>05</h1>
-                        </div>
-                        <div class="faqwh_01_02">
                             <p>Q. &nbsp; 볼링장 등록은 어떻게 해야하나요 ?</p>
                         </div>
                         <div class="faqwh_01_03">
@@ -131,7 +111,7 @@
                 <div class="faqwh_01All">
                     <div class="faqwh_01">
                         <div class="faqwh_01_01">
-                            <h1>06</h1>
+                            <h1>05</h1>
                         </div>
                         <div class="faqwh_01_02">
                             <p>Q. &nbsp; 가맹점 회원가입은 어떻게 하나요?</p>

@@ -157,7 +157,7 @@ $(function() {
             
 <!--             logo 부분 -->
             <div class="singupLogo">
-                <img src="../resources/img/logo.png" height="100%" alt="logo">
+                <a href="/"><img src="../resources/img/logo.png" height="100%" alt="logo"></a>
             </div>
 
 <!--             단계 부분 -->

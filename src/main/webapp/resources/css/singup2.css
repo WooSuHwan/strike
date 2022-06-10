@@ -244,7 +244,7 @@ tbody>tr>td{
 
 .tableInput>input{
     margin-left: 1.5em;
-    height: 50%;
+    height: 45%;
     width: 49%;
     font-family: 'S-CoreDream-5Medium';
     outline: none;
@@ -253,10 +253,24 @@ tbody>tr>td{
 
 .tableInput{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
     height: 100%;
     border-bottom: 1px solid #c6c6c6;
+}
+
+#id_message{
+	margin-left: 1em;
+	font-size: 0.8em;
+}
+
+#pw_message{
+	margin-left: 1em;
+	font-size: 0.8em;
+}
+
+#pw_confirm_message{
+	margin-left: 1em;
+	font-size: 0.8em;
 }
 
 .tableInput>span{
