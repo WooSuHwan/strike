@@ -23,8 +23,10 @@
 	</select>
 	
 	<select id="mypage" resultType="Member">
-		SELECT * FROM member
-		WHERE member_code = #{member_code}
+		SELECT * FROM member m
+		LEFT JOIN clan c
+			ON m.clan_code = c.clan_code
+		WHERE m.member_code = #{member_code}
 	</select>
 	
 	<update id="update">

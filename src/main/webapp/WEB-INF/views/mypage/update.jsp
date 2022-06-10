@@ -79,10 +79,10 @@
 						<div class="singup2Table">
 							<table>
 								<tbody>
-<!-- 									<tr> -->
-<!-- 										<td class="tableColor">아이디</td> -->
-<%-- 										<td class="tableInput">${item.id }</td> --%>
-<!-- 									</tr> -->
+									<tr>
+										<td class="tableColor">아이디</td>
+										<td class="tableInput">${item.id }</td>
+									</tr>
 									<tr>
 										<td class="tableColor">이름</td>
 										<td class="tableInput"><input type="text" name="name" value="${item.name }" ></td>
@@ -98,29 +98,24 @@
 									<tr>
 										<td class="tableColor">성별</td>
 										<td class="tableInput" style="border-bottom: none;">
-											<select name="sex" id="sex">
 										<c:choose>
-												<c:when test="${sessionScope.member.sex == 0}">
-		                                            <option value="${sessionScope.member.sex}">남자</option>
-		                                            <option value="1">여자</option>
-										       	</c:when>
-												<c:when test="${sessionScope.member.sex == 1}">
-		                                            <option value="0">남자</option>
-		                                            <option value="${sessionScope.member.sex}">여자</option>
-										       	</c:when>
-												<c:otherwise>
-										          성별이 등록되지 않았습니다.
-										       	</c:otherwise>
-										</c:choose>
-	                                        </select>
+									        <c:when test = "${sessionScope.member.sex == 0}">
+									          남자
+									       </c:when>
+									       <c:when test = "${sessionScope.member.sex == 1}">
+									          여자
+									       </c:when>
+									       <c:otherwise>
+									          성별이 등록되지 않았습니다.
+									       </c:otherwise>
+								    </c:choose>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 					<div class="loginBtn">
-					<button type="submit">개인정보 수정</button>
-<%-- 						<a href="/update/${item.member_code}"> 개인정보 수정</a> --%>
+					<a><button type="submit">개인정보 수정</button></a>
 					</div>
 					</form>
 				</div>

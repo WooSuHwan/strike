@@ -32,6 +32,8 @@ public class LoginController {
 			return "redirect:/login/login?wrong=true";
 		} else {
 			session.setAttribute("member", member);
+			session.setAttribute("name", member.getName());
+			session.setAttribute("member_code", member.getMember_code());
 			System.out.println(member.getMember_code());
 			System.out.println(member.getName());
 			

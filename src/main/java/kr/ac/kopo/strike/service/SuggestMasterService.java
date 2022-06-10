@@ -9,6 +9,8 @@ public interface SuggestMasterService {
 
 	List<SuggestMaster> list(Pager pager);
 
+	List<SuggestMaster> list();
+	
 	void add(SuggestMaster item);
 
 	void delete(int master_code);

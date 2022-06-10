@@ -41,8 +41,8 @@ public class RootController {
 		List<Member> rankList = rankService.rankList();
 		model.addAttribute("rankList", rankList);
 		for (Member item : rankList) {
-
 			item.setName(aes256.decrypt(item.getName()));
+
 		}
 
 		return "index";

@@ -34,36 +34,8 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-  <div class="header"> <!-- header nav 메뉴 시작 -->
-        <div class="Logo">
-            <a href="/"><img src="/resources/img/logo.png" width="100%" height="100%" alt="logo"></a>
-        </div>
-        <div class="W_1200px">
-            <div class="Menu">
-                <ul class="Menu_list">
-                    <li>
-                        <a href="../clan/list">클랜랭크</a>
-                    </li>
-                    <li>
-                        <a href="#">개인랭크</a>
-                    </li>
-                    <li>
-                        <a href="#">대결(신청)</a>
-                    </li>
-                    <li>
-                        <a href="#">자유게시판</a>
-                    </li>
-                    <li>
-                        <a href="#">공지사항</a>
-                    </li>
-                    <li>
-                        <a href="#">중고</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-       <jsp:include page="../rnav.jsp"></jsp:include>
-    </div> <!-- header nav 메뉴 끝 -->   
+   <jsp:include page="font.jsp"></jsp:include>
+  <jsp:include page="nav.jsp"></jsp:include>
 
 <div class="mypageNavSM"></div>
     <p style="font-size:44px;  font-weight: bold; text-align: center;" >Notice Board</p>
@@ -104,5 +76,32 @@
      <input type="hidden" name="name" type="text"  value="${name}">
    </form>
    
+   <div class="mypageNav"></div>
+        <div class="mypageNav"></div>
+        <div class="mypageNav"></div>
+        <div class="footer">
+            <div class="footerL01">
+                <div class="ffflogo">
+                    <img src="/resources/img/logoW.png" width="100%" height="30%" alt="logo">
+                </div>
+                <div class="ffftxt">
+                    <ul>
+                        <li id="footer_1">STRIKE Project</li>
+                        <li id="footer_2">Project Team : ( 팀장 ) 홍종필 ( 팀원 ) 우수환 박미연 신인선</li>
+                        <li id="footer_3">주소 : 대전광역시 동구 우암로 352-21 한국 폴리텍 대전 컴퍼스</li>
+                        <li id="footer_4"> COPYRIGHTⓒ2022.STRIKE.All.rights reserved.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerL02">
+                <div class="footerL02_01">
+                    <ul>
+                        <li id="footer_5">TEL &nbsp;<span>063-447-2500</span></li>
+                        <li id="footer_2">AM : 10:00 ~ PM : 17:30 <br> LUNCH TIME PM 12:00 ~ 13:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- 풋터 부분  -->
+   	<script src="/resources/js/index.js"></script>
 </body>
 </html>
