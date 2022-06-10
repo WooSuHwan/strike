@@ -25,4 +25,10 @@ public interface ClanGameDao {
 	void permission(int clan_game_code, int clan_challenger_code);
 
 	void addClanGame(int clan_game_code, int clan_challenger_code, int clan_code);
+	/**
+	int challengeCount(int clan_code, int clan_game_code);
+	*/
+	int confirm(int clan_game_code, int clan_code);
+
+	int compare(int clan_game_code, int member_code);
 }

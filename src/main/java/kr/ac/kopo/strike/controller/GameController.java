@@ -1,6 +1,10 @@
 package kr.ac.kopo.strike.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -129,13 +133,31 @@ public class GameController {
 	}
 	
 	@GetMapping("/challenge/{game_code}")
-	public String add(@PathVariable int game_code, @SessionAttribute Member member) {
+	public String add(@PathVariable int game_code, @SessionAttribute Member member, HttpServletResponse response) throws IOException {
 		
-		service.challenge(game_code, member.getMember_code());
-		
+		if(service.compare(game_code, member.getMember_code()) > 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('자신의 게임 입니다'); </script>");
+			out.println("<script>location.href='../list';</script>");
+			out.flush();
+		} else if(service.confirm(game_code, member.getMember_code()) > 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('이미 신청을 했습니다'); </script>");
+			out.println("<script>location.href='../list';</script>");
+			out.flush();
+		} else {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('신청을 했습니다'); </script>");
+			out.println("<script>location.href='../list';</script>");
+			out.flush();
+			service.challenge(game_code, member.getMember_code());
+		}
 		return "redirect:../view/" + game_code;
 	}
-	
+
 	@GetMapping("/permission/{game_code}/{challenger_code}/{challenger_member_code}/{member_code}")
 	public String permission(@PathVariable int game_code, @PathVariable int challenger_code, @PathVariable int challenger_member_code, @SessionAttribute Member member) {
 		

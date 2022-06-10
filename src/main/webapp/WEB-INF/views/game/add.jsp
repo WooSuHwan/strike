@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -7,8 +6,40 @@
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/battleBtn.css">
 <link rel="stylesheet" href="/resources/css/index.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+//페이지 로딩 후
+$(function() {
+	// 등록을 눌렀을 때 등록 방지 용도
+	$("#add").click(function(event) {
+		console.log( $("#applyForm input[name='style']:checked").val() );
+		
+		if($("#applyForm input[name='title']").val()=="") {
+			alert("제목이 비었습니다");
+			return false;
+		}
+		
+		if($("#applyForm input[name='clock']").val()=="") {
+			alert("시간이 비었습니다");
+			return false;
+		}
+		
+		if($("#applyForm input[name='loc']").val()=="") {
+			alert("위치가 비었습니다");
+			return false;
+		}
+		
+		if($("#applyForm input[name='recruit']").val()=="") {
+			alert("모집이 비었습니다");
+			return false;
+		}
+		
+		$("#applyForm").submit();
+			
+	});
+})
+</script>
 
 <script>
 $(function() { // 입장과 동시에 실행
@@ -34,7 +65,7 @@ $(function() { // 입장과 동시에 실행
 				</div>
 			</div>
 
-			<form method="post" class="vspost">
+			<form id="applyForm" method="post" class="vspost">
 				<div class="vspost_01">
 					<h3>대결 신청 등록</h3>
 				</div>
@@ -92,7 +123,7 @@ $(function() { // 입장과 동시에 실행
 				</div>
 
 				<div class="cbtn0">
-					<button>등록</button>
+					<button type="button" id="add" class="add">등록</button>
 				</div>
 			</form>
 		</div>

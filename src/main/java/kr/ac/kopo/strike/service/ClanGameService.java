@@ -25,5 +25,10 @@ public interface ClanGameService {
 	void permission(int clan_game_code, int clan_challenger_code);
 
 	void addClanGame(int clan_game_code, int clan_challenger_code, int clan_code);
+	/**
+	boolean confirm(int clan_code, int clan_game_code);
+	*/
+	int confirm(int clan_game_code, int clan_code);
 
+	int compare(int clan_game_code, int member_code);
 }

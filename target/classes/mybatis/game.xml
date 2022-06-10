@@ -104,4 +104,16 @@
 		select *
 		from franchisee
 	</select>
+	
+	<select id="confirm" parameterType="Integer" resultType="Integer">
+		select count(*)
+		from challenger
+		where game_code = #{game_code} and challenger_member_code = #{member_code}
+	</select>
+	
+	<select id="compare" parameterType="Integer" resultType="Integer">
+		select count(*)
+		from game
+		where game_code = #{game_code} and member_code = #{member_code}
+	</select>
 </mapper>

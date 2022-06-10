@@ -6,8 +6,48 @@
 <meta charset="UTF-8">
 <title>STRIKE</title>
 <link rel="stylesheet" href="/resources/css/font.css">
-    <link rel="stylesheet" href="/resources/css/personaldetails.css">
-    <link rel="stylesheet" href="/resources/css/index.css">
+<link rel="stylesheet" href="/resources/css/personaldetails.css">
+<link rel="stylesheet" href="/resources/css/index.css">
+<!--  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+// 신청자 중복 확인
+function confirm(event) {
+	
+	var clan_code = ${sessionScope.member.clan_code};
+	var clan_game_code = ${clan_game_code}; 
+	
+	$.ajax({
+		url:"/clanGame/confirm/",
+		data:{
+			"clan_code" : clan_code, 
+			"clan_game_code" : clan_game_code
+			},
+		method:"POST",
+		dataType:"TEXT",
+		success:function(data) {
+			console.log(data);
+			if(data == "overlap") {
+				alert("이미 신청을 했습니다")
+				e.preventDefault();
+			} else {
+				alert("신청을 했습니다")
+			}
+		},
+		error:function(){
+			console.err("에러")
+		}
+	});
+}
+// 페이지 로딩 후	
+$(function() {
+	// 신청을 눌렀을 때 등록 방지 용도
+	$("#challenge").click(function(event) {
+		confirm();
+	});
+})
+</script>
+-->
 </head>
 <body>
     <jsp:include page="../font.jsp"></jsp:include>
@@ -217,7 +257,7 @@
                     </table>
                 </div>
                 <div class="applicant_03">
-                    <a href="../challenge/${clan_game_code}">신청</a>
+                    <a href="../challenge/${clan_game_code}" id="challenge" name="challenge">신청</a>
                 </div>
             </div>
         </div>
