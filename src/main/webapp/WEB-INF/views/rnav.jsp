@@ -4,12 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%-- <jsp:include page="font.jsp"></jsp:include> --%>
-<!-- <link rel="stylesheet" href="/resources/css/index.css"> -->
-<!-- <link rel="stylesheet" href="/resources/css/Mham.css"> -->
-<!-- <link rel="stylesheet" -->
-<!-- 	href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-<!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
+<jsp:include page="font.jsp"></jsp:include>
+<link rel="stylesheet" href="/resources/css/index.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
 	<div class="All">
@@ -173,9 +171,5 @@
 			</ul>
 		</div>
 	</div>
-		<!-- 햄버거 버튼 메뉴 끝 -->
-		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-     	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-		<script src="../resources/js/index.js"></script>
 </body>
 </html>

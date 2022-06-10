@@ -19,7 +19,7 @@
 
 </style>
 <link rel="stylesheet" href="/resources/css/index.css">
-<jsp:include page="font.jsp"></jsp:include>
+<jsp:include page="../font.jsp"></jsp:include>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
 <link rel="stylesheet" href="summernote/summernote-lite.css">
 <link rel="stylesheet" href="/resources/css/view.css">
@@ -28,7 +28,7 @@
 <body>
    
     <div class="mypageNav"></div>
-    <jsp:include page="nav.jsp"></jsp:include>
+    <jsp:include page="../nav.jsp"></jsp:include>
     
     
     <div class="mypageNavSM"></div>
