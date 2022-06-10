@@ -184,7 +184,7 @@
                                 <th>패</th>
                                 <th>무</th>
                                 <th>승률</th>
-                                <th>상태</th>
+                                <th style="border-right: none;">상태</th>
                                 <c:forEach items="${view}" var="item" varStatus="status">
                                 <c:if test="${item.member_code eq sessionScope.member.member_code}">
                                 	<th style="border-right: none;">승인</th>
@@ -193,6 +193,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <c:if test="${challenger.size() < 1}">
+							<tr>
+								<td colspan="9" style="border-right:none;">등록 된 신청자가 없습니다.</td>
+							</tr>
+						</c:if>
                         <c:forEach items="${challenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>

@@ -116,11 +116,11 @@
 					<table class="applicanttable">
 						<colgroup>
 							<col style="width: 10%;">
-							<col style="width: 15%;">
+							<col style="width: 20%;">
+							<col style="width: 20%;">
 							<col style="width: 10%;">
-							<col style="width: 8%;">
-							<col style="width: 8%;">
-							<col style="width: 8%;">
+							<col style="width: 10%;">
+							<col style="width: 10%;">
 							<col style="width: 10%;">
 							<col style="width: 10%;">
 							<col style="width: 10%;">
@@ -138,7 +138,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:if test="${wait.size() < 1}">
+							<c:if test="${clanMember.size() < 1}">
 								<tr>
 									<td colspan="8">등록 된 클랜원이 없습니다</td>
 								</tr>
