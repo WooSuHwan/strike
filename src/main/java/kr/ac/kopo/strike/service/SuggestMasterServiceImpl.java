@@ -20,7 +20,8 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 		
 		int total = dao.total(pager);
 		pager.setTotal(total);
-		return dao.list();
+		
+		return dao.list(pager);
 	}
 
 	@Override
@@ -57,6 +58,17 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 	public SuggestMaster item(int master_code) {
 		
 		return dao.item(master_code);
+	}
+
+	@Override
+	public List<SuggestMaster> list() {
+		Pager pager = new Pager();
+		int total = dao.total(pager);
+		pager.setTotal(total);
+		pager.setPerPage(total);
+		
+		
+		return dao.list(pager);
 	}
 
 }

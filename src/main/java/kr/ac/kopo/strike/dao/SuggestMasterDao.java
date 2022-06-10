@@ -7,7 +7,7 @@ import kr.ac.kopo.strike.util.Pager;
 
 public interface SuggestMasterDao {
 
-	List<SuggestMaster> list();
+	List<SuggestMaster> list(Pager pager);
 
 	void add(SuggestMaster item);
 

@@ -5,25 +5,27 @@
 	<!-- 리스트화 시키는 쿼리문 -->
 
 	<sql id="search">
+	SELECT master_code, title, reg_date, hit, name, story FROM suggest_master
 		<where>
-			<if test="search==1">
-				suggestmaster.master_code=#{keyword}
+			<if test="keyword != null">
+			title LIKE CONCAT(CONCAT('%', #{keyword}), '%')
 			</if>
-			<if test="search==2">
-				suggestmaster.title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
-			</if>	
 		</where>
 	</sql>
 
-
 	<select id="list" resultType="suggestmaster">
-		SELECT master_code, title, story, hit, name, reg_date  FROM suggest_master 
+		SELECT master_code, title, reg_date, hit, name, story FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})
+		ORDER BY master_code DESC]]>
 	</select>
 	
 	<insert id="add">
-		INSERT INTO suggest_master (master_code, title, story, hit, name, reg_date)
+		INSERT INTO suggest_master (master_code, title, hit, name, reg_date, member_code, story)
 	
-		VALUES(MASTER_CODE_SEQ.nextval,#{title}, #{story}, 0, #{name}, sysdate )
+		VALUES(MASTER_CODE_SEQ.nextval,#{title}, 0, #{name}, sysdate, #{member_code} ,#{story} )
 		
 	</insert>
 	
@@ -39,12 +41,13 @@
 	</update>
 	
 	<select id="item" resultType="suggestmaster">
-		SELECT * FROM suggest_master
+		SELECT master_code, title,  hit, name, reg_date, member_code ,story 
+		 FROM suggest_master
 		WHERE master_code = #{masterCode}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestMaster">
-		SELECT *
+		SELECT  master_code, title,  hit, name, reg_date, story
 		FROM suggest_master
 		WHERE master_code = #{masterCode}
 	</select>
@@ -58,7 +61,7 @@
 	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) FROM suggest_master
-		<include refid="search"></include>
+		
 	</select>
 	
 </mapper>

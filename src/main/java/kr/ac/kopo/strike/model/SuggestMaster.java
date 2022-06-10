@@ -18,18 +18,20 @@ public class SuggestMaster {
 	
 	
 	
-	public Date getReg_date() {
-		return reg_date;
-	}
-	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
-	}
+	
 	public int getMember_code() {
 		return member_code;
 	}
 	public void setMember_code(int member_code) {
 		this.member_code = member_code;
 	}
+	public Date getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
+	}
+	
 	public int getGrade() {
 		return grade;
 	}
@@ -67,12 +69,7 @@ public class SuggestMaster {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public int getmember_code() {
-		return member_code;
-	}
-	public void setmember_code(int user_code) {
-		this.member_code = user_code;
-	}
+	
 	public String getName() {
 		return name;
 	}

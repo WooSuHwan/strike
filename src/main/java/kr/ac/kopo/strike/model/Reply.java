@@ -8,12 +8,20 @@ public class Reply {
 	private int reply_code;
 	private int free_code;
 	private String reply_story;
-	
+	private int member_code;
 	private Date reg_date;
 	private int user_code;
 	private String reply_name;
 	
 	
+	
+	
+	public int getMember_code() {
+		return member_code;
+	}
+	public void setMember_code(int member_code) {
+		this.member_code = member_code;
+	}
 	public int getReply_code() {
 		return reply_code;
 	}

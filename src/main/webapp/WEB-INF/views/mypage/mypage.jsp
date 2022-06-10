@@ -34,7 +34,7 @@
                         <img src="/resources/img/mypage1.png" alt="1">
                     </div>
                     <div class="proFont">
-                        <div class="proName">${item.name } </div><div class="proName2">&nbsp;님</div>
+                        <div class="proName">${sessionScope.member.name } </div><div class="proName2">&nbsp;님</div>
                     </div>
             </div>
 
@@ -76,27 +76,27 @@
         </div>
         
         <div class="mainBody">
-            <div class="mypageName"><strong class="namePoint">${item.name }</strong><div class="name">&nbsp;님의 마이페이지</div></div>
+            <div class="mypageName"><strong class="namePoint">${sessionScope.member.name }</strong><div class="name">&nbsp;님의 마이페이지</div></div>
                 
                 <div class="mypageBox">
                     <div class="box">
                         <div class="tear">
                             <div class="myText">
                                     <p class="namePoint myTitle">My Tear</p>
-                                    <p class="namePoint myTitle">${item.name }님은</p>
+                                    <p class="namePoint myTitle">${sessionScope.member.name }님은</p>
                                     <div class="nameTearPoint"><p class="namePoint">현재&nbsp;</p><p class="namePorintTear">티어수정필요</p> &nbsp;<p class="namePoint">티어 입니다.</p></div>
                             </div>
                         </div>
                         <div class="mypageClan">
                             <div class="myText">
                                 <p class="namePoint myTitle">My clan</p>
-                               	<c:if test="${item.clan_code == 0}">
+                               	<c:if test="${Mitem.clan_code == 0}">
                                 <div class="nameTearPoint myTitle"><p class="namePoint">현재&nbsp;</p><p class="namePoint">클랜이 존재하지 않습니다</p></div>
-<!--                                 <a href="#"> <img src="/resources/img/mypageclan.png" alt=""></a> -->
+                                <a href="#"> <img src="/resources/img/mypageclan.png" alt=""></a>
                                	</c:if>
-                               	<c:if test="${item.clan_code != 0}">
-                                <div class="nameTearPoint myTitle"><p class="namePoint">현재&nbsp;</p><p class="namePorintTear">${item.clan_code }</p> &nbsp;<p class="namePoint">클랜 입니다.</p></div>
-                                <a href="/clan/view/${item.clan_code}"> <img src="/resources/img/mypageclan.png" alt=""></a>
+                               	<c:if test="${Mitem.clan_code != 0}">
+                                <div class="nameTearPoint myTitle"><p class="namePoint">현재&nbsp;</p><p class="namePorintTear">${Mitem.clan_name }</p> &nbsp;<p class="namePoint">클랜 입니다.</p></div>
+                                <a href="/clan/view/${sessionScope.member.clan_code }"> <img src="/resources/img/mypageclan.png" alt=""></a>
                                	</c:if>
                             </div>
                         </div>
@@ -107,11 +107,11 @@
                         <p class="namePoint myTitle">현재 전적 (개인)</p>
                         <div class="nameTearPoint myTitle2">
                             <p class="namePoint">승&nbsp;</p>
-                            <p class="namePorintTear">${item.win }&nbsp;&nbsp;</p> 
+                            <p class="namePorintTear">${sessionScope.member.win }&nbsp;&nbsp;</p> 
                             <p class="namePoint ">패&nbsp;</p>
-                            <p class="namePorintTear">${item.lose }&nbsp;&nbsp;</p> 
+                            <p class="namePorintTear">${sessionScope.member.lose }&nbsp;&nbsp;</p> 
                             <p class="namePoint">무&nbsp;</p>
-                            <p class="namePorintTear">${item.draw }&nbsp;&nbsp;</p> 
+                            <p class="namePorintTear">${sessionScope.member.draw }&nbsp;&nbsp;</p> 
                         </div>
                     </div>
                     </div>
@@ -128,28 +128,28 @@
                             <tbody>
                                 <tr>
                                     <td class="tableColor">아이디 </td>
-                                    <td class="tableInput">${item.id }</td>
+                                    <td class="tableInput">${sessionScope.member.id }</td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">이름</td>
-                                    <td class="tableInput">${item.name }</td>
+                                    <td class="tableInput">${sessionScope.member.name }</td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">휴대전화</td>
-                                    <td class="tableInput">${item.tel }</td>
+                                    <td class="tableInput">${sessionScope.member.tel }</td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">생년월일</td>
-                                    <td class="tableInput">${item.birth }</td>
+                                    <td class="tableInput">${sessionScope.member.birth }</td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">성별</td>
                                     <td class="tableInput" style="border-bottom: none;">
                                      <c:choose>
-								       <c:when test = "${sessionScope.member.sex == 0}">
+								       <c:when test = "${Mitem.sex == 0}">
 								          남자
 								       </c:when>
-								       <c:when test = "${sessionScope.member.sex == 1}">
+								       <c:when test = "${Mitem.sex == 1}">
 								          여자
 								       </c:when>
 								       <c:otherwise>
@@ -164,7 +164,7 @@
                 </form>
 
                 <div class="loginBtn">
-                    <a href="../update/${item.member_code}"> 개인정보 수정</a>
+                    <a href="../update/${Mitem.member_code}"> 개인정보 수정</a>
                 </div>
 
             </div>

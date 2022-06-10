@@ -9,7 +9,7 @@
 
 
 <link rel="stylesheet" href="/resources/css/list.css">
-<jsp:include page="../font.jsp"></jsp:include>
+<jsp:include page="font.jsp"></jsp:include>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -25,7 +25,7 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="nav.jsp"></jsp:include>
     <div class="mypageNav"></div>
         
     <div class="container">
@@ -35,22 +35,25 @@
         <p style="font-size:20px;">회원들 간의 다양한 정보를 나눌 수 있는 공간입니다.</p>
         
 		<div class="mypageNavSM"></div>
-        <div class="whiteBox" >
+           <div class="whiteBox" >
           
-            <div class="searchButton">
-                    <div style="text-align: center">
-                        <span class="material-icons-outlined" style="color: white; font-size:31px;"  >
-                         search
-                        </span>
-                    </div>
-                
+            <form method="get" action="" id="search" class="clanrankSearch_02">
+	                    <div class="zmffos">
+	                        <p style="margin-right: 1em;">search</p>
+	                        <div class="clanrankSearch_02_01">
+	                            <input style="" type="text" name="keyword" placeholder="제목을 입력해 주세요">
+	                            <button  type="submit">
+	                               <span class="material-icons-outlined" style="color: white; font-size:31px;"  >
+                        	 search
+                        		</span>
+	                            </button>
+	                        </div>
+	                    </div>
+                    </form>
             </div>
-            <div  class="searchBar" >
-                        <input type="text"></div>
-                            <div class="mypageNavSM"></div>
-                        <p style="font-size:17px;  font-weight: bold;">search</p>
-            </div>
+       	
        
+      
         <div class="mypageNavSM"></div>
 		<table>
       <thead>
@@ -67,8 +70,8 @@
 					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
 
-							<td>${item.free_code}</td>
-							<td><a href="view/${item.free_code}">${item.title}</a></td>
+							<td>${pager.offset + status.count}</td>
+							<td><a href="view/${item.free_code}" "style="text-decoration:none">${item.title} </a></td>
 							<td>${item.name}</td>
 							<td>${item.hit}</td>
 							<td><fmt:formatDate value="${item.reg_date}" pattern="yyyy.MM.dd"/></td>

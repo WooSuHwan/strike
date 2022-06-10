@@ -60,14 +60,14 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-  <jsp:include page="../font.jsp"></jsp:include>
-  <jsp:include page="../nav.jsp"></jsp:include>
+  <jsp:include page="font.jsp"></jsp:include>
+  <jsp:include page="nav.jsp"></jsp:include>
 
   
   
   
 <div class="mypageNavSM"></div>
-    <p style="font-size:44px;  font-weight: bold; text-align: center;" >Notice Board</p>
+    <p style="font-size:44px;  font-weight: bold; text-align: center;" >공지게시판</p>
     <div class="mypageNavSM"></div>
     <form method="post" >
     <div class="containerBox">
@@ -106,7 +106,7 @@
    </form>
    
    <div>
-   	<input type="hidden"  name="member_code" value="${member.member_code}">
+   	<input type="hidden"  name="member_code" value="${sessionScope.member_code}">
    </div>
   
   

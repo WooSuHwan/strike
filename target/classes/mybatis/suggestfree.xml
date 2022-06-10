@@ -5,35 +5,38 @@
 	<!-- 리스트화 시키는 쿼리문 -->
 	
 	<sql id="search">
+	SELECT free_code, title, reg_date, hit, name, member_code, story FROM free
 		<where>
-			<if test="search==1">
-				free.free_code=#{keyword}
+			<if test="keyword != null">
+			title LIKE CONCAT(CONCAT('%', #{keyword}), '%')
 			</if>
-			<if test="search==2">
-				free.title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
-			</if>	
 		</where>
 	</sql>
 
-
-
-
 	<select id="list" resultType="suggestfree">
-		SELECT free_code, title,  hit, name, reg_date
-		FROM free 
-		ORDER BY free_code DESC
+		SELECT free_code, title, reg_date, hit, name, member_code, story FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage}) 
+		ORDER BY free_code desc
+		]]>
+		
+		
 	</select>
-	
+
+
+
 	<insert id="add">
-		INSERT INTO free ( story,free_code, title, hit, name, reg_date,member_code)
+		INSERT INTO free ( free_code, title, hit, name, reg_date,member_code, story)
 	
-		VALUES(#{story}, FREE_CODE_SEQ.nextval,#{title}, 0, #{name}, sysdate, #{member_code} )
+		VALUES (FREE_CODE_SEQ.nextval,#{title}, 0, #{name}, sysdate, #{member_code},#{story} )
 		
 	</insert>
 	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) FROM free
-		<include refid="search"></include>
+		
 	</select>
 	
 	
@@ -49,13 +52,13 @@
 	</update>
 	
 	<select id="item" resultType="suggestfree">
-		SELECT story ,free_code, title,  hit, name, reg_date, member_code
+		SELECT free_code, title,  hit, name, reg_date, member_code,story 
 		FROM free
 		WHERE free_code = #{free_code}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestFree">
-		SELECT story, free_code, title,  hit, name, reg_date
+		SELECT free_code, title,  hit, name, reg_date, story
 		FROM FREE
 		WHERE free_code = #{free_code}
 	</select>
@@ -66,5 +69,7 @@
 		WHERE
 			free_code = #{free_code}
 	</update>
+	
+	
 	
 </mapper>

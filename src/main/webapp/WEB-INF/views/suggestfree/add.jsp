@@ -60,8 +60,8 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-  <jsp:include page="../font.jsp"></jsp:include>
-  <jsp:include page="../nav.jsp"></jsp:include>
+  <jsp:include page="font.jsp"></jsp:include>
+  <jsp:include page="nav.jsp"></jsp:include>
 
   
   
@@ -106,7 +106,7 @@
    </form>
    
    <div>
-   	<input type="hidden"  name="member_code" value="${member.member_code}">
+   	<input type="hidden"  name="member_code" value="${sessionScope.member_code}">
    </div>
   
   

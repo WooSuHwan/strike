@@ -147,7 +147,7 @@ input {
     border: 2px solid #dddddd;
     background: #ffffff;
     border-radius: 10px;
-    
+    min-height: 500px;
 
     
 }
@@ -163,15 +163,7 @@ input {
     
 }
 
-.storyBox{
-    display: flex;
-    width: 700px;
-    height: 100%;
-    flex-direction: row;
-    min-height: 200px;
 
-    
-}
 
 
 .StoryAndReplyBar{

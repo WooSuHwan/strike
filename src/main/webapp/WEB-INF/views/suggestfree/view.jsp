@@ -16,10 +16,18 @@
 	}
 </script>
 <style>
+.storyBox{
+    display: flex;
+    width: 700px;
+    height: 100%;
+    flex-direction: row;
+    min-height: 200px;
 
+    
+}
 </style>
 <link rel="stylesheet" href="/resources/css/index.css">
-<jsp:include page="../font.jsp"></jsp:include>
+<jsp:include page="font.jsp"></jsp:include>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
 <link rel="stylesheet" href="summernote/summernote-lite.css">
 <link rel="stylesheet" href="/resources/css/view.css">
@@ -28,18 +36,19 @@
 <body>
    
     <div class="mypageNav"></div>
-    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="nav.jsp"></jsp:include>
     
     
     <div class="mypageNavSM"></div>
     <p style="font-size:44px;  font-weight: bold; text-align: center;" >게시글</p>
+    
     <div class="mypageNavSM"></div>
     <div class="container">
         <div class="boardBar">
             <div class="mypageNavSM5"></div>
             <div class="titleBox">
                 <div class="mypageNavSM3"></div>
-                <p style="font-size:24px;  font-weight: bold;">${item.title}</p>
+                <p style="font-size:24px;  font-weight: bold; " >${item.title}</p>
                 
             </div>
             <div class="mypageNavSM7"></div>
@@ -112,8 +121,15 @@
             <div class="mypageNavSM9"></div>
 			<p style="text-align: left; font-weight: bold; font-size:18px;">${reply.reply_story}</p>
             <div class="mypageNavSM9"></div>
-            <p style="text-align: left; font-size:14px; color:gray;"><fmt:formatDate value="${reply.reg_date}" pattern="yyyy-MM-dd" /><a href="../reply/${reply.reply_code}/replyupdate" >수정</a>
-                <a href="../reply/${reply.reply_code}/replydelete" >삭제</a></p>	
+              
+            <p style="text-align: left; font-size:14px; color:gray;">
+            <fmt:formatDate value="${reply.reg_date}" pattern="yyyy-MM-dd" />
+            <c:if test="${sessionScope.member_code == reply.member_code}">
+            
+            <a href="../reply/${reply.reply_code}/replydelete" >삭제</a>
+            </c:if>
+            </p>	
+               
 		</div>
 	</li>	
 	</c:forEach>
@@ -124,15 +140,18 @@
 	<form method="post" action="../reply/${item.free_code}/write">
         <div class="mypageNavSM11"></div>
 		<p style="text-align: left"  >
-			 <input  style="font-weight : bold;  width: 200px " type="text" name="name" value="${member.name}" readonly>
+			 <input  style="font-weight : bold;  width: 200px " type="text" name="name" value="${name}" readonly>
 		</p>
 		<p style="text-align: left">
 			<input placeholder="이곳에 입력하세요." style="font-weight : bold;  width: 600px " name="reply_story"></input>
 		</p>
 		<p style="text-align: right" >
 			<input type="hidden" name="free_code" value="${item.free_code}">
+			<c:if test="${sessionScope.member_code != null }">
 			<button type="submit">댓글 작성</button>
+			</c:if>
 		</p>
+		<input type="hidden"  name="member_code" value="${sessionScope.member_code}">
 	</form>
 	
 </div>
@@ -153,7 +172,7 @@
         		<button class="w-btn w-btn-white" type="button" onclick = "location.href = '../list' " style="width:100; float: right;">목록</button>
    		 </div>
      			<div class="mypageNavSM12"></div>
-   <c:if test="${member.member_code == item.member_code}">
+   <c:if test="${member_code == item.member_code}">
     	 <div>   
       		  <button class="w-btn w-btn-gray"  onclick = "location.href = '../update/${item.free_code}' " style="width:100; float: right;">수정</button>
   		  </div> 

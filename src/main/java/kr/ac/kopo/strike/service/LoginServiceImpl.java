@@ -30,6 +30,10 @@ public class LoginServiceImpl implements LoginService {
 			System.out.println(member.getMember_code());
 			System.out.println(member.getName());
 			member.setName(aes256.decrypt(member.getName()));
+			member.setBirth(aes256.decrypt(member.getBirth()));
+			member.setId(aes256.decrypt(member.getId()));
+//			member.setPw(sha256.encrypt(member.getPw()));
+			member.setTel(aes256.decrypt(member.getTel()));
 			return member;
 		}
 

@@ -16,9 +16,9 @@ public class SuggestMasterDaoImpl implements SuggestMasterDao {
 	SqlSession sql;
 	
 	@Override
-	public List<SuggestMaster> list() {
+	public List<SuggestMaster> list(Pager pager) {
 		
-		return sql.selectList("suggestmaster.list");
+		return sql.selectList("suggestmaster.list",pager);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class SuggestMasterDaoImpl implements SuggestMasterDao {
 	@Override
 	public int total(Pager pager) {
 		
-		return sql.selectOne("suggestfree.total",pager);
+		return sql.selectOne("suggestmaster.total",pager);
 	}
 
 }

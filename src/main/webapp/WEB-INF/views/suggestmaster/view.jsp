@@ -16,10 +16,18 @@
 	}
 </script>
 <style>
+.storyBox{
+    display: flex;
+    width: 700px;
+    height: 100%;
+    flex-direction: row;
+    min-height: 400px;
 
+    
+}
 </style>
 <link rel="stylesheet" href="/resources/css/index.css">
-<jsp:include page="../font.jsp"></jsp:include>
+<jsp:include page="font.jsp"></jsp:include>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
 <link rel="stylesheet" href="summernote/summernote-lite.css">
 <link rel="stylesheet" href="/resources/css/view.css">
@@ -28,7 +36,7 @@
 <body>
    
     <div class="mypageNav"></div>
-    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="nav.jsp"></jsp:include>
     
     
     <div class="mypageNavSM"></div>
@@ -90,14 +98,7 @@
                     <div class="mypageNavSM11"></div>
                 
                
-                <div class="titleBox2">
-                    <div class="mypageNavSM3"></div>
-                  
-                  
-                
-
-                </div>
-                    
+              
         
                     
           <div class="replyContent">
@@ -120,7 +121,7 @@
         		<button class="w-btn w-btn-white" type="button" onclick = "location.href = '../list' " style="width:100; float: right;">목록</button>
    		 </div>
      			<div class="mypageNavSM12"></div>
-   <c:if test="${member.member_code == item.member_code}">
+   <c:if test="${sessionScope.member_code == item.member_code}">
     	 <div>   
       		  <button class="w-btn w-btn-gray"  onclick = "location.href = '../update/${item.master_code}' " style="width:100; float: right;">수정</button>
   		  </div> 

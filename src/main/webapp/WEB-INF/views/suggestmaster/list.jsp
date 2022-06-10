@@ -8,7 +8,7 @@
 <title>공지게시판 리스트</title>
 
 <link rel="stylesheet" href="/resources/css/list.css">
-<jsp:include page="../font.jsp"></jsp:include>
+<jsp:include page="font.jsp"></jsp:include>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-    <jsp:include page="../nav.jsp"></jsp:include>
+    <jsp:include page="nav.jsp"></jsp:include>
      
      <div class="mypageNav"></div>
      
@@ -37,18 +37,19 @@
 		<div class="mypageNavSM"></div>
         <div class="whiteBox" >
           
-            <div class="searchButton">
-                    <div style="text-align: center">
-                        <span class="material-icons-outlined" style="color: white; font-size:31px;"  >
-                         search
-                        </span>
-                    </div>
-                
-            </div>
-            <div  class="searchBar" >
-                        <input type="text"></div>
-                            <div class="mypageNavSM"></div>
-                        <p style="font-size:17px;  font-weight: bold;">search</p>
+            <form method="get" action="" id="search" class="clanrankSearch_02">
+	                    <div class="zmffos">
+	                        <p style="margin-right: 1em;">search</p>
+	                        <div class="clanrankSearch_02_01">
+	                            <input style="" type="text" name="keyword" placeholder="제목을 입력해 주세요">
+	                            <button  type="submit">
+	                               <span class="material-icons-outlined" style="color: white; font-size:31px;"  >
+                        	 search
+                        		</span>
+	                            </button>
+	                        </div>
+	                    </div>
+                    </form>
             </div>
        
         <div class="mypageNavSM"></div>
@@ -67,7 +68,7 @@
 					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
 
-							<td>${item.master_code}</td>
+							<td>${pager.offset + status.count}</td>
 							<td><a href="view/${item.master_code}">${item.title}</a></td>
 							<td>${item.name}</td>
 							<td>${item.hit}</td>
@@ -81,7 +82,7 @@
     <div class="mypageNavSM"></div>
 </div>
     <div class="container">
-    <c:if test="${sessionScope.member != null}">
+    <c:if test="${member.grade == 100}">
         <div>
 		    <button class="w-btn w-btn-gray" type="button" onclick = "location.href = 'add' " style="width:100; float: right;">글쓰기</button>
         </div> 

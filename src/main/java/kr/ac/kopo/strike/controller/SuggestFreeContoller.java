@@ -93,10 +93,9 @@ public class SuggestFreeContoller {
 	}
 	
 	@GetMapping("/view/{free_code}")
-	public String view(@PathVariable int free_code,Model model, @SessionAttribute Member member) throws Exception{
+	public String view(@PathVariable int free_code,Model model) throws Exception{
 		
-		member.setMember_code(member.getMember_code());
-	    member.setName(member.getName());
+		
 		
 		SuggestFree item = service.item(free_code);
 		service.addCount(free_code);
@@ -112,10 +111,9 @@ public class SuggestFreeContoller {
 	}
 	
 	@RequestMapping(value= "/readView", method = RequestMethod.GET)
-	public String read(SuggestFree suggestFree,Model model, int free_code,@SessionAttribute Member member) throws Exception{
+	public String read(SuggestFree suggestFree,Model model, int free_code) throws Exception{
 		
-		member.setMember_code(member.getMember_code());
-		member.setName(member.getName());
+	
 	
 		logger.info("read");
 		model.addAttribute("read", service.read(suggestFree.getFree_code()));
