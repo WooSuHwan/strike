@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>STRIKE</title>
 <link rel="stylesheet" href="/resources/css/font.css">
-<link rel="stylesheet" href="/resources/css/personaldetails.css">
+<link rel="stylesheet" href="/resources/css/battleBtn.css">
 <link rel="stylesheet" href="/resources/css/index.css">
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -220,7 +220,7 @@ function confirm(event) {
                                 <th>패</th>
                                 <th>무</th>
                                 <th>승률</th>
-                                <th>상태</th>
+                                <th style="border-right: none;">상태</th>
                                 <c:forEach items="${challenger}" var="item" varStatus="status">
                                 <c:if test="${item.clan_code eq sessionScope.member.clan_code}">
                                 	<th style="border-right: none;">승인</th>

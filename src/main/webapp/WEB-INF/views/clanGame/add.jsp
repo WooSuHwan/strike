@@ -92,30 +92,23 @@ $(function() { // 입장과 동시에 실행
 					</div>
 					<div class="vspost_02_01">
 						<label>스타일</label> 
-						<label><input type="radio" name="style" value="1">1vs1</label>
-						<label><input type="radio" name="style" value="2">2vs2</label>
-						<label><input type="radio" name="style" value="3">3vs3</label>
-						<label><input type="radio" name="style" value="4">4vs4</label>
-						<label><input type="radio" name="style" value="5">5vs5</label>
+						<label><input type="radio" name="style" value="1" class="vsstyle">1 vs 1</label>
+						<label><input type="radio" name="style" value="2" class="vsstyle">2 vs 2</label>
+						<label><input type="radio" name="style" value="3" class="vsstyle">3 vs 3</label>
+						<label><input type="radio" name="style" value="4" class="vsstyle">4 vs 4</label>
+						<label><input type="radio" name="style" value="5" class="vsstyle">5 vs 5</label>
 					</div>
 				</div>
 				
 				<div class="applicant">
 	                <div class="applicant_01">
-	                    <h3>등록이 된 가쟁점 위치</h3>
+	                    <h3>등록이 된 가맹점 위치</h3>
 	                </div>
                 		<div class="applicant_02">
                    			<table class="applicanttable">
                     		    <colgroup>
-		                            <col style="width: 10%;">
 		                            <col style="width: 15%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 8%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 10%;">
-		                            <col style="width: 10%;">
+		                            <col style="width: 85%;">
                         		</colgroup>
 		                        <thead>
 		                            <tr>
@@ -132,62 +125,89 @@ $(function() { // 입장과 동시에 실행
 		                        </tbody>
 		                    </table>
 		                </div>
+		                <div class="cbtn0">
+							<button type="button" id="add" class="add">등록</button>
+						</div>
+						<div class="pagination">
+							<div class="paginate">
+								<a href="?page=1" class="pagebtn link arrow start prev"
+									data-page="1">처음 페이지</a> <a
+									href="?page=${pager.prev }&${pager.query}"
+									class="link arrow prev" data-page="1">이전 페이지</a>
+								<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
+								<!--                         <span class="now">1</span>/ 8 -->
+								<!--                     </span> -->
+								<c:forEach var="page" items="${pager.list}">
+									<a href="?page=${page}&${pager.query}"
+										class="link now${page == pager.page ? '': 'active' }">${page}</a>
+								</c:forEach>
+								<a href="?page=${pager.next }&${pager.query}"
+									class="pagebtn link arrow next" data-page="9">다음 페이지</a> <a
+									href="?page=${pager.last}" class="pagebtn link arrow last next"
+									data-page="66">Next</a>
+							</div>
+						</div>
 					</div>
-				
-				<div class="cbtn0">
-					<button type="button" id="add" class="add">등록</button>
-				</div>
-			</form>
-		</div>
+				 </form>
+			</div>
 
-		<div class="wh"></div>
+		
 	</section>
-	<!-- 카카오 지도 보여주는 div -->
-	<div>등록이 되어 있는 가맹점 위치</div>
-	<div id="map" style="width: 500px; height: 400px;"></div>
-	<!-- 카카오 지도 보여주는 div -->
-	<!-- 카카오 지도 API 시작 -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f281014ca014b8210d45a1c3d8663784"></script>
-	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-	    mapOption = { 
-	        center: new kakao.maps.LatLng(36.3504119, 127.3845475), // 지도의 중심좌표
-	        level: 13 // 지도의 확대 레벨
-	    };
-		
-		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-		
-		function loadMap() { // 지도 데이터를 들고오는 코드
-			console.log("loadMap()");
-			$.ajax({
-				url : "/game/add/map",
-				method : "GET",
-				dataType : "JSON",
-				success : function(server_data) {
-					console.log(server_data);
-					
-					var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; // 마커 이미지의 이미지 주소입니다
-					    
-					for (var i = 0; i < server_data.length; i ++) {
-					    
-					    var imageSize = new kakao.maps.Size(24, 35); // 마커 이미지의 이미지 크기 입니다
-					    
-					    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); // 마커 이미지를 생성합니다 
-					    
-					    var latlng = new kakao.maps.LatLng(server_data[i].latitude, server_data[i].longitude); // 저장되어 있는 위도 경도를 latlng 변수에 저장
-					    			 				    
-					    var marker = new kakao.maps.Marker({ // 마커를 생성합니다
-					        map: map, // 마커를 표시할 지도
-					        position: latlng, // 마커를 표시할 위치
-					        title : server_data[i].address, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-					        image : markerImage // 마커 이미지 
-					    });
-					}
+	
+	<section style="display: flex; justify-content: center; margin-top: 5.5em;">
+		<div class="api">
+			<!-- 카카오 지도 보여주는 div -->
+			<div class="api_01">
+	        	<h3>등록이 되어 있는 가맹점 위치</h3>
+	        </div>
+			<div id="map" class="map"></div>
+			<!-- 카카오 지도 보여주는 div -->
+			<!-- 카카오 지도 API 시작 -->
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f281014ca014b8210d45a1c3d8663784"></script>
+			<script>
+				var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+			    mapOption = { 
+			        center: new kakao.maps.LatLng(36.3504119, 127.3845475), // 지도의 중심좌표
+			        level: 13 // 지도의 확대 레벨
+			    };
+				
+				var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+				
+				function loadMap() { // 지도 데이터를 들고오는 코드
+					console.log("loadMap()");
+					$.ajax({
+						url : "/game/add/map",
+						method : "GET",
+						dataType : "JSON",
+						success : function(server_data) {
+							console.log(server_data);
+							
+							var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; // 마커 이미지의 이미지 주소입니다
+							    
+							for (var i = 0; i < server_data.length; i ++) {
+							    
+							    var imageSize = new kakao.maps.Size(24, 35); // 마커 이미지의 이미지 크기 입니다
+							    
+							    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); // 마커 이미지를 생성합니다 
+							    
+							    var latlng = new kakao.maps.LatLng(server_data[i].latitude, server_data[i].longitude); // 저장되어 있는 위도 경도를 latlng 변수에 저장
+							    			 				    
+							    var marker = new kakao.maps.Marker({ // 마커를 생성합니다
+							        map: map, // 마커를 표시할 지도
+							        position: latlng, // 마커를 표시할 위치
+							        title : server_data[i].address, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+							        image : markerImage // 마커 이미지 
+							    });
+							}
+						}
+					})
 				}
-			})
-		}
-	</script>
-	<!-- 카카오 지도 API 끝 -->
+			</script>
+			<!-- 카카오 지도 API 끝 -->
+		</div>
+	</section>
+	<div class="wh"></div>
+
 	<jsp:include page="../footer.jsp"></jsp:include>
 	<script src="../resources/js/index.js"></script>
 </body>
