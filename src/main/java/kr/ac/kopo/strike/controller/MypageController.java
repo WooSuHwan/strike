@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.ClanGame;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.service.ClanGameService;
 import kr.ac.kopo.strike.service.ClanService;
 import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.MemberService;
@@ -33,6 +35,9 @@ public class MypageController {
 	
 	@Autowired
 	GameService gameService;
+	
+	@Autowired
+	ClanGameService clanGameService;
 	
 	AES256Util aes256 = new AES256Util();
 	SHA256Util sha256 = new SHA256Util();
@@ -94,5 +99,15 @@ public class MypageController {
 		model.addAttribute("mypageGame", mypageGame);
 		
 		return path + "gameDetail";
+	}
+	
+	@GetMapping("/clanGameDetail/{member_code}")
+	public String clanGameDetail(@PathVariable int member_code, Model model, Pager pager) {
+		
+		List<ClanGame> mypageClanGame = clanGameService.mypageClanGame(pager);
+		model.addAttribute("mypageClanGame", mypageClanGame);
+		
+		return path + "clanGameDetail";
+		
 	}
 }

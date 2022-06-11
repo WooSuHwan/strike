@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,7 +138,7 @@
 								<td>${pager.offset + status.count}</td>
 								<td><a style="color: #000;" href="view/${item.game_code}">${item.title}</a></td>
 								<td>${item.maker}</td>
-								<td>2022.05.16</td>
+								<td> <fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
 								<td>10</td>
 							</tr>
 						</c:forEach>

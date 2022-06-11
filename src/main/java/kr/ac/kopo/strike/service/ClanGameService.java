@@ -5,6 +5,7 @@ import java.util.List;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanChallenger;
 import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.util.Pager;
 
 public interface ClanGameService {
 
@@ -25,5 +26,7 @@ public interface ClanGameService {
 	void permission(int clan_game_code, int clan_challenger_code);
 
 	void addClanGame(int clan_game_code, int clan_challenger_code, int clan_code);
+
+	List<ClanGame> mypageClanGame(Pager pager);
 
 }
