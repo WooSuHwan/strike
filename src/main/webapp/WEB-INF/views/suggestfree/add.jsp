@@ -60,8 +60,8 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-  <jsp:include page="font.jsp"></jsp:include>
-  <jsp:include page="nav.jsp"></jsp:include>
+  <jsp:include page="../font.jsp"></jsp:include>
+  <jsp:include page="../nav.jsp"></jsp:include>
 
   
   

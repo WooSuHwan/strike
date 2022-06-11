@@ -34,8 +34,8 @@
 </head>
 <body>
 <div class="mypageNav"></div>
-   <jsp:include page="font.jsp"></jsp:include>
-  <jsp:include page="nav.jsp"></jsp:include>
+   <jsp:include page="../font.jsp"></jsp:include>
+  <jsp:include page="../nav.jsp"></jsp:include>
 
 <div class="mypageNavSM"></div>
     <p style="font-size:44px;  font-weight: bold; text-align: center;" >Notice Board</p>
