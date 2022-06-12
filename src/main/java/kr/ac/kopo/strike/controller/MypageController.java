@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
+import kr.ac.kopo.strike.model.GameRecord;
 import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanGameService;
 import kr.ac.kopo.strike.service.ClanService;
+import kr.ac.kopo.strike.service.FranchiseePageService;
 import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.MemberService;
 import kr.ac.kopo.strike.util.AES256Util;
@@ -38,6 +41,9 @@ public class MypageController {
 	
 	@Autowired
 	ClanGameService clanGameService;
+	
+	@Autowired
+	FranchiseePageService franchiseeService;
 	
 	AES256Util aes256 = new AES256Util();
 	SHA256Util sha256 = new SHA256Util();
@@ -109,5 +115,31 @@ public class MypageController {
 		
 		return path + "clanGameDetail";
 		
+	}
+	
+	@GetMapping("/mypageRecord/{member_code}")
+	public String mypageRecord(@PathVariable int member_code, Model model, Pager pager) {
+		
+		List<GameRecord> mypageRecord = franchiseeService.mypageRecord();
+		
+		for (GameRecord item : mypageRecord) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+			item.setChallenger_name( aes256.decrypt(item.getChallenger_name()) );
+		}
+		
+		model.addAttribute("mypageRecord", mypageRecord);
+		
+		
+		
+		return path + "mypageRecord";
+	}
+	
+	@GetMapping("/mypageClanRecord/{member_code}")
+	public String mypageClanRecord(@PathVariable int member_code, Model model) {
+		List<ClanGameRecord> mypageClanRecord = franchiseeService.mypageClanRecord();
+		model.addAttribute("mypageClanRecord", mypageClanRecord);
+		
+		return path + "mypageClanRecord";
 	}
 }

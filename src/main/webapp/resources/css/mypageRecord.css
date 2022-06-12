@@ -16,6 +16,7 @@ body {
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 .mypageNav{
@@ -160,17 +161,17 @@ a {
 
 .recordMainTitle {
     display: flex;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 5em;
 
     font-family: 'S-CoreDream-6Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
-    align-items: center;
-
     font-size: 20px;
+
+    align-items: flex-end;
 }
 
 .menuList {
@@ -237,6 +238,9 @@ a {
 }
 .rankRulstBackLose {
     background-color: #e3f3ff;
+}
+.rankRulstBackDraw {
+    background-color: #d2d2d2;
 }
 
 .rankRulstFontWin {
@@ -379,7 +383,7 @@ a {
 }
 
 .pagination>.paginate>.link.arrow.prev.start {
-    background-image: url('img/pagerLeft2.png');
+    background-image: url('/resources/img/pagerLeft2.png');
 }
 
 .pagination>.paginate>.link.arrow {
@@ -405,7 +409,7 @@ a {
 }
 
 .pagination>.paginate>.link.arrow.prev {
-    background-image: url('img/pagerLeft1.png');
+    background-image: url('/resources/img/pagerLeft1.png');
 }
 
 .pagination>.paginate>.link.mobile {
@@ -423,9 +427,47 @@ a {
 }
 
 .pagination>.paginate>.link.arrow.next {
-    background-image: url('img/pagerRight1.png');
+    background-image: url('/resources/img/pagerRight1.png');
 }
 
 .pagination>.paginate>.link.arrow.next.last {
-    background-image: url('img/pagerRight2.png');
+    background-image: url('/resources/img/pagerRight2.png');
+}
+
+.draw {
+	color: #545454;
+	font-size: 35px;
+}
+
+.detailsTitle {
+    display: flex;
+    width: 100%;
+    height: 5em;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 20px;
+
+    align-items: flex-end;
+    
+    margin-bottom: 2em;
+}
+
+.titleDiv {
+	margin-right: 0.5em;
+	
+	padding: 1em 2em 1em 2em;
+	border: 1px solid #bfbfbf;
+	
+}
+
+.TD {
+	padding: 1em 2em 1em 2em;
+	border: 1px solid #f6cd00;
+	background-color: #f6cd00;
+	color: #ffffff;
+	
 }
