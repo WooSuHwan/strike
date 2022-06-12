@@ -67,17 +67,23 @@ a {
     font-family: 'S-CoreDream-8Heavy';
 }
 
+.clanRdetails01>img{
+	max-width: 100%;
+}
+
 .clanRdetails01{
+	position:relative;
     display: flex;
     flex-direction: column;
     width: 62.4%;
-    height: 21em;
+    height: 22em;
     margin-top: 8em;
     background-repeat: no-repeat;
-    background-image: url(../img/clandetailsbanner.jpg);
+/*     background-image: url(../img/clandetailsbanner.jpg); */
 }
 
 .cdetail01{
+	position:absolute;
     display: flex;
     align-items: center;
     width: 100%;
@@ -615,7 +621,7 @@ a {
     border-radius: 10px;
     height: 3em;
     background-color: #444444;
-    margin-top: 1.5em;
+    margin-top: 3em;
 }
 
 .applicant_03>a{
@@ -644,6 +650,10 @@ a {
     font-size: 1.1em;
 }
 
+.applicanttable00>tbody>tr{
+    font-size: 1.1em;
+}
+
 .applicant_02>table>thead>tr>th{
     border-right: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
@@ -656,3 +666,37 @@ a {
     border-bottom: 1px solid #e0e0e0;
     box-sizing: border-box;
 }
+
+.applicanttable00 tbody tr td{
+    line-height: 50px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+
+
+.applicanttable00>tbody>tr>td:nth-child(8){
+	border-right: none;
+}
+
+.applicanttable00>thead>tr>th:nth-child(8){
+	border-right: none;
+}
+
+.applicanttable>tbody>tr>td:nth-child(9){
+	border-right: none;
+}
+
+.applicanttable>thead>tr>th:nth-child(9){
+	border-right: none;
+}
+
+/* .applicanttable>tbody>tr>td:last-child{ */
+/* 	border-bottom: none; */
+/* } */
+
+/* .applicanttable00>tbody>tr>td:last-child{ */
+/* 	border-bottom: none; */
+/* } */
+

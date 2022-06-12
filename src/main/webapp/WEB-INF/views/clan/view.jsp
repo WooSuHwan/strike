@@ -22,6 +22,7 @@
 			</div>
 
 			<div class="clanRdetails01">
+				<img alt="배너" width="100%" src="/resources/img/clandetailsbanner.jpg">
 				<div class="cdetail01">
 					<div class="cdetail01_01">
 						<img src="/resources/img/clandetailsicon.png" alt="아이콘">
@@ -113,7 +114,7 @@
 					<h3>클랜원</h3>
 				</div>
 				<div class="applicant_02">
-					<table class="applicanttable">
+					<table class="applicanttable00">
 						<colgroup>
 							<col style="width: 10%;">
 							<col style="width: 20%;">
@@ -199,7 +200,7 @@
 						<tbody>
 							<c:if test="${wait.size() < 1}">
 								<tr>
-									<td colspan="10">등록 된 신청자가 없습니다</td>
+									<td colspan="10" style="border-right: none;">등록 된 신청자가 없습니다</td>
 								</tr>
 							</c:if>
 							<c:forEach items="${wait}" var="item" varStatus="status">
