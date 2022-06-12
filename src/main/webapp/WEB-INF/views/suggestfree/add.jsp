@@ -65,6 +65,9 @@
 
 			</form>
 
+			<div>
+				<input type="hidden" name="member_code" value="${sessionScope.member_code}">
+			</div>
 		</div>    
             
         <div class="wh"></div>
