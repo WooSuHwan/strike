@@ -26,10 +26,10 @@
                 <div class="clanrankSearch1200">
                     <div class="clanrankSearch_01">
                         <div class="clanrankSearch_01_01">
-                            <a href="freeBoard.html">자유게시판</a>
+                            <a href="/suggestfree/list">자유게시판</a>
                         </div>
                         <div class="clanrankSearch_01_02">
-                            <a href="noticeBoard.html">공지사항</a>
+                            <a href="/suggestmaster/list">공지사항</a>
                         </div>
                     </div>
                 </div>
