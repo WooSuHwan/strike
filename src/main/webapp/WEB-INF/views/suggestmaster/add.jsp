@@ -39,7 +39,7 @@
             </div>
             
             <div class="freewrite01">
-            	<h1>Notice Board</h1>
+            	<h1>공지사항</h1>
             </div>
 
 
