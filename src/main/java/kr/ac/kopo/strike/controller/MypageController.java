@@ -19,11 +19,13 @@ import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
 import kr.ac.kopo.strike.model.GameRecord;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.model.SuggestFree;
 import kr.ac.kopo.strike.service.ClanGameService;
 import kr.ac.kopo.strike.service.ClanService;
 import kr.ac.kopo.strike.service.FranchiseePageService;
 import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.MemberService;
+import kr.ac.kopo.strike.service.SuggestFreeService;
 import kr.ac.kopo.strike.util.AES256Util;
 import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.util.SHA256Util;
@@ -44,6 +46,10 @@ public class MypageController {
 	
 	@Autowired
 	FranchiseePageService franchiseeService;
+	
+	
+	@Autowired
+	SuggestFreeService suggestFreeService;
 	
 	AES256Util aes256 = new AES256Util();
 	SHA256Util sha256 = new SHA256Util();
@@ -141,5 +147,13 @@ public class MypageController {
 		model.addAttribute("mypageClanRecord", mypageClanRecord);
 		
 		return path + "mypageClanRecord";
+	}
+	
+	@GetMapping("/mypageFreeList/{member_code}")
+	public String mypageFreeList(@PathVariable int member_code, Model model) {
+		List<SuggestFree> mypageFreeList = suggestFreeService.mypageFreeList();
+		model.addAttribute("mypageFreeList", mypageFreeList);
+		
+		return path + "mypageFreeList";
 	}
 }

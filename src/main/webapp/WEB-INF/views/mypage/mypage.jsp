@@ -58,6 +58,12 @@
                     </div>
                 </div>
                 <div class="navListDiv">
+                    <div class="navListDivName"><a href="../mypageFreeList/${sessionScope.member.member_code}">내가 쓴 글</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
                     <div class="navListDivName"><a href="../delete">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">

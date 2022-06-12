@@ -24,6 +24,8 @@ public interface SuggestFreeService {
 
 	void addCount(int free_code);
 
+	List<SuggestFree> mypageFreeList();
+
 	
 
 	
