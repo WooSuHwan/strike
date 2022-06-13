@@ -48,8 +48,7 @@
                 <div class="freeB01_03">
                     <p><span>Total :</span> 22</p>
                 </div>
-                <div class="freeB01_04">
-					<form method="get" id="search" class="freeB01_04_02">
+				<form method="get" id="search" class="freeB01_04">
                     <div class="freeB01_04_01">
                         <select name="search">
                             <option value="1">제목</option>
@@ -57,6 +56,7 @@
                             <option value="3">작성일</option>
                         </select>
                     </div>
+                    <div class="freeB01_04_02">
 						<div class="freeB01_04_02_01">
 							<p>search</p>
 						</div>
@@ -66,8 +66,8 @@
 						<button class="rjator" type="submit">
 							<img src="/resources/img/premium1.png" height="65%" alt="돋보기">
 						</button>
-					</form>
-				</div>
+					</div>
+				</form>
             </div>
 
             <div class="freeB03">
