@@ -55,6 +55,12 @@
 							<img src="/resources/img/right.png" alt="">
 						</div>
 					</div>
+					                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../mypageFreeList/${sessionScope.member.member_code}">내가 쓴 글</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
 					<div class="navListDiv">
 						<div class="navListDivName">
 							<a href="../delete">회원탈퇴</a>
@@ -240,28 +246,6 @@
 							</div>
 						</c:if>
 				</c:forEach>
-
-
-				<div class="pagination">
-					<div class="paginate">
-						<a href="?page=1" class="pagebtn link arrow start prev"
-							data-page="1">처음 페이지</a> <a
-							href="?page=${pager.prev }&${pager.query}"
-							class="link arrow prev" data-page="1">이전 페이지</a>
-						<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
-						<!--                         <span class="now">1</span>/ 8 -->
-						<!--                     </span> -->
-						<c:forEach var="page" items="${pager.list}">
-							<a href="?page=${page}&${pager.query}"
-								class="link now${page == pager.page ? '': 'active' }">${page}</a>
-						</c:forEach>
-						<a href="?page=${pager.next }&${pager.query}"
-							class="pagebtn link arrow next" data-page="9">다음 페이지</a> <a
-							href="?page=${pager.last}" class="pagebtn link arrow last next"
-							data-page="66">Next</a>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>

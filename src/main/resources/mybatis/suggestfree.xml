@@ -80,7 +80,8 @@
 	</update>
 	
 	<select id="mypageFreeList" resultType="suggestfree">
-		SELECT * FROM free
+		SELECT free_code, title, reg_date, hit, name, member_code, story FROM 
+			(<include refid="search"></include>)
 	</select>
 	
 </mapper>

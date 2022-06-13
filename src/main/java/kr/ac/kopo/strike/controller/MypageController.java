@@ -124,7 +124,7 @@ public class MypageController {
 	}
 	
 	@GetMapping("/mypageRecord/{member_code}")
-	public String mypageRecord(@PathVariable int member_code, Model model, Pager pager) {
+	public String mypageRecord(@PathVariable int member_code, Model model) {
 		
 		List<GameRecord> mypageRecord = franchiseeService.mypageRecord();
 		
