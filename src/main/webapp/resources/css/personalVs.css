@@ -351,3 +351,12 @@ a {
     color: #fff;
     font-family: 'S-CoreDream-6Bold';
 }
+
+.personalvs02_01>tbody>tr>td>a{
+	color: #000;
+}
+
+.personalvs02_01>tbody>tr>td>a:hover{
+	color: #fbce00;
+}
+
