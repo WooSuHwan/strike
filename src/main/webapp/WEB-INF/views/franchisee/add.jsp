@@ -144,7 +144,7 @@ $(function() {
             
 <!--             logo 부분 -->
             <div class="singupLogo">
-                <a href="/"><img src="../resources/img/logo.png" height="100%" alt="logo"></a>
+                <a href="/"><img src="/resources/img/franchisee/franchiseeLogo.png" height="100%" alt="logo"></a>
             </div>
 
             <div class="singup2Txt">
