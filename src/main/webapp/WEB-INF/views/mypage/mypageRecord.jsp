@@ -95,7 +95,7 @@
 									<fmt:formatDate value="${item.time_end}" type="date"
 										pattern="YYYY.MM.dd" />
 								</div>
-								<div class="listLineName">클랜전</div>
+								<div class="listLineName">개인전</div>
 							</div>
 
 							<div class="winOrLose">win or lose</div>
@@ -134,7 +134,7 @@
 									<fmt:formatDate value="${item.time_end}" type="date"
 										pattern="YYYY.MM.dd" />
 								</div>
-								<div class="listLineName">클랜전</div>
+								<div class="listLineName">개인전</div>
 							</div>
 
 							<div class="winOrLose">win or lose</div>
@@ -172,7 +172,7 @@
 										<fmt:formatDate value="${item.time_end}" type="date"
 											pattern="YYYY.MM.dd" />
 									</div>
-									<div class="listLineName">클랜전</div>
+									<div class="listLineName">개인전</div>
 								</div>
 
 								<div class="winOrLose">win or lose</div>
@@ -209,7 +209,7 @@
 										<fmt:formatDate value="${item.time_end}" type="date"
 											pattern="YYYY.MM.dd" />
 									</div>
-									<div class="listLineName">클랜전</div>
+									<div class="listLineName">개인전</div>
 								</div>
 
 								<div class="winOrLose">win or lose</div>
