@@ -75,7 +75,6 @@
 							<td><a href="view/${item.master_code}">${item.title}</a></td>
 							<td>${item.name}</td>
 							<td><fmt:formatDate value="${item.reg_date}" pattern="yyyy.MM.dd"/></td>
-							<td>${item.hit}</td>
 						</tr>
 					</c:forEach>
                     </tbody>
