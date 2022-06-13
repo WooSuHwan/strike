@@ -118,4 +118,20 @@ public class ClanDaoImpl implements ClanDao {
 		return sql.selectList("clan.clanList");
 	}
 
+	@Override
+	public int confirm(int clan_code, int member_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+
+		map.put("clan_code", clan_code);
+		map.put("member_code", member_code);
+		
+		return sql.selectOne("clan.confirm", map);
+	}
+
+	@Override
+	public int check(int clan_code) {
+		return sql.selectOne("clan.check", clan_code);
+	}
+
 }

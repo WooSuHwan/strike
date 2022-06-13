@@ -73,13 +73,13 @@ $(function() { // 입장과 동시에 실행
 						<label>제목</label> <input type="text" name="title">
 					</div>
 					<div class="vspost_02_01">
-						<label>시간</label> <input type="text" name="clock">
+						<label>시간</label> <input type="datetime-local" name="clock">
 					</div>
 					<div class="vspost_02_01">
 						<label>위치</label> <input type="text" name="loc">
 					</div>
 					<div class="vspost_02_01">
-						<label>모집</label> <input type="text" name="recruit">
+						<label>모집</label> <input type="number" name="recruit">
 					</div>
 					<div class="vspost_02_01">
 						<label>내용</label> <input type="text" name="story">

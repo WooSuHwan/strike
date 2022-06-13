@@ -61,10 +61,31 @@ public class ClanGameServiceImpl implements ClanGameService {
 	public void addClanGame(int clan_game_code, int clan_challenger_code, int clan_code) {
 		dao.addClanGame(clan_game_code, clan_challenger_code, clan_code);
 	}
+	/**
+	@Override
+	public boolean confirm(int clan_code, int clan_game_code) {
 
+		int count = dao.challengeCount(clan_code, clan_game_code);
+			
+		if(count > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	*/
+	@Override
+	public int confirm(int clan_game_code, int clan_code) {
+		return dao.confirm(clan_game_code, clan_code);
+	}
+
+	@Override
+	public int compare(int clan_game_code, int member_code) {
+		return dao.compare(clan_game_code, member_code);
+	}
+	
 	@Override
 	public List<ClanGame> mypageClanGame(Pager pager) {
 		return dao.mypageClanGame(pager);
 	}
-	
 }

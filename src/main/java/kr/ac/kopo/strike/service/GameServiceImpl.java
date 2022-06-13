@@ -103,4 +103,14 @@ public class GameServiceImpl implements GameService {
 		return dao.map();
 	}
 
+	@Override
+	public int confirm(int game_code, int member_code) {
+		return dao.confirm(game_code, member_code);
+	}
+
+	@Override
+	public int compare(int game_code, int member_code) {
+		return dao.compare(game_code, member_code);
+	}
+
 }

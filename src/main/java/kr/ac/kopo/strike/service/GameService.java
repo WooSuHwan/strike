@@ -41,5 +41,9 @@ public interface GameService {
 	List<Franchisee> franchiseeList();
 
 	List<Franchisee> map();
+
+	int confirm(int game_code, int member_code);
+
+	int compare(int game_code, int member_code);
 	
 }
