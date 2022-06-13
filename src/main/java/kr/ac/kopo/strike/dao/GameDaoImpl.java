@@ -122,4 +122,26 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectList("game.map");
 	}
 
+	@Override
+	public int confirm(int game_code, int member_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+
+		map.put("game_code", game_code);
+		map.put("member_code", member_code);
+		
+		return sql.selectOne("game.confirm", map);
+	}
+
+	@Override
+	public int compare(int game_code, int member_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+
+		map.put("game_code", game_code);
+		map.put("member_code", member_code);
+		
+		return sql.selectOne("game.compare", map);
+	}
+
 }

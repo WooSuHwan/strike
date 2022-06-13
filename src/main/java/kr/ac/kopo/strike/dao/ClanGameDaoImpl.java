@@ -79,10 +79,43 @@ public class ClanGameDaoImpl implements ClanGameDao {
 		
 		sql.insert("clanGame.addClanGame", map);
 	}
+	/**
+	@Override
+	public int challengeCount(int clan_code, int clan_game_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("clan_game_code", clan_game_code);
+		map.put("clan_code", clan_code);
+		
+		return sql.selectOne("clanGame.challengeCount", map);
+	}
+	*/
 
+	@Override
+	public int confirm(int clan_game_code, int clan_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("clan_game_code", clan_game_code);
+		map.put("clan_code", clan_code);
+		
+		return sql.selectOne("clanGame.confirm", map);
+	}
+
+	@Override
+	public int compare(int clan_game_code, int member_code) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("clan_game_code", clan_game_code);
+		map.put("member_code", member_code);
+		
+		return sql.selectOne("clanGame.compare", map);
+	}
+	
 	@Override
 	public List<ClanGame> mypageClanGame(Pager pager) {
 		return sql.selectList("clanGame.mypageClanGame", pager);
 	}
-
 }

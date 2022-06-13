@@ -15,14 +15,14 @@ public class ClanServiceImpl implements ClanService {
 
 	@Autowired
 	ClanDao dao;
-	
+
 	@Override
 	public List<Clan> list(Pager pager) {
-		
+
 		int total = dao.total(pager);
-		
+
 		pager.setTotal(total);
-		
+
 		return dao.list(pager);
 	}
 
@@ -97,5 +97,14 @@ public class ClanServiceImpl implements ClanService {
 		return dao.clanList();
 	}
 
+	@Override
+	public int confirm(int clan_code, int member_code) {
+		return dao.confirm(clan_code, member_code);
+	}
+
+	@Override
+	public int check(int clan_code) {
+		return dao.check(clan_code);
+	}
 
 }
