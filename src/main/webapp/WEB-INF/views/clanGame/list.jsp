@@ -113,20 +113,16 @@
 				<table class="personalvs02_01">
 					<colgroup>
 						<col style="width: 10%;">
+						<col style="width: 35%;">
 						<col style="width: 25%;">
-						<col style="width: 20%;">
-						<col style="width: 20%;">
 						<col style="width: 15%;">
-						<col style="width: 10%;">
 					</colgroup>
 					<thead>
 						<tr>
 							<th>No.</th>
 							<th>제목</th>
-							<th>작성클랜</th>
-							<th>클랜티어</th>
+							<th>작성 클랜</th>
 							<th>작성일</th>
-							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -138,11 +134,9 @@
 						<c:forEach items="${list}" var="item" varStatus="status">
 							<tr>
 								<td>${pager.offset + status.count}</td>
-								<td><a style="color: #000;" href="view/${item.clan_game_code}">${item.title}</a></td>
+								<td><a href="view/${item.clan_game_code}">${item.title}</a></td>
 								<td>${item.clan_name}</td>
-								<td>${item.clan_score}</td>
 								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
-								<td>10</td>
 							</tr>
 						</c:forEach>
 

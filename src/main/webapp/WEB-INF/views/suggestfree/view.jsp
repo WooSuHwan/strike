@@ -30,7 +30,6 @@
 <body>
 	<jsp:include page="../font.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<jsp:include page="../rnav.jsp"></jsp:include>
 
 	<section>
 		<div class="clanAll">
@@ -127,6 +126,7 @@
 								</div>
 							</form>
 						</div>
+						<div class="wh00"></div>
 					</div>
                 </div>
             </div>
