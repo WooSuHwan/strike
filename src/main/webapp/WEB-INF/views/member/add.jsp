@@ -147,7 +147,6 @@ $(function() {
 </script>
     <link rel="stylesheet" href="../resources/css/font.css">
     <link rel="stylesheet" href="../resources/css/singup2.css">
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body class="body">
 <jsp:include page="../font.jsp"></jsp:include>
