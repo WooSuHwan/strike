@@ -235,3 +235,8 @@ a {
 
     line-height: 35px;
 }
+
+.boxButton>a{
+	color: #fff;
+	font-family: 'S-CoreDream-6Bold';
+}

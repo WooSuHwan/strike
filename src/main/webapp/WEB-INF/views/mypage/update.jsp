@@ -69,55 +69,60 @@
 			</div>
 
 			<div class="mainBody">
-				<div class="mypageUpdate">
+				<div class="mypageUpdate" style="height: 52em;">
 					<div class="singup2simple">
 						<div class="singup2simple_01">
 							<p>개인정보 수정</p>
 						</div>
 					</div>
-					<form style="width: 100%;" method="post">
-						<div class="singup2Table">
+					<form class="fofo01" method="post">
+                    <div class="singup2Table">
 							<table>
 								<tbody>
 									<tr>
 										<td class="tableColor">아이디</td>
-										<td class="tableInput">${item.id }</td>
+										<td class="tableInput"><p>${item.id }</p></td>
 									</tr>
 									<tr>
 										<td class="tableColor">이름</td>
-										<td class="tableInput"><input type="text" name="name" value="${item.name }" ></td>
+										<td class="tableInput"><input type="text" name="name"
+											value="${item.name }"></td>
 									</tr>
 									<tr>
 										<td class="tableColor">휴대전화</td>
-										<td class="tableInput"><input type="text" name="tel" value="${item.tel }" ></td>
+										<td class="tableInput"><input type="text" name="tel"
+											value="${item.tel }"></td>
 									</tr>
 									<tr>
 										<td class="tableColor">생년월일</td>
-										<td class="tableInput"><input type="date" name="birth" value="${item.birth }" ></td>
+										<td class="tableInput"><input style="width: 17%;" type="date" name="birth"
+											value="${item.birth }"></td>
 									</tr>
 									<tr>
 										<td class="tableColor">성별</td>
 										<td class="tableInput" style="border-bottom: none;">
-										<c:choose>
-									        <c:when test = "${sessionScope.member.sex == 0}">
-									          남자
-									       </c:when>
-									       <c:when test = "${sessionScope.member.sex == 1}">
-									          여자
-									       </c:when>
-									       <c:otherwise>
-									          성별이 등록되지 않았습니다.
-									       </c:otherwise>
-								    </c:choose>
+											<p>
+											<c:choose>
+												<c:when test="${sessionScope.member.sex == 0}">
+									          		남자
+									       		</c:when>
+												<c:when test="${sessionScope.member.sex == 1}">
+									          		여자
+									       		</c:when>
+												<c:otherwise>
+									          		성별이 등록되지 않았습니다.
+									       		</c:otherwise>
+											</c:choose>
+											</p>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-					<div class="loginBtn">
-					<a><button type="submit">개인정보 수정</button></a>
-					</div>
-					</form>
+						<div class="loginBtn">
+							<a><button type="submit">개인정보 수정</button></a>
+						</div>
+               	 	</form>
 				</div>
 				<div class="wh"></div>
 			</div>
