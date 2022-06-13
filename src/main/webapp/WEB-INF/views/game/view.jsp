@@ -58,7 +58,7 @@
                         <p>무 <span>${item.draw}</span></p>
                     </div>
                     <div class="newRecord02_04">
-                        <p>승률 <span>${item.rate}</span></p>
+                        <p>승률 <span>${item.percent}</span></p>
                     </div>
                     <div class="newRecord02_05">
                         <p>티어 <span>PLATINUM</span></p>

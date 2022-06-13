@@ -90,7 +90,7 @@
                             <div class="myText">
                                     <p class="namePoint myTitle">My Tear</p>
                                     <p class="namePoint myTitle">${sessionScope.member.name }님은</p>
-                                    <div class="nameTearPoint"><p class="namePoint">현재&nbsp;</p><p class="namePorintTear">티어수정필요</p> &nbsp;<p class="namePoint">티어 입니다.</p></div>
+                                    <div class="nameTearPoint"><p class="namePoint">현재&nbsp;</p><p class="namePorintTear">${sessionScope.member.tier}</p> &nbsp;<p class="namePoint">티어 입니다.</p></div>
                             </div>
                         </div>
                         <div class="mypageClan">

@@ -108,6 +108,7 @@ public class ClanController {
 	public String view(@PathVariable int clan_code, Model model) {
 		
 		Clan clan = service.item(clan_code);
+		System.out.println(clan.getName());
 		List<ClanMember> wait = service.wait(clan_code);
 		
 		for (ClanMember item : wait) {

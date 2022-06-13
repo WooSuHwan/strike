@@ -39,10 +39,10 @@
 	</insert>
 
 	<select id="item" resultType="Clan">
-		SELECT *
-		FROM clan
-		WHERE clan_code =
-		#{clan_code}
+		select c.*, m.name
+		from clan c
+		join member m on c.clan_master_code = m.member_code
+		where c.clan_code = #{clan_code}
 	</select>
 
 	<update id="update">

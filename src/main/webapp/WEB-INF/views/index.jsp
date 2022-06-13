@@ -192,7 +192,7 @@
 		                           <tr class="tbodyTr01">
 		                              <td width="20%" height="100%">${status.index + 1}</td>
 		                              <td width="25%" height="100%">${item.name}</td>
-		                              <td width="55%" height="100%">${item.score}</td>
+		                              <td width="55%" height="100%">${item.tier}</td>
 		                           </tr>
 		                        </c:forEach>
 							</tbody>
