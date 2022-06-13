@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ac.kopo.strike.model.User_User;
+import kr.ac.kopo.strike.model.Member;
 
 @Repository
 public class LoginDaoImpl implements LoginDao {
@@ -15,12 +15,12 @@ public class LoginDaoImpl implements LoginDao {
 	SqlSession sql;
 	
 	@Override
-	public User_User check(String id, String pw) {
+	public Member check(String id, String pw) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pw", pw);
 		
-		return sql.selectOne("user_user.check", map);
+		return sql.selectOne("member.check", map);
 	}
 
 }

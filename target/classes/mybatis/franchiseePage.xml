@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="franchiseePage">
+	<!-- 개인 게임 -->
+	<!-- 개인 게임 -->
+	<select id="game" resultType="Game">
+		SELECT * 
+		FROM game
+		WHERE loc = #{address}
+	</select>
+	
+	<select id ="gameRecord" resultType="GameRecord">
+		select gr.*, m.name, cm.name as challenger_name
+		from game_record gr
+    	JOIN challenger c ON gr.game_code = #{game_code} AND c.state=1 AND gr.game_code = c.game_code
+    	JOIN member m ON gr.maker_code = m.member_code        
+    	JOIN member cm ON c.challenger_member_code = cm.member_code AND gr.challenger_code = cm.member_code
+    	where gr.time_end is null
+	</select>
+	
+	<select id ="gameRecordEnd" resultType="GameRecord">
+		select gr.*, m.name, cm.name as challenger_name
+		from game_record gr
+    	JOIN challenger c ON gr.game_code = #{game_code} AND c.state=1 AND gr.game_code = c.game_code
+    	JOIN member m ON gr.maker_code = m.member_code        
+    	JOIN member cm ON c.challenger_member_code = cm.member_code AND gr.challenger_code = cm.member_code
+    	where gr.time_end is not null
+	</select>	
+	<!-- 제작자 승리 -->
+	<update id="makerWin">
+		update member 
+		set
+		record = record + 1,
+		win = win + 1,
+		score = score + 10
+		where member_code = #{maker_code}
+	</update>
+	<!-- 도전자 패배 -->
+	<update id="challengerLose">
+		update member 
+		set
+		record = record + 1,
+		lose = lose + 1,
+		score = score - 3
+		where member_code = #{challenger_code}
+	</update>
+	<!-- 도전자 승리 -->
+	<update id="challengerWin">
+		update member 
+		set
+		record = record + 1,
+		win = win + 1,
+		score = score + 10
+		where member_code = #{challenger_code}
+	</update>
+	<!-- 제작자 패배 -->
+	<update id="makerLose">
+		update member 
+		set
+		record = record + 1,
+		lose = lose + 1,
+		score = score - 3
+		where member_code = #{maker_code}
+	</update>
+	<!-- 무승부 -->
+	<update id="draw">
+		update member 
+		set
+		record = record + 1,
+		draw = draw + 1
+		where member_code = #{maker_code} or member_code = #{challenger_code}
+	</update>
+	
+	<update id="makerWinGameRecord">
+		update game_record 
+		set
+		winner_code = #{maker_code},
+		loser_code = #{challenger_code},
+		time_end = sysdate
+		where game_record_code = #{game_record_code}
+	</update>
+	
+	<update id="challengerWinGameRecord">
+		update game_record 
+		set
+		winner_code = #{challenger_code},
+		loser_code = #{maker_code},
+		time_end = sysdate
+		where game_record_code = #{game_record_code}
+	</update>
+	
+	<update id="drawGameRecord">
+		update game_record 
+		set
+		draw = 1,
+		time_end = sysdate
+		where game_record_code = #{game_record_code}
+	</update>
+	<!-- 클랜 게임 -->
+	<!-- 클랜 게임 -->
+	<select id="clanGame" resultType="ClanGame">
+		SELECT * 
+		FROM clan_game
+		WHERE loc = #{address}
+	</select>
+	
+	<select id ="clanGameRecord" resultType="ClanGameRecord">
+		select cgr.*, cn.clan_name as clan_challenger_name, cn.clan_code as challenger_clan_code, c.clan_name
+		from clan_game_record cgr
+		JOIN clan_challenger cc ON cgr.clan_game_code = #{clan_game_code} AND cgr.clan_challenger_code = cc.clan_challenger_code
+		JOIN clan cn ON cc.clan_code = cn.clan_code
+		JOIN clan c ON cgr.clan_maker_code = c.clan_code
+    	where cgr.time_end is null
+	</select>
+	
+	<select id ="clanGameRecordEnd" resultType="ClanGameRecord">
+		select cgr.*, cn.clan_name as clan_challenger_name, cn.clan_code as challenger_clan_code, c.clan_name
+		from clan_game_record cgr
+		JOIN clan_challenger cc ON cgr.clan_game_code = #{clan_game_code} AND cgr.clan_challenger_code = cc.clan_challenger_code
+		JOIN clan cn ON cc.clan_code = cn.clan_code
+		JOIN clan c ON cgr.clan_maker_code = c.clan_code
+    	where cgr.time_end is not null
+	</select>	
+	<!-- 제작자 승리 -->
+	<update id="clanMakerWin">
+		update clan
+		set
+		clan_record = clan_record + 1,
+		clan_win = clan_win + 1,
+		clan_score = clan_score + 10
+		where clan_code = #{clan_maker_code}
+	</update>
+	<!-- 도전자 패배 -->
+	<update id="clanChallengerLose">
+		update clan
+		set
+		clan_record = clan_record + 1,
+		clan_lose = clan_lose + 1,
+		clan_score = clan_score - 3
+		where clan_code = #{challenger_clan_code}
+	</update>
+	<!-- 도전자 승리 -->
+	<update id="clanChallengerWin">
+		update clan
+		set
+		clan_record = clan_record + 1,
+		clan_win = clan_win + 1,
+		clan_score = clan_score + 10
+		where clan_code = #{challenger_clan_code}
+	</update>
+	<!-- 제작자 패배 -->
+	<update id="clanMakerLose">
+		update clan
+		set
+		clan_record = clan_record + 1,
+		clan_lose = clan_lose + 1,
+		clan_score = clan_score - 3
+		where clan_code = #{clan_maker_code}
+	</update>
+	<!-- 무승부 -->
+	<update id="clanDraw">
+		update clan
+		set
+		clan_record = clan_record + 1,
+		clan_draw = clan_draw + 1
+		where clan_code = #{clan_maker_code} or clan_code = #{challenger_clan_code}
+	</update>
+	
+	<update id="clanMakerWinGameRecord">
+		update clan_game_record 
+		set
+		winner_code = #{clan_maker_code},
+		loser_code = #{challenger_clan_code},
+		time_end = sysdate
+		where clan_game_record_code = #{clan_game_record_code}
+	</update>
+	
+	<update id="clanChallengerWinGameRecord">
+		update clan_game_record 
+		set
+		winner_code = #{challenger_clan_code},
+		loser_code = #{clan_maker_code},
+		time_end = sysdate
+		where clan_game_record_code = #{clan_game_record_code}
+	</update>
+	
+	<update id="clanDrawGameRecord">
+		update clan_game_record 
+		set
+		draw = 1,
+		time_end = sysdate
+		where clan_game_record_code = #{clan_game_record_code}
+	</update>
+	
+	<select id ="mypageRecord" resultType="GameRecord">
+	select gr.*, mr.name as challenger_name, m.* from game_record gr
+	LEFT JOIN member m ON gr.maker_code = m.member_code
+	LEFT JOIN member mr ON gr.challenger_code = mr.member_code
+	ORDER BY gr.time_end ASC
+	</select>	
+	
+	<select id ="mypageClanRecord" resultType="ClanGameRecord">
+	select cgr.*, cn.clan_name as clan_challenger_name, c.* from clan_game_record cgr
+	LEFT JOIN clan c ON cgr.clan_maker_code = c.clan_code
+	LEFT JOIN clan cn ON cgr.clan_challenger_code = cn.clan_code
+	ORDER BY cgr.time_end ASC
+	</select>	
+</mapper>

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.LoginDao;
-import kr.ac.kopo.strike.model.User_User;
-import kr.co.kopo.strike.util.AES256Util;
-import kr.co.kopo.strike.util.SHA256Util;
+import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Service
 public class LoginServiceImpl implements LoginService {
@@ -18,16 +18,23 @@ public class LoginServiceImpl implements LoginService {
 	LoginDao dao;
 	
 	@Override
-	public User_User check(String id, String pw) {
+	public Member check(String id, String pw) {
 		String encryptedId = aes256.encrypt(id);
 		String encryptedPw = sha256.encrypt(pw);
 		
-		User_User user = dao.check(encryptedId, encryptedPw);
-		if(user == null) {
+		Member member = dao.check(encryptedId, encryptedPw);
+		if(member == null) {
+			System.out.println("널이당!!!");
 			return null;
 		} else {
-			user.setName(aes256.decrypt(user.getName()));
-			return user;
+			System.out.println(member.getMember_code());
+			System.out.println(member.getName());
+			member.setName(aes256.decrypt(member.getName()));
+			member.setBirth(aes256.decrypt(member.getBirth()));
+			member.setId(aes256.decrypt(member.getId()));
+//			member.setPw(sha256.encrypt(member.getPw()));
+			member.setTel(aes256.decrypt(member.getTel()));
+			return member;
 		}
 
 	}

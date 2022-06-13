@@ -1,9 +1,9 @@
 package kr.ac.kopo.strike.service;
 
-import kr.ac.kopo.strike.model.User_User;
+import kr.ac.kopo.strike.model.Member;
 
 public interface LoginService {
 	
-	User_User check(String id, String pw);
+	Member check(String id, String pw);
 
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="clanGame">
+	<select id="list" resultType="ClanGame">
+		select cg.*, c.*
+		from clan_game cg
+    	JOIN clan c ON cg.clan_code = c.clan_code
+	</select>
+	
+	<insert id="add">
+		INSERT INTO clan_game
+		VALUES (CLAN_GAME_CODE_SEQ.nextval, #{member_code}, #{clan_code}, #{title}, #{clock}, #{loc}, #{clan_recruit}, #{story}, #{style}, sysdate)
+	</insert>
+	 
+	<select id="item" resultType="ClanGame">
+		select cg.*, c.clan_code as maker_clan_code, c.clan_master_code, c.clan_name, c.clan_win, c.clan_lose, c.clan_draw, c.clan_rate, c.clan_score, c.time as maker_time 
+		from clan_game cg
+		join clan c on cg.clan_code = c.clan_code AND cg.clan_game_code = #{clan_game_code}
+	</select>
+	
+	<select id="clanItem" resultType="Clan">
+		select * 
+		from clan 
+		where clan_code = #{clan_code}
+	</select>
+	
+	<select id="admitClanChallenger" resultType="ClanChallenger">
+		SELECT cc.*, c.clan_code as challenger_clan_code, c.clan_master_code, c.clan_name, c.clan_record, c.clan_win, c.clan_lose, c.clan_draw, c.clan_rate, c.clan_score, c.time as clan_time
+    	from clan_challenger cc
+    	join clan c on cc.clan_code = c.clan_code
+    	where cc.clan_game_code = #{clan_game_code}
+    	and cc.state = 1
+	</select>
+	
+	<select id="challenger" resultType="ClanChallenger">
+		SELECT cc.*, c.clan_code as challenger_clan_code, c.clan_master_code, c.clan_name, c.clan_record, c.clan_win, c.clan_lose, c.clan_draw, c.clan_rate, c.clan_score, c.time as clan_time
+   		from clan_challenger cc
+    	join clan c on cc.clan_code = c.clan_code
+    	where cc.clan_game_code = #{clan_game_code}
+    	and state is null
+	</select>
+	
+	<insert id="challenge">
+		INSERT INTO clan_challenger
+		VALUES (CLAN_CHALLENGER_CODE_SEQ.nextval, #{clan_code}, #{clan_game_code}, null, sysdate)
+	</insert>
+	
+	<update id="permission">
+		UPDATE clan_challenger
+		SET state = 1
+		WHERE clan_game_code = #{clan_game_code} AND clan_challenger_code = #{clan_challenger_code}
+	</update>
+	
+	<insert id="addClanGame">
+		insert into clan_game_record
+		values(CLAN_GAME_RECORD_CODE_SEQ.nextval, #{clan_game_code}, #{clan_challenger_code}, #{clan_code}, 0, 0, 0, null)
+	</insert>
+	
+	<select id="mypageClanGame" resultType="ClanGame">
+		select cg.*, c.*
+		from clan_game cg
+    	JOIN clan c ON cg.clan_code = c.clan_code
+	</select>
+</mapper>

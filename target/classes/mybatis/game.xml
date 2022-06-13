@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="game">
+	<sql id="search">
+	SELECT * FROM game
+		<where>
+			<if test="keyword != null">
+			title LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+		</where>
+	</sql>
+
+	<select id="list" resultType="Game">
+	SELECT * FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
+	</select>
+	
+	<insert id="add">
+		INSERT INTO game
+		VALUES (GAME_CODE_SEQ.nextval, #{member_code}, #{maker}, #{title}, #{clock}, #{loc}, #{recruit}, #{story}, sysdate)
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM game
+		WHERE game_code=#{game_code}
+	</delete>
+	
+	<update id="update">
+		UPDATE game
+		SET title=#{title}, loc=#{loc}, story=#{story}
+		WHERE game_code=#{game_code}
+	</update>
+	
+	<select id="item" resultType="Game">
+		SELECT * FROM game
+		WHERE game_code=#{game_code}
+	</select>
+	
+	<select id="view" resultType="Game">
+		SELECT * FROM game
+		WHERE game_code=#{game_code}
+	</select>
+	
+	<select id="challenger" resultType="Challenger">
+		SELECT c.*, m.* 
+		FROM challenger c, member m
+		WHERE game_code=#{game_code}
+		AND c.challenger_member_code = m.member_code
+        AND c.state is null
+	</select>
+	
+	<insert id="challenge">
+		INSERT INTO challenger
+		VALUES (CHALLENGER_CODE_SEQ.nextval, #{member_code}, #{game_code}, null, sysdate)
+	</insert>
+	
+	<update id="permission">
+		UPDATE challenger
+		SET state = 1
+		WHERE game_code = #{game_code} AND challenger_code = #{challenger_code}
+	</update>
+	
+	<insert id="addGame">
+		insert into game_record
+		values(GAME_RECORD_CODE_SEQ.nextval, #{game_code}, #{challenger_member_code}, #{member_code}, 0, 0, 0, null)
+	</insert>
+	
+	<select id="member" resultType="Member">
+		select m.* 
+    	from game g, member m
+    	where g.game_code = #{game_code} and g.member_code = m.member_code
+	</select>
+	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM game
+	</select>
+
+	<select id="mypageGame" resultType="Game">
+	SELECT * FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+ 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
+	</select>
+	
+	<select id="admitChallenger" resultType="Challenger">
+		SELECT c.*, m.* 
+		FROM challenger c, member m
+		WHERE game_code=#{game_code}
+		AND c.challenger_member_code = m.member_code
+        AND c.state = 1
+	</select>
+	
+	<select id="franchiseeList" resultType="Franchisee">
+		select *
+		from franchisee
+	</select>
+	
+	<select id="map" resultType="Franchisee">
+		select *
+		from franchisee
+	</select>
+</mapper>

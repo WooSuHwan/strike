@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.Reply;
 import kr.ac.kopo.strike.model.SuggestFree;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class SuggestFreeDaoImpl implements SuggestFreeDao {
@@ -16,8 +17,8 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 	SqlSession sql;
 	
 	@Override
-	public List<SuggestFree> list() {
-		return sql.selectList("suggestfree.list");
+	public List<SuggestFree> list(Pager pager) {
+		return sql.selectList("suggestfree.list", pager);
 	}
 
 	@Override
@@ -27,15 +28,15 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 	}
 
 	@Override
-	public void delete(int freeCode) {
-		sql.delete("suggestfree.delete", freeCode);
+	public void delete(int free_code) {
+		sql.delete("suggestfree.delete", free_code);
 		
 	}
 	
 	@Override
-	public SuggestFree item(int freeCode) {
+	public SuggestFree item(int free_code) {
 		
-		return sql.selectOne("suggestfree.item", freeCode);
+		return sql.selectOne("suggestfree.item", free_code);
 	}
 
 	@Override
@@ -45,16 +46,29 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 	}
 
 	@Override
-	public SuggestFree read(int freeCode) throws Exception {
+	public SuggestFree read(int free_code) throws Exception {
 		
-		return sql.selectOne("suggestfree.read", freeCode);
+		return sql.selectOne("suggestfree.read", free_code);
 	}
 
 	@Override
-	public void addCount(int freeCode) {
-		sql.update("suggestfree.addcount", freeCode);
+	public void addCount(int free_code) {
+		sql.update("suggestfree.addcount", free_code);
 		
 	}
+
+	@Override
+	public int total(Pager pager) {
+		
+		return sql.selectOne("suggestfree.total",pager);
+	}
+
+	@Override
+	public List<SuggestFree> mypageFreeList() {
+		return sql.selectList("suggestfree.mypageFreeList");
+	}
+
+	
 	
 
 
