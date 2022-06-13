@@ -144,7 +144,7 @@ $(function() {
             
 <!--             logo 부분 -->
             <div class="singupLogo">
-                <img src="../resources/img/logo.png" height="100%" alt="logo">
+                <a href="/"><img src="../resources/img/logo.png" height="100%" alt="logo"></a>
             </div>
 
             <div class="singup2Txt">
@@ -182,7 +182,7 @@ $(function() {
                             </tr>
                             <tr>
                                 <td class="tableColor">주소 <span>*</span></td>
-                                <td class="tableInput">
+                                <td class="tableInput1">
                                     <div class="tableInput_01">
                                         <input type="text" style="width: 23%;" name="postcode" id="postcode"  placeholder="우편번호" readonly>
                                         <button type="button" class="tableBtn0" onclick="execDaumPostcode()">우편번호</button>
