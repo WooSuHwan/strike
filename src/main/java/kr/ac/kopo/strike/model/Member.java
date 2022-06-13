@@ -20,8 +20,17 @@ public class Member {
 	private Date time;
 	private int grade;
 	
+	// 티어
+	private String tier; // 밑줄은 무시
 	
+	private String clan_name;
 	
+	public String getClan_name() {
+		return clan_name;
+	}
+	public void setClan_name(String clan_name) {
+		this.clan_name = clan_name;
+	}
 	public int getGrade() {
 		return grade;
 	}
@@ -119,8 +128,52 @@ public class Member {
 		this.score = score;
 	}
 
+	public String getTier() {
 
+		if (score < 11) {
 
-	
+			return "아이언";
 
+		} else if (score < 21) {
+
+			return "브론즈";
+
+		} else if (score < 31) {
+
+			return "실버";
+
+		} else if (score < 31) {
+
+			return "실버";
+
+		} else if (score < 31) {
+
+			return "실버";
+
+		} else if (score < 41) {
+
+			return "골드";
+
+		} else if (score < 51) {
+
+			return "플래티넘";
+
+		} else if (score < 61) {
+
+			return "다이아몬드";
+
+		} else if (score < 71) {
+
+			return "마스터";
+
+		} else if (score < 81) {
+
+			return "그랜드마스터";
+
+		} else {
+
+			return "챌린저";
+		}
+
+}
 }

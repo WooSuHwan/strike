@@ -1,51 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>STRIKE</title>
-<link rel="stylesheet" href="/resources/css/font.css">
-<link rel="stylesheet" href="/resources/css/battleBtn.css">
-<link rel="stylesheet" href="/resources/css/index.css">
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-//아이디 중복 확인
-function confirm(event) {
-	var clan_code = $("#challenge").val();
-	var 
-	
-	if(id == "") {
-		return false;
-	}
-	// 신청자 중복 확인
-	$.ajax({
-		url:"confirm",
-		data:{"user_id" : id},
-		method:"POST",
-		dataType:"TEXT",
-		success:function(data) {
-			console.log(data);
+    <link rel="stylesheet" href="/resources/css/clanvsView.css">
+    <link rel="stylesheet" href="/resources/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+		//아이디 중복 확인
+		function confirm(event) {
+			var clan_code = $("#challenge").val();
+			var 
 			
-			if(data == "overlap") {
-				$("#id_message").text("아이디가 중복이 되었습니다")
-				$("#confirm").attr("disabled", true);
-			} else {
-				$("#id_message").text("멋있는 아이디 입니다.")
-				$("#confirm").attr("disabled", false);
+			if(id == "") {
+				return false;
 			}
-		},
-		error:function(){
-			console.err("에러")
+			// 신청자 중복 확인
+			$.ajax({
+				url:"confirm",
+				data:{"user_id" : id},
+				method:"POST",
+				dataType:"TEXT",
+				success:function(data) {
+					console.log(data);
+					
+					if(data == "overlap") {
+						$("#id_message").text("아이디가 중복이 되었습니다")
+						$("#confirm").attr("disabled", true);
+					} else {
+						$("#id_message").text("멋있는 아이디 입니다.")
+						$("#confirm").attr("disabled", false);
+					}
+				},
+				error:function(){
+					console.err("에러")
+				}
+			})
 		}
-	})
-}
 </script>
-
 </head>
 <body>
-    <jsp:include page="../font.jsp"></jsp:include>
+	<jsp:include page="../font.jsp"></jsp:include>
     <jsp:include page="../nav.jsp"></jsp:include>
     <jsp:include page="../rnav.jsp"></jsp:include>
 <section>
@@ -62,7 +60,7 @@ function confirm(event) {
                 <div class="cdetail01">
                     <div class="cdetail01_02">
                         <div class="cdetail01_02_01">
-                            <h1>strike</h1>
+                            <h1>${game.maker }</h1>  <!-- 수정 el 코드 -->
                         </div>
                         <div class="cdetail01_02_02">
                             <a href="#">최신정보</a>
@@ -75,7 +73,7 @@ function confirm(event) {
                     </div>
                 </div>
             </div>
-            
+
             <div class="newRecord">
                 <div class="newRecord01">
                     <h3>최근 전적</h3>
@@ -98,7 +96,7 @@ function confirm(event) {
                     </div>
                 </div>
             </div>
-            
+
             <div class="vspost">
                 <div class="vspost_01">
                     <h3>대결 신청 게시글</h3>
@@ -114,7 +112,7 @@ function confirm(event) {
                         </div>
                         <div class="vspost_02_date">
                             <div class="vspost_02_date01">
-                                <p>${clanGame.time}</p>
+                            <fmt:formatDate value="${clanGame.time}" type="date" pattern="YYYY.MM.dd"/>
                             </div>
                             <div class="vspost_02_date02">
                                 <p>조회 56</p>
@@ -143,8 +141,7 @@ function confirm(event) {
                     </div>
                 </div>
             </div>
-            
-            <div>
+
 				 <div class="applicant">
                 <div class="applicant_01">
                     <h3>대결자</h3>
@@ -165,7 +162,7 @@ function confirm(event) {
                         <thead>
                             <tr>
                             	<th>No.</th>
-                                <th>클랜이름</th>
+                                <th>이름</th>
                                 <th>티어</th>
                                 <th>전적</th>
                                 <th>승</th>
@@ -176,7 +173,12 @@ function confirm(event) {
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${admitClanChallenger}" var="item" varStatus="status">
+                        <c:if test="${challenger.size() < 1}">
+							<tr>
+								<td colspan="9" style="border-right:none;">등록 된 신청자가 없습니다.</td>
+							</tr>
+						</c:if>
+                        <c:forEach items="${admitChallenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>
                                 <td>${item.clan_name}</td>
@@ -191,7 +193,7 @@ function confirm(event) {
                         </tbody>
                     </table>
                 </div>
-			</div>
+                </div>
 			
             <div class="applicant">
                 <div class="applicant_01">
@@ -229,6 +231,11 @@ function confirm(event) {
                             </tr>
                         </thead>
                         <tbody>
+                        <c:if test="${challenger.size() < 1}">
+							<tr>
+								<td colspan="9" style="border-right:none;">등록 된 신청자가 없습니다.</td>
+							</tr>
+						</c:if>
                         <c:forEach items="${challenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>
@@ -255,8 +262,7 @@ function confirm(event) {
                     <a href="../challenge/${clan_game_code}" id="challenge" name="challenge">신청</a>
                 </div>
             </div>
-        </div>
-
+</div>
         <div class="wh"></div>
     </section>        
      <jsp:include page="../footer.jsp"></jsp:include>

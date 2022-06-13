@@ -1,0 +1,525 @@
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body::-webkit-scrollbar { width: 0; }
+
+table {
+    border-collapse: collapse;
+}
+
+td,th {
+    border: none;
+    text-align: center;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 내용 영역 */
+
+.clanAll{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    background-color: #fff;
+    align-items: center;
+}
+
+
+
+.wh{
+    height: 13em;
+    background-color: #fff;
+}
+
+.clanrankSearch{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #2c2f36;
+    height: 4em;
+    margin-top: 5.5em;
+}
+
+.clanrankSearch1200{
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    height: 100%;
+}
+
+.clanrankSearch_01{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+}
+
+.clanrankSearch_01_01>a{
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanrankSearch_01_02>a{
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.clanrankSearch_01_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    width: 45%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fbce00;
+}
+
+.clanrankSearch_01_02{
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    justify-content: center;
+    width: 45%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.personalvs01_01{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+}
+
+.personalvs01_02{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    margin-left: 3.5em;
+}
+
+.freeB01{
+    display: flex;
+    width: 58.6%;
+    height: 8em;
+    margin-top: 7em;
+    flex-direction: column;
+}
+
+.freeB01_01{
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+    font-family: 'S-CoreDream-6Bold';
+    width: 100%;
+    height: 60%;
+}
+
+.freeB01_02{
+    display: flex;
+    align-items: center;
+    font-family: 'S-CoreDream-6Bold';
+    width: 100%;
+    height: 40%;
+    font-size: 1.2em;
+}
+
+.freeB02{
+    display: flex;
+    width: 58.6%;
+    height: 8em;
+    flex-direction: column;
+    margin-top: 4.5em;
+}
+
+.freeB01_03{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 25%;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.freeB01_04{
+    display: flex;
+    width: 100%;
+    height: 65%;
+    margin-top: 1em;
+    box-sizing: border-box;
+    align-items: center ;
+    border: 1px solid #c8c8c8;
+}
+
+.freeB01_03>p>span{
+    color: #0087e5;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.freeB01_04_01{
+    display: flex;
+    width: 12%;
+    height: 60%;
+    background-color: #0087e5;
+    margin-left: 2.5em;
+}
+
+.freeB01_04_01>select{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #bfbfbf;
+}
+
+.freeB01_04_02{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 60%; 
+    margin-left: 31em;
+}
+
+.freeB01_04_02_01{
+    display: flex;
+    align-items: center;
+    font-family: 'S-CoreDream-6Bold';
+    width: 20%;
+    height: 100%;
+    font-size: 1.1em;
+    justify-content: center;
+}
+
+.freeB01_04_02_02{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #bfbfbf;
+    background-color: #fff;
+}
+
+.freeB01_04_02_02>input{
+    width: 85%;
+    outline: none;
+    border: none;
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 1.1em;
+}
+
+.rjator{
+    display: flex;
+    width: 10%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: #545454;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.rjator>img{
+    max-width: 100%;
+}
+
+
+.freeB03{
+    display: flex;
+    width: 58.6%;
+    font-family: 'S-CoreDream-6Bold';
+    margin-top: 2.5em;
+}
+
+.personalvs02_01{
+    border-top: 1px solid #3d3d3d;
+    width: 100%;
+}
+
+.personalvs02_01>table{
+    width: 100%;
+    height: 100%;
+}
+
+.personalvs02_01>thead{
+    color: #fff;
+    width: 100%;
+    height: 3.5em;
+    background: #363944;
+    font-family: 'S-CoreDream-6Bold';
+    font-size: 1.2em;
+}
+
+.personalvs02_01 tbody tr td{
+    line-height: 5.5em;
+    font-size: 1.1em;
+    border-bottom: 1px solid #bfbfbf;
+}
+
+.freespan{
+    color: #f50c0c;
+}
+
+.cbtn0{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 100%;
+    height: 2.8em;
+    margin-top: 3em;
+}
+
+.cbtn0_b01>button{
+	outline: none;
+	border: none;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border-radius: 7px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.cbtn0_b02>button{
+	outline: none;
+	border: none;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border-radius: 7px;
+    cursor: pointer;
+    background: #393939;
+    color: #fff;
+}
+
+.cbtn0_b01{
+	display: flex;
+	font-family: 'S-CoreDream-6Bold';
+	width: 9%;
+	height: 100%;
+	align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    margin-right: 0.7em;
+}
+
+.cbtn0_b02{
+	display: flex;
+	font-family: 'S-CoreDream-6Bold';
+	width: 9%;
+	height: 100%;
+	align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #393939;
+    box-sizing: border-box;
+}
+
+.cbtn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    border-radius: 7px;
+    height: 100%;
+    background-color: #393939;
+    cursor: pointer;
+}
+
+.cbtn1>button{
+	width: 100%;
+    border-radius: 7px;
+    height: 100%;
+    background-color: #393939;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-family: 'S-CoreDream-6Bold';
+    cursor: pointer;
+}
+
+
+.personalvs02_01>tbody>tr>td>a{
+    color: black;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.freewrite01{
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	width: 58.6%;
+	height: 4em;
+	margin-top: 7em;
+	font-size: 0.8em;
+	font-family: 'S-CoreDream-6Bold';
+}
+
+.freewrite02{
+	display: flex;
+	align-items:center;
+	flex-direction:column;
+	width: 100%;
+    height: 90%;
+	border-radius: 20px;
+	box-sizing: border-box;
+	border: 1px solid #cccccc;
+}
+
+.note-placeholder{
+	margin-top: 2em;
+}
+
+.note-editor.note-frame .note-statusbar, .note-editor.note-airframe .note-statusbar{
+	border: none !important;
+}
+
+.freewrite02_01{
+	display: flex;
+	width: 80%;
+	height: 10%;
+	margin-top: 5em;
+}
+
+.freewrite02_01>input{
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: none;
+	font-family: 'S-CoreDream-6Bold';
+	font-size:1.3em;
+/* 	color:#cacaca; */
+	border-bottom: 1px solid #cccccc;
+}
+
+.freewrite02_02{
+	display:flex;
+	height:70%;
+	width: 80%;
+}
+
+#summernote{
+	width: 100%;
+	height: 100%;
+	border: none;
+	text-align: center;
+}
+
+.note-editor{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.note-editor.note-frame, .note-editor.note-airframe{
+	border: none !important;
+}
+
+.vmfl00{
+	display: flex;
+	flex-direction:column;
+	margin-top: 4em;
+	width: 58.6%;
+	height: 65em;
+}
+
+
+
+.pagination {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62.5%;
+    height: 2.5em;
+}
+
+
+.paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    color: #545454;
+    font-size: 0.9em;
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pagination>.paginate>.link.arrow.prev.start {
+    background-image: url('../img/pagerLeft2.png');
+}
+
+.pagination>.paginate>.link.arrow {
+    padding: 0 0.5em;
+    font-size: 0.813em;
+    text-align: left;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: #f0f0f0;
+}
+
+.pagination>.paginate>.link {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+    height: 70%;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d2;
+    border-radius: 0.188em;
+    line-height: 1.750em;
+    color: #888888;
+}
+
+.pagination>.paginate>.link.arrow.prev {
+    background-image: url('../img/pagerLeft1.png');
+}
+
+.pagination>.paginate>.link.mobile {
+    display: none;
+    padding: 0 0.5em;
+}
+
+.pagination>.paginate>.link+.link {
+    margin-left: 0.33em;
+}
+
+.now {
+    background-color: #0087e5;
+    color: #fff !important;
+}
+
+.pagination>.paginate>.link.arrow.next {
+    background-image: url('../img/pagerRight1.png');
+}
+
+.pagination>.paginate>.link.arrow.next.last {
+    background-image: url('../img/pagerRight2.png');
+}

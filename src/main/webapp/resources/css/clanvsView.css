@@ -464,13 +464,13 @@ a {
 	border-right: none;
 }
 
+.applicanttable tbody tr td:last-child{
+	border-bottom: none;
+}
+
 .applicanttable thead tr th:nth-child(9){
 	border-right: none;
 }
-
-/* .applicanttable tbody tr td:last-child{ */
-/* 	border-bottom: none; */
-/* } */
 
 .pagination {
     margin-top: 3em;

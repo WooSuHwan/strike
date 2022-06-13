@@ -192,4 +192,18 @@
 		time_end = sysdate
 		where clan_game_record_code = #{clan_game_record_code}
 	</update>
+	
+	<select id ="mypageRecord" resultType="GameRecord">
+	select gr.*, mr.name as challenger_name, m.* from game_record gr
+	LEFT JOIN member m ON gr.maker_code = m.member_code
+	LEFT JOIN member mr ON gr.challenger_code = mr.member_code
+	ORDER BY gr.time_end ASC
+	</select>	
+	
+	<select id ="mypageClanRecord" resultType="ClanGameRecord">
+	select cgr.*, cn.clan_name as clan_challenger_name, c.* from clan_game_record cgr
+	LEFT JOIN clan c ON cgr.clan_maker_code = c.clan_code
+	LEFT JOIN clan cn ON cgr.clan_challenger_code = cn.clan_code
+	ORDER BY cgr.time_end ASC
+	</select>	
 </mapper>

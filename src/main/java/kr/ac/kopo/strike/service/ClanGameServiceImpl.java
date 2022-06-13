@@ -9,6 +9,7 @@ import kr.ac.kopo.strike.dao.ClanGameDao;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanChallenger;
 import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class ClanGameServiceImpl implements ClanGameService {
@@ -59,6 +60,11 @@ public class ClanGameServiceImpl implements ClanGameService {
 	@Override
 	public void addClanGame(int clan_game_code, int clan_challenger_code, int clan_code) {
 		dao.addClanGame(clan_game_code, clan_challenger_code, clan_code);
+	}
+
+	@Override
+	public List<ClanGame> mypageClanGame(Pager pager) {
+		return dao.mypageClanGame(pager);
 	}
 	
 }

@@ -94,17 +94,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${mypageGame}" var="item" varStatus="status">
-                        <c:if test="${item.member_code == sessionScope.member.member_code}">
-                            <tr>
-                                <td>${item.loc}</td>
-                                <td>${item.title}</td>
-                                <td>${item.recruit} 명</td>
-                                 <td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
-                                <td><a href="/game/view/${item.game_code}" class="tableButton">상세보기</a></td>
-                            </tr>
-                        </c:if>
-                        </c:forEach>
+<%--                         <c:forEach items="${mypageFreeList}" var="item" varStatus="status"> --%>
+<%--                         <c:if test="${item.member_code == sessionScope.member.member_code}"> --%>
+<!--                             <tr> -->
+<%--                                 <td>${item.loc}</td> --%>
+<%--                                 <td>${item.title}</td> --%>
+<%--                                 <td>${item.recruit} 명</td> --%>
+<%--                                  <td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td> --%>
+<%--                                 <td><a href="/game/view/${item.game_code}" class="tableButton">상세보기</a></td> --%>
+<!--                             </tr> -->
+<%--                         </c:if> --%>
+<%--                         </c:forEach> --%>
                         </tbody>
                     </table>
                     
@@ -129,57 +129,8 @@
 				</div>
 			</div>
                 </div>
-<!--                 <div class="detailsTitle"> -->
-<!--                     클랜 신청내역 -->
-<!--                 </div> -->
-<!--                 <div class="detailsTable"> -->
-<!--                     <table class="tableOrginel"> -->
-<!--                         <thead> -->
-<!--                             <tr> -->
-<!--                                 <th>번호</th> -->
-<!--                                 <th>제목</th> -->
-<!--                                 <th>모집현황</th> -->
-<!--                                 <th>대결일</th> -->
-<!--                                 <th>상세보기</th> -->
-<!--                             </tr> -->
-<!--                         </thead> -->
-<!--                         <tbody> -->
-<!--                             <tr> -->
-<!--                                 <td>1</td> -->
-<!--                                 <td>볼링대결</td> -->
-<!--                                 <td>모집완료</td> -->
-<!--                                 <td>2022.05.14</td> -->
-<!--                                 <td><a href="#" class="tableButton">상세보기</a></td> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td>2</td> -->
-<!--                                 <td>[대전] 볼링 대결 모집합니다!</td> -->
-<!--                                 <td>모집완료</td> -->
-<!--                                 <td>2022.05.14</td> -->
-<!--                                 <td> <a href="#" class="tableButton">상세보기</a></td> -->
-<!--                             </tr> -->
-<!--                         </tbody> -->
-<!--                     </table> -->
-                    
-<!--                 </div> -->
-<!--                 <div class="pagination"> -->
-<!--                     <div class="paginate"> -->
-<!--                         <a href="javascript:;" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a> -->
-<!--                         <a href="javascript:;" class="link arrow prev" data-page="1">이전 페이지</a> -->
-<!--                         <span class="link mobile" data-page="1" data-end="10"> -->
-<!--                             <span class="now">1</span>/ 8 -->
-<!--                         </span> -->
-<!--                         <a href="javascript:;" class="now link">1</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="2">2</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="3">3</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="4">4</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="5">5</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link arrow last next" data-page="66">Next</a> -->
-<!--                     </div> -->
-<!--                 </div> -->
             </div>
         </div>
-    </div>
     
     <jsp:include page="../footer.jsp"></jsp:include>
     <script src="/resources/js/index.js"></script>

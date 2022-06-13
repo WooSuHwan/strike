@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/personalVs.css">
 <link rel="stylesheet" href="/resources/css/index.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<script src="https://www.w3schools.com/lib/w3.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
 	<!-- 	<div> -->
@@ -137,7 +136,7 @@
 								<td>${pager.offset + status.count}</td>
 								<td><a style="color: #000;" href="view/${item.game_code}">${item.title}</a></td>
 								<td>${item.maker}</td>
-								<td>2022.05.16</td>
+								<td> <fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
 								<td>10</td>
 							</tr>
 						</c:forEach>

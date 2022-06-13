@@ -56,4 +56,10 @@
 		insert into clan_game_record
 		values(CLAN_GAME_RECORD_CODE_SEQ.nextval, #{clan_game_code}, #{clan_challenger_code}, #{clan_code}, 0, 0, 0, null)
 	</insert>
+	
+	<select id="mypageClanGame" resultType="ClanGame">
+		select cg.*, c.*
+		from clan_game cg
+    	JOIN clan c ON cg.clan_code = c.clan_code
+	</select>
 </mapper>

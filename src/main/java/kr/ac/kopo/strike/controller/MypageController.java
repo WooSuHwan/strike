@@ -13,12 +13,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.strike.model.Clan;
+import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Franchisee;
 import kr.ac.kopo.strike.model.Game;
+import kr.ac.kopo.strike.model.GameRecord;
 import kr.ac.kopo.strike.model.Member;
+import kr.ac.kopo.strike.model.SuggestFree;
+import kr.ac.kopo.strike.service.ClanGameService;
 import kr.ac.kopo.strike.service.ClanService;
+import kr.ac.kopo.strike.service.FranchiseePageService;
 import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.service.MemberService;
+import kr.ac.kopo.strike.service.SuggestFreeService;
 import kr.ac.kopo.strike.util.AES256Util;
 import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.util.SHA256Util;
@@ -33,6 +40,16 @@ public class MypageController {
 	
 	@Autowired
 	GameService gameService;
+	
+	@Autowired
+	ClanGameService clanGameService;
+	
+	@Autowired
+	FranchiseePageService franchiseeService;
+	
+	
+	@Autowired
+	SuggestFreeService suggestFreeService;
 	
 	AES256Util aes256 = new AES256Util();
 	SHA256Util sha256 = new SHA256Util();
@@ -94,5 +111,49 @@ public class MypageController {
 		model.addAttribute("mypageGame", mypageGame);
 		
 		return path + "gameDetail";
+	}
+	
+	@GetMapping("/clanGameDetail/{member_code}")
+	public String clanGameDetail(@PathVariable int member_code, Model model, Pager pager) {
+		
+		List<ClanGame> mypageClanGame = clanGameService.mypageClanGame(pager);
+		model.addAttribute("mypageClanGame", mypageClanGame);
+		
+		return path + "clanGameDetail";
+		
+	}
+	
+	@GetMapping("/mypageRecord/{member_code}")
+	public String mypageRecord(@PathVariable int member_code, Model model, Pager pager) {
+		
+		List<GameRecord> mypageRecord = franchiseeService.mypageRecord();
+		
+		for (GameRecord item : mypageRecord) {
+			
+			item.setName( aes256.decrypt(item.getName()) );
+			item.setChallenger_name( aes256.decrypt(item.getChallenger_name()) );
+		}
+		
+		model.addAttribute("mypageRecord", mypageRecord);
+		
+		
+		
+		return path + "mypageRecord";
+	}
+	
+	@GetMapping("/mypageClanRecord/{member_code}")
+	public String mypageClanRecord(@PathVariable int member_code, Model model) {
+		List<ClanGameRecord> mypageClanRecord = franchiseeService.mypageClanRecord();
+		model.addAttribute("mypageClanRecord", mypageClanRecord);
+		
+		return path + "mypageClanRecord";
+	}
+	
+	@GetMapping("/mypageFreeList/{member_code}")
+	public String mypageFreeList(@PathVariable int member_code, Model model) {
+		List<SuggestFree> mypageFreeList = suggestFreeService.mypageFreeList();
+		model.addAttribute("mypageFreeList", mypageFreeList);
+		
+		return path + "mypageFreeList";
 	}
 }

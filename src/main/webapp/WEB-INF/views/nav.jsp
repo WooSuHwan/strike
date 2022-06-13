@@ -17,9 +17,9 @@
 				<ul class="Menu_list">
 					<li><a href="/clan/list">클랜랭크</a></li>
 					<li><a href="/rank/list">개인랭크</a></li>
-					<li><a href="/game/list">대결(신청)</a></li>
+					<li><a href="/clanGame/list">대결(신청)</a></li>
 					<li><a href="/suggestfree/list">자유게시판</a></li>
-					<li><a href="/suggestmaster/list"">공지사항</a></li>
+					<li><a href="">가맹점신청</a></li>
 					<li><a href="/faq">고객센터</a></li>
 				</ul>
 			</div>

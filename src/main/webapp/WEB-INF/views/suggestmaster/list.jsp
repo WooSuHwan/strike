@@ -4,92 +4,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>공지게시판 리스트</title>
-
-<link rel="stylesheet" href="/resources/css/list.css">
-<jsp:include page="font.jsp"></jsp:include>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Sharp|Material+Icons+Two+Tone|Material+Icons+Outlined" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<script src="https://www.w3schools.com/lib/w3.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<link rel="stylesheet" href="/resources/css/font.css">
-	
+	<link rel="stylesheet" href="/resources/css/noticeBoard.css">
 	<link rel="stylesheet" href="/resources/css/index.css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<script src="https://www.w3schools.com/lib/w3.js"></script>
-
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="mypageNav"></div>
-    <jsp:include page="nav.jsp"></jsp:include>
-     
-     <div class="mypageNav"></div>
-     
-    <div class="container">
-        
+	<jsp:include page="../font.jsp"></jsp:include>
+	<jsp:include page="../nav.jsp"></jsp:include>
+	<jsp:include page="../rnav.jsp"></jsp:include>
 	
-		<p style="font-size:44px;  font-weight: bold;" >공지게시판</p>
-        
-        
-		<div class="mypageNavSM"></div>
-        <div class="whiteBox" >
-          
-            <form method="get" action="" id="search" class="clanrankSearch_02">
-	                    <div class="zmffos">
-	                        <p style="margin-right: 1em;">search</p>
-	                        <div class="clanrankSearch_02_01">
-	                            <input style="" type="text" name="keyword" placeholder="제목을 입력해 주세요">
-	                            <button  type="submit">
-	                               <span class="material-icons-outlined" style="color: white; font-size:31px;"  >
-                        	 search
-                        		</span>
-	                            </button>
-	                        </div>
-	                    </div>
-                    </form>
+	<section>
+        <div class="clanAll">
+            <div class="clanrankSearch">
+                <div class="clanrankSearch1200">
+                    <div class="clanrankSearch_01">
+                        <div class="clanrankSearch_01_01">
+                            <a href="/suggestfree/list">자유게시판</a>
+                        </div>
+                        <div class="clanrankSearch_01_02">
+                            <a href="/suggestmaster/list">공지사항</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-       
-        <div class="mypageNavSM"></div>
-		<table>
-      <thead>
-        <tr>
-          <th>No.</th><th style="width:50%">제목</th><th >작성자</th><th >조회수</th><th >작성일</th>
-        </tr>
-      </thead>
-      <tbody >
-        <c:if test="${list.size() < 1}">
+
+            <div class="freeB01">
+                <div class="freeB01_01">
+                    <h1>공지사항</h1>
+                </div>
+            </div>
+
+            <div class="freeB02">
+                <div class="freeB01_03">
+                    <p><span>Total :</span> 22</p>
+                </div>
+            </div>
+
+            <div class="freeB03">
+                <table class="personalvs02_01">
+                    <colgroup>
+                        <col style="width: 10%;">
+                        <col style="width: 45%;">
+                        <col style="width: 15%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                            <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="4">등록 된 내용이 없습니다</td>
+							<td colspan="5">등록 된 내용이 없습니다</td>
 						</tr>
 					</c:if>
 					<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 						<tr>
-
 							<td>${pager.offset + status.count}</td>
 							<td><a href="view/${item.master_code}">${item.title}</a></td>
 							<td>${item.name}</td>
-							<td>${item.hit}</td>
 							<td><fmt:formatDate value="${item.reg_date}" pattern="yyyy.MM.dd"/></td>
-									
-							
+							<td>${item.hit}</td>
 						</tr>
 					</c:forEach>
-      </tbody>
-    </table>
-    <div class="mypageNavSM"></div>
-</div>
-    <div class="container">
-    <c:if test="${member.grade == 100}">
-        <div>
-		    <button class="w-btn w-btn-gray" type="button" onclick = "location.href = 'add' " style="width:100; float: right;">글쓰기</button>
-        </div> 
-      </c:if>
-      
-       
-        		<div class="pagination">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="cbtn0">
+                <c:if test="${member.grade == 100}">
+			        <div class="cbtn1">
+					    <button type="button" onclick = "location.href = 'add' ">글쓰기</button>
+			        </div> 
+			    </c:if>
+            </div>
+            
+            <div class="pagination">
 				<div class="paginate">
 					<a href="?page=1" class="pagebtn link arrow start prev"
 						data-page="1">처음 페이지</a> <a
@@ -108,15 +111,12 @@
 						data-page="66">Next</a>
 				</div>
 			</div>
-         
-	</div>
-	
+        </div>
 
-		
-        <div class="mypageNav"></div>
-        <div class="mypageNav"></div>
-        <div class="mypageNav"></div>
-         <jsp:include page="../footer.jsp"></jsp:include>
-     	<script src="/resources/js/index.js"></script>
+        <div class="wh"></div>
+    </section>
+    
+	<jsp:include page="../footer.jsp"></jsp:include>
+	<script src="/resources/js/index.js"></script>
 </body>
 </html>

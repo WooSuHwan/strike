@@ -59,7 +59,7 @@
 						<img src="/resources/img/V_icon.png" alt="vsicon">
 					</div>
 					<div class="clan_text">
-						<a href="/game/list">대결(신청)</a>
+						<a href="/clanGame/list">대결(신청)</a>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 				</div>
 				<div class="used">
 					<div class="f_board_text">
-						<a href="#">중고 거래</a>
+						<a href="#">가맹점 신청</a>
 					</div>
 					<div class="f_board_icon">
 						<img src="/resources/img/right.png" width="55%" alt="right">

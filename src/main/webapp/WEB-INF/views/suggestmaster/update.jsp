@@ -62,7 +62,7 @@
                 </ul>
             </div>
         </div>
-       <jsp:include page="rnav.jsp"></jsp:include>
+       <jsp:include page="../rnav.jsp"></jsp:include>
     </div> <!-- header nav 메뉴 끝 -->   
 
 <div class="mypageNavSM"></div>
