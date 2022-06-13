@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.SuggestMasterDao;
 import kr.ac.kopo.strike.model.SuggestMaster;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class SuggestMasterServiceImpl implements SuggestMasterService {
@@ -15,9 +16,12 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 	SuggestMasterDao dao;
 	
 	@Override
-	public List<SuggestMaster> list() {
+	public List<SuggestMaster> list(Pager pager) {
 		
-		return dao.list();
+		int total = dao.total(pager);
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override
@@ -27,8 +31,8 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 	}
 
 	@Override
-	public void delete(int masterCode) {
-		dao.delete(masterCode);
+	public void delete(int master_code) {
+		dao.delete(master_code);
 
 	}
 
@@ -39,21 +43,32 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 	}
 
 	@Override
-	public void addCount(int masterCode) {
-		dao.addCount(masterCode);
+	public void addCount(int master_code) {
+		dao.addCount(master_code);
 
 	}
 
 	@Override
-	public SuggestMaster read(int masterCode) throws Exception {
+	public SuggestMaster read(int master_code) throws Exception {
 		
-		return dao.read(masterCode);
+		return dao.read(master_code);
 	}
 
 	@Override
-	public SuggestMaster item(int masterCode) {
+	public SuggestMaster item(int master_code) {
 		
-		return dao.item(masterCode);
+		return dao.item(master_code);
+	}
+
+	@Override
+	public List<SuggestMaster> list() {
+		Pager pager = new Pager();
+		int total = dao.total(pager);
+		pager.setTotal(total);
+		pager.setPerPage(total);
+		
+		
+		return dao.list(pager);
 	}
 
 }

@@ -1,0 +1,163 @@
+/* 공통  */
+
+*{margin: 0; padding: 0;}
+
+body, ul, li {
+    list-style: none;
+}
+
+body::-webkit-scrollbar { width: 0; }
+
+/* body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+} */
+
+a {
+    text-decoration: none;
+}
+
+
+/* 전체 영역 */
+
+.inAll{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.hnone{
+    width: 100vw;
+    background-color: #fff;
+    height: 5.5em;
+}
+
+
+/* 내용 */
+
+.upperArea{
+    display: flex;
+    flex-direction: column;
+    width: 62.4%;
+    align-items: center;
+}
+
+.main_content01{
+    display: flex;
+    width: 80%;
+    height: 12.5em;
+    padding-top: 7%;
+}
+
+.main_content02{
+    display: flex;
+    width: 80%;
+    height: 12em;
+    align-items: center;
+
+    font-family: 'Vitro_core';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 24px;
+}
+
+.listLink{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    height: 5em;
+
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 20px;
+}
+
+.link{
+    display: flex;
+    width: 15em;
+    background-color: #ffca06;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.pre{
+    display: flex;
+    margin-right: 5em;
+}
+
+a {
+    color: #181818;
+}
+/* ----------------- 헤더 메뉴 ---------------------*/
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 5.5em;
+    border-bottom: 1px solid #b7b7b7;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.W_1200px{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 1200px;
+    height: 70%;
+}
+
+.Logo{
+    display: flex;
+    justify-content: center;
+    width: 7%;
+    height: 70%;
+}
+
+.Menu{
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+
+.Menu_list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Vitro_core';
+    font-size: 1.250em;
+}
+
+.Menu_list>li{
+    display: flex;
+    margin-left: 3.4%;
+    margin-right: 3.4%;
+}
+
+.Menu_list>li>a{color: #181818;}
+
+.Menu_list>li>a:hover{color: #ffca06;}
+

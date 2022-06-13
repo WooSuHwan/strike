@@ -15,7 +15,16 @@ public class Clan {
 	private Date time;
 	// member
 	private String name;
+	// 승률
+	private float percent; // 밑줄은 무시
 
+	public float getPercent() {
+		
+		percent = (float)clan_win / (float)clan_record * 100;
+		
+		return percent;
+	}
+	
 	public int getClan_score() {
 		return clan_score;
 	}

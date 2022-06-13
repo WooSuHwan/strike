@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>STRIKE</title>
+<link rel="shortcut icon" type="image/x-icon" href="../resources/img/Ologo.png" />
  	<link rel="stylesheet" href="../resources/css/font.css">
     <link rel="stylesheet" href="../resources/css/singup3.css">
     <script src="https://www.w3schools.com/lib/w3.js"></script>

@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>STRIKE</title>
+<link rel="shortcut icon" type="image/x-icon" href="/resources/img/Ologo.png" />
  <!-- font -->
  <style>
      @font-face {

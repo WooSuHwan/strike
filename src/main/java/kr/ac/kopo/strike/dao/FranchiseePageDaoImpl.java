@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.GameRecord;
+import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.model.ClanGame;
 import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Game;
@@ -166,6 +167,16 @@ public class FranchiseePageDaoImpl implements FranchiseePageDao {
 	@Override
 	public void clanDrawGameRecord(int clan_game_record_code) {
 		sql.update("franchiseePage.clanDrawGameRecord", clan_game_record_code);
+	}
+
+	@Override
+	public List<GameRecord> mypageRecord() {
+		return sql.selectList("franchiseePage.mypageRecord");
+	}
+
+	@Override
+	public List<ClanGameRecord> mypageClanRecord() {
+		return sql.selectList("franchiseePage.mypageClanRecord");
 	}
 
 }

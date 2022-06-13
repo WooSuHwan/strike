@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="#">개인전적</a></div>
+                    <div class="navListDivName"><a href="/mypage/mypageRecord/${sessionScope.member.member_code}">경기결과</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="../mypage/gameDetail/${sessionScope.member.member_code}">신청내역</a></div>
+                    <div class="navListDivName"><a href="/mypage/gameDetail/${sessionScope.member.member_code}">신청내역</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>

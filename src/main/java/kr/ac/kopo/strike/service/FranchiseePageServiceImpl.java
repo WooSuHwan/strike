@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.FranchiseePageDao;
 import kr.ac.kopo.strike.model.GameRecord;
+import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.model.ClanGame;
 import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Game;
@@ -125,6 +126,16 @@ public class FranchiseePageServiceImpl implements FranchiseePageService {
 	@Override
 	public void clanDrawGameRecord(int clan_game_record_code) {
 		dao.clanDrawGameRecord(clan_game_record_code);
+	}
+
+	@Override
+	public List<GameRecord> mypageRecord() {
+		return dao.mypageRecord();
+	}
+
+	@Override
+	public List<ClanGameRecord> mypageClanRecord() {
+		return dao.mypageClanRecord();
 	}
 
 }

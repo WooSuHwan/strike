@@ -49,7 +49,7 @@ public class ClanController {
 	}
 
 	@GetMapping("/add")
-	public String add(@SessionAttribute Member member) {
+	public String add() {
 		
 		return path + "add";
 	}
@@ -108,6 +108,7 @@ public class ClanController {
 	public String view(@PathVariable int clan_code, Model model) {
 		
 		Clan clan = service.item(clan_code);
+		System.out.println(clan.getName());
 		List<ClanMember> wait = service.wait(clan_code);
 		
 		for (ClanMember item : wait) {
@@ -130,10 +131,28 @@ public class ClanController {
 	}
 	
 	@GetMapping("/application/{clan_code}/{member_code}")
-	public String add(@PathVariable int clan_code, @SessionAttribute Member member) {
+	public String add(@PathVariable int clan_code, @SessionAttribute Member member, HttpServletResponse response) throws IOException {
 		
-		service.application(clan_code, member.getMember_code());
-		
+		if(service.confirm(clan_code, member.getMember_code()) > 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('이미 이 클랜에 신청을 했습니다'); </script>");
+			out.println("<script>location.href='/clan/list';</script>");
+			out.flush();
+		} else if(service.check(member.getClan_code()) > 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('이미 클랜이 있습니다'); </script>");
+			out.println("<script>location.href='/clan/list';</script>");
+			out.flush();
+		} else {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('신청을 했습니다'); </script>");
+			out.println("<script>location.href='/clan/list';</script>");
+			out.flush();
+			service.application(clan_code, member.getMember_code());
+		}
 		return "redirect:/clan/view/" + clan_code;
 	}
 	

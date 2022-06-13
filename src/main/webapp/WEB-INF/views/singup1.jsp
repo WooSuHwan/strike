@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
 <title>STRIKE</title>
+<link rel="shortcut icon" type="image/x-icon" href="../resources/img/Ologo.png" />
 <link rel="stylesheet" href="../resources/css/font.css">
 <link rel="stylesheet" href="../resources/css/singup.css">
 <script>
@@ -189,5 +190,6 @@
 		crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="../resources/js/index.js"></script>
+	<script src="../resources/js/check.js"></script>
 </body>
 </html>

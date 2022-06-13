@@ -3,47 +3,75 @@
 
 <mapper namespace="suggestfree">
 	<!-- 리스트화 시키는 쿼리문 -->
-
+	
+	<sql id="search">
+	SELECT free_code, title, reg_date, hit, name, member_code, story FROM free
+		<where>
+			<if test="keyword != null">
+			title LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+		</where>
+	</sql>
 
 	<select id="list" resultType="suggestfree">
-		SELECT free_code, title, story, hit, name, reg_date
-		FROM free
+		SELECT free_code, title, reg_date, hit, name, member_code, story FROM 
+		(SELECT ROWNUM rnum, sub.* FROM
+			(<include refid="search"></include>) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage}) 
+		ORDER BY free_code desc
+		]]>
+		
+		
 	</select>
-	
+
+
+
 	<insert id="add">
-		INSERT INTO free (free_code, title, story, hit, name, reg_date)
+		INSERT INTO free ( free_code, title, hit, name, reg_date,member_code, story)
 	
-		VALUES(FREE_CODE_SEQ.nextval,#{title}, #{story}, 0, #{name}, sysdate )
+		VALUES (FREE_CODE_SEQ.nextval,#{title}, 0, #{name}, sysdate, #{member_code},#{story} )
 		
 	</insert>
 	
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) FROM free
+		
+	</select>
+	
+	
 	<delete id="delete">
 		DELETE FROM free
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</delete>
 	
 	<update id="update">
 		UPDATE free
 		SET title=#{title}, story = #{story}
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</update>
 	
 	<select id="item" resultType="suggestfree">
-		SELECT * FROM free
-		WHERE free_code = #{freeCode}
+		SELECT free_code, title,  hit, name, reg_date, member_code,story 
+		FROM free
+		WHERE free_code = #{free_code}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestFree">
-		SELECT *
+		SELECT free_code, title,  hit, name, reg_date, story
 		FROM FREE
-		WHERE free_code = #{freeCode}
+		WHERE free_code = #{free_code}
 	</select>
 	
 	<update id="addcount">
 		UPDATE FREE
 		SET hit = hit + 1
 		WHERE
-			free_code = #{freeCode}
+			free_code = #{free_code}
 	</update>
+	
+	<select id="mypageFreeList" resultType="suggestfree">
+		SELECT * FROM free
+	</select>
 	
 </mapper>

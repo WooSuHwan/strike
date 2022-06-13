@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,7 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="#">개인전적</a></div>
+                    <div class="navListDivName"><a href="/mypage/mypageRecord/${sessionScope.member.member_code}">경기결과</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -67,7 +68,19 @@
                     경기 신청내역
                 </div>
                 <div class="detailsTitle">
-                   	대결 모집 내역
+                <a href="../gameDetail/${sessionScope.member.member_code}">
+                	<div class="titleDiv TD">
+                		개인 대결 신청 내역
+                	</div>
+                </a>
+                <a href="../clanGameDetail/${sessionScope.member.member_code}">
+                	<div class="titleDiv">
+                		클랜 대결 신청 내역
+                	</div>
+                </a>
+                </div>
+                <div class="detailsTitle">
+                   개인 대결 모집 내역
                 </div>
                 <div class="detailsTable">
                     <table class="tableOrginel">
@@ -87,7 +100,7 @@
                                 <td>${item.loc}</td>
                                 <td>${item.title}</td>
                                 <td>${item.recruit} 명</td>
-                                <td>${item.time }</td>
+                                 <td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
                                 <td><a href="/game/view/${item.game_code}" class="tableButton">상세보기</a></td>
                             </tr>
                         </c:if>

@@ -4,127 +4,163 @@
 <mapper namespace="clan">
 
 	<sql id="search">
-	SELECT * FROM clan
+		SELECT * FROM clan
 		<where>
 			<if test="keyword != null">
-			clan_name LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+				clan_name LIKE CONCAT(CONCAT('%', #{keyword}), '%')
 			</if>
 		</where>
 	</sql>
 
 	<select id="list" resultType="Clan">
-		SELECT * FROM 
+		SELECT * FROM
 		(SELECT ROWNUM rnum, sub.* FROM
-			(<include refid="search"></include>) sub)
+		(
+		<include refid="search"></include>)
+		sub)
 		<![CDATA[ 
 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
 	</select>
-	
+
 	<insert id="add">
 		INSERT INTO clan
 		VALUES (
 		CLAN_CODE_SEQ.nextval,
-		#{clan_master_code}, 
-		#{clan_name}, 
-		#{clan_record}, 
-		#{clan_win}, 
-		#{clan_lose}, 
-		#{clan_draw}, 
+		#{clan_master_code},
+		#{clan_name},
+		#{clan_record},
+		#{clan_win},
+		#{clan_lose},
+		#{clan_draw},
 		#{clan_rate},
 		#{clan_score},
 		sysdate
 		)
 	</insert>
-	
+
 	<select id="item" resultType="Clan">
-		SELECT * 
-		FROM clan
-		WHERE clan_code = #{clan_code}
+		select c.*, m.name
+		from clan c
+		join member m on c.clan_master_code = m.member_code
+		where c.clan_code = #{clan_code}
 	</select>
-	
+
 	<update id="update">
 		UPDATE clan
 		SET clan_name = #{clan_name}
-		WHERE clan_master = #{member_code}
+		WHERE
+		clan_master = #{member_code}
 	</update>
-	
+
 	<delete id="delete">
 		DELETE clan
 		WHERE clan_master = #{member_code}
 	</delete>
-	
+
 	<select id="clan" resultType="ClanMember">
 		SELECT clan_name
 		FROM clan
-		WHERE clan_code = #{clan_code}
+		WHERE
+		clan_code = #{clan_code}
 	</select>
-	
+
 	<select id="wait" resultType="ClanMember">
-		select c_m.clan_member_code, c_m.state, m.name, m.score, m.record, m.win, m.lose, m.draw, m.rate, c.clan_master_code
+		select c_m.clan_member_code,
+		c_m.state, m.name, m.score, m.record, m.win, m.lose, m.draw, m.rate,
+		c.clan_master_code
 		from clan_member c_m, member m, clan c
-		where c_m.clan_code = #{clan_code}
-		and c_m.member_code = m.member_code 
-		and c_m.clan_code = c.clan_code
+		where
+		c_m.clan_code = #{clan_code}
+		and c_m.member_code = m.member_code
+		and
+		c_m.clan_code = c.clan_code
 		and c_m.state is null
 	</select>
-	
+
 	<select id="clanMember" resultType="ClanMember">
-		select c_m.clan_member_code, c_m.state, m.name, m.score, m.record, m.win, m.lose, m.draw, m.rate, c.clan_master_code
+		select c_m.clan_member_code,
+		c_m.state, m.name, m.score, m.record, m.win, m.lose, m.draw, m.rate,
+		c.clan_master_code
 		from clan_member c_m, member m, clan c
-		where c_m.clan_code = #{clan_code}
-		and c_m.member_code = m.member_code 
-		and c_m.clan_code = c.clan_code
+		where
+		c_m.clan_code = #{clan_code}
+		and c_m.member_code = m.member_code
+		and
+		c_m.clan_code = c.clan_code
 		and c_m.state = 1
 	</select>
-	
+
 	<update id="change">
 		update member
-		SET clan_code  = #{clan_code}
-		WHERE member_code = #{member_code}
+		SET clan_code = #{clan_code}
+		WHERE
+		member_code = #{member_code}
 	</update>
-	
+
 	<select id="get" resultType="Clan">
-		SELECT * 
+		SELECT *
 		FROM clan
-		WHERE clan_master_code = #{memeber_code}
+		WHERE
+		clan_master_code = #{memeber_code}
 	</select>
-	
+
 	<insert id="application">
 		INSERT INTO clan_member
-		VALUES (CLAN_MEMBER_CODE_SEQ.nextval, #{member_code}, #{clan_code}, null, sysdate)
+		VALUES
+		(CLAN_MEMBER_CODE_SEQ.nextval, #{member_code}, #{clan_code}, null,
+		sysdate)
 	</insert>
-	
+
 	<update id="permission">
 		update clan_member
-		set 
+		set
 		state = 1,
 		time = sysdate
-		where clan_member_code = #{clan_member_code} and clan_code = #{clan_code}
+		where
+		clan_member_code = #{clan_member_code} and
+		clan_code = #{clan_code}
 	</update>
-	
+
 	<select id="getMember" resultType="ClanMember">
-		SELECT c.clan_code, c_m.member_code  
+		SELECT c.clan_code,
+		c_m.member_code
 		FROM clan c, clan_member c_m
-		WHERE c_m.clan_member_code = #{clan_member_code}
+		WHERE c_m.clan_member_code
+		=
+		#{clan_member_code}
 		AND c.clan_code = c_m.clan_code
 	</select>
-	
+
 	<update id="changeMember">
 		update member
 		SET clan_code = #{clan_code}
-		WHERE member_code = #{member_code}
+		WHERE
+		member_code = #{member_code}
 	</update>
-	
-<!-- 	index 순위출력 list -->
+
+	<!-- index 순위출력 list -->
 	<select id="clanList" resultType="Clan">
-	SELECT ROWNUM, CLAN_NAME FROM 
-			(SELECT * FROM clan) A
+		SELECT ROWNUM, CLAN_NAME FROM
+		(SELECT * FROM clan) A
 		where <![CDATA[ROWNUM <= 5]]>
 	</select>
-	
-<!-- 	pager -->
+
+	<!-- pager -->
 	<select id="total" resultType="Integer">
-	SELECT COUNT(*) FROM clan
+		SELECT COUNT(*) FROM clan
 	</select>
-	
+
+	<select id="confirm" parameterType="Integer"
+		resultType="Integer">
+		select count(*)
+		from clan_member
+		where clan_code =
+		#{clan_code} and member_code = #{member_code}
+	</select>
+
+	<select id="check" parameterType="Integer" resultType="Integer">
+		select count(*)
+		from member
+		where clan_code != 0 and member_code = #{member_code}
+	</select>
 </mapper>

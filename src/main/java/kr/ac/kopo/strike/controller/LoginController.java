@@ -1,4 +1,3 @@
-
 package kr.ac.kopo.strike.controller;
 
 import javax.servlet.http.HttpSession;
@@ -28,17 +27,21 @@ public class LoginController {
 	@PostMapping("/login")
 	String login(String id, String pw, HttpSession session) {
 		Member member = service.check(id, pw);
-
+		
 		if(member == null) {
 			return "redirect:/login/login?wrong=true";
 		} else {
 			session.setAttribute("member", member);
+			session.setAttribute("name", member.getName());
+			session.setAttribute("member_code", member.getMember_code());
 			System.out.println(member.getMember_code());
 			System.out.println(member.getName());
 			
-			
 			return "redirect:/";
 		}
+		
+		
+		
 	}
 	
 	@RequestMapping("/logout")
@@ -47,4 +50,3 @@ public class LoginController {
 		return "redirect:/";
 	}
 }
-

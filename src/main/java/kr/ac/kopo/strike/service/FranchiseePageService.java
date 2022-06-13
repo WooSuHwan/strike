@@ -3,6 +3,7 @@ package kr.ac.kopo.strike.service;
 import java.util.List;
 
 import kr.ac.kopo.strike.model.GameRecord;
+import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.model.ClanGame;
 import kr.ac.kopo.strike.model.ClanGameRecord;
 import kr.ac.kopo.strike.model.Game;
@@ -52,5 +53,9 @@ public interface FranchiseePageService {
 	void clanDraw(int clan_maker_code, int challenger_clan_code);
 
 	void clanDrawGameRecord(int clan_game_record_code);
+
+	List<GameRecord> mypageRecord();
+
+	List<ClanGameRecord> mypageClanRecord();
 
 }

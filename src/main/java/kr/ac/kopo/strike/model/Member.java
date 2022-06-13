@@ -18,8 +18,36 @@ public class Member {
 	private int rate;
 	private int score;
 	private Date time;
+	private int grade;
 	// 티어
 	private String tier; // 밑줄은 무시
+	// 승률
+	private float percent; // 밑줄은 무시
+
+	public float getPercent() {
+		
+		percent = (float)win / (float)record * 100;
+		
+		return percent;
+	}
+
+	private String clan_name;
+
+	public String getClan_name() {
+		return clan_name;
+	}
+
+	public void setClan_name(String clan_name) {
+		this.clan_name = clan_name;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
 
 	public Date getTime() {
 		return time;
@@ -140,7 +168,7 @@ public class Member {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	
+
 	public String getTier() {
 
 		if (score < 11) {
@@ -187,6 +215,6 @@ public class Member {
 
 			return "챌린저";
 		}
-	}
 
+	}
 }

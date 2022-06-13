@@ -5,6 +5,7 @@ import java.util.List;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanChallenger;
 import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.util.Pager;
 
 public interface ClanGameDao {
 
@@ -31,4 +32,6 @@ public interface ClanGameDao {
 	int confirm(int clan_game_code, int clan_code);
 
 	int compare(int clan_game_code, int member_code);
+	
+	List<ClanGame> mypageClanGame(Pager pager);
 }

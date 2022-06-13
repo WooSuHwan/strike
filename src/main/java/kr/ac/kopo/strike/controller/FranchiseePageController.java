@@ -123,7 +123,8 @@ public class FranchiseePageController {
 	@GetMapping("/clanGameView/{clan_game_code}")
 	public String clanGameView(@PathVariable int clan_game_code, Model model) {
 		
-		ClanGame clanGame = clanGameService.item(clan_game_code);		
+		ClanGame clanGame = clanGameService.item(clan_game_code);
+		System.out.println(clanGame);
 		List<ClanGameRecord> clanGameRecord = service.clanGameRecord(clan_game_code);
 		List<ClanGameRecord> clanGameRecordEnd = service.clanGameRecordEnd(clan_game_code);
 		

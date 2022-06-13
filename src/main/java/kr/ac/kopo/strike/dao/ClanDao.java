@@ -40,4 +40,8 @@ public interface ClanDao {
 
 	List<Clan> clanList();
 
+	int confirm(int clan_code, int member_code);
+
+	int check(int clan_code);
+
 }

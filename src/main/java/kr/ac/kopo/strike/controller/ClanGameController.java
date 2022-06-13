@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Clan;
@@ -110,6 +109,12 @@ public class ClanGameController {
 			response.setContentType("text/html; charset=euc-kr");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('자신의 게임 입니다'); </script>");
+			out.println("<script>location.href='../list';</script>");
+			out.flush();
+		} else if(member.getClan_code() == 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('클랜을 만들거나 들어가주세요'); </script>");
 			out.println("<script>location.href='../list';</script>");
 			out.flush();
 		} else {

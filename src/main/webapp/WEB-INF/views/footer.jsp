@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html>
+<head>
 <body>
 <div class="footer">
             <div class="footerL01">
@@ -9,9 +13,9 @@
                 <div class="ffftxt">
                     <ul>
                         <li id="footer_1">STRIKE Project</li>
-                        <li id="footer_2">Project Team : ( 팀장 ) 홍종필 ( 팀원 ) 우수환 박미연 신인선</li>
-                        <li id="footer_3">주소 : 대전광역시 동구 우암로 352-21 한국 폴리텍 대전 컴퍼스</li>
-                        <li id="footer_4"> COPYRIGHTⓒ2022.STRIKE.All.rights reserved.</li>
+	                    <li id="footer_2">Project Team : ( 팀장 ) 홍종필 ( 팀원 ) 우수환 박미연 신인선</li>
+	                    <li id="footer_3">주소 : 대전 동구 우암로 352-21 한국 폴리텍</li>
+	                    <li id="footer_4"> COPYRIGHTⓒ2022.STRIKE.All.rights reserved.</li>
                     </ul>
                 </div>
             </div>

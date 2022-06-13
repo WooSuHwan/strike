@@ -1,13 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/personalVs.css">
 <link rel="stylesheet" href="/resources/css/index.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 <body>
@@ -112,19 +114,15 @@
 					<colgroup>
 						<col style="width: 10%;">
 						<col style="width: 35%;">
-						<col style="width: 35%;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
+						<col style="width: 25%;">
+						<col style="width: 15%;">
 					</colgroup>
 					<thead>
 						<tr>
 							<th>No.</th>
 							<th>제목</th>
-							<th>작성클랜</th>
-							<th>클랜티어</th>
+							<th>작성 클랜</th>
 							<th>작성일</th>
-							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -136,11 +134,9 @@
 						<c:forEach items="${list}" var="item" varStatus="status">
 							<tr>
 								<td>${pager.offset + status.count}</td>
-								<td><a style="color: #000;" href="view/${item.clan_game_code}">${item.title}</a></td>
+								<td><a href="view/${item.clan_game_code}">${item.title}</a></td>
 								<td>${item.clan_name}</td>
-								<td>${item.clan_score}</td>
-								<td>${item.time}</td>
-								<td>10</td>
+								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
 							</tr>
 						</c:forEach>
 

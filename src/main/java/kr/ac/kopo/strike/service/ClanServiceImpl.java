@@ -8,21 +8,26 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.strike.dao.ClanDao;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanMember;
+import kr.ac.kopo.strike.util.AES256Util;
 import kr.ac.kopo.strike.util.Pager;
+import kr.ac.kopo.strike.util.SHA256Util;
 
 @Service
 public class ClanServiceImpl implements ClanService {
 
+	AES256Util aes256 = new AES256Util();
+	SHA256Util sha256 = new SHA256Util();
+	
 	@Autowired
 	ClanDao dao;
-	
+
 	@Override
 	public List<Clan> list(Pager pager) {
-		
+
 		int total = dao.total(pager);
-		
+
 		pager.setTotal(total);
-		
+
 		return dao.list(pager);
 	}
 
@@ -33,7 +38,12 @@ public class ClanServiceImpl implements ClanService {
 
 	@Override
 	public Clan item(int member_code) {
-		return dao.item(member_code);
+		
+		Clan item = dao.item(member_code);
+		
+		item.setName(aes256.decrypt(item.getName()));
+		System.out.println(item.getName());
+		return item;
 	}
 
 	@Override
@@ -97,5 +107,14 @@ public class ClanServiceImpl implements ClanService {
 		return dao.clanList();
 	}
 
+	@Override
+	public int confirm(int clan_code, int member_code) {
+		return dao.confirm(clan_code, member_code);
+	}
+
+	@Override
+	public int check(int clan_code) {
+		return dao.check(clan_code);
+	}
 
 }

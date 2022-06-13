@@ -163,6 +163,22 @@ a {
     align-items: flex-end;
 }
 
+.titleDiv {
+	margin-right: 0.5em;
+	
+	padding: 1em 2em 1em 2em;
+	border: 1px solid #bfbfbf;
+	
+}
+
+.TD {
+	padding: 1em 2em 1em 2em;
+	border: 1px solid #f6cd00;
+	background-color: #f6cd00;
+	color: #ffffff;
+	
+}
+
 .detailsTable {
     display: flex;
     width: 100%;

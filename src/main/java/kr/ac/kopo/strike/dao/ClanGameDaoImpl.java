@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanChallenger;
 import kr.ac.kopo.strike.model.ClanGame;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class ClanGameDaoImpl implements ClanGameDao {
@@ -111,5 +112,10 @@ public class ClanGameDaoImpl implements ClanGameDao {
 		map.put("member_code", member_code);
 		
 		return sql.selectOne("clanGame.compare", map);
+	}
+	
+	@Override
+	public List<ClanGame> mypageClanGame(Pager pager) {
+		return sql.selectList("clanGame.mypageClanGame", pager);
 	}
 }
