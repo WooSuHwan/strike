@@ -23,6 +23,8 @@ public interface SuggestFreeDao {
 	void addCount(int free_code);
 
 	int total(Pager pager);
+
+	List<SuggestFree> mypageFreeList();
 	
 	
 

@@ -63,6 +63,11 @@ public class SuggestFreeDaoImpl implements SuggestFreeDao {
 		return sql.selectOne("suggestfree.total",pager);
 	}
 
+	@Override
+	public List<SuggestFree> mypageFreeList() {
+		return sql.selectList("suggestfree.mypageFreeList");
+	}
+
 	
 	
 

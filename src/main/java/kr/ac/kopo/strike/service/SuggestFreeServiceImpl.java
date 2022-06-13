@@ -75,6 +75,11 @@ public class SuggestFreeServiceImpl implements SuggestFreeService {
 		
 		return dao.list(pager);
 	}
+
+	@Override
+	public List<SuggestFree> mypageFreeList() {
+		return dao.mypageFreeList();
+	}
 	
 
 	

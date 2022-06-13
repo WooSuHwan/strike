@@ -70,6 +70,8 @@
 			free_code = #{free_code}
 	</update>
 	
-	
+	<select id="mypageFreeList" resultType="suggestfree">
+		SELECT * FROM free
+	</select>
 	
 </mapper>
