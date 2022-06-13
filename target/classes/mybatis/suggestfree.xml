@@ -3,24 +3,33 @@
 
 <mapper namespace="suggestfree">
 	<!-- 리스트화 시키는 쿼리문 -->
-	
 	<sql id="search">
-	SELECT free_code, title, reg_date, hit, name, member_code, story FROM free
+		SELECT free_code, title, reg_date, hit, name, member_code, story FROM free	
 		<where>
-			<if test="keyword != null">
-			title LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			<if test="search == 1 and keyword != null">
+				title LIKE CONCAT(CONCAT('%', #{keyword}), '%')
+			</if>
+			
+			<if test="search == 2 and keyword != null">
+				name LIKE CONCAT('%', CONCAT(#{keyword}, '%'))
+			</if>
+			
+			<if test="search == 3 and keyword != null">
+				reg_date LIKE CONCAT('%', CONCAT(#{keyword}, '%'))
 			</if>
 		</where>
 	</sql>
 
 	<select id="list" resultType="suggestfree">
 		SELECT free_code, title, reg_date, hit, name, member_code, story FROM 
-		(SELECT ROWNUM rnum, sub.* FROM
+		(SELECT ROWNUM AS rnum, sub.* FROM
 			(<include refid="search"></include>) sub)
-		<![CDATA[ 
-		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage}) 
-		ORDER BY free_code desc
-		]]>
+		<if test="perPage != 0">
+			<![CDATA[ 
+			WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage}) 
+			ORDER BY free_code desc
+			]]>
+		</if>
 		
 		
 	</select>
@@ -35,7 +44,7 @@
 	</insert>
 	
 	<select id="total" resultType="Integer">
-		SELECT COUNT(*) FROM free
+		SELECT COUNT(*) FROM (<include refid="search"></include>) sub
 		
 	</select>
 	

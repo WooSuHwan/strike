@@ -152,17 +152,15 @@
 						<table class="table_R">
 							<thead class="rankC01_01">
 								<tr style="display: flex; width: 100%;">
-									<th class="rank01_t1" width="20%">순위</th>
-									<th class="rank01_t2" width="35%">이름</th>
-									<th class="rank01_t3" width="45%">티어</th>
+									<th class="rank01_t1" width="30%">순위</th>
+									<th class="rank01_t2" width="70%">이름</th>
 								</tr>
 							</thead>
 							<tbody class="rankC01_02">
 							 <c:forEach items="${clanList}" var="item" varStatus="status">
 	                           <tr class="tbodyTr01">
-	                              <td width="20%" height="100%">${status.index + 1}</td>
-	                              <td width="35%" height="100%">${item.clan_name}</td>
-	                              <td width="45%" height="100%">티어수정필요함</td>
+	                              <td width="30%" height="100%">${status.index + 1}</td>
+	                              <td width="70%" height="100%">${item.clan_name}</td>
 	                           </tr>
 	                        </c:forEach>
 							</tbody>
