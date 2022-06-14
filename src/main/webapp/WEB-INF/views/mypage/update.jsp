@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="../delete">회원탈퇴</a></div>
+                    <div class="navListDivName"><a href="../delete/${sessionScope.member.member_code}">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>

@@ -34,7 +34,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public void delete(int member_code) {
-		sql.delete("member.delete", member_code);
+		sql.update("member.delete", member_code);
 	}
 
 	@Override

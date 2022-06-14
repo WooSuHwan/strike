@@ -36,7 +36,8 @@
 	</update>
 	
 	<delete id="delete">
-		DELETE FROM member 
-		WHERE member_code = #{member_code} 
+		UPDATE member 
+		SET stat = 1
+		WHERE member_code = #{member_code}
 	</delete>
 </mapper>
