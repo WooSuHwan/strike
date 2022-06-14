@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="boxButton">
-                       <a href="/delete/${item.member_code}">확인</a>
+                       <a href="/delete/${sessionScope.member.member_code}">확인</a>
                     </div>
                 </div>
             </div>

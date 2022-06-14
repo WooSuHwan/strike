@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanGame;
@@ -100,8 +101,15 @@ public class MypageController {
 	
 	@GetMapping("/delete/{member_code}")
 	public String delete(@PathVariable int member_code) {
-		memberService.delete(member_code);
-		return "redirect:../index";
+		return path + "delete";
+	}
+	
+	@PostMapping("/delete/{member_code}")
+	public String delete(@SessionAttribute Member member ) {
+		
+		memberService.delete(member.getMember_code());
+		System.out.println("작동");
+		return "redirect:index";
 	}
 	
 	@GetMapping("/gameDetail/{member_code}")

@@ -19,6 +19,7 @@ public class Member {
 	private int score;
 	private Date time;
 	private int grade;
+	private int stat;
 	// 티어
 	private String tier; // 밑줄은 무시
 	// 승률
@@ -30,6 +31,16 @@ public class Member {
 		
 		return percent;
 	}
+
+	
+	public int getStat() {
+		return stat;
+	}
+
+	public void setStat(int stat) {
+		this.stat = stat;
+	}
+
 
 	private String clan_name;
 
