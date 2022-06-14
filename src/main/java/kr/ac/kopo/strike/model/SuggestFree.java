@@ -13,8 +13,17 @@ public class SuggestFree {
 	private int member_code;
 	private String name;
 	private Date reg_date;
+	private int recnt;
 	
 	
+	
+	
+	public int getRecnt() {
+		return recnt;
+	}
+	public void setRecnt(int recnt) {
+		this.recnt = recnt;
+	}
 	public int getFree_code() {
 		return free_code;
 	}

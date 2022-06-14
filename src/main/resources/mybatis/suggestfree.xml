@@ -61,8 +61,8 @@
 	</update>
 	
 	<select id="item" resultType="suggestfree">
-		SELECT free_code, title,  hit, name, reg_date, member_code,story 
-		FROM free
+		SELECT free_code, title,  hit, name, reg_date, member_code,(SELECT COUNT(*) FROM reply WHERE free_code=f.free_code) AS recnt,story 
+		FROM free f
 		WHERE free_code = #{free_code}
 	</select>
 	

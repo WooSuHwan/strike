@@ -71,7 +71,7 @@
                             <div class="vspost_02_date_002">
                             	<div class="vspost_02_date03">
                             		<div class="mes01"><img alt="채팅" src="/resources/img/chatting.png"></div>
-                            		<div class="mes02">댓글 1</div>
+                            		<div class="mes02">댓글 ${item.recnt}</div>
                             	</div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
 							<div class="mes03">
 								<img alt="채팅" src="/resources/img/chatting.png">
 							</div>
-							<div class="mes04">댓글 1</div>
+							<div class="mes04">댓글 ${item.recnt}</div>
 						</div>
 						<div class="titleBox2">
 							<p>댓글</p>

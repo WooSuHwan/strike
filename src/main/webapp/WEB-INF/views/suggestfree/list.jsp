@@ -45,7 +45,7 @@
 
             <div class="freeB02">
                 <div class="freeB01_03">
-                    <p><span>Total :</span> 22</p>
+                    <p><span>Total :</span> ${pager.total}</p>
                 </div>
 				<form method="get" id="search" class="freeB01_04">
                     <div class="freeB01_04_01">
@@ -96,7 +96,7 @@
 						<c:forEach items="${list}" var="item" varStatus="status"> <!-- ${list} == var="item" -->
 							<tr>
 								<td>${pager.offset + status.count}</td>
-								<td><a href="view/${item.free_code}" "style="text-decoration:none">${item.title}</a> &nbsp;<span class="freespan">(58)</span></td>
+								<td><a href="view/${item.free_code}" "style="text-decoration:none">${item.title}</a> &nbsp;<span class="freespan"></span></td>
 								<td>${item.name}</td>
 								<td>${item.hit}</td>
 								<td><fmt:formatDate value="${item.reg_date}" pattern="yyyy.MM.dd"/></td>
