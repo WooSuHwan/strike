@@ -226,7 +226,7 @@ td,th {
 .mypageUpdate {
     display: flex;
     width: 80%;
-    height: 60em;
+    height: 51em;
     flex-direction: column;
     justify-content: center;
     align-items: center;
