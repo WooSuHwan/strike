@@ -26,7 +26,7 @@ $(function() {
 
 			<!-- logo 영역 -->
 			<div class="LoginCenterLogo">
-				<a href="/franchisee"><img src="../resources/img/logo.png" height="100%" width= "80%" alt="logo"></a>
+				<a href="/franchisee"><img src="../resources/img/franchisee/franchiseeLogo.png" height="100%" width= "80%" alt="logo"></a>
 			</div>
 			<form action="login" method="post" class="idpassBox">
 				<!-- 아이디 박스 영역 -->
