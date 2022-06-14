@@ -47,7 +47,19 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="../delete">회원탈퇴</a></div>
+                    <div class="navListDivName"><a href="../mypageFreeList/${sessionScope.member.member_code}">내가 쓴 글</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../deleteClan">클랜탈퇴</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../deleteMember">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -109,77 +121,9 @@
                     </table>
                     
                 </div>
-      		<div class="pagination">
-				<div class="paginate">
-					<a href="?page=1" class="pagebtn link arrow start prev"
-						data-page="1">처음 페이지</a> <a
-						href="?page=${pager.prev }&${pager.query}" class="link arrow prev"
-						data-page="1">이전 페이지</a>
-					<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
-					<!--                         <span class="now">1</span>/ 8 -->
-					<!--                     </span> -->
-					<c:forEach var="page" items="${pager.list}">
-						<a href="?page=${page}&${pager.query}"
-							class="link now${page == pager.page ? '': 'active' }">${page}</a>
-					</c:forEach>
-					<a href="?page=${pager.next }&${pager.query}"
-						class="pagebtn link arrow next" data-page="9">다음 페이지</a> <a
-						href="?page=${pager.last}" class="pagebtn link arrow last next"
-						data-page="66">Next</a>
-				</div>
-			</div>
                 </div>
-<!--                 <div class="detailsTitle"> -->
-<!--                     클랜 신청내역 -->
-<!--                 </div> -->
-<!--                 <div class="detailsTable"> -->
-<!--                     <table class="tableOrginel"> -->
-<!--                         <thead> -->
-<!--                             <tr> -->
-<!--                                 <th>번호</th> -->
-<!--                                 <th>제목</th> -->
-<!--                                 <th>모집현황</th> -->
-<!--                                 <th>대결일</th> -->
-<!--                                 <th>상세보기</th> -->
-<!--                             </tr> -->
-<!--                         </thead> -->
-<!--                         <tbody> -->
-<!--                             <tr> -->
-<!--                                 <td>1</td> -->
-<!--                                 <td>볼링대결</td> -->
-<!--                                 <td>모집완료</td> -->
-<!--                                 <td>2022.05.14</td> -->
-<!--                                 <td><a href="#" class="tableButton">상세보기</a></td> -->
-<!--                             </tr> -->
-<!--                             <tr> -->
-<!--                                 <td>2</td> -->
-<!--                                 <td>[대전] 볼링 대결 모집합니다!</td> -->
-<!--                                 <td>모집완료</td> -->
-<!--                                 <td>2022.05.14</td> -->
-<!--                                 <td> <a href="#" class="tableButton">상세보기</a></td> -->
-<!--                             </tr> -->
-<!--                         </tbody> -->
-<!--                     </table> -->
-                    
-<!--                 </div> -->
-<!--                 <div class="pagination"> -->
-<!--                     <div class="paginate"> -->
-<!--                         <a href="javascript:;" class="pagebtn link arrow start prev" data-page="1">처음 페이지</a> -->
-<!--                         <a href="javascript:;" class="link arrow prev" data-page="1">이전 페이지</a> -->
-<!--                         <span class="link mobile" data-page="1" data-end="10"> -->
-<!--                             <span class="now">1</span>/ 8 -->
-<!--                         </span> -->
-<!--                         <a href="javascript:;" class="now link">1</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="2">2</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="3">3</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="4">4</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link" data-page="5">5</a> -->
-<!--                         <a href="javascript:;" class="pagebtn link arrow last next" data-page="66">Next</a> -->
-<!--                     </div> -->
-<!--                 </div> -->
             </div>
         </div>
-    </div>
     
     <jsp:include page="../footer.jsp"></jsp:include>
     <script src="/resources/js/index.js"></script>

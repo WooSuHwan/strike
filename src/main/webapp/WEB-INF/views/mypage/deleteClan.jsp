@@ -50,7 +50,19 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName nt">회원탈퇴</div>
+                    <div class="navListDivName"><a href="../mypageFreeList/${sessionScope.member.member_code}">내가 쓴 글</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="/mypage/deleteClan">클랜탈퇴</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="/mypage/deleteMember">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -74,15 +86,15 @@
                         <img src="/resources/img/mypageDelete.png" alt="">
 
                         <div class="titleText1">
-                            회원 탈퇴를 진행하시겠습니까?
+                            클랜 탈퇴를 진행하시겠습니까?
                         </div>
                         <div class="titleText2">
                             확인 버튼을 누르시면 <br>
-                            정상적으로 회원탈퇴가 완료됩니다.
+                            정상적으로 클랜탈퇴가 완료됩니다.
                         </div>
                     </div>
                     <div class="boxButton">
-                       <a href="/delete/${item.member_code}">확인</a>
+                       <a href="/mypage/deleteClan/${sessionScope.member.member_code}">확인</a>
                     </div>
                 </div>
             </div>

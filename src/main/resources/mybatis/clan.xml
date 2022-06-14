@@ -147,7 +147,7 @@
 
 	<!-- pager -->
 	<select id="total" resultType="Integer">
-		SELECT COUNT(*) FROM clan
+		SELECT COUNT(*) FROM (<include refid="search"></include>) sub
 	</select>
 
 	<select id="confirm" parameterType="Integer"

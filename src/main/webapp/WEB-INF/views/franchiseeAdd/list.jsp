@@ -65,7 +65,6 @@
 	<!-- 	</div> -->
 	<jsp:include page="../font.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<jsp:include page="../rnav.jsp"></jsp:include>
 
 	<section>
 		<div class="clanAll">
@@ -73,10 +72,7 @@
 				<div class="clanrankSearch1200">
 					<div class="clanrankSearch_01">
 						<div class="clanrankSearch_01_02">
-							<a href="/clanGame/list">가맹점 신청 목록</a>
-						</div>
-						<div class="clanrankSearch_01_01">
-							<a href="/game/list">가맹점 신청 목록</a>
+							<a href="/franchiseeAdd/list">가맹점 신청 목록</a>
 						</div>
 					</div>
 					<form method="get" action="" id="search" class="clanrankSearch_02">
@@ -94,9 +90,9 @@
 			</div>
 
 			<div class="personalvs01">
-				<div class="personalvs01_01">
-					<img src="/resources/img/vs.png" alt="vs">
-				</div>
+<!-- 				<div class="personalvs01_01"> -->
+<!-- 					<img src="/resources/img/vs.png" alt="vs"> -->
+<!-- 				</div> -->
 				<div class="personalvs01_02">
 					<div class="personalvs01_02_01">
 						<h1>가맹점 신청 목록</h1>
@@ -124,7 +120,6 @@
 							<th>주소</th>
 							<th>전화번호</th>
 							<th>작성일</th>
-							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -140,7 +135,6 @@
 								<td>${item.address}</td>
 								<td>${item.tel}</td>
 								<td>${item.time}</td>
-								<td>10</td>
 							</tr>
 						</c:forEach>
 

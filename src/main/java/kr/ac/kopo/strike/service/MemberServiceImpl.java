@@ -90,4 +90,14 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public void deleteClan(int member_code) {
+		dao.deleteClan(member_code);
+	}
+
+	@Override
+	public void deleteMember(int member_code) {
+		dao.deleteMember(member_code);
+	}
+
 }

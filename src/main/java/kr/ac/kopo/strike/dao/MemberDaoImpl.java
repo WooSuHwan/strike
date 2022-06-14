@@ -34,11 +34,21 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public void delete(int member_code) {
-		sql.delete("member.delete", member_code);
+		sql.update("member.delete", member_code);
 	}
 
 	@Override
 	public Member mypage(Member item) {
 		return sql.selectOne("member.mypage", item);
+	}
+
+	@Override
+	public void deleteClan(int member_code) {
+		sql.update("member.deleteClan", member_code);
+	}
+
+	@Override
+	public void deleteMember(int member_code) {
+		sql.update("member.deleteMember", member_code);
 	}
 }

@@ -1,7 +1,10 @@
 package kr.ac.kopo.strike.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.ClanGame;
@@ -92,16 +96,42 @@ public class MypageController {
 		
 		return "redirect:/mypage/mypage/{member_code}";
 	}
-	
-	@RequestMapping("/delete")
-	public String delete(Member item,Model model) {
-		return path + "delete";
+	// 클랜 삭제
+	@GetMapping("/deleteClan")
+	public String deleteClan() {
+		
+		return path + "deleteClan";
 	}
 	
-	@GetMapping("/delete/{member_code}")
-	public String delete(@PathVariable int member_code) {
-		memberService.delete(member_code);
-		return "redirect:../index";
+	@GetMapping("deleteClan/{member_code}")
+	public String deleteClan(@PathVariable int member_code) {
+		
+		memberService.deleteClan(member_code);
+		
+		return "redirect:/";
+	}
+	
+	// 멤버 삭제
+	@GetMapping("/deleteMember")
+	public String deleteMember() {
+		
+		return path + "deleteMember";
+	}
+	
+	@GetMapping("/deleteMember/{member_code}")
+	public String deleteMember(@PathVariable int member_code, @SessionAttribute Member member, HttpServletResponse response) throws IOException {
+		
+		if(member.getState() == 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('회원탈퇴가 완료되었습니다'); </script>");
+			out.println("<script>location.href='list';</script>");
+			out.flush();
+			
+			memberService.deleteMember(member_code);
+		} 
+			
+		return "redirect:/";
 	}
 	
 	@GetMapping("/gameDetail/{member_code}")
@@ -124,7 +154,7 @@ public class MypageController {
 	}
 	
 	@GetMapping("/mypageRecord/{member_code}")
-	public String mypageRecord(@PathVariable int member_code, Model model, Pager pager) {
+	public String mypageRecord(@PathVariable int member_code, Model model) {
 		
 		List<GameRecord> mypageRecord = franchiseeService.mypageRecord();
 		

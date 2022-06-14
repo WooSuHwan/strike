@@ -12,8 +12,12 @@ public interface MemberService {
 
 	void update(Member item);
 
+	Member mypage(Member item);
+
 	void delete(int member_code);
 
-	Member mypage(Member item);
+	void deleteClan(int member_code);
+
+	void deleteMember(int member_code);
 
 }
