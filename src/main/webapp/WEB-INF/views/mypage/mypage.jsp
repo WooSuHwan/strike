@@ -134,34 +134,36 @@
                             <tbody>
                                 <tr>
                                     <td class="tableColor">아이디 </td>
-                                    <td class="tableInput">${sessionScope.member.id }</td>
+                                    <td class="tableInput"><p>${sessionScope.member.id }</p></td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">이름</td>
-                                    <td class="tableInput">${sessionScope.member.name }</td>
+                                    <td class="tableInput"><p>${sessionScope.member.name }</p></td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">휴대전화</td>
-                                    <td class="tableInput">${sessionScope.member.tel }</td>
+                                    <td class="tableInput"><p>${sessionScope.member.tel }</p></td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">생년월일</td>
-                                    <td class="tableInput">${sessionScope.member.birth }</td>
+                                    <td class="tableInput"><p>${sessionScope.member.birth }</p></td>
                                 </tr>
                                 <tr>
                                     <td class="tableColor">성별</td>
                                     <td class="tableInput" style="border-bottom: none;">
-                                     <c:choose>
-								       <c:when test = "${Mitem.sex == 0}">
-								          남자
-								       </c:when>
-								       <c:when test = "${Mitem.sex == 1}">
-								          여자
-								       </c:when>
-								       <c:otherwise>
-								          성별이 등록되지 않았습니다.
-								       </c:otherwise>
-								    </c:choose>
+	                                    <p>
+	                                     	<c:choose>
+									       		<c:when test = "${Mitem.sex == 0}">
+									          남자
+									       	</c:when>
+									       	<c:when test = "${Mitem.sex == 1}">
+									          여자
+									       	</c:when>
+									       	<c:otherwise>
+									          성별이 등록되지 않았습니다.
+									       </c:otherwise>
+									    </c:choose>
+									    </p>
                                     </td>
                                 </tr>
                             </tbody>

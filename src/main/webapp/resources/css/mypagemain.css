@@ -228,7 +228,6 @@ td,th {
     width: 80%;
     height: 60em;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 }
@@ -277,9 +276,34 @@ td,th {
     margin-top: 1.3em;
     background-color: #434343;
     width: 60%;
-    height: 4.5em;
+    height: 5.5em;
     margin-top: 5em;
     border-radius: 0.6em;
+}
+
+.fofo01{
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.tableInput>input{
+	outline: none;
+	border: none;
+	font-family: 'S-CoreDream-6Bold';
+	margin-left: 2.4em;
+}
+
+.loginBtn>a>button{
+	border-radius: 0.6em;
+	font-size:1em;
+	font-family: 'S-CoreDream-6Bold';
+	color:#fff;
+	background-color: #434343;
+	border: none;
+	width: 100%;
+	height: 100%;
 }
 
 .loginBtn a{
@@ -342,8 +366,8 @@ td,th {
     background-color: #fff;
     display: flex;
     width: 100%;
-    height: 40em;
-    margin-top: 0.5em;
+    height: auto;
+    margin-top: 1.5em;
 
 }
 
@@ -359,7 +383,7 @@ td,th {
 .tableColor{
     padding-left: 1.5em;
     background-color: #f1f1f1;
-    width: 28%;
+    width: 26%;
     border-right: 1px solid #c6c6c6;
 }
 
@@ -378,7 +402,8 @@ tbody>tr>td{
     justify-content: center;
     height: 100%;
     border-bottom: 1px solid #c6c6c6;
-    text-align: center;
+    line-height: 100px;
+/*     text-align: center; */
 }
 
 .tableInput>span{
@@ -442,4 +467,12 @@ tbody>tr>td{
 
 .nt {
     color: #f6cd00;
+}
+
+.tableInput>p{
+	margin-left: 2em;
+}
+
+.tableInput>input{
+	line-height: 100px;
 }

@@ -18,7 +18,6 @@
 <body>
 	<jsp:include page="../font.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<jsp:include page="../rnav.jsp"></jsp:include>
 	
 	<section>
         <div class="clanAll">
@@ -48,28 +47,26 @@
                 <div class="freeB01_03">
                     <p><span>Total :</span> 22</p>
                 </div>
-                <div class="freeB01_04">
+				<form method="get" id="search" class="freeB01_04">
                     <div class="freeB01_04_01">
-                        <select name="board">
-                            <option value="선택" selected="selected">선택</option>
-                            <option value="전체">전체</option>
-                            <option value="제목">제목</option>
-                            <option value="작성자">작성자</option>
-                            <option value="작성일">작성일</option>
+                        <select name="search">
+                            <option value="1">제목</option>
+                            <option value="2">작성자</option>
+                            <option value="3">작성일</option>
                         </select>
                     </div>
-					<form method="get" id="search" class="freeB01_04_02">
+                    <div class="freeB01_04_02">
 						<div class="freeB01_04_02_01">
 							<p>search</p>
 						</div>
 						<div class="freeB01_04_02_02">
-							<input type="text" name="fsearch">
+							<input type="text" name="keyword">
 						</div>
-						<button class="rjator">
+						<button class="rjator" type="submit">
 							<img src="/resources/img/premium1.png" height="65%" alt="돋보기">
 						</button>
-					</form>
-				</div>
+					</div>
+				</form>
             </div>
 
             <div class="freeB03">
@@ -123,12 +120,8 @@
 						data-page="1">처음 페이지</a> <a
 						href="?page=${pager.prev }&${pager.query}" class="link arrow prev"
 						data-page="1">이전 페이지</a>
-					<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
-					<!--                         <span class="now">1</span>/ 8 -->
-					<!--                     </span> -->
 					<c:forEach var="page" items="${pager.list}">
-						<a href="?page=${page}&${pager.query}"
-							class="link now${page == pager.page ? '': 'active' }">${page}</a>
+						<a href="?page=${page}&${pager.query}" class="link now${page == pager.page ? '': 'active' }">${page}</a>
 					</c:forEach>
 					<a href="?page=${pager.next }&${pager.query}"
 						class="pagebtn link arrow next" data-page="9">다음 페이지</a> <a

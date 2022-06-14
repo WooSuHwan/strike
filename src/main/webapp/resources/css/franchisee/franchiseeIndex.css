@@ -85,6 +85,11 @@ a {
     font-size: 20px;
 }
 
+.clanrankSearch_01{
+	font-family: 'S-CoreDream-6Bold';
+	color: #fff;
+}
+
 .link{
     display: flex;
     width: 15em;
