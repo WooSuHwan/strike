@@ -97,6 +97,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <c:if test="${mypageFreeList.size() < 1}">
+							<tr>
+								<td colspan="5">등록 된 게시글이 없습니다.</td>
+							</tr>
+						</c:if>
                         <c:forEach items="${mypageFreeList}" var="item" varStatus="status">
                         <c:if test="${item.member_code == sessionScope.member.member_code}">
                             <tr>

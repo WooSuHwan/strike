@@ -90,6 +90,13 @@
                 </div>
                 <div class="detailsTable">
                     <table class="tableOrginel">
+                    	<colgroup>
+							<col style="width: 20%;">
+							<col style="width: 20%;">
+							<col style="width: 8%;">
+							<col style="width: 10%;">
+							<col style="width: 10%;">
+						</colgroup>
                         <thead>
                             <tr>
                                 <th>위치</th>
@@ -100,6 +107,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <c:if test="${mypageGame.size() < 1}">
+							<tr>
+								<td colspan="5">등록 된 개인 대결이 없습니다</td>
+							</tr>
+						</c:if>
                         <c:forEach items="${mypageGame}" var="item" varStatus="status">
                         <c:if test="${item.member_code == sessionScope.member.member_code}">
                             <tr>
