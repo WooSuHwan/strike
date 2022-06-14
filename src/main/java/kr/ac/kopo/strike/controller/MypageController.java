@@ -113,9 +113,9 @@ public class MypageController {
 	}
 	
 	@GetMapping("/gameDetail/{member_code}")
-	public String gameDetail(@PathVariable int member_code, Model model, Pager pager) {
+	public String gameDetail(@PathVariable int member_code, Model model) {
 		
-		List<Game> mypageGame =  gameService.mypageGame(pager);
+		List<Game> mypageGame =  gameService.mypageGame();
 		model.addAttribute("mypageGame", mypageGame);
 		
 		return path + "gameDetail";

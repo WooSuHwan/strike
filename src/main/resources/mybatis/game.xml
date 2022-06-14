@@ -80,11 +80,7 @@
 	</select>
 
 	<select id="mypageGame" resultType="Game">
-	SELECT * FROM 
-		(SELECT ROWNUM rnum, sub.* FROM
-			(<include refid="search"></include>) sub)
-		<![CDATA[ 
- 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
+	SELECT * FROM game 
 	</select>
 	
 	<select id="admitChallenger" resultType="Challenger">
