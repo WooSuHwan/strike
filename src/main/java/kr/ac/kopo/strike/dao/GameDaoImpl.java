@@ -103,8 +103,8 @@ public class GameDaoImpl implements GameDao {
 	}
 
 	@Override
-	public List<Game> mypageGame(Pager pager) {
-		return sql.selectList("game.mypageGame", pager);
+	public List<Game> mypageGame() {
+		return sql.selectList("game.mypageGame");
 	}
 
 	@Override
