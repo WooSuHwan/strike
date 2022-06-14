@@ -23,6 +23,7 @@ import kr.ac.kopo.strike.model.Member;
 import kr.ac.kopo.strike.service.ClanGameService;
 import kr.ac.kopo.strike.service.GameService;
 import kr.ac.kopo.strike.util.AES256Util;
+import kr.ac.kopo.strike.util.Pager;
 import kr.ac.kopo.strike.util.SHA256Util;
 
 @Controller
@@ -40,9 +41,9 @@ public class ClanGameController {
 	GameService gameService;
 	
 	@GetMapping("list")
-	public String list(Model model) {
+	public String list(Model model, Pager pager) {
 		
-		List<ClanGame> list = service.list();
+		List<ClanGame> list = service.list(pager);
 		
 		model.addAttribute("list", list);
 		

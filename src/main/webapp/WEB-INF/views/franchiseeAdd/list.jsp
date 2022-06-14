@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,7 +80,7 @@
 						<div class="zmffos">
 							<p style="margin-right: 1em;">search</p>
 							<div class="clanrankSearch_02_01">
-								<input type="text" name="keyword" placeholder="제목을 입력해 주세요">
+								<input type="text" name="keyword" placeholder="가맹지점명을 입력해 주세요">
 								<button class="clanrankSearch_02_02" type="submit">
 									<img src="/resources/img/premium.png" alt="돋보기" width="55%">
 								</button>
@@ -109,16 +110,13 @@
 						<col style="width: 10%;">
 						<col style="width: 35%;">
 						<col style="width: 35%;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
+						<col style="width: 30%;">
 					</colgroup>
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th>이름</th>
+							<th>가맹지점명</th>
 							<th>주소</th>
-							<th>전화번호</th>
 							<th>작성일</th>
 						</tr>
 					</thead>
@@ -133,8 +131,7 @@
 								<td>${pager.offset + status.count}</td>
 								<td><a style="color: #000;" href="view/${item.franchisee_suggest_code}">${item.name}</a></td>
 								<td>${item.address}</td>
-								<td>${item.tel}</td>
-								<td>${item.time}</td>
+								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
 							</tr>
 						</c:forEach>
 
@@ -152,9 +149,6 @@
 						data-page="1">처음 페이지</a> <a
 						href="?page=${pager.prev }&${pager.query}" class="link arrow prev"
 						data-page="1">이전 페이지</a>
-					<!--                     <span class="link mobile" data-page="1" data-end="10"> -->
-					<!--                         <span class="now">1</span>/ 8 -->
-					<!--                     </span> -->
 					<c:forEach var="page" items="${pager.list}">
 						<a href="?page=${page}&${pager.query}"
 							class="link now${page == pager.page ? '': 'active' }">${page}</a>

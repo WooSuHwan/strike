@@ -43,11 +43,10 @@ $(function() { // 입장과 동시에 실행
 })
 </script>
 
+	<jsp:include page="../font.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="../font.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<jsp:include page="../rnav.jsp"></jsp:include>
 
 	<div class="mypageNav"></div>
 	<section>
@@ -69,7 +68,15 @@ $(function() { // 입장과 동시에 실행
 						<label>이름</label> <input type="text" name="name">
 					</div>
 					<div class="vspost_02_01">
-						<label>주소</label> <input type="text" name="address">
+						<label>주소</label> 
+						<div class="tableInput_01">
+                                  <input type="text" style="width: 23%;" name="postcode" id="postcode"  placeholder="우편번호" readonly>
+                                  <button type="button" class="tableBtn0" onclick="execDaumPostcode()">우편번호</button>
+                              </div>
+                              <div class="tableInput_02">
+                                  <input type="text" style="margin-left: 1.5em;" class="tableBtn1" name="address" id="address" placeholder="도로명 주소" readonly />
+                                  <input type="text" style="margin-left: 0.7em;" name="detailAddress" placeholder="상세 주소" required />
+                  			</div>
 					</div>
 					<div class="vspost_02_01">
 						<label>전화번호</label> <input type="text" name="tel">
@@ -84,6 +91,9 @@ $(function() { // 입장과 동시에 실행
 
 		<div class="wh"></div>
 	</section>
+	 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>  
+	 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
 	<jsp:include page="../footer.jsp"></jsp:include>
 	<script src="../resources/js/index.js"></script>
 </body>

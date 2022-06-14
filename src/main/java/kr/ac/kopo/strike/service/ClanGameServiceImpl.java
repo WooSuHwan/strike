@@ -18,8 +18,13 @@ public class ClanGameServiceImpl implements ClanGameService {
 	ClanGameDao dao;
 
 	@Override
-	public List<ClanGame> list() {
-		return dao.list();
+	public List<ClanGame> list(Pager pager) {
+
+		int total = dao.total(pager);
+
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override

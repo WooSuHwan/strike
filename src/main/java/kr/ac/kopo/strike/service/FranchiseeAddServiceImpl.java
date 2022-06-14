@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.strike.dao.FranchiseeAddDao;
 import kr.ac.kopo.strike.model.FranchiseeAdd;
+import kr.ac.kopo.strike.util.Pager;
 
 @Service
 public class FranchiseeAddServiceImpl implements FranchiseeAddService {
@@ -15,8 +16,13 @@ public class FranchiseeAddServiceImpl implements FranchiseeAddService {
 	FranchiseeAddDao dao;
 	
 	@Override
-	public List<FranchiseeAdd> list() {
-		return dao.list();
+	public List<FranchiseeAdd> list(Pager pager) {
+
+		int total = dao.total(pager);
+
+		pager.setTotal(total);
+		
+		return dao.list(pager);
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.FranchiseeAdd;
+import kr.ac.kopo.strike.util.Pager;
 
 @Repository
 public class FranchiseeAddDaoImpl implements FranchiseeAddDao {
@@ -15,8 +16,8 @@ public class FranchiseeAddDaoImpl implements FranchiseeAddDao {
 	SqlSession sql;
 	
 	@Override
-	public List<FranchiseeAdd> list() {
-		return sql.selectList("franchiseeAdd.list");
+	public List<FranchiseeAdd> list(Pager pager) {
+		return sql.selectList("franchiseeAdd.list",pager);
 	}
 
 	@Override
@@ -27,6 +28,11 @@ public class FranchiseeAddDaoImpl implements FranchiseeAddDao {
 	@Override
 	public FranchiseeAdd item(int franchisee_suggest_code) {
 		return sql.selectOne("franchiseeAdd.item", franchisee_suggest_code);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("franchiseeAdd.total", pager);
 	}
 
 }

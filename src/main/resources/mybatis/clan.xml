@@ -20,6 +20,7 @@
 		sub)
 		<![CDATA[ 
 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
+		ORDER BY clan_score DESC
 	</select>
 
 	<insert id="add">

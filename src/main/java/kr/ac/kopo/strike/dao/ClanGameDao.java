@@ -9,7 +9,7 @@ import kr.ac.kopo.strike.util.Pager;
 
 public interface ClanGameDao {
 
-	List<ClanGame> list();
+	List<ClanGame> list(Pager pager);
 
 	void add(ClanGame clanGame);
 
@@ -34,4 +34,6 @@ public interface ClanGameDao {
 	int compare(int clan_game_code, int member_code);
 	
 	List<ClanGame> mypageClanGame(Pager pager);
+
+	int total(Pager pager);
 }

@@ -1,19 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>STRIKE</title>
 <link rel="stylesheet" href="/resources/css/font.css">
 <link rel="stylesheet" href="/resources/css/personaldetails.css">
 <link rel="stylesheet" href="/resources/css/index.css">
+    <jsp:include page="../font.jsp"></jsp:include>
 
 </head>
 <body>
-    <jsp:include page="../font.jsp"></jsp:include>
     <jsp:include page="../nav.jsp"></jsp:include>
-    <jsp:include page="../rnav.jsp"></jsp:include>
 <section>
         <div class="clanAll">
             <div class="clanrankSearch">
@@ -57,10 +55,8 @@
                         </div>
                         <div class="vspost_02_date">
                             <div class="vspost_02_date01">
-                                <p>${item.time}</p>
-                            </div>
-                            <div class="vspost_02_date02">
-                                <p>조회 56</p>
+                                <p><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></p>
+<%--                                 <p>${item.time }</p> --%>
                             </div>
                         </div>
                     </div>
@@ -72,10 +68,11 @@
                             <p>주소 : ${item.address}</p>
                         </div>
                         <div class="vpostCo01">
-                            <p>전화번호 : ${item.tel}명</p>
+                            <p>전화번호 : ${item.tel}</p>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         <div class="wh"></div>
     </section>        

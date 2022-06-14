@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.ac.kopo.strike.model.Clan;
 import kr.ac.kopo.strike.model.FranchiseeAdd;
 import kr.ac.kopo.strike.service.FranchiseeAddService;
+import kr.ac.kopo.strike.util.Pager;
 
 @Controller
 @RequestMapping("/franchiseeAdd")
@@ -23,9 +24,9 @@ public class FranchiseeAddController {
 	FranchiseeAddService service;
 	
 	@GetMapping("/list")
-	public String list(Model model) {
+	public String list(Model model, Pager pager) {
 		
-		List<FranchiseeAdd> list = service.list();
+		List<FranchiseeAdd> list = service.list(pager);
 		
 		model.addAttribute("list", list);
 		

@@ -33,7 +33,7 @@ public class FranchiseeController {
 		
 		service.add(franchisee);
 		
-		return "redirect:..";
+		return "redirect:/franchisee";
 	}
 	
 	@ResponseBody

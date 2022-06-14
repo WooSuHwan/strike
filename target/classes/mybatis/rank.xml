@@ -17,7 +17,7 @@
 			(<include refid="search"></include>) sub)
 		<![CDATA[ 
 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
-		ORDER BY score
+		ORDER BY score DESC
 	</select>
 	
 <!-- 	index 순위출력 list -->

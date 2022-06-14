@@ -9,7 +9,7 @@ import kr.ac.kopo.strike.util.Pager;
 
 public interface ClanGameService {
 
-	List<ClanGame> list();
+	List<ClanGame> list(Pager pager);
 
 	void add(ClanGame clanGame);
 

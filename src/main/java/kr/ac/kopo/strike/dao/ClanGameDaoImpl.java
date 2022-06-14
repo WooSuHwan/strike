@@ -19,8 +19,8 @@ public class ClanGameDaoImpl implements ClanGameDao {
 	SqlSession sql;
 	
 	@Override
-	public List<ClanGame> list() {
-		return sql.selectList("clanGame.list");
+	public List<ClanGame> list(Pager pager) {
+		return sql.selectList("clanGame.list", pager);
 	}
 
 	@Override
@@ -117,5 +117,10 @@ public class ClanGameDaoImpl implements ClanGameDao {
 	@Override
 	public List<ClanGame> mypageClanGame(Pager pager) {
 		return sql.selectList("clanGame.mypageClanGame", pager);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("clanGame.total", pager);
 	}
 }

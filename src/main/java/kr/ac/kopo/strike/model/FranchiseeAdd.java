@@ -1,17 +1,19 @@
 package kr.ac.kopo.strike.model;
 
+import java.util.Date;
+
 public class FranchiseeAdd {
 	private int franchisee_suggest_code;
 	private String name;
 	private String address;
 	private String tel;
-	private String time;
+	private Date time;
 
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
 
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 
