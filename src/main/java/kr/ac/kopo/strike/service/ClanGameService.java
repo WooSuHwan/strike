@@ -31,7 +31,9 @@ public interface ClanGameService {
 
 	int compare(int clan_game_code, int member_code);
 	
-	List<ClanGame> mypageClanGame(Pager pager);
+	List<ClanGame> mypageClanGame();
 
 	boolean confirm(String loc);
+
+	List<ClanGame> mypageClanGameDetailVS();
 }

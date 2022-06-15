@@ -87,12 +87,12 @@
                 </div>
                 <div class="detailsTitle">
                 <a href="../clanGameDetail/${sessionScope.member.member_code}">
-                	<div class="titleDiv TD">
+                	<div class="titleDiv">
                 		클랜 대결 모집 내역
                 	</div>
                 </a>
                 <a href="../mypageClanGameDetailVS/${sessionScope.member.member_code}">
-                	<div class="titleDiv">
+                	<div class="titleDiv TD">
                 		클랜 대결 신청 내역
                 	</div>
                 </a>
@@ -117,8 +117,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${mypageClanGame}" var="item" varStatus="status">
-                        <c:if test="${item.member_code == sessionScope.member.member_code}">
+                        <c:forEach items="${mypageClanGameDetailVS}" var="item" varStatus="status">
+<%--                         <c:if test="${item.member_code == sessionScope.member.member_code}"> --%>
                         	<tr>
                                 <td>${item.loc}</td>
 								<td>${item.title}</td>
@@ -126,7 +126,7 @@
 								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
                                 <td><a href="/clanGame/view/${item.clan_game_code}" class="tableButton">상세보기</a></td>
 							</tr>
-                        </c:if>
+<%--                         </c:if> --%>
                         </c:forEach>
                         </tbody>
                     </table>
