@@ -61,22 +61,8 @@ public class MypageController {
 	@GetMapping("/mypage/{member_code}")
 	public String mypage(Member item, Model model, HttpSession session, @PathVariable int member_code) {
 		
-//		Member member = new Member();
-//		member.setMember_code((Integer) session.getAttribute("code"));
-//		model.addAttribute("member", member);
-		
 		Member Mitem = memberService.mypage(item);
 		model.addAttribute("Mitem", Mitem);
-		
-		//유저 아이디가 admin이면 사원 목록으로 가고
-		//admin이 아니면 로그인한 사원 개인 페이지로 간다
-//		if("4".equals(item.getMember_code())) {
-//			return path + "mypage";
-//		} else {
-//			return "redirect:/login/login";
-//		}
-//		
-//		System.out.println(item.getName()+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		
 		return path + "mypage";
 	}
