@@ -86,7 +86,7 @@
 	<select id="mypageGameDetailVS" resultType="Game">
 		SELECT g.*, c.* FROM game g
 		JOIN CHALLENGER c ON g.GAME_CODE = c.GAME_CODE
-		WHERE c.CHALLENGER_MEMBER_CODE = #{member_code} 
+		WHERE c.CHALLENGER_MEMBER_CODE = #{member_code} AND STATE is null OR STATE = 0
 	</select>
 	
 	<select id="mypageGameDetailOK" resultType="Game">
