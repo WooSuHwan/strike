@@ -48,22 +48,44 @@
 						</div>
 					</div>
 					<div class="navListDiv">
-						<div class="navListDivName">
-							<a href="../gameDetail/${sessionScope.member.member_code}">신청내역</a>
+						<div class="navListDivName nt">
+							<a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전
+								목록</a>
 						</div>
 						<div class="navListDivImg">
 							<img src="/resources/img/right.png" alt="">
 						</div>
 					</div>
-					                <div class="navListDiv">
-                    <div class="navListDivName"><a href="../mypageFreeList/${sessionScope.member.member_code}">내가 쓴 글</a></div>
-                    <div class="navListDivImg">
-                        <img src="/resources/img/right.png" alt="">
-                    </div>
-                </div>
 					<div class="navListDiv">
 						<div class="navListDivName">
-							<a href="../delete">회원탈퇴</a>
+							<a
+								href="/mypage/clanGameDetail/${sessionScope.member.member_code}">클랜전
+								목록</a>
+						</div>
+						<div class="navListDivImg">
+							<img src="/resources/img/right.png" alt="">
+						</div>
+					</div>
+					<div class="navListDiv">
+						<div class="navListDivName">
+							<a href="../mypageFreeList/${sessionScope.member.member_code}">내가
+								쓴 글</a>
+						</div>
+						<div class="navListDivImg">
+							<img src="/resources/img/right.png" alt="">
+						</div>
+					</div>
+					<div class="navListDiv">
+						<div class="navListDivName">
+							<a href="../deleteClan">클랜탈퇴</a>
+						</div>
+						<div class="navListDivImg">
+							<img src="/resources/img/right.png" alt="">
+						</div>
+					</div>
+					<div class="navListDiv">
+						<div class="navListDivName">
+							<a href="../deleteMember">회원탈퇴</a>
 						</div>
 						<div class="navListDivImg">
 							<img src="/resources/img/right.png" alt="">
@@ -171,80 +193,82 @@
 						</div>
 					</c:if>
 
-					<c:if test="${item.draw == 1 and item.maker_code == sessionScope.member.member_code}">
-							<div class="recordMainList rankRulstBackDraw">
-								<div class="listLine">
-									<div class="listLineDate">
-										<fmt:formatDate value="${item.time_end}" type="date"
-											pattern="YYYY.MM.dd" />
-									</div>
-									<div class="listLineName">개인전</div>
+					<c:if
+						test="${item.draw == 1 and item.maker_code == sessionScope.member.member_code}">
+						<div class="recordMainList rankRulstBackDraw">
+							<div class="listLine">
+								<div class="listLineDate">
+									<fmt:formatDate value="${item.time_end}" type="date"
+										pattern="YYYY.MM.dd" />
 								</div>
-
-								<div class="winOrLose">win or lose</div>
-
-								<div class="listScore">
-									<c:if
-										test="${item.maker_code == sessionScope.member.member_code }">
-										<div>${item.name}</div>
-										<div class="WOL">
-											<div>
-												<div class="draw">무승부</div>
-											</div>
-										</div>
-										<div>${item.challenger_name}</div>
-									</c:if>
-
-									<c:if
-										test="${item.challenger_code == sessionScope.member.member_code }">
-										<div>${item.challenger_name}</div>
-										<div class="WOL">
-											<div>
-												<div class="draw">무승부</div>
-											</div>
-										</div>
-										<div>${item.name}</div>
-									</c:if>
-								</div>
+								<div class="listLineName">개인전</div>
 							</div>
+
+							<div class="winOrLose">win or lose</div>
+
+							<div class="listScore">
+								<c:if
+									test="${item.maker_code == sessionScope.member.member_code }">
+									<div>${item.name}</div>
+									<div class="WOL">
+										<div>
+											<div class="draw">무승부</div>
+										</div>
+									</div>
+									<div>${item.challenger_name}</div>
+								</c:if>
+
+								<c:if
+									test="${item.challenger_code == sessionScope.member.member_code }">
+									<div>${item.challenger_name}</div>
+									<div class="WOL">
+										<div>
+											<div class="draw">무승부</div>
+										</div>
+									</div>
+									<div>${item.name}</div>
+								</c:if>
+							</div>
+						</div>
 					</c:if>
-						<c:if test="${item.draw == 1 and item.challenger_code == sessionScope.member.member_code}">
-							<div class="recordMainList rankRulstBackDraw">
-								<div class="listLine">
-									<div class="listLineDate">
-										<fmt:formatDate value="${item.time_end}" type="date"
-											pattern="YYYY.MM.dd" />
-									</div>
-									<div class="listLineName">개인전</div>
+					<c:if
+						test="${item.draw == 1 and item.challenger_code == sessionScope.member.member_code}">
+						<div class="recordMainList rankRulstBackDraw">
+							<div class="listLine">
+								<div class="listLineDate">
+									<fmt:formatDate value="${item.time_end}" type="date"
+										pattern="YYYY.MM.dd" />
 								</div>
-
-								<div class="winOrLose">win or lose</div>
-
-								<div class="listScore">
-									<c:if
-										test="${item.maker_code == sessionScope.member.member_code }">
-										<div>${item.name}</div>
-										<div class="WOL">
-											<div>
-												<div class="draw">무승부</div>
-											</div>
-										</div>
-										<div>${item.challenger_name}</div>
-									</c:if>
-
-									<c:if
-										test="${item.challenger_code == sessionScope.member.member_code }">
-										<div>${item.challenger_name}</div>
-										<div class="WOL">
-											<div>
-												<div class="draw">무승부</div>
-											</div>
-										</div>
-										<div>${item.name}</div>
-									</c:if>
-								</div>
+								<div class="listLineName">개인전</div>
 							</div>
-						</c:if>
+
+							<div class="winOrLose">win or lose</div>
+
+							<div class="listScore">
+								<c:if
+									test="${item.maker_code == sessionScope.member.member_code }">
+									<div>${item.name}</div>
+									<div class="WOL">
+										<div>
+											<div class="draw">무승부</div>
+										</div>
+									</div>
+									<div>${item.challenger_name}</div>
+								</c:if>
+
+								<c:if
+									test="${item.challenger_code == sessionScope.member.member_code }">
+									<div>${item.challenger_name}</div>
+									<div class="WOL">
+										<div>
+											<div class="draw">무승부</div>
+										</div>
+									</div>
+									<div>${item.name}</div>
+								</c:if>
+							</div>
+						</div>
+					</c:if>
 				</c:forEach>
 			</div>
 		</div>

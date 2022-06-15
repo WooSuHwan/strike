@@ -70,7 +70,7 @@
 					<tbody>
 						<c:forEach items="${list}" var="item" varStatus="status">
 							<tr>
-								<td>${pager.offset + status.count}</td>
+								<td>${pagerMember.offset + status.count}</td>
 								<td>${item.name}</td>
 								<td>${item.record}</td>
 								<td>${item.win}</td>
@@ -86,28 +86,22 @@
 				<div class="paginate">
 					<a href="?page=1" class="pagebtn link arrow start prev"
 						data-page="1">처음 페이지</a> <a
-						href="?page=${pager.prev }&${pager.query}" class="link arrow prev"
+						href="?page=${pagerMember.prev }&${pagerMember.query}" class="link arrow prev"
 						data-page="1">이전 페이지</a>
-					<c:forEach var="page" items="${pager.list}">
-						<a href="?page=${page}&${pager.query}"
-							class="link now${page == pager.page ? '': 'active' }">${page}</a>
+					<c:forEach var="page" items="${pagerMember.list}">
+						<a href="?page=${page}&${pagerMember.query}"
+							class="link now${page == pagerMember.page ? '': 'active' }">${page}</a>
 					</c:forEach>
-					<a href="?page=${pager.next }&${pager.query}"
+					<a href="?page=${pagerMember.next }&${pagerMember.query}"
 						class="pagebtn link arrow next" data-page="9">다음 페이지</a> <a
-						href="?page=${pager.last}" class="pagebtn link arrow last next"
+						href="?page=${pagerMember.last}" class="pagebtn link arrow last next"
 						data-page="66">Next</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="wh"></div>
-		<footer w3-include-html="footer.html"></footer>
 	</section>
-
-	<!-- script -->
-	<script>
-		w3.includeHTML();
-	</script>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
 	<script src="/resources/js/index.js"></script>

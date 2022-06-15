@@ -40,14 +40,18 @@
                         <img src="/resources/img/right.png" alt="">
                     </div>
                 </div>
-					<div class="navListDiv">
-						<div class="navListDivName">
-							<a href="../gameDetail/${sessionScope.member.member_code}">신청내역</a>
-						</div>
-						<div class="navListDivImg">
-							<img src="/resources/img/right.png" alt="">
-						</div>
-					</div>
+<div class="navListDiv">
+                    <div class="navListDivName nt"><a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전 목록</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="/mypage/clanGameDetail/${sessionScope.member.member_code}">클랜전 목록</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
                                 <div class="navListDiv">
                     <div class="navListDivName nt">내가 쓴 글</div>
                     <div class="navListDivImg">
@@ -55,7 +59,13 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="../delete">회원탈퇴</a></div>
+                    <div class="navListDivName"><a href="../deleteClan">클랜탈퇴</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../deleteMember">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -97,11 +107,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:if test="${mypageFreeList.size() < 1}">
-							<tr>
-								<td colspan="5">등록 된 게시글이 없습니다.</td>
-							</tr>
-						</c:if>
                         <c:forEach items="${mypageFreeList}" var="item" varStatus="status">
                         <c:if test="${item.member_code == sessionScope.member.member_code}">
                             <tr>

@@ -83,6 +83,18 @@
 	SELECT * FROM game 
 	</select>
 	
+	<select id="mypageGameDetailVS" resultType="Game">
+		SELECT g.*, c.* FROM game g
+		JOIN CHALLENGER c ON g.GAME_CODE = c.GAME_CODE
+		WHERE c.CHALLENGER_MEMBER_CODE = #{member_code} 
+	</select>
+	
+	<select id="mypageGameDetailOK" resultType="Game">
+		SELECT g.*, c.* FROM game g
+		JOIN CHALLENGER c ON g.GAME_CODE = c.GAME_CODE
+		WHERE c.CHALLENGER_MEMBER_CODE = #{member_code} AND STATE = 1
+	</select>
+	
 	<select id="admitChallenger" resultType="Challenger">
 		SELECT c.*, m.* 
 		FROM challenger c, member m
@@ -111,5 +123,9 @@
 		select count(*)
 		from game
 		where game_code = #{game_code} and member_code = #{member_code}
+	</select>
+	
+	<select id="locCount" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM franchisee WHERE address = #{loc}
 	</select>
 </mapper>

@@ -40,8 +40,14 @@
                         <img src="/resources/img/right.png" alt="">
                     </div>
                 </div>
+				<div class="navListDiv">
+                    <div class="navListDivName nt">개인전 목록</div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
                 <div class="navListDiv">
-                    <div class="navListDivName nt">신청내역</div>
+                    <div class="navListDivName"><a href="/mypage/clanGameDetail/${sessionScope.member.member_code}">클랜전 목록</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -53,7 +59,13 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="../delete">회원탈퇴</a></div>
+                    <div class="navListDivName"><a href="../deleteClan">클랜탈퇴</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../deleteMember">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -71,17 +83,22 @@
             </div>
             <div class="mypageDetails">
                 <div class="detailsTitle">
-                    경기 신청내역
+                    개인전 경기 내역
                 </div>
                 <div class="detailsTitle">
                 <a href="../gameDetail/${sessionScope.member.member_code}">
                 	<div class="titleDiv TD">
+                		개인 대결 모집 내역
+                	</div>
+                </a>
+                <a href="../mypageGameDetailVS/${sessionScope.member.member_code}">
+                	<div class="titleDiv">
                 		개인 대결 신청 내역
                 	</div>
                 </a>
-                <a href="../clanGameDetail/${sessionScope.member.member_code}">
+                <a href="../mypageGameDetailOK/${sessionScope.member.member_code}">
                 	<div class="titleDiv">
-                		클랜 대결 신청 내역
+                		개인 대결 승인완료 내역
                 	</div>
                 </a>
                 </div>
@@ -90,13 +107,6 @@
                 </div>
                 <div class="detailsTable">
                     <table class="tableOrginel">
-                    	<colgroup>
-							<col style="width: 20%;">
-							<col style="width: 20%;">
-							<col style="width: 8%;">
-							<col style="width: 10%;">
-							<col style="width: 10%;">
-						</colgroup>
                         <thead>
                             <tr>
                                 <th>위치</th>
@@ -107,11 +117,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:if test="${mypageGame.size() < 1}">
-							<tr>
-								<td colspan="5">등록 된 개인 대결이 없습니다</td>
-							</tr>
-						</c:if>
                         <c:forEach items="${mypageGame}" var="item" varStatus="status">
                         <c:if test="${item.member_code == sessionScope.member.member_code}">
                             <tr>

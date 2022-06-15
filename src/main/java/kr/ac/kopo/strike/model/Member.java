@@ -19,28 +19,30 @@ public class Member {
 	private int score;
 	private Date time;
 	private int grade;
-	private int stat;
+	private int state;
 	// 티어
 	private String tier; // 밑줄은 무시
 	// 승률
 	private float percent; // 밑줄은 무시
 
 	public float getPercent() {
-		
-		percent = (float)win / (float)record * 100;
-		
+
+		if (record == 0) {
+			percent = 0;
+		} else {
+			percent = (float)win / (float)record * 100;
+		}
+
 		return percent;
 	}
 
-	
-	public int getStat() {
-		return stat;
+	public int getState() {
+		return state;
 	}
 
-	public void setStat(int stat) {
-		this.stat = stat;
+	public void setState(int state) {
+		this.state = state;
 	}
-
 
 	private String clan_name;
 

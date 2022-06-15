@@ -28,6 +28,7 @@
 	</select>
 	
 	<select id="total" resultType="Integer">
-	SELECT COUNT(*) FROM member
+	SELECT COUNT(*) FROM 
+	(<include refid="search"></include>)
 	</select>
 </mapper>

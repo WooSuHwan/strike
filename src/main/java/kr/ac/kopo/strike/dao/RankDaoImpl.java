@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.strike.model.Member;
-import kr.ac.kopo.strike.util.Pager;
+import kr.ac.kopo.strike.util.PagerMember;
 
 @Repository
 public class RankDaoImpl implements RankDao {
@@ -16,8 +16,8 @@ public class RankDaoImpl implements RankDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Member> list(Pager pager) {
-		return sql.selectList("rank.list",pager);
+	public List<Member> list(PagerMember pagerMember) {
+		return sql.selectList("rank.list",pagerMember);
 	}
 
 	@Override
@@ -26,8 +26,8 @@ public class RankDaoImpl implements RankDao {
 	}
 
 	@Override
-	public int total(Pager pager) {
-		return sql.selectOne("rank.total", pager);
+	public int total(PagerMember pagerMember) {
+		return sql.selectOne("rank.total", pagerMember);
 	}
 
 }

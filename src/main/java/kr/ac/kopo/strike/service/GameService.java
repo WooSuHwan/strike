@@ -45,5 +45,11 @@ public interface GameService {
 	int confirm(int game_code, int member_code);
 
 	int compare(int game_code, int member_code);
+
+	List<Game> mypageGameDetailVS(int member_code);
+
+	List<Game> mypageGameDetailOK(int member_code);
+
+	boolean confirm(String loc);
 	
 }

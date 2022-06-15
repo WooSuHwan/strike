@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="clanGame">
-<sql id="search">
+	<sql id="search">
 		SELECT * FROM clan_game
 		<where>
 			<if test="keyword != null">
@@ -15,7 +15,9 @@
 	<select id="list" resultType="ClanGame">
 		select cg.*, c.*
 		from (SELECT ROWNUM rnum, sub.* FROM
-		(<include refid="search"></include>) sub) cg
+		(
+		<include refid="search"></include>)
+		sub) cg
 		JOIN clan c ON cg.clan_code = c.clan_code
 		<![CDATA[ 
 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
@@ -34,14 +36,16 @@
 		c.clan_lose, c.clan_draw, c.clan_rate, c.clan_score, c.time as
 		maker_time
 		from clan_game cg
-		join clan c on cg.clan_code = c.clan_code AND
+		join clan c on cg.clan_code = c.clan_code
+		AND
 		cg.clan_game_code = #{clan_game_code}
 	</select>
 
 	<select id="clanItem" resultType="Clan">
 		select *
 		from clan
-		where clan_code = #{clan_code}
+		where
+		clan_code = #{clan_code}
 	</select>
 
 	<select id="admitClanChallenger" resultType="ClanChallenger">
@@ -50,7 +54,8 @@
 		c.clan_record, c.clan_win, c.clan_lose, c.clan_draw, c.clan_rate,
 		c.clan_score, c.time as clan_time
 		from clan_challenger cc
-		join clan c on cc.clan_code = c.clan_code
+		join clan c on
+		cc.clan_code = c.clan_code
 		where cc.clan_game_code = #{clan_game_code}
 		and cc.state = 1
 	</select>
@@ -61,9 +66,11 @@
 		c.clan_win, c.clan_lose, c.clan_draw, c.clan_rate, c.clan_score,
 		c.time as clan_time
 		from clan_challenger cc
-		join clan c on cc.clan_code = c.clan_code
+		join clan c on cc.clan_code
+		= c.clan_code
 		where cc.clan_game_code = #{clan_game_code}
-		and state is null
+		and state is
+		null
 	</select>
 
 	<insert id="challenge">
@@ -112,9 +119,16 @@
 		clan_game cg
 		JOIN clan c ON cg.clan_code = c.clan_code
 	</select>
-	
-		<!-- pager -->
+
+	<!-- pager -->
 	<select id="total" resultType="Integer">
-		SELECT COUNT(*) FROM (<include refid="search"></include>) sub
+		SELECT COUNT(*) FROM (
+		<include refid="search"></include>
+		) sub
+	</select>
+
+	<select id="locCount" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT(*) FROM franchisee WHERE address = #{loc}
 	</select>
 </mapper>

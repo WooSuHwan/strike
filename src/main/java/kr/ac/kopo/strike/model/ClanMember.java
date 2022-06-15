@@ -19,11 +19,15 @@ public class ClanMember {
 	// 티어
 	private String tier; // 밑줄은 무시
 	// 승률
-	private float percent; // 밑줄은 무시
+	private double percent; // 밑줄은 무시
 
-	public float getPercent() {
+	public double getPercent() {
 		
-		percent = (float)win / (float)record * 100;
+		if (record == 0) {
+			percent = 0;
+		} else {
+			percent = (float)win / (float)record * 100;
+		}
 		
 		return percent;
 	}

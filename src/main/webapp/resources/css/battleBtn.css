@@ -385,6 +385,69 @@ a {
     background-color: #fff;
 }
 
+.vspost_02_011>label{
+	font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    font-family: 'S-CoreDream-6Bold';
+    width: 13%;
+    height: 100%;
+}
+
+.vspost_02_011{
+	display: flex;
+	font-family: 'S-CoreDream-6Bold';
+	align-items:center;
+	width: 85%;
+	height: 25%;
+	font-size:1.2em;
+}
+
+.vspost_02_011>input{
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 70%;
+    outline: none;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.vspost_02_011_IN{
+	display: flex;
+	flex-direction:column;
+	width: 85.3%;
+	height:85%;
+	justify-content: center;
+}
+
+.tableInput_01{
+	display: flex;
+	width: 50%;
+	height: 50%;
+}
+
+.tableBtn0{
+	display: flex;
+	background: #333333;
+	color:#ffffff;
+	border:none;
+	width: 30%;
+	cursor:pointer;
+	border-radius:6px;
+	font-family: 'S-CoreDream-6Bold';
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.tableInput_02{
+	margin-top:0.5em;
+	display: flex;
+	width: 70%;
+	height: 50%;
+}
+
 .map{
 	width: 100%;
 	height: 90%;

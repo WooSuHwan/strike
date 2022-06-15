@@ -113,4 +113,26 @@ public class GameServiceImpl implements GameService {
 		return dao.compare(game_code, member_code);
 	}
 
+	@Override
+	public List<Game> mypageGameDetailVS(int member_code) {
+		return dao.mypageGameDetailVS(member_code);
+	}
+
+	@Override
+	public List<Game> mypageGameDetailOK(int member_code) {
+		return dao.mypageGameDetailOK(member_code);
+	}
+
+	@Override
+	public boolean confirm(String loc) {
+		
+		int count = dao.locCount(loc);
+		
+		if(count > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
