@@ -13,7 +13,7 @@
            <!-- <div class="sssW"></div>  -->
             <div class="storeOwner1200">
                 <div class="store01">
-                    <img src="../resources/img/logo.png" height="100%" alt="logo">
+                    <a href="/"><img src="../resources/img/logo.png" height="100%" alt="logo"></a>
                 </div>
                 <div class="store02">
                     <div class="store02_01">
