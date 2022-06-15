@@ -167,4 +167,15 @@ public class GameController {
 		return "redirect:/game/view/" + game_code;
 	}
 	
+	@ResponseBody
+	@PostMapping("/same")
+	public String confirm(String loc) {
+		
+		boolean overlap = service.confirm(loc);
+		if(overlap == true) {
+			return "overlap";
+		} else {
+			return "/no";
+		}
+	}
 }

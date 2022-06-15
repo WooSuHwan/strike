@@ -116,4 +116,8 @@
 		from game
 		where game_code = #{game_code} and member_code = #{member_code}
 	</select>
+	
+	<select id="locCount" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM franchisee WHERE address = #{loc}
+	</select>
 </mapper>

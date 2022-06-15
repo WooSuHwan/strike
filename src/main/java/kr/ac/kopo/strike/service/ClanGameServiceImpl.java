@@ -88,4 +88,17 @@ public class ClanGameServiceImpl implements ClanGameService {
 	public List<ClanGame> mypageClanGame(Pager pager) {
 		return dao.mypageClanGame(pager);
 	}
+
+	@Override
+	public boolean confirm(String loc) {
+		
+		int count = dao.locCount(loc);
+		
+		if(count > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 }

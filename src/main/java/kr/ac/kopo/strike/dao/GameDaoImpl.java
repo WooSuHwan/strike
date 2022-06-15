@@ -144,4 +144,9 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectOne("game.compare", map);
 	}
 
+	@Override
+	public int locCount(String loc) {
+		return sql.selectOne("game.locCount", loc);
+	}
+
 }

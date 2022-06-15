@@ -45,5 +45,7 @@ public interface GameService {
 	int confirm(int game_code, int member_code);
 
 	int compare(int game_code, int member_code);
+
+	boolean confirm(String loc);
 	
 }

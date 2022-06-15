@@ -89,14 +89,15 @@
 		where clan_game_code =
 		#{clan_game_code} and member_code = #{member_code}
 	</select>
-	<!-- <select id="challengeCount" parameterType="Integer" resultType="Integer"> 
-		select count(*) from clan_challenger where clan_game_code = #{clan_game_code} 
-		and clan_code = #{clan_code} </select> -->
 
 	<select id="mypageClanGame" resultType="ClanGame">
 		select cg.*, c.*
 		from
 		clan_game cg
 		JOIN clan c ON cg.clan_code = c.clan_code
+	</select>
+	
+	<select id="locCount" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) FROM franchisee WHERE address = #{loc}
 	</select>
 </mapper>

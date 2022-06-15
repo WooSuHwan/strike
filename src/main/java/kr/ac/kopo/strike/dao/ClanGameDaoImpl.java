@@ -79,18 +79,6 @@ public class ClanGameDaoImpl implements ClanGameDao {
 		
 		sql.insert("clanGame.addClanGame", map);
 	}
-	/**
-	@Override
-	public int challengeCount(int clan_code, int clan_game_code) {
-		
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		
-		map.put("clan_game_code", clan_game_code);
-		map.put("clan_code", clan_code);
-		
-		return sql.selectOne("clanGame.challengeCount", map);
-	}
-	*/
 
 	@Override
 	public int confirm(int clan_game_code, int clan_code) {
@@ -117,5 +105,10 @@ public class ClanGameDaoImpl implements ClanGameDao {
 	@Override
 	public List<ClanGame> mypageClanGame(Pager pager) {
 		return sql.selectList("clanGame.mypageClanGame", pager);
+	}
+
+	@Override
+	public int locCount(String loc) {
+		return sql.selectOne("clanGame.locCount", loc);
 	}
 }

@@ -113,4 +113,16 @@ public class GameServiceImpl implements GameService {
 		return dao.compare(game_code, member_code);
 	}
 
+	@Override
+	public boolean confirm(String loc) {
+		
+		int count = dao.locCount(loc);
+		
+		if(count > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

@@ -48,4 +48,6 @@ public interface GameDao {
 
 	int compare(int game_code, int member_code);
 
+	int locCount(String loc);
+
 }

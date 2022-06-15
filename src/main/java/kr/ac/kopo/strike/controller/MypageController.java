@@ -119,16 +119,17 @@ public class MypageController {
 	}
 	
 	@GetMapping("/deleteMember/{member_code}")
-	public String deleteMember(@PathVariable int member_code, @SessionAttribute Member member, HttpServletResponse response) throws IOException {
+	public String deleteMember(@PathVariable int member_code, HttpSession session, @SessionAttribute Member member, HttpServletResponse response) throws IOException {
 		
 		if(member.getState() == 0) {
 			response.setContentType("text/html; charset=euc-kr");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert('회원탈퇴가 완료되었습니다'); </script>");
-			out.println("<script>location.href='list';</script>");
+			out.println("<script>location.href='/';</script>");
 			out.flush();
 			
 			memberService.deleteMember(member_code);
+			session.invalidate();
 		} 
 			
 		return "redirect:/";
