@@ -20,7 +20,11 @@ public class Clan {
 
 	public float getPercent() {
 		
-		percent = (float)clan_win / (float)clan_record * 100;
+		if (clan_record == 0) {
+			percent = 0;
+		} else {
+			percent = (float)clan_win / (float)clan_record * 100;
+		}
 		
 		return percent;
 	}

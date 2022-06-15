@@ -3,14 +3,14 @@ package kr.ac.kopo.strike.dao;
 import java.util.List;
 
 import kr.ac.kopo.strike.model.Member;
-import kr.ac.kopo.strike.util.Pager;
+import kr.ac.kopo.strike.util.PagerMember;
 
 public interface RankDao {
 
-	List<Member> list(Pager pager);
+	List<Member> list(PagerMember pagerMember);
 
 	List<Member> rankList();
 
-	int total(Pager pager);
+	int total(PagerMember pagerMember);
 
 }

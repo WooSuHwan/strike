@@ -16,4 +16,8 @@ public interface MemberService {
 
 	void delete(int member_code);
 
+	void deleteClan(int member_code);
+
+	void deleteMember(int member_code);
+
 }

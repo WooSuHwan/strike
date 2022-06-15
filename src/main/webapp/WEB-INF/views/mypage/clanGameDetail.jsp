@@ -40,8 +40,14 @@
                         <img src="/resources/img/right.png" alt="">
                     </div>
                 </div>
+				<div class="navListDiv">
+                    <div class="navListDivName nt"><a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전 목록</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
                 <div class="navListDiv">
-                    <div class="navListDivName nt">신청내역</div>
+                    <div class="navListDivName nt">클랜전 목록</div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -53,7 +59,13 @@
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="../delete">회원탈퇴</a></div>
+                    <div class="navListDivName"><a href="../deleteClan">클랜탈퇴</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
+                <div class="navListDiv">
+                    <div class="navListDivName"><a href="../deleteMember">회원탈퇴</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -90,13 +102,6 @@
                 </div>
                 <div class="detailsTable">
                     <table class="tableOrginel">
-	                    <colgroup>
-							<col style="width: 20%;">
-							<col style="width: 20%;">
-							<col style="width: 15%;">
-							<col style="width: 10%;">
-							<col style="width: 10%;">
-						</colgroup>
                         <thead>
                             <tr>
                                 <th>위치</th>
@@ -107,11 +112,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:if test="${mypageClanGame.size() < 1}">
-							<tr>
-								<td colspan="5">등록 된 클랜 대결이 없습니다</td>
-							</tr>
-						</c:if>
                         <c:forEach items="${mypageClanGame}" var="item" varStatus="status">
                         <c:if test="${item.member_code == sessionScope.member.member_code}">
                         	<tr>

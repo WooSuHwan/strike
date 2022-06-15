@@ -43,8 +43,14 @@
                         <img src="/resources/img/right.png" alt="">
                     </div>
                 </div>
+				<div class="navListDiv">
+                    <div class="navListDivName nt"><a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전 목록</a></div>
+                    <div class="navListDivImg">
+                        <img src="/resources/img/right.png" alt="">
+                    </div>
+                </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="/mypage/gameDetail/${sessionScope.member.member_code}">신청내역</a></div>
+                    <div class="navListDivName"><a href="/mypage/clanGameDetail/${sessionScope.member.member_code}">클랜전 목록</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>

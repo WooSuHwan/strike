@@ -42,6 +42,45 @@ $(function() {
 </script>
 
 <script>
+//주소 중복 확인
+function confirm(event) {
+	var loc = $("#loc").val();
+	var input = document.getElementById('loc'); 
+	
+	if(loc == "") {
+		return false;
+	}
+	// 주소 중복 확인
+	$.ajax({
+		url:"same",
+		data:{"loc" : loc},
+		method:"POST",
+		dataType:"TEXT",
+		success:function(data) {
+			console.log(data);
+			
+			if(data == "overlap") {
+				console.log("주소가 존재합니다");
+			} else {
+				console.log("주소가 없습니다");
+				alert("존재하는 주소를 입력해주세요");
+				input.value = "";
+			}
+		},
+		error:function(){
+			console.err("에러")
+		}
+	})
+}
+//페이지 로딩 후
+$(function() {
+	$("#loc").blur(function() {
+		confirm();
+	})
+})
+</script>
+
+<script>
 $(function() { // 입장과 동시에 실행
 	
 	loadMap(); //지도 데이터를 들고오는 코드
@@ -76,7 +115,7 @@ $(function() { // 입장과 동시에 실행
 						<label>시간</label> <input type="datetime-local" name="clock">
 					</div>
 					<div class="vspost_02_01">
-						<label>위치</label> <input type="text" name="loc">
+						<label>위치</label> <input type="text" name="loc" id="loc">
 					</div>
 					<div class="vspost_02_01">
 						<label>모집</label> <input type="number" name="recruit">

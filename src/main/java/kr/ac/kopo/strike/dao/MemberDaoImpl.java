@@ -11,7 +11,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Autowired
 	SqlSession sql;
-	
+
 	@Override
 	public int idCount(String id) {
 		return sql.selectOne("member.idCount", id);
@@ -40,5 +40,15 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public Member mypage(Member item) {
 		return sql.selectOne("member.mypage", item);
+	}
+
+	@Override
+	public void deleteClan(int member_code) {
+		sql.update("member.deleteClan", member_code);
+	}
+
+	@Override
+	public void deleteMember(int member_code) {
+		sql.update("member.deleteMember", member_code);
 	}
 }

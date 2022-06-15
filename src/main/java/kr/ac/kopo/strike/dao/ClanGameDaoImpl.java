@@ -123,4 +123,9 @@ public class ClanGameDaoImpl implements ClanGameDao {
 	public int total(Pager pager) {
 		return sql.selectOne("clanGame.total", pager);
 	}
+	
+	@Override
+	public int locCount(String loc) {
+		return sql.selectOne("clanGame.locCount", loc);
+	}
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.strike.model.Clan;
@@ -137,20 +138,16 @@ public class ClanGameController {
 		
 		return "redirect:/clanGame/view/" + clan_game_code;
 	}
-	/**
+	
 	@ResponseBody
-	@PostMapping("/confirm")
-	public String confirm(int clan_code, int clan_game_code) {
-		System.out.println("클랜코드" + clan_code);
-		System.out.println("클랜게임코드" + clan_game_code);
-		boolean overlap = service.confirm(clan_code, clan_game_code);
+	@PostMapping("/same")
+	public String confirm(String loc) {
+		
+		boolean overlap = service.confirm(loc);
 		if(overlap == true) {
-			System.out.println("중복작동");
 			return "overlap";
 		} else {
-			System.out.println("중복확인작동");
-			return "/use";
+			return "/no";
 		}
 	}
-	*/
 }	

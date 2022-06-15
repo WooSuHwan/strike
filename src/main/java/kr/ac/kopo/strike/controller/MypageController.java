@@ -1,7 +1,10 @@
 package kr.ac.kopo.strike.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,32 +96,70 @@ public class MypageController {
 		
 		return "redirect:/mypage/mypage/{member_code}";
 	}
-	
-	@RequestMapping("/delete")
-	public String delete(Member item,Model model) {
-		return path + "delete";
-	}
-	
-	@GetMapping("/delete/{member_code}")
-	public String delete(@PathVariable int member_code) {
-		return path + "delete";
-	}
-	
-	@PostMapping("/delete/{member_code}")
-	public String delete(@SessionAttribute Member member ) {
+	// 클랜 삭제
+	@GetMapping("/deleteClan")
+	public String deleteClan() {
 		
-		memberService.delete(member.getMember_code());
-		System.out.println("작동");
-		return "redirect:index";
+		return path + "deleteClan";
+	}
+	
+	@GetMapping("deleteClan/{member_code}")
+	public String deleteClan(@PathVariable int member_code) {
+		
+		memberService.deleteClan(member_code);
+		
+		return "redirect:/";
+	}
+	
+	// 멤버 삭제
+	@GetMapping("/deleteMember")
+	public String deleteMember() {
+		
+		return path + "deleteMember";
+	}
+	
+	@GetMapping("/deleteMember/{member_code}")
+	public String deleteMember(@PathVariable int member_code, HttpSession session, @SessionAttribute Member member, HttpServletResponse response) throws IOException {
+		
+		if(member.getState() == 0) {
+			response.setContentType("text/html; charset=euc-kr");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('회원탈퇴가 완료되었습니다'); </script>");
+			out.println("<script>location.href='/';</script>");
+			out.flush();
+			
+			memberService.deleteMember(member_code);
+			session.invalidate();
+		} 
+			
+		return "redirect:/";
 	}
 	
 	@GetMapping("/gameDetail/{member_code}")
-	public String gameDetail(@PathVariable int member_code, Model model) {
+	public String gameDetail(@PathVariable int member_code, Model model, Pager pager) {
 		
 		List<Game> mypageGame =  gameService.mypageGame();
 		model.addAttribute("mypageGame", mypageGame);
 		
 		return path + "gameDetail";
+	}
+	
+	@GetMapping("/mypageGameDetailVS/{member_code}")
+	public String mypageGameDetailVS(@PathVariable int member_code, Model model) {
+		
+		List<Game> mypageGameDetailVS = gameService.mypageGameDetailVS(member_code);
+		model.addAttribute("mypageGameDetailVS", mypageGameDetailVS);
+		
+		return path + "mypageGameDetailVS";
+	}
+	
+	@GetMapping("/mypageGameDetailOK/{member_code}")
+	public String mypageGameDetailOK(@PathVariable int member_code, Model model) {
+		
+		List<Game> mypageGameDetailOK = gameService.mypageGameDetailOK(member_code);
+		model.addAttribute("mypageGameDetailOK", mypageGameDetailOK);
+		
+		return path + "mypageGameDetailOK";
 	}
 	
 	@GetMapping("/clanGameDetail/{member_code}")

@@ -144,4 +144,18 @@ public class GameDaoImpl implements GameDao {
 		return sql.selectOne("game.compare", map);
 	}
 
+	@Override
+	public List<Game> mypageGameDetailVS(int member_code) {
+		return sql.selectList("game.mypageGameDetailVS",member_code);
+	}
+
+	@Override
+	public List<Game> mypageGameDetailOK(int member_code) {
+		return sql.selectList("game.mypageGameDetailOK", member_code);
+	}
+
+	@Override
+	public int locCount(String loc) {
+		return sql.selectOne("game.locCount", loc);
+	}
 }
