@@ -36,7 +36,7 @@ public interface GameDao {
 
 	int total(Pager pager);
 
-	List<Game> mypageGame(Pager pager);
+	List<Game> mypageGame();
 
 	List<Challenger> admitChallenger(int game_code);
 

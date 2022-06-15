@@ -140,6 +140,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <c:if test="${admitChallenger.size() < 1}">
+							<tr>
+								<td colspan="9" style="border-right:none;">등록 된 신청자가 없습니다.</td>
+							</tr>
+						</c:if>
                         <c:forEach items="${admitChallenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>
