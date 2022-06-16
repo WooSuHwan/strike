@@ -311,6 +311,8 @@ tbody>tr>td{
     color: #fff;
     font-family: 'S-CoreDream-5Medium';
     width: 18%;
+    border: none;
+    outline: none;
 }
 
 .tableInput_01{

@@ -112,9 +112,8 @@
 					<colgroup>
 						<col style="width: 10%;">
 						<col style="width: 35%;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
-						<col style="width: 10%;">
+						<col style="width: 15%;">
+						<col style="width: 15%;">
 					</colgroup>
 					<thead>
 						<tr>
@@ -122,7 +121,6 @@
 							<th>제목</th>
 							<th>작성자</th>
 							<th>작성일</th>
-							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -137,7 +135,6 @@
 								<td><a href="view/${item.game_code}">${item.title}</a></td>
 								<td>${item.maker}</td>
 								<td> <fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
-								<td>10</td>
 							</tr>
 						</c:forEach>
 
