@@ -50,7 +50,7 @@
 					</div>
 					<div class="navListDiv">
 						<div class="navListDivName nt">
-							<a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전
+							<a href="/mypage/gameDetail/${sessionScope.member.member_code}">개인전
 								목록</a>
 						</div>
 						<div class="navListDivImg">
@@ -69,7 +69,7 @@
 					</div>
 					<div class="navListDiv">
 						<div class="navListDivName">
-							<a href="../mypageFreeList/${sessionScope.member.member_code}">내가
+							<a href="/mypage/mypageFreeList/${sessionScope.member.member_code}">내가
 								쓴 글</a>
 						</div>
 						<div class="navListDivImg">
@@ -85,8 +85,8 @@
 						</div>
 					</div>
 					<div class="navListDiv">
-						<div class="navListDivName">
-							<a href="/mypage/deleteMember">회원탈퇴</a>
+						<div class="navListDivName nt">
+							회원탈퇴
 						</div>
 						<div class="navListDivImg">
 							<img src="/resources/img/right.png" alt="">

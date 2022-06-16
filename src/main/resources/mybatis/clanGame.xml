@@ -18,7 +18,7 @@
 		(
 		<include refid="search"></include>)
 		sub) cg
-		JOIN clan c ON cg.clan_code = c.clan_code
+		LEFT JOIN clan c ON cg.clan_code = c.clan_code
 		<![CDATA[ 
 		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
 	</select>
@@ -118,6 +118,16 @@
 		from
 		clan_game cg
 		JOIN clan c ON cg.clan_code = c.clan_code
+	</select>
+	
+	<select id="mypageClanGameDetailVS" resultType="ClanGame">
+		select cg.*, c.*, cn.*
+		from
+		clan_game cg
+		JOIN clan c ON cg.clan_code = c.clan_code
+	    JOIN CLAN_CHALLENGER cn ON cg.CLAN_CODE = cn.CLAN_CODE
+	    JOIN member m ON cg.member_code = m.member_code
+	    WHERE cg.member_code = 4 AND STATE is null
 	</select>
 
 	<!-- pager -->

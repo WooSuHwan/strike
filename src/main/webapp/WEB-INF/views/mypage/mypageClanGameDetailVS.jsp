@@ -41,13 +41,13 @@
                     </div>
                 </div>
 				<div class="navListDiv">
-                    <div class="navListDivName nt">개인전 목록</div>
+                    <div class="navListDivName nt"><a href="/mypage/gameDetail/${sessionScope.member.member_code}">개인전 목록</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
                 </div>
                 <div class="navListDiv">
-                    <div class="navListDivName"><a href="/mypage/clanGameDetail/${sessionScope.member.member_code}">클랜전 목록</a></div>
+                    <div class="navListDivName nt">클랜전 목록</div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -83,57 +83,50 @@
             </div>
             <div class="mypageDetails">
                 <div class="detailsTitle">
-                    개인전 경기 내역
+                    경기 신청내역
                 </div>
                 <div class="detailsTitle">
-                <a href="../gameDetail/${sessionScope.member.member_code}">
+                <a href="../clanGameDetail/${sessionScope.member.member_code}">
+                	<div class="titleDiv">
+                		클랜 대결 모집 내역
+                	</div>
+                </a>
+                <a href="../mypageClanGameDetailVS/${sessionScope.member.member_code}">
                 	<div class="titleDiv TD">
-                		개인 대결 모집 내역
+                		클랜 대결 신청 내역
                 	</div>
                 </a>
-                <a href="../mypageGameDetailVS/${sessionScope.member.member_code}">
+                <a href="../mypageClanGameDetailOK/${sessionScope.member.member_code}">
                 	<div class="titleDiv">
-                		개인 대결 신청 내역
-                	</div>
-                </a>
-                <a href="../mypageGameDetailOK/${sessionScope.member.member_code}">
-                	<div class="titleDiv">
-                		개인 대결 승인완료 내역
+                		클랜 대결 승인완료 내역
                 	</div>
                 </a>
                 </div>
                 <div class="detailsTitle">
-                   개인 대결 모집 내역
+                   클랜 대결 모집 내역
                 </div>
                 <div class="detailsTable">
                     <table class="tableOrginel">
-                    <colgroup>
-							<col style="width: 20%;">
-							<col style="width: 20%;">
-							<col style="width: 8%;">
-							<col style="width: 10%;">
-							<col style="width: 10%;">
-						</colgroup>
                         <thead>
                             <tr>
                                 <th>위치</th>
                                 <th>제목</th>
-                                <th>모집인원</th>
-                                <th>대결일</th>
+                                <th>클랜명</th>
+                                <th>작성일</th>
                                 <th>상세보기</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${mypageGame}" var="item" varStatus="status">
-                        <c:if test="${item.member_code == sessionScope.member.member_code}">
-                            <tr>
+                        <c:forEach items="${mypageClanGameDetailVS}" var="item" varStatus="status">
+<%--                         <c:if test="${item.member_code == sessionScope.member.member_code}"> --%>
+                        	<tr>
                                 <td>${item.loc}</td>
-                                <td>${item.title}</td>
-                                <td>${item.recruit} 명</td>
-                                 <td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
-                                <td><a href="/game/view/${item.game_code}" class="tableButton">상세보기</a></td>
-                            </tr>
-                        </c:if>
+								<td>${item.title}</td>
+								<td>${item.clan_name}</td>
+								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
+                                <td><a href="/clanGame/view/${item.clan_game_code}" class="tableButton">상세보기</a></td>
+							</tr>
+<%--                         </c:if> --%>
                         </c:forEach>
                         </tbody>
                     </table>

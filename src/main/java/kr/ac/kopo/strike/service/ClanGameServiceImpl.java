@@ -90,8 +90,8 @@ public class ClanGameServiceImpl implements ClanGameService {
 	}
 	
 	@Override
-	public List<ClanGame> mypageClanGame(Pager pager) {
-		return dao.mypageClanGame(pager);
+	public List<ClanGame> mypageClanGame() {
+		return dao.mypageClanGame();
 	}
 	
 	@Override
@@ -104,5 +104,10 @@ public class ClanGameServiceImpl implements ClanGameService {
 		} else {
 			return false;
 		}
+	}
+
+	@Override
+	public List<ClanGame> mypageClanGameDetailVS() {
+		return dao.mypageClanGameDetailVS();
 	}
 }

@@ -118,12 +118,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:if test="${mypageGameDetailVS.size() < 1}">
+                        <c:if test="${mypageGameDetailOK.size() < 1}">
 							<tr>
 								<td colspan="5">등록 된 개인 대결이 없습니다</td>
 							</tr>
 						</c:if>
-                        <c:forEach items="${mypageGameDetailVS}" var="item" varStatus="status">
+                        <c:forEach items="${mypageGameDetailOK}" var="item" varStatus="status">
 <%--                         <c:if test="${item.member_code == sessionScope.member.member_code}"> --%>
                             <tr>
                                 <td>${item.loc}</td>

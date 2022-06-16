@@ -41,7 +41,7 @@
                     </div>
                 </div>
 				<div class="navListDiv">
-                    <div class="navListDivName nt"><a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전 목록</a></div>
+                    <div class="navListDivName nt"><a href="/mypage/gameDetail/${sessionScope.member.member_code}">개인전 목록</a></div>
                     <div class="navListDivImg">
                         <img src="/resources/img/right.png" alt="">
                     </div>
@@ -86,14 +86,19 @@
                     경기 신청내역
                 </div>
                 <div class="detailsTitle">
-                <a href="../gameDetail/${sessionScope.member.member_code}">
-                	<div class="titleDiv">
-                		개인 대결 신청 내역
-                	</div>
-                </a>
                 <a href="../clanGameDetail/${sessionScope.member.member_code}">
                 	<div class="titleDiv TD">
+                		클랜 대결 모집 내역
+                	</div>
+                </a>
+                <a href="../mypageClanGameDetailVS/${sessionScope.member.member_code}">
+                	<div class="titleDiv">
                 		클랜 대결 신청 내역
+                	</div>
+                </a>
+                <a href="../mypageClanGameDetailOK/${sessionScope.member.member_code}">
+                	<div class="titleDiv">
+                		클랜 대결 승인완료 내역
                 	</div>
                 </a>
                 </div>
