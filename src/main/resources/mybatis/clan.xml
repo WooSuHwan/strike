@@ -76,6 +76,7 @@
 		and
 		c_m.clan_code = c.clan_code
 		and c_m.state is null
+		and c_m.clan_code = 0
 	</select>
 
 	<select id="clanMember" resultType="ClanMember">
