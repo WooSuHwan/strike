@@ -160,7 +160,6 @@
                             <tr>
                             	<th>No.</th>
                                 <th>이름</th>
-                                <th>티어</th>
                                 <th>전적</th>
                                 <th>승</th>
                                 <th>패</th>
@@ -172,14 +171,13 @@
                         <tbody>
                         <c:if test="${challenger.size() < 1}">
 							<tr>
-								<td colspan="9" style="border-right:none;">등록 된 신청자가 없습니다.</td>
+								<td colspan="8" style="border-right:none;">등록 된 신청자가 없습니다.</td>
 							</tr>
 						</c:if>
                         <c:forEach items="${admitChallenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>
                                 <td>${item.clan_name}</td>
-                                <td style="color: #ffb400;">${item.clan_score}</td>
                                 <td>${item.record}</td>
                                 <td>${item.clan_win}</td>
                                 <td>${item.clan_lose}</td>
@@ -213,7 +211,6 @@
                             <tr>
                             	<th>No.</th>
                                 <th>이름</th>
-                                <th>티어</th>
                                 <th>전적</th>
                                 <th>승</th>
                                 <th>패</th>
@@ -230,14 +227,13 @@
                         <tbody>
                         <c:if test="${challenger.size() < 1}">
 							<tr>
-								<td colspan="9" style="border-right:none;">등록 된 신청자가 없습니다.</td>
+								<td colspan="8" style="border-right:none;">등록 된 신청자가 없습니다.</td>
 							</tr>
 						</c:if>
                         <c:forEach items="${challenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>
                                 <td>${item.clan_name}</td>
-                                <td style="color: #ffb400;">${item.clan_score}</td>
                                 <td>${item.record}</td>
                                 <td>${item.clan_win}</td>
                                 <td>${item.clan_lose}</td>

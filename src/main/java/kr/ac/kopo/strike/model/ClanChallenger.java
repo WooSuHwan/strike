@@ -19,6 +19,21 @@ public class ClanChallenger {
 	private int clan_rate;
 	private int clan_score;
 	private Date clan_time;
+	// 티어
+	private String tier; // 밑줄은 무시
+	// 승률
+	private float percent; // 밑줄은 무시
+
+	public float getPercent() {
+
+		if (record == 0) {
+			percent = 0;
+		} else {
+			percent = (float) clan_win / (float) record * 100;
+		}
+
+		return percent;
+	}
 
 	public int getClan_challenger_code() {
 		return clan_challenger_code;

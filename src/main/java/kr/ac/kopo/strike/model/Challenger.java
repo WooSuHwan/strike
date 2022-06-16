@@ -16,6 +16,70 @@ public class Challenger {
 	private int lose;
 	private int draw;
 	private int rate;
+	// 티어
+	private String tier; // 밑줄은 무시
+	// 승률
+	private float percent; // 밑줄은 무시
+
+	public float getPercent() {
+
+		if (record == 0) {
+			percent = 0;
+		} else {
+			percent = (float) win / (float) record * 100;
+		}
+
+		return percent;
+	}
+
+	public String getTier() {
+
+		if (score < 11) {
+
+			return "아이언";
+
+		} else if (score < 21) {
+
+			return "브론즈";
+
+		} else if (score < 31) {
+
+			return "실버";
+
+		} else if (score < 31) {
+
+			return "실버";
+
+		} else if (score < 31) {
+
+			return "실버";
+
+		} else if (score < 41) {
+
+			return "골드";
+
+		} else if (score < 51) {
+
+			return "플래티넘";
+
+		} else if (score < 61) {
+
+			return "다이아몬드";
+
+		} else if (score < 71) {
+
+			return "마스터";
+
+		} else if (score < 81) {
+
+			return "그랜드마스터";
+
+		} else {
+
+			return "챌린저";
+		}
+
+	}
 
 	public int getRate() {
 		return rate;
