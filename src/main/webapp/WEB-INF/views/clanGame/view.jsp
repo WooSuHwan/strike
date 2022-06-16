@@ -154,7 +154,6 @@
                             <col style="width: 8%;">
                             <col style="width: 10%;">
                             <col style="width: 10%;">
-                            <col style="width: 10%;">
                         </colgroup>
                         <thead>
                             <tr>
@@ -165,16 +164,16 @@
                                 <th>패</th>
                                 <th>무</th>
                                 <th>승률</th>
-                                <th>상태</th>
+                                <th style="border-right: none;">상태</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <c:if test="${challenger.size() < 1}">
+                        <c:if test="${admitClanChallenger.size() < 1}">
 							<tr>
 								<td colspan="8" style="border-right:none;">등록 된 신청자가 없습니다.</td>
 							</tr>
 						</c:if>
-                        <c:forEach items="${admitChallenger}" var="item" varStatus="status">
+                        <c:forEach items="${admitClanChallenger}" var="item" varStatus="status">
                             <tr>
                             	<td>${status.index + 1 }</td>
                                 <td>${item.clan_name}</td>
@@ -183,7 +182,7 @@
                                 <td>${item.clan_lose}</td>
                                 <td>${item.clan_draw}</td>
                                 <td>${item.clan_rate}</td>
-                                <td>승인완료</td>
+                                <td style="border-right: none;">승인완료</td>
 						</c:forEach>
                         </tbody>
                     </table>
