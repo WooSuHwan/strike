@@ -205,7 +205,9 @@ $(function() {
                             </tr>
                             <tr>
                                 <td class="tableColor">위도 <span>*</span></td>
-                                <td class="tableInput"><input type="text" name="latitude" id="latitude" size=40></td>
+                                <td class="tableInput"><input type="text" name="latitude" id="latitude" size=40>
+                                	<button class="site"><a href="http://map.esran.com/" target="_blank">위도 경도 찾기</a></button>
+                                </td>
                                 <div id="latitude_message"></div>
                             </tr>
                             <tr>

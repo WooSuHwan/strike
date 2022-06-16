@@ -703,5 +703,18 @@ tbody>tr>td{
     font-size: 14px;
 }
 
+.site>a{
+	color: #fff;
+	font-family: 'S-CoreDream-6Bold';
+}
+
+.site{
+	width: 22%;
+	outline:none;
+	border:none;
+	margin-left: 1em;
+	height: 50%;
+	background-color: #434343;
+}
 
 
