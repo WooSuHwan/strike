@@ -60,7 +60,7 @@
                 <div class="cdetail01">
                     <div class="cdetail01_02">
                         <div class="cdetail01_02_01">
-                            <h1>${game.maker}</h1>  <!-- 수정 el 코드 -->
+                            <h1>${clanGame.clan_name}</h1>  <!-- 수정 el 코드 -->
                         </div>
                         <div class="cdetail01_02_02">
                             <a href="#">최신정보</a>
