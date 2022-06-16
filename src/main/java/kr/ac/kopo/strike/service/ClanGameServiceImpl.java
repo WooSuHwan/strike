@@ -107,7 +107,12 @@ public class ClanGameServiceImpl implements ClanGameService {
 	}
 
 	@Override
-	public List<ClanGame> mypageClanGameDetailVS() {
-		return dao.mypageClanGameDetailVS();
+	public List<ClanGame> mypageClanGameDetailVS(int member_code) {
+		return dao.mypageClanGameDetailVS(member_code);
+	}
+
+	@Override
+	public List<ClanGame> mypageClanGameDetailOK(int member_code) {
+		return dao.mypageClanGameDetailOK(member_code);
 	}
 }

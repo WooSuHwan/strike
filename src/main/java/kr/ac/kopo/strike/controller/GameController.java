@@ -47,9 +47,9 @@ public class GameController {
 	}
 	
 	@GetMapping("/add")
-	public String add(Model model) {	
+	public String add(Model model, Pager pager) {	
 		
-		List<Franchisee> franchiseeList = service.franchiseeList();
+		List<Franchisee> franchiseeList = service.franchiseeList(pager);
 		
 		model.addAttribute("franchiseeList", franchiseeList);
 		

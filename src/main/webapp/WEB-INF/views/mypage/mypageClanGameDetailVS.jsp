@@ -124,7 +124,7 @@
 								<td>${item.title}</td>
 								<td>${item.clan_name}</td>
 								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
-                                <td><a href="/clanGame/view/${item.clan_game_code}" class="tableButton">상세보기</a></td>
+                                <td><a href="/clanGame/view/${item.clan_game_code}/${item.member_code}" class="tableButton">상세보기</a></td>
 							</tr>
 <%--                         </c:if> --%>
                         </c:forEach>

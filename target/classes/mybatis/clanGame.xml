@@ -121,13 +121,23 @@
 	</select>
 	
 	<select id="mypageClanGameDetailVS" resultType="ClanGame">
-		select cg.*, c.*, cn.*
+   		select  c.*, cn.*, m.*, cg.*
 		from
-		clan_game cg
-		JOIN clan c ON cg.clan_code = c.clan_code
-	    JOIN CLAN_CHALLENGER cn ON cg.CLAN_CODE = cn.CLAN_CODE
-	    JOIN member m ON cg.member_code = m.member_code
-	    WHERE cg.member_code = 4 AND STATE is null
+		CLAN_CHALLENGER cn
+	    JOIN member m ON cn.clan_code = m.clan_code
+	    JOIN clan_game cg ON cn.CLAN_GAME_CODE = cg.CLAN_GAME_CODE
+	    JOIN clan c ON cg.clan_code = c.clan_code
+	    WHERE cn.clan_code = m.clan_code AND cn.STATE is null OR cn.state = 0
+	</select>
+	
+	<select id="mypageClanGameDetailOK" resultType="ClanGame">
+   		select  c.*, cn.*, m.*, cg.*
+		from
+		CLAN_CHALLENGER cn
+	    JOIN member m ON cn.clan_code = m.clan_code
+	    JOIN clan_game cg ON cn.CLAN_GAME_CODE = cg.CLAN_GAME_CODE
+	    JOIN clan c ON cg.clan_code = c.clan_code
+	    WHERE cn.clan_code = m.clan_code AND cn.state = 1
 	</select>
 
 	<!-- pager -->

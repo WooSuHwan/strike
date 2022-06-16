@@ -161,10 +161,20 @@ public class MypageController {
 	@GetMapping("/mypageClanGameDetailVS/{member_code}")
 	public String mypageClanGameDetailVS(@PathVariable int member_code, Model model) {
 		
-		List<ClanGame> mypageClanGameDetailVS = clanGameService.mypageClanGameDetailVS();
+		List<ClanGame> mypageClanGameDetailVS = clanGameService.mypageClanGameDetailVS(member_code);
 		model.addAttribute("mypageClanGameDetailVS", mypageClanGameDetailVS);
 		
 		return path + "mypageClanGameDetailVS";
+		
+	}
+	
+	@GetMapping("/mypageClanGameDetailOK/{member_code}")
+	public String mypageClanGameDetailOK(@PathVariable int member_code, Model model) {
+		
+		List<ClanGame> mypageClanGameDetailOK = clanGameService.mypageClanGameDetailOK(member_code);
+		model.addAttribute("mypageClanGameDetailOK", mypageClanGameDetailOK);
+		
+		return path + "mypageClanGameDetailOK";
 		
 	}
 	

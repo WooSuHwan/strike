@@ -130,7 +130,12 @@ public class ClanGameDaoImpl implements ClanGameDao {
 	}
 
 	@Override
-	public List<ClanGame> mypageClanGameDetailVS() {
-		return sql.selectList("clanGame.mypageClanGameDetailVS");
+	public List<ClanGame> mypageClanGameDetailVS(int member_code) {
+		return sql.selectList("clanGame.mypageClanGameDetailVS",member_code);
+	}
+
+	@Override
+	public List<ClanGame> mypageClanGameDetailOK(int member_code) {
+		return sql.selectList("clanGame.mypageClanGameDetailOK", member_code);
 	}
 }

@@ -105,7 +105,10 @@
 	
 	<select id="franchiseeList" resultType="Franchisee">
 		select *
-		from franchisee
+		from (SELECT ROWNUM rnum, sub.* FROM
+			(SELECT * FROM franchisee) sub)
+		<![CDATA[ 
+		WHERE rnum >= ((#{page} - 1 ) * #{perPage} + 1) and rnum <= (#{page} * #{perPage})]]>
 	</select>
 	
 	<select id="map" resultType="Franchisee">

@@ -52,9 +52,9 @@ public class ClanGameController {
 	}
 	
 	@GetMapping("/add")
-	public String add(Model model) {
+	public String add(Model model, Pager pager) {
 		
-		List<Franchisee> franchiseeList = gameService.franchiseeList();
+		List<Franchisee> franchiseeList = gameService.franchiseeList(pager);
 		
 		model.addAttribute("franchiseeList", franchiseeList);
 		

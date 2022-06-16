@@ -37,5 +37,7 @@ public interface ClanGameDao {
 
 	int locCount(String loc);
 
-	List<ClanGame> mypageClanGameDetailVS();
+	List<ClanGame> mypageClanGameDetailVS(int member_code);
+
+	List<ClanGame> mypageClanGameDetailOK(int member_code);
 }

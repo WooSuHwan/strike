@@ -38,7 +38,7 @@ public interface GameService {
 
 	List<Challenger> admitChallenger(int game_code);
 
-	List<Franchisee> franchiseeList();
+	List<Franchisee> franchiseeList(Pager pager);
 
 	List<Franchisee> map();
 

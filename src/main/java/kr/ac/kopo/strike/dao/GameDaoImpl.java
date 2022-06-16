@@ -113,8 +113,8 @@ public class GameDaoImpl implements GameDao {
 	}
 
 	@Override
-	public List<Franchisee> franchiseeList() {
-		return sql.selectList("game.franchiseeList");
+	public List<Franchisee> franchiseeList(Pager pager) {
+		return sql.selectList("game.franchiseeList", pager);
 	}
 
 	@Override

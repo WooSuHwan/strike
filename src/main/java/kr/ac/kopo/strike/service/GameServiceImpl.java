@@ -94,8 +94,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public List<Franchisee> franchiseeList() {
-		return dao.franchiseeList();
+	public List<Franchisee> franchiseeList(Pager pager) {
+		return dao.franchiseeList(pager);
 	}
 	
 	@Override
