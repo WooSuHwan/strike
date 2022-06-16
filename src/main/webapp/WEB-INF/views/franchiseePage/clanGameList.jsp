@@ -43,13 +43,10 @@
 					<colgroup>
 						<col style="width: 10%;">
 						<col style="width: 15%;">
-						<col style="width: 20%;">
+						<col style="width: 30%;">
 						<col style="width: 10%;">
 						<col style="width: 10%;">
 						<col style="width: 10%;">
-						<col style="width: 5%;">
-						<col style="width: 5%;">
-						<col style="width: 5%;">
 					</colgroup>
 					<thead>
 					<tr>
@@ -57,11 +54,8 @@
 						<th>작성자</th>
 						<th>제목</th>
 						<th>시간</th>
-						<th>위치</th>
 						<th>모집인원</th>
 						<th>입장</th>
-						<th>수정</th>
-						<th>삭제</th>
 					</tr>
 				</thead>
 									<tbody>
@@ -76,11 +70,8 @@
 							<td>${item.clan_name}</td>
 							<td>${item.title}</td>
 							<td>${item.clock}</td>
-							<td>${item.loc}</td>
 							<td>${item.clan_recruit}</td>
 							<td><a href="/franchiseePage/clanGameView/${item.clan_game_code} "style="text-decoration:none">입장</a></td>
-							<td><a href="update/${item.clan_game_code}" style="text-decoration:none">수정</a></td>
-							<td><a href="delete/${item.clan_game_code}" style="text-decoration:none">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

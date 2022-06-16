@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,6 @@
                 <div class="vspost_01">
                     <h3>대결 신청 게시글</h3>
                 </div>
-               	<div>
                	
                	<div class="vspost_02">
                     <div class="vspost_02_01">
@@ -38,10 +38,7 @@
                         </div>
                         <div class="vspost_02_date">
                             <div class="vspost_02_date01">
-                                <p>${game.time}</p>
-                            </div>
-                            <div class="vspost_02_date02">
-                                <p>조회 56</p>
+                                <p><fmt:formatDate value="${game.time}" pattern="yyyy-MM-dd" /></p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +61,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
           </div>
 	
 	<div class="applicant">
@@ -143,8 +139,6 @@
                             <col style="width: 8%;">
                             <col style="width: 8%;">
                             <col style="width: 10%;">
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
                         </colgroup>
                         <thead>
 							<tr>
@@ -160,7 +154,7 @@
                         <tbody>
                        <c:if test="${gameRecord.size() < 1}">
 					<tr>
-						<td colspan="6">등록 된 개인 대결이 없습니다</td>
+						<td colspan="7">등록 된 개인 대결이 없습니다</td>
 					</tr>
 				</c:if>
 				<c:forEach items="${gameRecord}" var="item" varStatus="status">

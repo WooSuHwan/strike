@@ -49,7 +49,7 @@
 					</div>
 					<div class="navListDiv">
 						<div class="navListDivName nt">
-							<a href="/mypage/GameDetail/${sessionScope.member.member_code}">개인전
+							<a href="/mypage/gameDetail/${sessionScope.member.member_code}">개인전
 								목록</a>
 						</div>
 						<div class="navListDivImg">
