@@ -36,11 +36,7 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 
 	}
 
-	@Override
-	public void update(SuggestMaster item) {
-		dao.update(item);
-
-	}
+	
 
 	@Override
 	public void addCount(int master_code) {
@@ -69,6 +65,12 @@ public class SuggestMasterServiceImpl implements SuggestMasterService {
 		
 		
 		return dao.list(pager);
+	}
+
+	@Override
+	public void update(SuggestMaster item) {
+		dao.update(item);
+		
 	}
 
 }

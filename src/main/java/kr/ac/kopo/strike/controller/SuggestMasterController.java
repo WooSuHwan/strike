@@ -66,7 +66,8 @@ public class SuggestMasterController {
 		
 		return "redirect:..";
 	}
-	@GetMapping("/update/{master_code}" )
+
+	@GetMapping("/update/{master_code}")
 	public String update(@PathVariable int master_code, Model model) {
 		SuggestMaster item = service.item(master_code);
 		
@@ -75,7 +76,7 @@ public class SuggestMasterController {
 		return path + "update";
 	}
 	
-	@PostMapping("/update/{master_code}")
+	@PostMapping("update/{master_code}")
 	public String update(@PathVariable int master_code, SuggestMaster item) {
 		service.update(item);
 		System.out.println(item);

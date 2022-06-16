@@ -13,7 +13,7 @@ public interface SuggestMasterDao {
 
 	void delete(int master_code);
 
-	void update(SuggestMaster item);
+	
 
 	void addCount(int master_code);
 
@@ -22,5 +22,7 @@ public interface SuggestMasterDao {
 	SuggestMaster item(int master_code);
 
 	int total(Pager pager);
+
+	void update(SuggestMaster item);
 
 }

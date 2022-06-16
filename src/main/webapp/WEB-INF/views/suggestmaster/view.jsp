@@ -70,8 +70,7 @@
 	                        </div>
                             <div class="vspost_02_date_002">
                             	<div class="vspost_02_date03">
-                            		<div class="mes01"><img alt="채팅" src="/resources/img/chatting.png"></div>
-                            		<div class="mes02">댓글 1</div>
+                            		
                             	</div>
                             </div>
                         </div>
@@ -83,50 +82,11 @@
 								<c:out value='${item.story}' escapeXml="false" />
 							</span>
 						</div>
-						<div class="replyBox">
-							<div class="mes03">
-								<img alt="채팅" src="/resources/img/chatting.png">
-							</div>
-							<div class="mes04">댓글 1</div>
-						</div>
-						<div class="titleBox2">
-							<p>댓글</p>
-						</div>
+						
+						
 
-						<c:forEach items="${reply}" var="reply">
-							<div class="replyContent">
-								<div class="replyContent_01">${reply.reply_name}</div>
-								<div class="replyContent_02">${reply.reply_story}</div>
-								<div class="replyContent_03">
-									<fmt:formatDate value="${reply.reg_date}" pattern="yyyy-MM-dd" />
-									<c:if test="${sessionScope.member_code == reply.member_code}">
-										&nbsp;<a href="../reply/${reply.reply_code}/replydelete">삭제</a>
-									</c:if>
-								</div>
-							</div>
-						</c:forEach>
-						<div class="boardBar2">
-							<form method="post" action="../reply/${item.free_code}/write" style="display: flex; width: 100%;">
-								<div class="boardBar2_01">
-									<div class="boardBar2_01_01">
-										<input type="text" name="name" value="${name}" readonly>
-									</div>
-									<div class="boardBar2_01_02">
-										<input placeholder="댓글을 작성해보세요" name="reply_story">
-									</div>
-									<div class="boardBar2_01_03">
-										<input type="hidden" name="free_code" value="${item.free_code}">
-										<c:if test="${sessionScope.member_code != null }">
-											<button type="submit">등록</button>
-										</c:if>
-									</div>
-									<div>
-										<input type="hidden" name="member_code" value="${sessionScope.member_code}">
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="wh00"></div>
+					
+				
 					</div>
                 </div>
             </div>

@@ -15,12 +15,14 @@ public interface SuggestMasterService {
 
 	void delete(int master_code);
 
-	void update(SuggestMaster item);
+	
 
 	void addCount(int master_code);
 
 	public SuggestMaster read(int master_code)throws Exception;
 
 	SuggestMaster item(int master_code);
+
+	void update(SuggestMaster item);
 
 }
