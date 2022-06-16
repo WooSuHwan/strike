@@ -44,7 +44,7 @@
 								<a href="franchiseeLogin/login" style="text-decoration: none">로그인</a>
 							</div>
 						</c:if> <c:if test="${sessionScope.franchisee != null}">
-				<span><a href="franchiseeLogin/logout" style="text-decoration:none">로그아웃</a></span>
+				<span><a href="/franchiseeLogin/logout" style="text-decoration:none">로그아웃</a></span>
 			</c:if>
                         </li>
                     </ul>

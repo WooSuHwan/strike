@@ -170,7 +170,12 @@ $(function() {
 						</table>
 					</div>
 					<div class="cbtn0">
-						<button type="button" id="add" class="add">등록</button>
+						<c:if test="${sessionScope.member != null}">
+							<button type="button" id="add" class="add">등록</button>
+						</c:if>
+						<c:if test="${sessionScope.member == null}">
+							<button type="button">등록</button>
+						</c:if>
 					</div>
 					<div class="pagination">
 						<div class="paginate">

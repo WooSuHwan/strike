@@ -216,11 +216,9 @@
                                 <th>무</th>
                                 <th>승률</th>
                                 <th style="border-right: none;">상태</th>
-                                <c:forEach items="${challenger}" var="item" varStatus="status">
-                                <c:if test="${item.clan_code eq sessionScope.member.clan_code}">
+                               <c:if test="${clanGame.clan_code eq sessionScope.member.clan_code}">
                                 	<th style="border-right: none;">승인</th>
                                 </c:if>
-                                </c:forEach>
                             </tr>
                         </thead>
                         <tbody>

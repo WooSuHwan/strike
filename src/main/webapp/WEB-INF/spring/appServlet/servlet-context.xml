@@ -29,6 +29,7 @@
 			<mapping path="/game/add"/>
 			<mapping path="/clan/add"/>
 			<mapping path="/clan/application/**"/>
+			<mapping path="/clanGame/view/challenge/**"/>
 			<beans:bean class="kr.ac.kopo.strike.util.UserInterceptor"></beans:bean>
 		</interceptor>
 	</interceptors>
