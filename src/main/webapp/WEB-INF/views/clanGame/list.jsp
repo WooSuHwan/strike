@@ -134,7 +134,7 @@
 						<c:forEach items="${list}" var="item" varStatus="status">
 							<tr>
 								<td>${pager.offset + status.count}</td>
-								<td><a href="view/${item.clan_game_code}">${item.title}</a></td>
+								<td><a href="view/${item.clan_game_code}/${item.clan_code}">${item.title}</a></td>
 								<td>${item.clan_name}</td>
 								<td><fmt:formatDate value="${item.time}" type="date" pattern="YYYY.MM.dd"/></td>
 							</tr>

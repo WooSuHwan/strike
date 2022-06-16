@@ -89,7 +89,7 @@
                         <p>무 <span>${clanItem.clan_draw}</span></p>
                     </div>
                     <div class="newRecord02_04">
-                        <p>승률 <span>${clanItem.clan_rate}</span></p>
+                        <p>승률 <span>${clanItem.percent}</span></p>
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                                 <td>${item.clan_win}</td>
                                 <td>${item.clan_lose}</td>
                                 <td>${item.clan_draw}</td>
-                                <td>${item.clan_rate}</td>
+                                <td>${item.percent}</td>
                                 <td style="border-right: none;">승인완료</td>
 						</c:forEach>
                         </tbody>
@@ -237,7 +237,7 @@
                                 <td>${item.clan_win}</td>
                                 <td>${item.clan_lose}</td>
                                 <td>${item.clan_draw}</td>
-                                <td>${item.clan_rate}</td>
+                                <td>${item.percent}</td>
                                 <c:choose>
                                 <c:when test="${item.state ne 1}"><td>승인대기</td></c:when>
                                 <c:when test="${item.state eq 1}"><td style="border-right: none; cursor: pointer;">승인</td></c:when>

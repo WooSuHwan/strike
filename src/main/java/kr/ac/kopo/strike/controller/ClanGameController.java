@@ -82,10 +82,10 @@ public class ClanGameController {
 		return "redirect:list";
 	}
 	
-	@GetMapping("/view/{clan_game_code}")
-	public String view(@PathVariable int clan_game_code, Model model) {
+	@GetMapping("/view/{clan_game_code}/{clan_code}")
+	public String view(@PathVariable int clan_game_code, @PathVariable int clan_code, Model model) {
 		
-		Clan clanItem = service.clanItem(clan_game_code);
+		Clan clanItem = service.clanItem(clan_code);
 		ClanGame clanGame = service.item(clan_game_code);
 		List<ClanChallenger> admitCLanChallenger = service.admitClanChallenger(clan_game_code);
 		List<ClanChallenger> challenger = service.challenger(clan_game_code);

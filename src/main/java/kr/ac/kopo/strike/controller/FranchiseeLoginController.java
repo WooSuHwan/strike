@@ -40,6 +40,6 @@ public class FranchiseeLoginController {
 	@RequestMapping("/logout")
 	String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/franchisee";
+		return "redirect:/";
 	}
 }
