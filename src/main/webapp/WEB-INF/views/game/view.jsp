@@ -225,11 +225,18 @@
                         </tbody>
                     </table>
                 </div>
+                <c:if test="${sessionScope.member != null}">
                 <div class="applicant_03">
                     <a href="../challenge/${game_code}">신청</a>
                 </div>
+            </c:if>
+            <c:if test="${sessionScope.member == null}">
+               <div class="applicant_03">
+                     <a href="/login/login">신청</a>
+               </div>
+            </c:if>
+         </div>
             </div>
-</div>
         <div class="wh"></div>
     </section>        
      <jsp:include page="../footer.jsp"></jsp:include>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +67,7 @@
 					</div>
 					<div class="newRecord02_04">
 						<p>
-							승률 <span>${clan.percent}</span>
+							승률 <span><fmt:formatNumber value="${clan.percent}" pattern=".00"/></span>
 						</p>
 					</div>
 				</div>
@@ -154,7 +155,7 @@
 									<td>${item.win}</td>
 									<td>${item.lose}</td>
 									<td>${item.draw}</td>
-									<td>${item.percent}</td>
+									<td><fmt:formatNumber value="${item.percent}" pattern=".00"/></td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -214,7 +215,7 @@
 									<td>${item.win}</td>
 									<td>${item.lose}</td>
 									<td>${item.draw}</td>
-									<td>${item.percent}</td>
+									<td><fmt:formatNumber value="${item.percent}" pattern=".00"/></td>
 									<c:choose>
 										<c:when test="${item.state ne 1}">
 											<td>승인대기</td>
@@ -242,6 +243,7 @@
 					</div>
 				</c:if>
 			</div>
+		</div>
 			<div class="wh"></div>
 
 			<jsp:include page="../footer.jsp"></jsp:include>
