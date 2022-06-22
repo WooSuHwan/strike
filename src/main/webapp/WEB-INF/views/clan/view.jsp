@@ -231,10 +231,16 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="applicant_03">
-					<a
-						href="../application/${clan_code}/${sessionScope.member.member_code}">신청</a>
-				</div>
+				<c:if test="${sessionScope.member != null}">
+					<div class="applicant_03">
+							<a href="../application/${clan_code}/${sessionScope.member.member_code}">신청</a>
+					</div>
+				</c:if>
+				<c:if test="${sessionScope.member == null}">
+					<div class="applicant_03">
+							<a href="/login/login">신청</a>
+					</div>
+				</c:if>
 			</div>
 			<div class="wh"></div>
 

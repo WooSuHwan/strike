@@ -55,11 +55,13 @@
 						<col style="width: 10%;">
 						<col style="width: 10%;">
 						<col style="width: 10%;">
+						<col style="width: 10%;">
 					</colgroup>
 					<thead>
 						<tr>
 							<th>순위</th>
 							<th>이름</th>
+							<th>티어</th>
 							<th>전적</th>
 							<th>승</th>
 							<th>패</th>
@@ -72,6 +74,7 @@
 							<tr>
 								<td>${pagerMember.offset + status.count}</td>
 								<td>${item.name}</td>
+								<td>${item.tier}</td> <!-- 랭크 -->
 								<td>${item.record}</td>
 								<td>${item.win}</td>
 								<td>${item.lose}</td>

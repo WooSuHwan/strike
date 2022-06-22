@@ -28,16 +28,18 @@ public class SuggestMasterDaoImpl implements SuggestMasterDao {
 	}
 
 	@Override
+	public void update(SuggestMaster item) {
+		sql.update("suggestmaster.update", item);
+		
+	}
+	
+	@Override
 	public void delete(int master_code) {
 		sql.delete("suggestmaster.delete", master_code);
 
 	}
 
-	@Override
-	public void update(SuggestMaster item) {
-		sql.update("suggestmaster.update", item);
-
-	}
+	
 
 	@Override
 	public void addCount(int master_code) {
@@ -62,5 +64,7 @@ public class SuggestMasterDaoImpl implements SuggestMasterDao {
 		
 		return sql.selectOne("suggestmaster.total",pager);
 	}
+
+	
 
 }

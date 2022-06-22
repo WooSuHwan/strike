@@ -31,32 +31,32 @@
 	
 	<delete id="delete">
 		DELETE FROM suggest_master
-		WHERE master_code = #{masterCode} 
+		WHERE master_code = #{master_code} 
 	</delete>
 	
 	<update id="update">
 		UPDATE suggest_master
 		SET title=#{title}, story = #{story}
-		WHERE master_code = #{masterCode} 
+		WHERE master_code = #{master_code}
 	</update>
 	
 	<select id="item" resultType="suggestmaster">
 		SELECT master_code, title,  hit, name, reg_date, member_code ,story 
 		 FROM suggest_master
-		WHERE master_code = #{masterCode}
+		WHERE master_code = #{master_code}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="kr.ac.kopo.strike.model.SuggestMaster">
 		SELECT  master_code, title,  hit, name, reg_date, story
 		FROM suggest_master
-		WHERE master_code = #{masterCode}
+		WHERE master_code = #{master_code}
 	</select>
 	
 	<update id="addcount">
 		UPDATE suggest_master
 		SET hit = hit + 1
 		WHERE
-			master_code = #{masterCode}
+			master_code = #{master_code}
 	</update>
 	
 	<select id="total" resultType="Integer">
